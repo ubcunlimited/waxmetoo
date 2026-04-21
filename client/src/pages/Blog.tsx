@@ -1,11 +1,12 @@
 /*
  * WAX ME TOO — Blog / Journal Index
  * Design: Modern Feminine Craft
+ * Layout: Two-column — posts grid (left) + sticky archive sidebar (right)
  */
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/lib/data";
 
@@ -24,7 +25,32 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-const categories = ["All", ...Array.from(new Set(blogPosts.map(p => p.category)))];
+// Build archive tree: { year -> { month -> posts[] } }
+function buildArchive() {
+  const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const tree: Record<number, Record<string, typeof blogPosts>> = {};
+  blogPosts.forEach(post => {
+    const d = new Date(post.date);
+    if (isNaN(d.getTime())) return;
+    const year = d.getFullYear();
+    const month = monthNames[d.getMonth()];
+    if (!tree[year]) tree[year] = {};
+    if (!tree[year][month]) tree[year][month] = [];
+    tree[year][month].push(post);
+  });
+  // Sort years descending
+  return Object.entries(tree)
+    .sort(([a], [b]) => Number(b) - Number(a))
+    .map(([year, months]) => ({
+      year: Number(year),
+      months: Object.entries(months)
+        .sort(([, a], [, b]) => new Date(b[0].date).getTime() - new Date(a[0].date).getTime())
+        .map(([month, posts]) => ({ month, posts }))
+    }));
+}
+
+const archive = buildArchive();
+const allCategories = Array.from(new Set(blogPosts.map(p => p.category))).sort();
 
 export default function Blog() {
   useEffect(() => {
@@ -36,8 +62,64 @@ export default function Blog() {
   }, []);
 
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [expandedYears, setExpandedYears] = useState<Set<number>>(new Set([2024, 2020]));
+  const [selectedArchiveMonth, setSelectedArchiveMonth] = useState<{ year: number; month: string } | null>(null);
 
-  const filtered = blogPosts.filter(p => activeCategory === "All" || p.category === activeCategory);
+  const toggleYear = (year: number) => {
+    setExpandedYears(prev => {
+      const next = new Set(prev);
+      next.has(year) ? next.delete(year) : next.add(year);
+      return next;
+    });
+  };
+
+  const handleArchiveClick = (year: number, month: string) => {
+    if (selectedArchiveMonth?.year === year && selectedArchiveMonth?.month === month) {
+      setSelectedArchiveMonth(null);
+      setActiveCategory("All");
+      setSearchQuery("");
+    } else {
+      setSelectedArchiveMonth({ year, month });
+      setActiveCategory("All");
+      setSearchQuery("");
+    }
+  };
+
+  const handleCategoryClick = (cat: string) => {
+    setActiveCategory(cat);
+    setSelectedArchiveMonth(null);
+    setSearchQuery("");
+  };
+
+  const handleSearch = (q: string) => {
+    setSearchQuery(q);
+    setActiveCategory("All");
+    setSelectedArchiveMonth(null);
+  };
+
+  const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  const filtered = blogPosts.filter(post => {
+    if (selectedArchiveMonth) {
+      const d = new Date(post.date);
+      return d.getFullYear() === selectedArchiveMonth.year &&
+        monthNames[d.getMonth()] === selectedArchiveMonth.month;
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      return post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q) ||
+        post.category.toLowerCase().includes(q);
+    }
+    if (activeCategory !== "All") return post.category === activeCategory;
+    return true;
+  });
+
+  const showFeatured = !selectedArchiveMonth && !searchQuery && activeCategory === "All";
+
+  // Sidebar: recent posts
+  const recentPosts = blogPosts.slice(0, 5);
 
   return (
     <Layout>
@@ -58,87 +140,266 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <div className="bg-white border-b border-[#D8C6B6]">
+      {/* Main Content: Posts + Sidebar */}
+      <section className="py-14 bg-[#F7F3EE]">
         <div className="container">
-          <div className="flex gap-0 overflow-x-auto">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-4 text-sm font-body font-500 whitespace-nowrap border-b-2 transition-all ${
-                  activeCategory === cat
-                    ? "border-[#CFA7A0] text-[#3B2F2A]"
-                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A]"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
 
-      {/* Blog Grid */}
-      <section className="py-16 bg-[#F7F3EE]">
-        <div className="container">
-          {/* Featured Post */}
-          {activeCategory === "All" && (
-            <FadeUp>
-              <Link href={`/blog/${filtered[0].slug}`}>
-                <div className="blog-card cursor-pointer mb-8 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-                  <div className="aspect-[16/9] md:aspect-auto overflow-hidden">
-                    <img
-                      src={filtered[0].image}
-                      alt={filtered[0].title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-8 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide">{filtered[0].category}</span>
-                      <span className="text-[#D8C6B6]">·</span>
-                      <span className="text-xs text-[#A8B3AA] font-body flex items-center gap-1">
-                        <Clock size={11} /> {filtered[0].readTime}
-                      </span>
-                    </div>
-                    <h2 className="font-display text-3xl text-[#3B2F2A] mb-3 leading-snug">{filtered[0].title}</h2>
-                    <p className="text-[#4A4A4A] font-body leading-relaxed mb-5">{filtered[0].excerpt}</p>
-                    <span className="text-sm font-body font-600 text-[#CFA7A0] flex items-center gap-1 hover:gap-2 transition-all">
-                      Read Article <ArrowRight size={14} />
-                    </span>
-                  </div>
+            {/* ── LEFT: Posts Column ── */}
+            <div className="flex-1 min-w-0">
+
+              {/* Active filter label */}
+              {(activeCategory !== "All" || searchQuery || selectedArchiveMonth) && (
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-sm font-body text-[#4A4A4A]">
+                    {selectedArchiveMonth
+                      ? `Showing: ${selectedArchiveMonth.month} ${selectedArchiveMonth.year}`
+                      : searchQuery
+                        ? `Search results for "${searchQuery}"`
+                        : `Category: ${activeCategory}`}
+                  </span>
+                  <button
+                    onClick={() => { setActiveCategory("All"); setSearchQuery(""); setSelectedArchiveMonth(null); }}
+                    className="text-xs text-[#CFA7A0] hover:text-[#3B2F2A] underline font-body transition-colors"
+                  >
+                    Clear filter
+                  </button>
+                  <span className="text-xs text-[#A8B3AA] font-body">({filtered.length} post{filtered.length !== 1 ? "s" : ""})</span>
                 </div>
-              </Link>
-            </FadeUp>
-          )}
+              )}
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(activeCategory === "All" ? filtered.slice(1) : filtered).map((post, i) => (
-              <FadeUp key={post.id} delay={i * 70}>
-                <Link href={`/blog/${post.slug}`}>
-                  <div className="blog-card cursor-pointer h-full">
-                    <div className="aspect-[16/9] overflow-hidden">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide">{post.category}</span>
-                        <span className="text-[#D8C6B6]">·</span>
-                        <span className="text-xs text-[#A8B3AA] font-body">{post.readTime}</span>
+              {/* Featured Post — only when showing "All" unfiltered */}
+              {showFeatured && filtered.length > 0 && (
+                <FadeUp>
+                  <Link href={`/blog/${filtered[0].slug}`}>
+                    <div className="blog-card cursor-pointer mb-8 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+                      <div className="aspect-[16/9] md:aspect-auto overflow-hidden">
+                        <img
+                          src={filtered[0].image}
+                          alt={filtered[0].title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
-                      <h3 className="font-display text-xl text-[#3B2F2A] mb-2 leading-snug">{post.title}</h3>
-                      <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">{post.excerpt}</p>
+                      <div className="p-8 flex flex-col justify-center">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide">{filtered[0].category}</span>
+                          <span className="text-[#D8C6B6]">·</span>
+                          <span className="text-xs text-[#A8B3AA] font-body flex items-center gap-1">
+                            <Clock size={11} /> {filtered[0].readTime}
+                          </span>
+                        </div>
+                        <h2 className="font-display text-3xl text-[#3B2F2A] mb-3 leading-snug">{filtered[0].title}</h2>
+                        <p className="text-[#4A4A4A] font-body leading-relaxed mb-5">{filtered[0].excerpt}</p>
+                        <span className="text-sm font-body font-600 text-[#CFA7A0] flex items-center gap-1 hover:gap-2 transition-all">
+                          Read Article <ArrowRight size={14} />
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </FadeUp>
-            ))}
+                  </Link>
+                </FadeUp>
+              )}
+
+              {/* Posts Grid */}
+              {filtered.length === 0 ? (
+                <div className="text-center py-16">
+                  <BookOpen size={40} className="mx-auto text-[#D8C6B6] mb-4" />
+                  <p className="font-display text-xl text-[#3B2F2A] mb-2">No posts found</p>
+                  <p className="text-sm text-[#4A4A4A] font-body">Try a different search term or category.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                  {(showFeatured ? filtered.slice(1) : filtered).map((post, i) => (
+                    <FadeUp key={post.id} delay={i * 60}>
+                      <Link href={`/blog/${post.slug}`}>
+                        <div className="blog-card cursor-pointer h-full flex flex-col">
+                          <div className="aspect-[16/9] overflow-hidden">
+                            <img
+                              src={post.image}
+                              alt={post.title}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            />
+                          </div>
+                          <div className="p-5 flex flex-col flex-1">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide">{post.category}</span>
+                              <span className="text-[#D8C6B6]">·</span>
+                              <span className="text-xs text-[#A8B3AA] font-body">{post.readTime}</span>
+                            </div>
+                            <h3 className="font-display text-xl text-[#3B2F2A] mb-2 leading-snug flex-1">{post.title}</h3>
+                            <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-3 line-clamp-2">{post.excerpt}</p>
+                            <span className="text-xs text-[#A8B3AA] font-body">{post.date}</span>
+                          </div>
+                        </div>
+                      </Link>
+                    </FadeUp>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* ── RIGHT: Sidebar ── */}
+            <aside className="w-full lg:w-72 xl:w-80 shrink-0 lg:sticky lg:top-28 space-y-6">
+
+              {/* Search */}
+              <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
+                <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
+                  <Search size={16} className="text-[#CFA7A0]" /> Search Posts
+                </h3>
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search the journal..."
+                    value={searchQuery}
+                    onChange={e => handleSearch(e.target.value)}
+                    className="w-full pl-4 pr-10 py-2.5 rounded-lg border border-[#D8C6B6] text-sm font-body text-[#3B2F2A] bg-[#F7F3EE] placeholder-[#A8B3AA] focus:outline-none focus:ring-2 focus:ring-[#CFA7A0]"
+                  />
+                  <Search size={14} className="absolute right-3 top-3 text-[#A8B3AA]" />
+                </div>
+              </div>
+
+              {/* Categories */}
+              <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
+                <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
+                  <Tag size={16} className="text-[#CFA7A0]" /> Categories
+                </h3>
+                <ul className="space-y-1">
+                  <li>
+                    <button
+                      onClick={() => handleCategoryClick("All")}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm font-body transition-colors flex items-center justify-between ${
+                        activeCategory === "All" && !selectedArchiveMonth && !searchQuery
+                          ? "bg-[#3B2F2A] text-white"
+                          : "text-[#4A4A4A] hover:bg-[#F7F3EE] hover:text-[#3B2F2A]"
+                      }`}
+                    >
+                      All Posts
+                      <span className={`text-xs rounded-full px-2 py-0.5 ${activeCategory === "All" && !selectedArchiveMonth && !searchQuery ? "bg-white/20 text-white" : "bg-[#F7F3EE] text-[#A8B3AA]"}`}>
+                        {blogPosts.length}
+                      </span>
+                    </button>
+                  </li>
+                  {allCategories.map(cat => {
+                    const count = blogPosts.filter(p => p.category === cat).length;
+                    const isActive = activeCategory === cat && !selectedArchiveMonth && !searchQuery;
+                    return (
+                      <li key={cat}>
+                        <button
+                          onClick={() => handleCategoryClick(cat)}
+                          className={`w-full text-left px-3 py-2 rounded-lg text-sm font-body transition-colors flex items-center justify-between ${
+                            isActive
+                              ? "bg-[#CFA7A0] text-white"
+                              : "text-[#4A4A4A] hover:bg-[#F7F3EE] hover:text-[#3B2F2A]"
+                          }`}
+                        >
+                          {cat}
+                          <span className={`text-xs rounded-full px-2 py-0.5 ${isActive ? "bg-white/20 text-white" : "bg-[#F7F3EE] text-[#A8B3AA]"}`}>
+                            {count}
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              {/* Archive by Year/Month */}
+              <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
+                <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
+                  <Calendar size={16} className="text-[#CFA7A0]" /> Archive
+                </h3>
+                <ul className="space-y-1">
+                  {archive.map(({ year, months }) => {
+                    const yearCount = months.reduce((acc, m) => acc + m.posts.length, 0);
+                    const isExpanded = expandedYears.has(year);
+                    return (
+                      <li key={year}>
+                        <button
+                          onClick={() => toggleYear(year)}
+                          className="w-full text-left px-3 py-2 rounded-lg text-sm font-body font-semibold text-[#3B2F2A] hover:bg-[#F7F3EE] transition-colors flex items-center justify-between group"
+                        >
+                          <span className="flex items-center gap-2">
+                            {isExpanded
+                              ? <ChevronDown size={14} className="text-[#CFA7A0]" />
+                              : <ChevronRight size={14} className="text-[#A8B3AA] group-hover:text-[#CFA7A0]" />
+                            }
+                            {year}
+                          </span>
+                          <span className="text-xs bg-[#F7F3EE] text-[#A8B3AA] rounded-full px-2 py-0.5">{yearCount}</span>
+                        </button>
+                        {isExpanded && (
+                          <ul className="ml-6 mt-1 space-y-0.5">
+                            {months.map(({ month, posts }) => {
+                              const isSelected = selectedArchiveMonth?.year === year && selectedArchiveMonth?.month === month;
+                              return (
+                                <li key={month}>
+                                  <button
+                                    onClick={() => handleArchiveClick(year, month)}
+                                    className={`w-full text-left px-3 py-1.5 rounded-lg text-sm font-body transition-colors flex items-center justify-between ${
+                                      isSelected
+                                        ? "bg-[#CFA7A0] text-white"
+                                        : "text-[#4A4A4A] hover:bg-[#F7F3EE] hover:text-[#3B2F2A]"
+                                    }`}
+                                  >
+                                    {month}
+                                    <span className={`text-xs rounded-full px-1.5 py-0.5 ${isSelected ? "bg-white/20 text-white" : "bg-[#F7F3EE] text-[#A8B3AA]"}`}>
+                                      {posts.length}
+                                    </span>
+                                  </button>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              {/* Recent Posts */}
+              <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
+                <h3 className="font-display text-lg text-[#3B2F2A] mb-4 flex items-center gap-2">
+                  <BookOpen size={16} className="text-[#CFA7A0]" /> Recent Posts
+                </h3>
+                <ul className="space-y-4">
+                  {recentPosts.map(post => (
+                    <li key={post.id}>
+                      <Link href={`/blog/${post.slug}`}>
+                        <div className="flex gap-3 group cursor-pointer">
+                          <div className="w-16 h-14 rounded-lg overflow-hidden shrink-0">
+                            <img
+                              src={post.image}
+                              alt={post.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-xs text-[#CFA7A0] font-body mb-0.5">{post.date}</p>
+                            <p className="text-sm font-body text-[#3B2F2A] leading-snug group-hover:text-[#CFA7A0] transition-colors line-clamp-2">
+                              {post.title}
+                            </p>
+                          </div>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Book CTA */}
+              <div className="bg-[#3B2F2A] rounded-xl p-6 text-center">
+                <p className="font-display text-xl text-white mb-2">Ready to get smooth?</p>
+                <p className="text-sm text-[#D8C6B6] font-body mb-4">New clients get 20% off their first service.</p>
+                <a
+                  href="https://app.mangomint.com/waxmetoo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-lg bg-[#CFA7A0] text-white text-sm font-body font-semibold hover:bg-[#b8918a] transition-colors"
+                >
+                  Book Your Appointment
+                </a>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
