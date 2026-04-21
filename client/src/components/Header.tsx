@@ -58,14 +58,14 @@ export default function Header() {
         }`}
       >
         <div className="container">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
             <Link href="/">
               <div className="flex items-center gap-3 cursor-pointer">
                 <img
-                  src="/manus-storage/logo-horizontal_95b38a28.png"
+                  src="/manus-storage/logo-main_dd69d8bf.png"
                   alt="Wax Me Too — Professional Waxing Studio"
-                  className="h-10 md:h-12 w-auto"
+                  className="h-14 md:h-16 w-auto"
                 />
               </div>
             </Link>
