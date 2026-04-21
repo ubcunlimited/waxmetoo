@@ -52,6 +52,12 @@ const featuredServices = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Wax Me Too — Utah's Professional Waxing Studio Since 2007";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']"); if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. New clients receive 20% off.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 

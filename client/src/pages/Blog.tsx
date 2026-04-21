@@ -27,6 +27,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 const categories = ["All", ...Array.from(new Set(blogPosts.map(p => p.category)))];
 
 export default function Blog() {
+  useEffect(() => {
+    document.title = "Waxing Tips, News & Guides — The Wax Me Too Journal";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Read the latest waxing tips, how-to guides, studio news, and beauty advice from Wax Me Too — Utah's professional waxing studio since 2007. From Brazilian wax prep to eyebrow design trends.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = blogPosts.filter(p => activeCategory === "All" || p.category === activeCategory);

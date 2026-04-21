@@ -41,10 +41,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <img
-              src="/manus-storage/wax-me-too-logo_b92111a4.png"
-              alt="Wax Me Too"
-              className="h-16 w-auto mb-4 opacity-90"
+              src="/manus-storage/logo-main_dd69d8bf.png"
+              alt="Wax Me Too — Professional Waxing Studio"
+              className="h-16 w-auto mb-2 brightness-0 invert opacity-80"
             />
+            <p className="text-xs text-[#CFA7A0] font-body italic mb-4 tracking-wide">
+              From Brows to Toes &amp; Anything in Between!<sup className="text-[10px]">&#8482;</sup>
+            </p>
             <p className="text-sm text-[#A8B3AA] leading-relaxed mb-5">
               Women-owned professional waxing studio established in 2007. Expert estheticians, premium wax, and a private, comfortable experience across Utah.
             </p>

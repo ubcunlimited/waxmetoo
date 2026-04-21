@@ -28,6 +28,15 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 export default function Services() {
   const [activeCategory, setActiveCategory] = useState("womens-waxing");
   const [showCashPrice, setShowCashPrice] = useState(false);
+
+  // Dynamic SEO
+  useEffect(() => {
+    document.title = "Services & Pricing | Wax Me Too — Utah's Professional Waxing Studio";
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
+    meta.content = "Browse Wax Me Too's full waxing menu — Brazilian wax, eyebrow design, full body waxing, men's waxing, and more. Transparent pricing, 6 Utah locations. New clients receive 20% off.";
+    return () => { document.title = 'Wax Me Too — Professional Waxing Studio | Utah'; };
+  }, []);
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const activeServices = serviceCategories.find(c => c.id === activeCategory);

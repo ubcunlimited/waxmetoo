@@ -28,6 +28,16 @@ export default function LocationDetail() {
   const { id } = useParams<{ id: string }>();
   const location = locations.find(l => l.id === id);
 
+  // Dynamic SEO per location
+  useEffect(() => {
+    if (!location) return;
+    document.title = `Waxing in ${location.city}, Utah | Wax Me Too — Professional Waxing Studio`;
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
+    meta.content = `Wax Me Too ${location.city} — Professional Brazilian waxing, eyebrow design, and full body waxing in ${location.city}, ${location.county}, Utah. ${location.address}. Book online today. New clients receive 20% off.`;
+    return () => { document.title = 'Wax Me Too — Professional Waxing Studio | Utah'; };
+  }, [location]);
+
   if (!location) {
     return (
       <Layout>

@@ -66,6 +66,14 @@ const stats = [
 ];
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Wax Me Too — Utah's First Waxing-Only Studio Since 2007";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Learn the story behind Wax Me Too — Utah's first waxing-only salon, founded in 2007 by two best friends. Women-owned, locally operated, and committed to professional waxing excellence across 6 Utah locations.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}

@@ -23,6 +23,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Contact Wax Me Too — 6 Utah Waxing Studio Locations";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Contact Wax Me Too at any of our 6 Utah locations — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Call (801) 572-7771 or book online. We'd love to hear from you.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   const [submitted, setSubmitted] = useState(false);
 
   return (

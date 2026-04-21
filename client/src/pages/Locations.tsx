@@ -25,6 +25,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export default function Locations() {
+  useEffect(() => {
+    document.title = "Wax Me Too Locations — 6 Utah Waxing Studios | Layton, SLC, Draper, Orem, St. George";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Find your nearest Wax Me Too waxing studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. From Weber County to Utah County and Washington County to Mesquite, Nevada.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}

@@ -92,6 +92,14 @@ const reassurances = [
 ];
 
 export default function FirstVisit() {
+  useEffect(() => {
+    document.title = "First Visit Guide — What to Expect at Wax Me Too | Utah Waxing";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Everything first-time clients need to know before their first waxing appointment at Wax Me Too. What to expect, how to prepare, what to wear, and what happens during your first Brazilian wax.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}

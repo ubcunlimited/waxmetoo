@@ -33,6 +33,14 @@ const beforeCareItems = [
 ];
 
 export default function BeforeCare() {
+  useEffect(() => {
+    document.title = "Before Care Guide — How to Prepare for Your Wax | Wax Me Too";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Get the best possible waxing results by following Wax Me Too's before-care guide. Learn what to do (and avoid) in the days before your appointment for a smoother, more comfortable wax.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   return (
     <Layout>
       <section className="bg-[#3B2F2A] py-20">

@@ -38,6 +38,14 @@ const dontItems = [
 ];
 
 export default function AfterCare() {
+  useEffect(() => {
+    document.title = "After Care Guide — How to Care for Your Skin After Waxing | Wax Me Too";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Protect your freshly waxed skin with Wax Me Too's expert aftercare guide. Learn what to avoid in the 24-48 hours after your wax, how to prevent ingrown hairs, and how to keep skin smooth longer.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   return (
     <Layout>
       <section className="bg-[#3B2F2A] py-20">

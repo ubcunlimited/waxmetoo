@@ -28,6 +28,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 const categories = ["All", ...Array.from(new Set(faqs.map(f => f.category)))];
 
 export default function FAQ() {
+  useEffect(() => {
+    document.title = "Waxing FAQ — Common Questions Answered | Wax Me Too Utah";
+    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
+    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
+    m.content = "Find answers to the most common waxing questions — from how to prepare for your first Brazilian wax to how often you should wax. Expert guidance from Wax Me Too's licensed estheticians.";
+    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+  }, []);
+
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [openId, setOpenId] = useState<number | null>(null);
