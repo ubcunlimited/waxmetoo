@@ -72,7 +72,10 @@ export default function Home() {
             backgroundImage: `url(/manus-storage/hero-main_9c0c850f.jpg)`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3B2F2A]/80 via-[#3B2F2A]/50 to-transparent" />
+        {/* Left-to-right gradient — ensures text always readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3B2F2A]/90 via-[#3B2F2A]/70 to-[#3B2F2A]/20" />
+        {/* Bottom vignette — extra legibility on small screens where image shifts */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#3B2F2A]/60 via-transparent to-transparent" />
 
         <div className="container relative z-10">
           <div className="max-w-xl">
