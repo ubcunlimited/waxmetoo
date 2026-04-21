@@ -457,6 +457,61 @@
     width: 100%;
   }
 
+  /* Nav link — dark background variant */
+  .nav-link-dark {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--champagne);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link-dark:hover {
+    color: var(--rose-nude);
+  }
+
+  .nav-link-dark::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--rose-nude);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link-dark:hover::after {
+    width: 100%;
+  }
+
+  /* Button — ivory/light variant for dark backgrounds */
+  .btn-ivory {
+    background-color: var(--ivory);
+    color: var(--espresso);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.25s ease;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+  }
+
+  .btn-ivory:hover {
+    background-color: var(--champagne);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(247, 243, 238, 0.2);
+  }
+
   /* Star rating */
   .star-rating {
     color: var(--rose-nude);
