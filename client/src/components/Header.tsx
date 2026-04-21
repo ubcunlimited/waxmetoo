@@ -53,8 +53,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#3B2F2A]/97 backdrop-blur-sm shadow-md"
-            : "bg-[#3B2F2A]"
+            ? "bg-[#D8C6B6]/97 backdrop-blur-sm shadow-sm"
+            : "bg-[#D8C6B6]"
         }`}
       >
         <div className="container">
@@ -81,7 +81,7 @@ export default function Header() {
                     onMouseLeave={() => setServicesOpen(false)}
                   >
                     <Link href={link.href}>
-                      <span className="nav-link-dark flex items-center gap-1 cursor-pointer">
+                      <span className="nav-link flex items-center gap-1 cursor-pointer">
                         {link.label}
                         <ChevronDown size={13} className="opacity-70" />
                       </span>
@@ -100,7 +100,7 @@ export default function Header() {
                   </div>
                 ) : (
                   <Link key={link.href} href={link.href}>
-                    <span className="nav-link-dark cursor-pointer">{link.label}</span>
+                    <span className="nav-link cursor-pointer">{link.label}</span>
                   </Link>
                 )
               )}
@@ -112,7 +112,7 @@ export default function Header() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-ivory text-sm py-3 px-6"
+                className="btn-primary text-sm py-3 px-6"
               >
                 Book Now
               </a>
@@ -120,7 +120,7 @@ export default function Header() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden p-2 text-[#F7F3EE]"
+              className="lg:hidden p-2 text-[#3B2F2A]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -131,11 +131,11 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="lg:hidden bg-[#3B2F2A] border-t border-[#4a3d38] shadow-lg">
+          <div className="lg:hidden bg-[#D8C6B6] border-t border-[#CFA7A0]/30 shadow-lg">
             <nav className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <span className="block py-3 px-2 text-[#F7F3EE] font-body font-medium text-base border-b border-[#4a3d38] cursor-pointer hover:text-[#CFA7A0] transition-colors">
+                  <span className="block py-3 px-2 text-[#3B2F2A] font-body font-medium text-base border-b border-[#CFA7A0]/20 cursor-pointer hover:text-[#CFA7A0] transition-colors">
                     {link.label}
                   </span>
                 </Link>
