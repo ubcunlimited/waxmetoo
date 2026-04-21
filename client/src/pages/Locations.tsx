@@ -37,7 +37,7 @@ export default function Locations() {
                 Our Utah<br /><em className="text-[#CFA7A0]">locations</em>
               </h1>
               <p className="text-[#D8C6B6] font-body leading-relaxed">
-                With studios across Utah — from Utah County to Washington County — there's a Wax Me Too near you. Each location offers the same premium experience, expert estheticians, and strict sanitation standards.
+                From Weber County to Utah County, and from Washington County to Mesquite, Nevada — there's a Wax Me Too near you. Each location offers the same premium experience, expert estheticians, and strict sanitation standards.
               </p>
             </div>
           </FadeUp>
@@ -116,10 +116,10 @@ export default function Locations() {
             <div className="text-center mb-10">
               <p className="section-label mb-3">Service Areas</p>
               <h2 className="font-display text-3xl md:text-4xl text-[#3B2F2A] mb-4">
-                Serving communities across Utah
+                Serving communities across Utah &amp; Nevada
               </h2>
               <p className="text-[#4A4A4A] font-body max-w-xl mx-auto">
-                Our locations serve clients throughout Utah, from Spanish Fork to Ogden and across Washington County.
+                Our studios serve clients from Weber County in the north to Utah County in the south, and from Washington County all the way to Mesquite, Nevada.
               </p>
             </div>
           </FadeUp>
@@ -127,10 +127,10 @@ export default function Locations() {
           <FadeUp delay={100}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { county: "Utah County", cities: ["Provo", "Orem", "Spanish Fork", "American Fork", "Lehi"] },
-                { county: "Salt Lake County", cities: ["Salt Lake City", "Sandy", "Murray", "Draper", "West Jordan"] },
-                { county: "Washington County", cities: ["St. George", "Washington City", "Hurricane", "Ivins", "Mesquite"] },
-                { county: "Davis & Weber County", cities: ["Ogden", "Layton", "Bountiful", "Kaysville", "Clearfield"] },
+                { county: "Davis & Weber County", cities: ["Layton", "Ogden", "Kaysville", "Clearfield", "Bountiful"] },
+                { county: "Salt Lake County", cities: ["South Jordan", "Salt Lake City", "Sandy", "West Jordan", "Draper"] },
+                { county: "Utah County", cities: ["Lehi", "American Fork", "Pleasant Grove", "Herriman", "Saratoga Springs"] },
+                { county: "Washington County & NV", cities: ["St. George", "Washington City", "Hurricane", "Ivins", "Mesquite, NV"] },
               ].map((area) => (
                 <div key={area.county} className="bg-[#F7F3EE] rounded-lg p-5">
                   <h3 className="font-body text-sm font-600 text-[#CFA7A0] uppercase tracking-wide mb-3">{area.county}</h3>

@@ -342,10 +342,10 @@ export default function Home() {
             <div className="text-center mb-12">
               <p className="section-label mb-3">Find Us</p>
               <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A] mb-4">
-                Locations across Utah
+                From Weber County to Utah County
               </h2>
               <p className="text-[#4A4A4A] font-body max-w-lg mx-auto">
-                With studios from Utah County to Washington County, there's a Wax Me Too near you.
+                From Weber County to Utah County, and from Washington County to Mesquite, Nevada — there's a Wax Me Too near you.
               </p>
             </div>
           </FadeUp>
