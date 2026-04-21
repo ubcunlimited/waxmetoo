@@ -55,7 +55,7 @@ export default function Locations() {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h2 className="font-display text-3xl text-[#3B2F2A]">{loc.name}</h2>
-                        <p className="text-xs font-body text-[#A8B3AA] mt-1 uppercase tracking-wide">{loc.county} · Utah</p>
+                        <p className="text-xs font-body text-[#A8B3AA] mt-1 uppercase tracking-wide">{loc.county} · {loc.state}</p>
                       </div>
                       <span className="text-[#CFA7A0] text-2xl">✦</span>
                     </div>
@@ -88,6 +88,11 @@ export default function Locations() {
                       </div>
                     </div>
 
+                    {(loc as any).note && (
+                      <div className="flex items-center gap-1.5 mb-4">
+                        <span className="text-xs font-body font-600 text-[#A8B3AA] bg-[#F7F3EE] px-2.5 py-1 rounded-full">★ {(loc as any).note}</span>
+                      </div>
+                    )}
                     <div className="flex gap-3">
                       <a
                         href={BOOKING_URL}
@@ -128,8 +133,8 @@ export default function Locations() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { county: "Davis & Weber County", cities: ["Layton", "Ogden", "Kaysville", "Clearfield", "Bountiful"] },
-                { county: "Salt Lake County", cities: ["South Jordan", "Salt Lake City", "Sandy", "West Jordan", "Draper"] },
-                { county: "Utah County", cities: ["Lehi", "American Fork", "Pleasant Grove", "Herriman", "Saratoga Springs"] },
+                { county: "Salt Lake County", cities: ["South Jordan", "Salt Lake City", "Draper", "Sandy", "West Jordan"] },
+                { county: "Utah County", cities: ["Orem", "Provo", "American Fork", "Lehi", "Spanish Fork"] },
                 { county: "Washington County & NV", cities: ["St. George", "Washington City", "Hurricane", "Ivins", "Mesquite, NV"] },
               ].map((area) => (
                 <div key={area.county} className="bg-[#F7F3EE] rounded-lg p-5">
