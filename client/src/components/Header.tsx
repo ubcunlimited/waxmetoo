@@ -53,8 +53,8 @@ export default function Header() {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#D8C6B6]/97 backdrop-blur-sm shadow-sm"
-            : "bg-[#D8C6B6]"
+            ? "bg-[#F7F3EE]/97 backdrop-blur-sm shadow-sm"
+            : "bg-[#F7F3EE]"
         }`}
       >
         <div className="container">
@@ -131,7 +131,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="lg:hidden bg-[#D8C6B6] border-t border-[#CFA7A0]/30 shadow-lg">
+          <div className="lg:hidden bg-[#F7F3EE] border-t border-[#D8C6B6] shadow-lg">
             <nav className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
