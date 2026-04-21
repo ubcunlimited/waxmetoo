@@ -47,7 +47,7 @@ export default function Locations() {
       {/* Locations Grid */}
       <section className="py-20 bg-[#F7F3EE]">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((loc, i) => (
               <FadeUp key={loc.id} delay={i * 80}>
                 <div className="location-card bg-white">
