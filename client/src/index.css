@@ -1,3 +1,10 @@
+/*
+ * WAX ME TOO — Design System
+ * Philosophy: Modern Feminine Craft
+ * Typography: Cormorant Garamond (display) + DM Sans (body/UI)
+ * Color Palette: Warm Ivory, Deep Espresso, Muted Rose Nude, Sage Gray-Green, Champagne Beige, Soft Charcoal
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -40,77 +47,59 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand Colors */
+  --color-ivory: #F7F3EE;
+  --color-espresso: #3B2F2A;
+  --color-rose-nude: #CFA7A0;
+  --color-sage: #A8B3AA;
+  --color-champagne: #D8C6B6;
+  --color-charcoal: #4A4A4A;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  /* Brand Colors as CSS Variables */
+  --ivory: #F7F3EE;
+  --espresso: #3B2F2A;
+  --rose-nude: #CFA7A0;
+  --sage: #A8B3AA;
+  --champagne: #D8C6B6;
+  --charcoal: #4A4A4A;
+
+  /* Semantic Tokens mapped to brand */
+  --primary: oklch(0.28 0.03 35);        /* espresso #3B2F2A */
+  --primary-foreground: oklch(0.97 0.01 60); /* ivory */
+  --secondary: oklch(0.86 0.03 20);      /* champagne #D8C6B6 */
+  --secondary-foreground: oklch(0.28 0.03 35);
+  --accent: oklch(0.74 0.06 15);         /* rose nude #CFA7A0 */
+  --accent-foreground: oklch(0.28 0.03 35);
+  --muted: oklch(0.93 0.01 60);          /* light champagne */
+  --muted-foreground: oklch(0.45 0.02 35);
+  --background: oklch(0.97 0.01 75);     /* ivory #F7F3EE */
+  --foreground: oklch(0.35 0.02 35);     /* charcoal #4A4A4A */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.35 0.02 35);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.35 0.02 35);
+  --border: oklch(0.88 0.02 60);
+  --input: oklch(0.88 0.02 60);
+  --ring: oklch(0.74 0.06 15);
+  --radius: 0.5rem;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar: oklch(0.97 0.01 75);
+  --sidebar-foreground: oklch(0.35 0.02 35);
+  --sidebar-primary: oklch(0.28 0.03 35);
+  --sidebar-primary-foreground: oklch(0.97 0.01 60);
+  --sidebar-accent: oklch(0.86 0.03 20);
+  --sidebar-accent-foreground: oklch(0.28 0.03 35);
+  --sidebar-border: oklch(0.88 0.02 60);
+  --sidebar-ring: oklch(0.74 0.06 15);
+  --chart-1: oklch(0.74 0.06 15);
+  --chart-2: oklch(0.68 0.05 160);
+  --chart-3: oklch(0.86 0.03 20);
+  --chart-4: oklch(0.28 0.03 35);
+  --chart-5: oklch(0.45 0.02 35);
 }
 
 @layer base {
@@ -119,6 +108,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +127,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +142,329 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Brand Typography Utilities */
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Brand Button Styles */
+  .btn-primary {
+    background-color: var(--espresso);
+    color: var(--ivory);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.25s ease;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #2a1f1b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(59, 47, 42, 0.25);
+  }
+
+  .btn-rose {
+    background-color: var(--rose-nude);
+    color: var(--espresso);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.25s ease;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+  }
+
+  .btn-rose:hover {
+    background-color: #b8918a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(207, 167, 160, 0.4);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--espresso);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.8125rem 1.9375rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid var(--espresso);
+    transition: all 0.25s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--espresso);
+    color: var(--ivory);
+  }
+
+  .btn-outline-ivory {
+    background-color: transparent;
+    color: var(--ivory);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.8125rem 1.9375rem;
+    border-radius: 0.25rem;
+    border: 1.5px solid var(--ivory);
+    transition: all 0.25s ease;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-outline-ivory:hover {
+    background-color: var(--ivory);
+    color: var(--espresso);
+  }
+
+  /* Section Label */
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-nude);
+  }
+
+  /* Divider line */
+  .divider-rose {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--rose-nude);
+    margin: 1rem 0;
+  }
+
+  /* Card styles */
+  .card-service {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 47, 42, 0.06);
+  }
+
+  .card-service:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(59, 47, 42, 0.12);
+  }
+
+  /* Testimonial card */
+  .card-testimonial {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(59, 47, 42, 0.06);
+    border-left: 3px solid var(--rose-nude);
+  }
+
+  /* Section backgrounds */
+  .bg-ivory { background-color: var(--ivory); }
+  .bg-champagne { background-color: var(--champagne); }
+  .bg-espresso { background-color: var(--espresso); }
+  .bg-sage { background-color: var(--sage); }
+  .bg-rose-nude { background-color: var(--rose-nude); }
+
+  /* Text colors */
+  .text-espresso { color: var(--espresso); }
+  .text-rose-nude { color: var(--rose-nude); }
+  .text-sage { color: var(--sage); }
+  .text-champagne { color: var(--champagne); }
+  .text-charcoal { color: var(--charcoal); }
+  .text-ivory { color: var(--ivory); }
+
+  /* Fade-up animation */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .animate-fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
+  .animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards; }
+  .animate-fade-up-delay-3 { animation-delay: 0.3s; opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; }
+
+  /* Wave divider */
+  .wave-divider {
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  /* Sticky booking button (mobile) */
+  .sticky-book-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: var(--espresso);
+    color: var(--ivory);
+    text-align: center;
+    padding: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .sticky-book-btn {
+      display: block;
+    }
+  }
+
+  /* Promo banner */
+  .promo-banner {
+    background-color: var(--rose-nude);
+    color: var(--espresso);
+    text-align: center;
+    padding: 0.625rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* Trust badge row */
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* FAQ accordion */
+  .faq-item {
+    border-bottom: 1px solid var(--champagne);
+  }
+
+  /* Pricing table */
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid var(--champagne);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Blog card */
+  .blog-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 47, 42, 0.06);
+  }
+
+  .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 47, 42, 0.1);
+  }
+
+  /* Location card */
+  .location-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(59, 47, 42, 0.06);
+    border-top: 3px solid var(--rose-nude);
+  }
+
+  .location-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(59, 47, 42, 0.12);
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Nav link hover */
+  .nav-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--espresso);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--rose-nude);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Star rating */
+  .star-rating {
+    color: var(--rose-nude);
+    font-size: 1rem;
+  }
+
+  /* Organic shape clip */
+  .clip-wave {
+    clip-path: ellipse(100% 85% at 50% 100%);
   }
 }

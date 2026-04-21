@@ -1,0 +1,161 @@
+/*
+ * WAX ME TOO — FAQ Center
+ * Design: Modern Feminine Craft
+ * Features: Search, category filter, accordion
+ */
+
+import { useState, useEffect, useRef } from "react";
+import { Search, ChevronDown } from "lucide-react";
+import { Link } from "wouter";
+import Layout from "@/components/Layout";
+import { faqs, BOOKING_URL } from "@/lib/data";
+
+function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
+
+const categories = ["All", ...Array.from(new Set(faqs.map(f => f.category)))];
+
+export default function FAQ() {
+  const [search, setSearch] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [openId, setOpenId] = useState<number | null>(null);
+
+  const filtered = faqs.filter(faq => {
+    const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
+    const matchesSearch = !search || 
+      faq.question.toLowerCase().includes(search.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(search.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="bg-[#3B2F2A] py-20">
+        <div className="container">
+          <FadeUp>
+            <div className="max-w-2xl">
+              <p className="section-label text-[#CFA7A0] mb-3">FAQ Center</p>
+              <h1 className="font-display text-5xl md:text-6xl text-white mb-5">
+                Your questions,<br /><em className="text-[#CFA7A0]">answered.</em>
+              </h1>
+              <p className="text-[#D8C6B6] font-body leading-relaxed mb-8">
+                We've compiled answers to the questions we hear most often. Browse by category or search for a specific topic.
+              </p>
+              {/* Search */}
+              <div className="relative">
+                <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#A8B3AA]" />
+                <input
+                  type="text"
+                  placeholder="Search questions..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full pl-11 pr-4 py-3.5 rounded-lg bg-white text-[#3B2F2A] placeholder-[#A8B3AA] font-body text-sm border-0 outline-none focus:ring-2 focus:ring-[#CFA7A0]"
+                />
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <div className="bg-white border-b border-[#D8C6B6] sticky top-[calc(4rem+2.5rem)] z-30">
+        <div className="container">
+          <div className="flex gap-0 overflow-x-auto">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-4 text-sm font-body font-500 whitespace-nowrap border-b-2 transition-all ${
+                  activeCategory === cat
+                    ? "border-[#CFA7A0] text-[#3B2F2A]"
+                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ List */}
+      <section className="py-16 bg-[#F7F3EE]">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            {filtered.length === 0 ? (
+              <div className="text-center py-16">
+                <p className="font-display text-2xl text-[#3B2F2A] mb-3">No results found</p>
+                <p className="text-[#4A4A4A] font-body mb-6">Try a different search term or browse all categories.</p>
+                <button onClick={() => { setSearch(""); setActiveCategory("All"); }} className="btn-outline">
+                  Clear Filters
+                </button>
+              </div>
+            ) : (
+              <div className="space-y-0">
+                {filtered.map((faq, i) => (
+                  <FadeUp key={faq.id} delay={i * 40}>
+                    <div className="faq-item bg-white mb-2 rounded-lg overflow-hidden shadow-sm">
+                      <button
+                        className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
+                        onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
+                      >
+                        <div className="flex-1">
+                          <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide block mb-1">{faq.category}</span>
+                          <span className="font-body font-500 text-[#3B2F2A] text-base">{faq.question}</span>
+                        </div>
+                        <ChevronDown
+                          size={18}
+                          className={`text-[#CFA7A0] shrink-0 transition-transform ${openId === faq.id ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      {openId === faq.id && (
+                        <div className="px-6 pb-5 border-t border-[#F7F3EE]">
+                          <p className="text-[#4A4A4A] font-body leading-relaxed pt-4">{faq.answer}</p>
+                        </div>
+                      )}
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Still Have Questions */}
+      <section className="py-14 bg-[#D8C6B6]">
+        <div className="container">
+          <FadeUp>
+            <div className="max-w-xl mx-auto text-center">
+              <h2 className="font-display text-3xl text-[#3B2F2A] mb-4">Still have questions?</h2>
+              <p className="text-[#4A4A4A] font-body mb-6">
+                Our team is happy to help. Reach out directly or book a consultation.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link href="/contact">
+                  <span className="btn-primary cursor-pointer">Contact Us</span>
+                </Link>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-outline">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+    </Layout>
+  );
+}
