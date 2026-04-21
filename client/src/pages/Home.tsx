@@ -162,7 +162,7 @@ export default function Home() {
             <div className="text-center mb-12">
               <p className="section-label mb-3">Our Services</p>
               <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A] mb-4">
-                From Brows to Toes and Anything in Between!<sup className="text-2xl align-super text-[#CFA7A0]">&#8482;</sup>
+                From Brows to Toes & Anything in Between!<sup className="text-2xl align-super text-[#CFA7A0]">&#8482;</sup>
               </h2>
               <p className="text-[#4A4A4A] max-w-xl mx-auto font-body leading-relaxed">
                 We offer a complete waxing menu for women and men. Every service is performed by licensed estheticians using premium, skin-safe wax.
