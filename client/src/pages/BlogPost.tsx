@@ -69,12 +69,13 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 // SEO-optimized article content for each real blog post
 function getArticleContent(slug: string): string {
   switch (slug) {
-    case "win-complimentary-bikini-wax-summer":
+    case "win-complimentary-bikini-wax-summer": // image updated to beach bikini fun photo
       return `
         <p>Summer is just around the corner, and at <strong>Wax Me Too</strong> — Utah's premier professional waxing studio — we're celebrating the season with something special: a chance to win a complimentary bikini wax. All you have to do is fill out a quick form on our website. Winners are announced by text monthly, sometimes sooner!</p>
-<img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&auto=format&fit=crop" alt="Summer bikini wax promotion at Wax Me Too Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop" alt="Woman having fun on the beach in a bikini, summer ready after waxing" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+        <p>Why are we giving away free bikini waxes? Because summer is the perfect time to treat yourself — and we want to help you feel beach-ready and confident all season long.</p>
 
-        <h2>Why Waxing Is the Ultimate Summer Upgrade</h2>
+        <h2>Get Beach-Ready with a Summer Upgrade</h2>
         <p>Picture yourself floating on crystal-clear water at the beach or poolside, completely confident in your swimsuit. That's the Wax Me Too promise. Professional waxing removes hair from the root, leaving your skin silky smooth for 3–6 weeks — no razor burns, no nicks, no daily shaving routine.</p>
         <p>And if you're feeling adventurous, you can always upgrade your bikini wax to a full <strong>Brazilian wax</strong> for a small additional fee. Once you experience the results, you'll wonder why you waited so long.</p>
 
