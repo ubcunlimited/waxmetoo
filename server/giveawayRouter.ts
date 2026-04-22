@@ -1,13 +1,17 @@
 /**
  * Giveaway Router — tRPC procedures for the Win a Free Wax promotion.
  *
- * Procedures:
- *  - giveaway.enter        (public)  — submit entry, send confirmation email
- *  - giveaway.confirm      (public)  — confirm via token from email link
- *  - giveaway.drawWinner   (admin)   — randomly draw a winner for the current month
- *  - giveaway.winners      (admin)   — list all past winners
- *  - giveaway.entries      (admin)   — list all confirmed entries
- *  - giveaway.stats        (admin)   — entry counts
+ * Public procedures:
+ *  - giveaway.enter          — submit entry, send confirmation email
+ *  - giveaway.confirm        — confirm via token from email link
+ *
+ * Admin procedures:
+ *  - giveaway.drawWinner     — manually draw a winner for the current/specified month
+ *  - giveaway.winners        — list all past winners
+ *  - giveaway.entries        — list all confirmed entries
+ *  - giveaway.stats          — entry counts
+ *  - giveaway.schedulerStatus — get cron job status
+ *  - giveaway.setScheduler   — enable/disable the auto-draw cron job
  */
 
 import { nanoid } from "nanoid";
@@ -21,13 +25,10 @@ import {
   confirmEntry,
   getAllConfirmedEntries,
   getConfirmedEntryCount,
-  getWinnerForMonth,
-  recordWinner,
   getAllWinners,
-  markWinnerNotified,
 } from "./giveawayDb";
-import { sendConfirmationEmail, sendWinnerEmail } from "./giveawayEmail";
-import { ENV } from "./_core/env";
+import { sendConfirmationEmail } from "./giveawayEmail";
+import { getSchedulerStatus, setSchedulerEnabled, runMonthlyDraw } from "./scheduler";
 
 // Admin-only guard
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -107,7 +108,7 @@ export const giveawayRouter = router({
       return { success: true, reason: "confirmed" as const, firstName: entry.firstName };
     }),
 
-  /** Admin: randomly draw a winner for the current (or specified) month */
+  /** Admin: manually draw a winner for the current (or specified) month */
   drawWinner: adminProcedure
     .input(z.object({ month: z.string().optional() }))
     .mutation(async ({ input }) => {
@@ -115,44 +116,7 @@ export const giveawayRouter = router({
       const month =
         input.month ??
         `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-
-      // Check if already drawn
-      const existing = await getWinnerForMonth(month);
-      if (existing) {
-        return { success: false, reason: "already_drawn" as const, winner: existing };
-      }
-
-      const entries = await getAllConfirmedEntries();
-      if (entries.length === 0) {
-        return { success: false, reason: "no_entries" as const };
-      }
-
-      // Cryptographically random selection
-      const idx = Math.floor(Math.random() * entries.length);
-      const winner = entries[idx];
-
-      await recordWinner({
-        drawMonth: month,
-        entryId: winner.id,
-        firstName: winner.firstName,
-        lastName: winner.lastName,
-        email: winner.email,
-      });
-
-      // Send winner email
-      const monthLabel = new Date(month + "-01").toLocaleDateString("en-US", {
-        month: "long",
-        year: "numeric",
-      });
-      await sendWinnerEmail({
-        to: winner.email,
-        firstName: winner.firstName,
-        month: monthLabel,
-      });
-
-      await markWinnerNotified(month);
-
-      return { success: true, reason: "drawn" as const, winner: { ...winner, drawMonth: month } };
+      return runMonthlyDraw(month);
     }),
 
   /** Admin: list all past winners */
@@ -170,4 +134,17 @@ export const giveawayRouter = router({
     const count = await getConfirmedEntryCount();
     return { confirmedCount: count };
   }),
+
+  /** Admin: get scheduler/cron status */
+  schedulerStatus: adminProcedure.query(() => {
+    return getSchedulerStatus();
+  }),
+
+  /** Admin: enable or disable the monthly auto-draw cron job */
+  setScheduler: adminProcedure
+    .input(z.object({ enabled: z.boolean() }))
+    .mutation(({ input }) => {
+      setSchedulerEnabled(input.enabled);
+      return { success: true, enabled: input.enabled };
+    }),
 });

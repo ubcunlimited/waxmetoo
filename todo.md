@@ -66,3 +66,23 @@
 - [x] Admin protection: role === 'admin' check on all admin procedures + frontend redirect
 - [x] "🎁 Win a Free Wax" highlighted link in header navigation (desktop + mobile)
 - [x] Vitest tests: 12 giveaway tests + 1 auth test — all passing
+
+## New Features (Phase 2)
+
+- [x] Homepage giveaway promo section (teaser card between blog teaser and CTA strip)
+- [x] Social share feature on /win-a-free-wax (Facebook, Instagram, X, copy link with pre-filled text)
+- [x] Automated monthly winner draw via server-side cron job (node-cron, runs 1st of month)
+- [x] DB schema: blog_posts table (title, slug, excerpt, content, hero_image, tags, published_at, status)
+- [x] DB schema: newsletter_subscribers table (email, first_name, confirmed, source)
+- [x] DB migration pushed for new tables
+- [x] Blog post DB helpers (CRUD)
+- [x] Blog post tRPC router (list, get, create, update, delete — admin protected)
+- [x] Newsletter subscriber DB helpers and tRPC router
+- [x] Admin blog management UI: list all posts, create new post, edit post, delete post
+- [x] Admin blog management UI: markdown editor for post content
+- [x] Admin subscriber management UI: list all subscribers, export CSV
+- [x] Admin giveaway automation controls: enable/disable auto-draw, view cron status
+- [x] Admin Hub page (/admin) — central landing page with links to all admin sections
+- [x] Admin Blog Management page (/admin/blog) — list, create, edit, delete with search/filter
+- [x] Admin Subscribers page (/admin/subscribers) — list, stats, CSV export, force-unsubscribe
+- [x] Vitest tests: 16 blog + 5 scheduler + 12 giveaway + 1 auth = 34 total, all passing

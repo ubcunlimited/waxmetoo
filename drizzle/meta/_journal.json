@@ -15,6 +15,13 @@
       "when": 1776873640862,
       "tag": "0001_magenta_old_lace",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1776875091866,
+      "tag": "0002_regular_timeslip",
+      "breakpoints": true
     }
   ]
 }
