@@ -410,6 +410,138 @@
     box-shadow: 0 8px 24px rgba(59, 47, 42, 0.1);
   }
 
+  /* Article prose — blog post reading styles */
+  .prose h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #3B2F2A;
+    margin-top: 2.5rem;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .prose h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3B2F2A;
+    margin-top: 2rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.4;
+  }
+
+  .prose p {
+    margin-bottom: 1.4rem;
+    color: #4A4A4A;
+  }
+
+  .prose p:first-child {
+    font-size: 1.125rem;
+    color: #3B2F2A;
+    font-weight: 400;
+    line-height: 1.85;
+  }
+
+  .prose ul {
+    margin: 1.25rem 0 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .prose ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.625rem;
+    color: #4A4A4A;
+  }
+
+  .prose ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #CFA7A0;
+    flex-shrink: 0;
+  }
+
+  .prose ol {
+    margin: 1.25rem 0 1.5rem 0;
+    padding-left: 1.5rem;
+    counter-reset: list-counter;
+    list-style: none;
+  }
+
+  .prose ol li {
+    position: relative;
+    padding-left: 0.5rem;
+    margin-bottom: 0.625rem;
+    color: #4A4A4A;
+    counter-increment: list-counter;
+  }
+
+  .prose ol li::before {
+    content: counter(list-counter) '.';
+    position: absolute;
+    left: -1.25rem;
+    color: #CFA7A0;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .prose strong {
+    color: #3B2F2A;
+    font-weight: 600;
+  }
+
+  .prose em {
+    color: #5a4540;
+    font-style: italic;
+  }
+
+  .prose a {
+    color: #CFA7A0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+  }
+
+  .prose a:hover {
+    color: #3B2F2A;
+  }
+
+  .prose blockquote {
+    border-left: 3px solid #CFA7A0;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #3B2F2A;
+    line-height: 1.6;
+  }
+
+  .prose hr {
+    border: none;
+    border-top: 1px solid #D8C6B6;
+    margin: 2.5rem 0;
+  }
+
+  .prose img {
+    width: 100%;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
+    object-fit: cover;
+    max-height: 420px;
+    box-shadow: 0 4px 16px rgba(59,47,42,0.08);
+  }
+
   /* Location card */
   .location-card {
     background: white;

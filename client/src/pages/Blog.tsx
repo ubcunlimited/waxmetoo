@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/lib/data";
@@ -66,6 +66,8 @@ function buildTagCloud() {
 const tagCloud = buildTagCloud();
 
 export default function Blog() {
+  const [location] = useLocation();
+
   useEffect(() => {
     document.title = "Waxing Tips, News & Guides — The Wax Me Too Journal";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
@@ -80,6 +82,22 @@ export default function Blog() {
   const [selectedArchiveMonth, setSelectedArchiveMonth] = useState<{ year: number; month: string } | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [showAllTags, setShowAllTags] = useState(false);
+
+  // Read ?tag= URL parameter and pre-filter on mount / location change
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tagParam = params.get('tag');
+    if (tagParam) {
+      setActiveTag(decodeURIComponent(tagParam));
+      setActiveCategory("All");
+      setSearchQuery("");
+      setSelectedArchiveMonth(null);
+      // Scroll to posts grid
+      setTimeout(() => {
+        document.getElementById('blog-posts-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  }, [location]);
 
   const toggleYear = (year: number) => {
     setExpandedYears(prev => {
@@ -179,7 +197,7 @@ export default function Blog() {
           <div className="flex flex-col lg:flex-row gap-10 items-start">
 
             {/* ── LEFT: Posts Column ── */}
-            <div className="flex-1 min-w-0">
+            <div id="blog-posts-grid" className="flex-1 min-w-0">
 
               {/* Active filter label */}
               {(activeCategory !== "All" || searchQuery || selectedArchiveMonth || activeTag) && (

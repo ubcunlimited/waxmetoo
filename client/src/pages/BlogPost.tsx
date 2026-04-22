@@ -5,8 +5,8 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "wouter";
-import { ArrowLeft, Clock, ArrowRight, ExternalLink } from "lucide-react";
+import { Link, useParams, useLocation } from "wouter";
+import { ArrowLeft, Clock, ArrowRight, ExternalLink, Tag, Hash, Calendar } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
 
@@ -1053,9 +1053,22 @@ function getArticleContent(slug: string): string {
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
+  const [, navigate] = useLocation();
   const post = blogPosts.find(p => p.slug === slug);
-  const related = blogPosts.filter(p => p.category === post?.category && p.slug !== slug).slice(0, 3)
-    .concat(blogPosts.filter(p => p.category !== post?.category && p.slug !== slug).slice(0, 3 - blogPosts.filter(p => p.category === post?.category && p.slug !== slug).slice(0, 3).length));
+  const postTags: string[] = (post as any)?.tags ?? [];
+
+  // Tag-based related posts: score by shared tags, fall back to category
+  const related = blogPosts
+    .filter(p => p.slug !== slug)
+    .map(p => {
+      const pTags: string[] = (p as any).tags ?? [];
+      const sharedTags = postTags.filter(t => pTags.includes(t)).length;
+      const sameCategory = p.category === post?.category ? 1 : 0;
+      return { post: p, score: sharedTags * 2 + sameCategory };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(r => r.post);
 
   // Dynamic SEO meta
   useSEO(
@@ -1076,64 +1089,143 @@ export default function BlogPost() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="bg-[#3B2F2A] py-12">
-        <div className="container">
+      {/* Hero — full-width image with gradient overlay */}
+      <section className="relative overflow-hidden" style={{ minHeight: '380px' }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${post.image})` }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(59,47,42,0.92) 0%, rgba(59,47,42,0.75) 55%, rgba(59,47,42,0.35) 100%)' }} />
+        <div className="relative container py-14 md:py-20">
           <Link href="/blog">
-            <span className="flex items-center gap-2 text-[#D8C6B6] text-sm font-body mb-6 cursor-pointer hover:text-[#CFA7A0] transition-colors">
-              <ArrowLeft size={14} /> Back to Journal
+            <span className="inline-flex items-center gap-2 text-[#D8C6B6] text-sm font-body mb-8 cursor-pointer hover:text-[#CFA7A0] transition-colors group">
+              <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" /> Back to Journal
             </span>
           </Link>
           <FadeUp>
             <div className="max-w-2xl">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide">{post.category}</span>
-                <span className="text-[#D8C6B6]">·</span>
-                <span className="text-xs text-[#D8C6B6] font-body flex items-center gap-1">
+              <div className="flex flex-wrap items-center gap-2 mb-5">
+                <span className="bg-[#CFA7A0]/20 border border-[#CFA7A0]/40 text-[#CFA7A0] text-xs font-body font-semibold uppercase tracking-widest px-3 py-1 rounded-full">{post.category}</span>
+                <span className="flex items-center gap-1 text-xs text-[#D8C6B6] font-body">
                   <Clock size={11} /> {post.readTime}
                 </span>
-                <span className="text-[#D8C6B6]">·</span>
-                <span className="text-xs text-[#D8C6B6] font-body">{post.date}</span>
+                <span className="flex items-center gap-1 text-xs text-[#D8C6B6] font-body">
+                  <Calendar size={11} /> {post.date}
+                </span>
               </div>
-              <h1 className="font-display text-4xl md:text-5xl text-white leading-tight">{post.title}</h1>
+              <h1 className="font-display text-3xl md:text-5xl text-white leading-tight mb-4">{post.title}</h1>
+              <p className="text-[#D8C6B6] font-body text-base leading-relaxed max-w-xl">{post.excerpt}</p>
             </div>
           </FadeUp>
         </div>
       </section>
 
       {/* Article */}
-      <section className="py-16 bg-[#F7F3EE]">
+      <section className="py-14 bg-[#F7F3EE]">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Content */}
             <div className="lg:col-span-2">
               <FadeUp>
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full rounded-lg object-cover aspect-[16/9] mb-8"
-                />
+                {/* Article body */}
                 <div
                   className="prose prose-lg max-w-none"
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     color: "#4A4A4A",
-                    lineHeight: "1.8",
+                    lineHeight: "1.9",
+                    fontSize: "1.0625rem",
                   }}
                   dangerouslySetInnerHTML={{ __html: getArticleContent(post.slug) }}
                 />
               </FadeUp>
 
+              {/* Tags section */}
+              {postTags.length > 0 && (
+                <FadeUp delay={80}>
+                  <div className="mt-10 pt-8 border-t border-[#D8C6B6]">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="flex items-center gap-1.5 text-xs font-body font-semibold text-[#A8B3AA] uppercase tracking-widest mr-1">
+                        <Hash size={13} /> Tags
+                      </span>
+                      {postTags.map(tag => (
+                        <button
+                          key={tag}
+                          onClick={() => navigate(`/blog?tag=${encodeURIComponent(tag)}`)}
+                          className="text-xs px-3 py-1.5 rounded-full border border-[#D8C6B6] bg-white text-[#4A4A4A] hover:bg-[#CFA7A0] hover:border-[#CFA7A0] hover:text-white transition-all duration-200 font-body cursor-pointer"
+                        >
+                          #{tag}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </FadeUp>
+              )}
+
               {/* CTA in article */}
               <FadeUp delay={100}>
-                <div className="mt-10 bg-[#CFA7A0] rounded-lg p-6">
-                  <h3 className="font-display text-2xl text-[#3B2F2A] mb-2">Ready to book?</h3>
-                  <p className="text-[#3B2F2A]/80 font-body text-sm mb-4">New clients receive 20% off their first service.</p>
-                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                    Book Your Appointment
-                  </a>
+                <div className="mt-10 rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #3B2F2A 0%, #5a4540 100%)' }}>
+                  <div className="p-8 flex flex-col md:flex-row items-center gap-6">
+                    <div className="flex-1">
+                      <p className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-widest mb-2">New Client Special</p>
+                      <h3 className="font-display text-2xl text-white mb-2">Ready to get smooth?</h3>
+                      <p className="text-[#D8C6B6] font-body text-sm">New clients receive 20% off their first service at any of our 6 Utah locations.</p>
+                    </div>
+                    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose whitespace-nowrap shrink-0">
+                      Book Your Appointment
+                    </a>
+                  </div>
                 </div>
               </FadeUp>
+
+              {/* Tag-based Related Posts */}
+              {related.length > 0 && (
+                <FadeUp delay={120}>
+                  <div className="mt-14">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="h-px flex-1 bg-[#D8C6B6]" />
+                      <h2 className="font-display text-2xl text-[#3B2F2A] whitespace-nowrap">You Might Also Like</h2>
+                      <div className="h-px flex-1 bg-[#D8C6B6]" />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                      {related.map((p, i) => (
+                        <FadeUp key={p.id} delay={i * 60}>
+                          <Link href={`/blog/${p.slug}`}>
+                            <div className="group cursor-pointer rounded-xl overflow-hidden border border-[#D8C6B6] bg-white hover:shadow-md transition-shadow duration-300">
+                              <div className="aspect-[4/3] overflow-hidden">
+                                <img
+                                  src={p.image}
+                                  alt={p.title}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <span className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide">{p.category}</span>
+                                <h3 className="font-display text-base text-[#3B2F2A] mt-1 leading-snug group-hover:text-[#CFA7A0] transition-colors line-clamp-2">{p.title}</h3>
+                                <p className="text-xs text-[#A8B3AA] font-body mt-2 flex items-center gap-1">
+                                  <Clock size={10} /> {p.readTime}
+                                </p>
+                                {/* Show shared tags */}
+                                {(() => {
+                                  const pTags: string[] = (p as any).tags ?? [];
+                                  const shared = postTags.filter(t => pTags.includes(t)).slice(0, 2);
+                                  return shared.length > 0 ? (
+                                    <div className="flex flex-wrap gap-1 mt-2">
+                                      {shared.map(t => (
+                                        <span key={t} className="text-xs bg-[#F7F3EE] text-[#A8B3AA] px-2 py-0.5 rounded-full">#{t}</span>
+                                      ))}
+                                    </div>
+                                  ) : null;
+                                })()}
+                              </div>
+                            </div>
+                          </Link>
+                        </FadeUp>
+                      ))}
+                    </div>
+                  </div>
+                </FadeUp>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -1206,32 +1298,6 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Related Articles */}
-      <section className="py-14 bg-white">
-        <div className="container">
-          <FadeUp>
-            <h2 className="font-display text-3xl text-[#3B2F2A] mb-8">More from the Journal</h2>
-          </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {related.map((p, i) => (
-              <FadeUp key={p.id} delay={i * 70}>
-                <Link href={`/blog/${p.slug}`}>
-                  <div className="blog-card cursor-pointer">
-                    <div className="aspect-[16/9] overflow-hidden">
-                      <img src={p.image} alt={p.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div className="p-4">
-                      <span className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide">{p.category}</span>
-                      <h3 className="font-display text-lg text-[#3B2F2A] mt-1 leading-snug">{p.title}</h3>
-                      <p className="text-xs text-[#4A4A4A]/60 font-body mt-1">{p.date}</p>
-                    </div>
-                  </div>
-                </Link>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
