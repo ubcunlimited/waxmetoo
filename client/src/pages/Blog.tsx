@@ -291,7 +291,7 @@ export default function Blog() {
             </div>
 
             {/* ── RIGHT: Sidebar ── */}
-            <aside className="w-full lg:w-72 xl:w-80 shrink-0 lg:sticky lg:top-28 space-y-6">
+            <aside className="w-full lg:w-72 xl:w-80 shrink-0 lg:sticky lg:top-28 space-y-6" style={{ maxHeight: 'calc(100vh - 7rem)', overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#D8C6B6 transparent' }}>
 
               {/* Search */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
