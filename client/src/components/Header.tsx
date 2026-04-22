@@ -9,13 +9,14 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { BOOKING_URL } from "@/lib/data";
 
-const navLinks = [
+const navLinks: { label: string; href: string; hasDropdown?: boolean; highlight?: boolean }[] = [
   { label: "Services", href: "/services", hasDropdown: true },
   { label: "First Visit", href: "/first-visit" },
   { label: "Locations", href: "/locations" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
+  { label: "🎁 Win a Free Wax", href: "/win-a-free-wax", highlight: true },
 ];
 
 const serviceDropdown = [
@@ -98,6 +99,15 @@ export default function Header() {
                       </div>
                     )}
                   </div>
+                ) : link.highlight ? (
+                  <Link key={link.href} href={link.href}>
+                    <span
+                      className="cursor-pointer text-sm font-semibold px-3 py-1.5 rounded-full transition-all"
+                      style={{ background: "rgba(207,167,160,0.15)", color: "#CFA7A0", border: "1px solid rgba(207,167,160,0.4)" }}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
                 ) : (
                   <Link key={link.href} href={link.href}>
                     <span className="nav-link cursor-pointer">{link.label}</span>
@@ -135,7 +145,10 @@ export default function Header() {
             <nav className="container py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <span className="block py-3 px-2 text-[#3B2F2A] font-body font-medium text-base border-b border-[#CFA7A0]/20 cursor-pointer hover:text-[#CFA7A0] transition-colors">
+                  <span
+                    className="block py-3 px-2 font-body font-medium text-base border-b border-[#CFA7A0]/20 cursor-pointer transition-colors"
+                    style={{ color: link.highlight ? "#CFA7A0" : "#3B2F2A" }}
+                  >
                     {link.label}
                   </span>
                 </Link>

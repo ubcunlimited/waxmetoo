@@ -4,9 +4,9 @@
  * Real blog content pulled from waxmetoo.blogspot.com and SEO-optimized
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Link, useParams, useLocation } from "wouter";
-import { ArrowLeft, Clock, Hash, Calendar, Check, Copy, ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, Clock, Hash, Calendar, Check, Copy, ArrowRight, ExternalLink, ChevronDown, ChevronRight, BookOpen, Tag } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
 
@@ -1132,6 +1132,38 @@ export default function BlogPost() {
   const post = blogPosts.find(p => p.slug === slug);
   const postTags: string[] = (post as any)?.tags ?? [];
 
+  // Blog archive: group all posts by year → month
+  const archiveTree = useMemo(() => {
+    const tree: Record<number, Record<number, typeof blogPosts>> = {};
+    blogPosts.forEach(p => {
+      const d = new Date(p.date);
+      const y = d.getFullYear();
+      const m = d.getMonth();
+      if (!tree[y]) tree[y] = {};
+      if (!tree[y][m]) tree[y][m] = [];
+      tree[y][m].push(p);
+    });
+    return tree;
+  }, []);
+
+  const sortedYears = useMemo(() => Object.keys(archiveTree).map(Number).sort((a, b) => b - a), [archiveTree]);
+  const [expandedYears, setExpandedYears] = useState<Set<number>>(() => {
+    const currentYear = new Date().getFullYear();
+    return new Set([currentYear, currentYear - 1]);
+  });
+
+  const toggleYear = (year: number) => {
+    setExpandedYears(prev => {
+      const next = new Set(prev);
+      if (next.has(year)) next.delete(year);
+      else next.add(year);
+      return next;
+    });
+  };
+
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const recentPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 4);
+
   // Tag-based related posts: score by shared tags, fall back to category
   const related = blogPosts
     .filter(p => p.slug !== slug)
@@ -1348,22 +1380,52 @@ export default function BlogPost() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+            <div className="lg:sticky lg:top-28 space-y-5" style={{ maxHeight: 'calc(100vh - 7rem)', overflowY: 'auto', paddingRight: '4px' }}>
+
+              {/* Book Now CTA */}
               <FadeUp>
-                <div className="bg-white rounded-lg p-5 shadow-sm border-t-4 border-[#CFA7A0]">
-                  <h3 className="font-display text-xl text-[#3B2F2A] mb-4">Quick Links</h3>
-                  <ul className="space-y-2">
+                <div className="bg-[#3B2F2A] rounded-xl p-5">
+                  <p className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide mb-2">New Client Special</p>
+                  <p className="font-display text-xl text-white mb-1">20% off your first service</p>
+                  <p className="text-xs text-[#D8C6B6] font-body mb-3">6 Utah locations. Book online in minutes.</p>
+                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose text-sm py-2.5 w-full text-center block">
+                    Book Now
+                  </a>
+                </div>
+              </FadeUp>
+
+              {/* Related Service */}
+              {(post as any).relatedService && (
+                <FadeUp delay={60}>
+                  <div className="bg-[#F7F3EE] rounded-xl p-4 border border-[#D8C6B6]">
+                    <p className="text-xs font-body font-semibold text-[#A8B3AA] uppercase tracking-wide mb-2 flex items-center gap-1"><Tag size={11} /> Related Service</p>
+                    <Link href={(post as any).relatedService}>
+                      <span className="flex items-center gap-2 text-[#3B2F2A] font-display text-base hover:text-[#CFA7A0] transition-colors cursor-pointer">
+                        <ExternalLink size={13} className="text-[#CFA7A0]" />
+                        View Service & Pricing
+                      </span>
+                    </Link>
+                  </div>
+                </FadeUp>
+              )}
+
+              {/* Quick Links */}
+              <FadeUp delay={80}>
+                <div className="bg-white rounded-xl p-4 shadow-sm border-t-4 border-[#CFA7A0]">
+                  <h3 className="font-display text-base text-[#3B2F2A] mb-3">Quick Links</h3>
+                  <ul className="space-y-1.5">
                     {[
                       { label: "First Visit Guide", href: "/first-visit" },
                       { label: "Before Care", href: "/before-care" },
                       { label: "After Care", href: "/after-care" },
                       { label: "FAQ Center", href: "/faq" },
                       { label: "Services & Pricing", href: "/services" },
+                      { label: "All Locations", href: "/locations" },
                     ].map((link) => (
                       <li key={link.href}>
                         <Link href={link.href}>
-                          <span className="text-sm font-body text-[#4A4A4A] hover:text-[#CFA7A0] transition-colors cursor-pointer flex items-center gap-1">
-                            <ArrowRight size={12} /> {link.label}
+                          <span className="text-sm font-body text-[#4A4A4A] hover:text-[#CFA7A0] transition-colors cursor-pointer flex items-center gap-1.5">
+                            <ArrowRight size={11} className="text-[#CFA7A0]" /> {link.label}
                           </span>
                         </Link>
                       </li>
@@ -1372,46 +1434,88 @@ export default function BlogPost() {
                 </div>
               </FadeUp>
 
+              {/* Recent Posts */}
               <FadeUp delay={100}>
-                <div className="bg-[#3B2F2A] rounded-lg p-5">
-                  <p className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide mb-2">New Client Special</p>
-                  <p className="font-display text-xl text-white mb-2">20% off your first service</p>
-                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose text-sm py-2.5 w-full text-center block mt-3">
-                    Book Now
-                  </a>
-                </div>
-              </FadeUp>
-
-              {(post as any).relatedService && (
-                <FadeUp delay={120}>
-                  <div className="bg-[#F7F3EE] rounded-lg p-5 border border-[#D8C6B6]">
-                    <p className="text-xs font-body font-semibold text-[#A8B3AA] uppercase tracking-wide mb-2">Related Service</p>
-                    <Link href={(post as any).relatedService}>
-                      <span className="flex items-center gap-2 text-[#3B2F2A] font-display text-base hover:text-[#CFA7A0] transition-colors cursor-pointer">
-                        <ExternalLink size={14} className="text-[#CFA7A0]" />
-                        View Service & Pricing
-                      </span>
-                    </Link>
-                  </div>
-                </FadeUp>
-              )}
-
-              <FadeUp delay={150}>
-                <div className="bg-white rounded-lg p-5 shadow-sm border-t-4 border-[#A8B3AA]">
-                  <h3 className="font-display text-lg text-[#3B2F2A] mb-3">Our Locations</h3>
-                  <ul className="space-y-1.5 text-sm font-body text-[#4A4A4A]">
-                    {["Layton", "Salt Lake City", "South Jordan", "Draper", "Orem", "St. George"].map(loc => (
-                      <li key={loc} className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#CFA7A0] flex-shrink-0" />
-                        {loc}, Utah
+                <div className="bg-white rounded-xl p-4 shadow-sm border-t-4 border-[#A8B3AA]">
+                  <h3 className="font-display text-base text-[#3B2F2A] mb-3 flex items-center gap-2"><BookOpen size={14} className="text-[#A8B3AA]" /> Recent Posts</h3>
+                  <ul className="space-y-3">
+                    {recentPosts.map(p => (
+                      <li key={p.slug}>
+                        <Link href={`/blog/${p.slug}`}>
+                          <div className="flex gap-2.5 group cursor-pointer">
+                            <img src={p.image} alt={p.title} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" />
+                            <div className="min-w-0">
+                              <p className="text-xs font-body font-semibold text-[#3B2F2A] group-hover:text-[#CFA7A0] transition-colors leading-snug line-clamp-2">{p.title}</p>
+                              <p className="text-xs text-[#A8B3AA] font-body mt-0.5">{new Date(p.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
+                            </div>
+                          </div>
+                        </Link>
                       </li>
                     ))}
                   </ul>
-                  <Link href="/locations">
-                    <span className="text-xs text-[#CFA7A0] hover:underline cursor-pointer mt-3 block">View all locations →</span>
+                  <Link href="/blog">
+                    <span className="text-xs text-[#CFA7A0] hover:underline cursor-pointer mt-3 block">View all posts →</span>
                   </Link>
                 </div>
               </FadeUp>
+
+              {/* Blog Archive Tree */}
+              <FadeUp delay={120}>
+                <div className="bg-white rounded-xl p-4 shadow-sm border-t-4 border-[#D8C6B6]">
+                  <h3 className="font-display text-base text-[#3B2F2A] mb-3 flex items-center gap-2"><Calendar size={14} className="text-[#D8C6B6]" /> Blog Archive</h3>
+                  <div className="space-y-1" style={{ maxHeight: '280px', overflowY: 'auto' }}>
+                    {sortedYears.map(year => {
+                      const yearPosts = Object.values(archiveTree[year]).flat();
+                      const isExpanded = expandedYears.has(year);
+                      return (
+                        <div key={year}>
+                          <button
+                            onClick={() => toggleYear(year)}
+                            className="w-full flex items-center justify-between py-1.5 px-2 rounded-lg hover:bg-[#F7F3EE] transition-colors group"
+                          >
+                            <span className="text-sm font-body font-semibold text-[#3B2F2A] group-hover:text-[#CFA7A0] transition-colors">{year}</span>
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-xs text-[#A8B3AA] font-body">{yearPosts.length}</span>
+                              {isExpanded ? <ChevronDown size={12} className="text-[#CFA7A0]" /> : <ChevronRight size={12} className="text-[#A8B3AA]" />}
+                            </div>
+                          </button>
+                          {isExpanded && (
+                            <div className="ml-3 border-l border-[#D8C6B6] pl-3 space-y-0.5 mb-1">
+                              {Object.keys(archiveTree[year]).map(Number).sort((a, b) => b - a).map(month => {
+                                const monthPosts = archiveTree[year][month];
+                                return (
+                                  <div key={month}>
+                                    <p className="text-xs font-body font-semibold text-[#A8B3AA] uppercase tracking-wide py-1">{monthNames[month]}</p>
+                                    <ul className="space-y-0.5">
+                                      {monthPosts.map(p => (
+                                        <li key={p.slug}>
+                                          <Link href={`/blog/${p.slug}`}>
+                                            <span className={`text-xs font-body block py-0.5 px-1 rounded transition-colors cursor-pointer line-clamp-1 ${
+                                              p.slug === slug
+                                                ? 'text-[#CFA7A0] font-semibold bg-[#F7F3EE]'
+                                                : 'text-[#4A4A4A] hover:text-[#CFA7A0] hover:bg-[#F7F3EE]'
+                                            }`}>
+                                              {p.title}
+                                            </span>
+                                          </Link>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <Link href="/blog">
+                    <span className="text-xs text-[#CFA7A0] hover:underline cursor-pointer mt-3 block">← Back to Journal</span>
+                  </Link>
+                </div>
+              </FadeUp>
+
             </div>
           </div>
         </div>

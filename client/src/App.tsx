@@ -22,7 +22,13 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ScrollToTop from "./components/ScrollToTop";
 
+// Giveaway pages
+import WinAFreeWax from "./pages/WinAFreeWax";
+import GiveawayConfirm from "./pages/GiveawayConfirm";
+import AdminGiveaway from "./pages/AdminGiveaway";
+
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
     <ScrollToTop />
@@ -41,6 +47,11 @@ function Router() {
       <Route path="/after-care" component={AfterCare} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      {/* Giveaway */}
+      <Route path="/win-a-free-wax" component={WinAFreeWax} />
+      <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
+      {/* Admin */}
+      <Route path="/admin/giveaway" component={AdminGiveaway} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
