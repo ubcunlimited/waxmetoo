@@ -72,7 +72,7 @@ function getArticleContent(slug: string): string {
     case "win-complimentary-bikini-wax-summer": // image updated to beach bikini fun photo
       return `
         <p>Summer is just around the corner, and at <strong>Wax Me Too</strong> — Utah's premier professional waxing studio — we're celebrating the season with something special: a chance to win a complimentary bikini wax. All you have to do is fill out a quick form on our website. Winners are announced by text monthly, sometimes sooner!</p>
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop" alt="Woman having fun on the beach in a bikini, summer ready after waxing" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&auto=format&fit=crop" alt="Woman laughing and having fun at the beach in a bikini, summer confidence" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <p>Why are we giving away free bikini waxes? Because summer is the perfect time to treat yourself — and we want to help you feel beach-ready and confident all season long.</p>
 
         <h2>Get Beach-Ready with a Summer Upgrade</h2>
