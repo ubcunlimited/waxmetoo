@@ -494,6 +494,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
     slug: "win-complimentary-bikini-wax-summer",
     relatedService: "/services#bikini",
+    tags: ["bikini wax", "summer", "giveaway", "promotions", "smooth skin"],
   },
   {
     id: "st-george-premier-waxing-salon",
@@ -505,6 +506,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "st-george-premier-waxing-salon",
     relatedService: "/services#brows",
+    tags: ["St. George", "Southern Utah", "waxing salon", "locations", "eyebrow waxing"],
   },
   {
     id: "vacation-waxing-prep-guide",
@@ -516,6 +518,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
     slug: "vacation-waxing-prep-guide",
     relatedService: "/services#bikini",
+    tags: ["vacation prep", "bikini wax", "travel", "pre-vacation", "smooth skin"],
   },
   {
     id: "military-discounts-wax-me-too-layton",
@@ -527,6 +530,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "military-discounts-wax-me-too-layton",
     relatedService: "/services",
+    tags: ["military discount", "Layton", "veterans", "promotions", "waxing deals"],
   },
   {
     id: "why-waxing-is-best-hair-removal",
@@ -538,6 +542,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "why-waxing-is-best-hair-removal",
     relatedService: "/services#brazilian",
+    tags: ["hair removal", "waxing vs shaving", "benefits of waxing", "smooth skin", "long-lasting"],
   },
   {
     id: "bridal-waxing-guide",
@@ -549,6 +554,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "bridal-waxing-guide",
     relatedService: "/services#bridal",
+    tags: ["bridal waxing", "wedding prep", "bride", "full body wax", "bikini wax"],
   },
   {
     id: "south-jordan-waxing-salon-relocation",
@@ -560,6 +566,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "south-jordan-waxing-salon-relocation",
     relatedService: "/services#brazilian",
+    tags: ["South Jordan", "new location", "waxing salon", "Utah County", "relocation"],
   },
 
   // ── 2020 ──────────────────────────────────────────────────────────────────
@@ -573,6 +580,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "south-jordan-6th-location-opening",
     relatedService: "/services#brazilian",
+    tags: ["South Jordan", "grand opening", "new location", "waxing salon", "Utah"],
   },
   {
     id: "free-bikini-wax-layton-utah",
@@ -584,6 +592,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "free-bikini-wax-layton-utah",
     relatedService: "/services#bikini",
+    tags: ["free wax", "Layton", "bikini wax", "promotions", "giveaway"],
   },
   {
     id: "wax-me-too-difference-local-salon",
@@ -595,6 +604,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "wax-me-too-difference-local-salon",
     relatedService: "/services",
+    tags: ["local salon", "women-owned", "Utah waxing", "professional waxing", "quality"],
   },
 
   // ── 2019 ──────────────────────────────────────────────────────────────────
@@ -608,6 +618,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
     slug: "summer-waxing-utah-guide",
     relatedService: "/services#bikini",
+    tags: ["summer waxing", "Utah", "bikini season", "smooth skin", "waxing tips"],
   },
   {
     id: "first-brazilian-wax-step-by-step",
@@ -619,6 +630,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "first-brazilian-wax-step-by-step",
     relatedService: "/services#brazilian",
+    tags: ["first Brazilian wax", "Brazilian wax", "what to expect", "new clients", "waxing guide"],
   },
 
   // ── 2017 ──────────────────────────────────────────────────────────────────
@@ -632,6 +644,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
     slug: "spring-adventure-waxing-utah",
     relatedService: "/services#bikini",
+    tags: ["spring waxing", "Utah", "outdoor activities", "bikini wax", "smooth skin"],
   },
   {
     id: "south-jordan-waxing-grand-opening",
@@ -643,6 +656,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "south-jordan-waxing-grand-opening",
     relatedService: "/services#brazilian",
+    tags: ["South Jordan", "grand opening", "waxing salon", "new location", "Utah County"],
   },
   {
     id: "waxing-south-jordan-utah-opening",
@@ -654,6 +668,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "waxing-south-jordan-utah-opening",
     relatedService: "/services#brazilian",
+    tags: ["South Jordan", "waxing", "new salon", "Utah", "opening"],
   },
   {
     id: "valentines-day-waxing-rippp-and-swear",
@@ -665,6 +680,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "valentines-day-waxing-rippp-and-swear",
     relatedService: "/services#brows",
+    tags: ["Valentine's Day", "Brazilian wax", "gift ideas", "couples", "waxing humor"],
   },
   {
     id: "valentines-day-free-wax-giveaway-2017",
@@ -676,6 +692,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "valentines-day-free-wax-giveaway-2017",
     relatedService: "/services#brazilian",
+    tags: ["Valentine's Day", "free wax", "giveaway", "promotions", "bikini wax"],
   },
   {
     id: "sundance-film-festival-waxing-utah",
@@ -687,6 +704,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1551524164-687a55dd1126?w=600&q=80",
     slug: "sundance-film-festival-waxing-utah",
     relatedService: "/services#brazilian",
+    tags: ["Sundance", "Park City", "Utah events", "waxing", "celebrity"],
   },
 
   // ── 2016 ──────────────────────────────────────────────────────────────────
@@ -700,6 +718,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "layton-waxing-salon-new-team",
     relatedService: "/services#brazilian",
+    tags: ["Layton", "estheticians", "waxing team", "professional waxing", "staff"],
   },
   {
     id: "pre-vacation-waxing-checklist",
@@ -711,6 +730,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
     slug: "pre-vacation-waxing-checklist",
     relatedService: "/services#bikini",
+    tags: ["vacation prep", "waxing checklist", "travel tips", "bikini wax", "smooth skin"],
   },
   {
     id: "free-bikini-wax-drawing-utah",
@@ -722,6 +742,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "free-bikini-wax-drawing-utah",
     relatedService: "/services#bikini",
+    tags: ["free wax", "bikini wax", "giveaway", "promotions", "Utah"],
   },
   {
     id: "holiday-waxing-on-top-of-the-world",
@@ -733,6 +754,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "holiday-waxing-on-top-of-the-world",
     relatedService: "/services#brazilian",
+    tags: ["holiday waxing", "gift ideas", "smooth skin", "winter waxing", "Utah"],
   },
   {
     id: "3-worst-things-waxing-salon",
@@ -744,6 +766,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "3-worst-things-waxing-salon",
     relatedService: "/services",
+    tags: ["waxing tips", "salon advice", "what to avoid", "professional waxing", "education"],
   },
   {
     id: "underarm-waxing-guide-utah",
@@ -755,6 +778,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "underarm-waxing-guide-utah",
     relatedService: "/services#body",
+    tags: ["underarm waxing", "armpit wax", "hair removal", "smooth skin", "waxing guide"],
   },
   {
     id: "throw-away-your-razor",
@@ -766,6 +790,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "throw-away-your-razor",
     relatedService: "/services#legs",
+    tags: ["waxing vs shaving", "razor bumps", "smooth skin", "hair removal", "benefits of waxing"],
   },
   {
     id: "bikini-wax-types-explained",
@@ -777,6 +802,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "bikini-wax-types-explained",
     relatedService: "/services#bikini",
+    tags: ["bikini wax types", "Brazilian wax", "bikini line", "full bikini", "waxing guide"],
   },
   {
     id: "naked-and-afraid-first-brazilian",
@@ -788,6 +814,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "naked-and-afraid-first-brazilian",
     relatedService: "/services#brazilian",
+    tags: ["first Brazilian wax", "what to expect", "new clients", "Brazilian wax", "waxing humor"],
   },
   {
     id: "mens-eyebrow-waxing-metrosexual",
@@ -799,6 +826,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600&q=80",
     slug: "mens-eyebrow-waxing-metrosexual",
     relatedService: "/services#mens",
+    tags: ["men's waxing", "eyebrow waxing", "male grooming", "metrosexual", "brow shaping"],
   },
   {
     id: "eyebrow-design-waxing-guide",
@@ -810,6 +838,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "eyebrow-design-waxing-guide",
     relatedService: "/services#brows",
+    tags: ["eyebrow waxing", "brow shaping", "eyebrow design", "facial waxing", "beauty tips"],
   },
   {
     id: "hair-removal-layton-utah",
@@ -821,6 +850,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "hair-removal-layton-utah",
     relatedService: "/services#brazilian",
+    tags: ["Layton", "hair removal", "waxing", "Utah", "professional waxing"],
   },
   {
     id: "brazilian-waxing-salon-qa",
@@ -832,6 +862,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "brazilian-waxing-salon-qa",
     relatedService: "/services#brazilian",
+    tags: ["Brazilian wax", "FAQ", "waxing questions", "what to expect", "waxing guide"],
   },
 
   // ── 2015 ──────────────────────────────────────────────────────────────────
@@ -845,6 +876,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "prevention-magazine-bikini-wax-tips",
     relatedService: "/services#bikini",
+    tags: ["bikini wax tips", "Prevention magazine", "waxing advice", "expert tips", "smooth skin"],
   },
   {
     id: "layton-waxing-milly-speaks-spanish",
@@ -856,6 +888,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "layton-waxing-milly-speaks-spanish",
     relatedService: "/services#brazilian",
+    tags: ["Layton", "bilingual", "Spanish-speaking", "esthetician", "inclusive"],
   },
   {
     id: "valentines-day-brazilian-wax-gift",
@@ -867,6 +900,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "valentines-day-brazilian-wax-gift",
     relatedService: "/services#brazilian",
+    tags: ["Valentine's Day", "gift ideas", "Brazilian wax", "couples", "promotions"],
   },
   {
     id: "layton-waxing-salon-new-location",
@@ -878,6 +912,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "layton-waxing-salon-new-location",
     relatedService: "/services#brazilian",
+    tags: ["Layton", "new location", "waxing salon", "Davis County", "Utah"],
   },
 
   // ── 2013 ──────────────────────────────────────────────────────────────────
@@ -891,6 +926,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "15-minute-brazilian-wax-experience",
     relatedService: "/services#brazilian",
+    tags: ["Brazilian wax", "quick wax", "fast service", "professional waxing", "efficiency"],
   },
   {
     id: "draper-waxing-salon-expansion",
@@ -902,6 +938,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "draper-waxing-salon-expansion",
     relatedService: "/services#brazilian",
+    tags: ["Draper", "expansion", "new location", "waxing salon", "Salt Lake County"],
   },
   {
     id: "salt-lake-city-waxing-salon",
@@ -913,6 +950,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "salt-lake-city-waxing-salon",
     relatedService: "/services#brazilian",
+    tags: ["Salt Lake City", "waxing salon", "Utah", "professional waxing", "locations"],
   },
   {
     id: "valentines-day-free-brazilian-2013",
@@ -924,6 +962,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "valentines-day-free-brazilian-2013",
     relatedService: "/services#brazilian",
+    tags: ["Valentine's Day", "free Brazilian wax", "giveaway", "promotions", "2013"],
   },
 
   // ── 2012 ──────────────────────────────────────────────────────────────────
@@ -937,6 +976,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "utah-waxing-salon-established-2007",
     relatedService: "/services",
+    tags: ["Utah waxing", "established 2007", "women-owned", "waxing history", "professional waxing"],
   },
   {
     id: "brazilian-wax-benefits-vs-shaving",
@@ -948,6 +988,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "brazilian-wax-benefits-vs-shaving",
     relatedService: "/services#brazilian",
+    tags: ["Brazilian wax", "waxing vs shaving", "benefits", "smooth skin", "hair removal"],
   },
   {
     id: "waxing-while-pregnant-utah",
@@ -959,6 +1000,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
     slug: "waxing-while-pregnant-utah",
     relatedService: "/services#brazilian",
+    tags: ["waxing while pregnant", "pregnancy waxing", "safe waxing", "prenatal care", "sensitive skin"],
   },
   {
     id: "ingrown-hair-prevention-waxing",
@@ -970,6 +1012,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "ingrown-hair-prevention-waxing",
     relatedService: "/after-care",
+    tags: ["ingrown hairs", "ingrown hair prevention", "aftercare", "smooth skin", "waxing tips"],
   },
   {
     id: "waxing-sensitive-skin-guide",
@@ -981,6 +1024,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "waxing-sensitive-skin-guide",
     relatedService: "/services#brazilian",
+    tags: ["sensitive skin", "waxing tips", "skin care", "gentle waxing", "aftercare"],
   },
   {
     id: "how-often-should-you-wax",
@@ -992,6 +1036,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "how-often-should-you-wax",
     relatedService: "/services",
+    tags: ["waxing schedule", "how often to wax", "waxing frequency", "hair regrowth", "waxing tips"],
   },
   {
     id: "waxing-for-men-manzilian-guide",
@@ -1003,6 +1048,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600&q=80",
     slug: "waxing-for-men-manzilian-guide",
     relatedService: "/services#mens",
+    tags: ["men's waxing", "Manzilian", "male Brazilian wax", "male grooming", "body waxing"],
   },
   {
     id: "st-george-waxing-salon-utah",
@@ -1014,6 +1060,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     slug: "st-george-waxing-salon-utah",
     relatedService: "/services#brazilian",
+    tags: ["St. George", "Southern Utah", "waxing salon", "Washington County", "locations"],
   },
   {
     id: "waxing-aftercare-guide",
@@ -1025,6 +1072,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "waxing-aftercare-guide",
     relatedService: "/after-care",
+    tags: ["aftercare", "post-wax care", "ingrown hairs", "smooth skin", "waxing tips"],
   },
   {
     id: "waxing-before-care-guide",
@@ -1036,6 +1084,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     slug: "waxing-before-care-guide",
     relatedService: "/before-care",
+    tags: ["before care", "pre-wax prep", "waxing tips", "first wax", "preparation"],
   },
   {
     id: "wax-me-too-happy-faces-community",
@@ -1047,6 +1096,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     slug: "wax-me-too-happy-faces-community",
     relatedService: "/about",
+    tags: ["community", "client stories", "Utah waxing", "women-owned", "testimonials"],
   },
   {
     id: "waxing-faq-utah",
@@ -1058,6 +1108,7 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
     slug: "waxing-faq-utah",
     relatedService: "/faq",
+    tags: ["FAQ", "waxing questions", "Utah waxing", "what to expect", "waxing guide"],
   },
 ];
 

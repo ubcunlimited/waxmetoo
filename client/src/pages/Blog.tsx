@@ -6,7 +6,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen } from "lucide-react";
+import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/lib/data";
 
@@ -52,6 +52,19 @@ function buildArchive() {
 const archive = buildArchive();
 const allCategories = Array.from(new Set(blogPosts.map(p => p.category))).sort();
 
+// Build tag frequency map, sorted by count desc
+function buildTagCloud() {
+  const freq: Record<string, number> = {};
+  blogPosts.forEach(post => {
+    const tags = (post as any).tags as string[] | undefined;
+    if (tags) tags.forEach(t => { freq[t] = (freq[t] || 0) + 1; });
+  });
+  return Object.entries(freq)
+    .sort(([, a], [, b]) => b - a)
+    .map(([tag, count]) => ({ tag, count }));
+}
+const tagCloud = buildTagCloud();
+
 export default function Blog() {
   useEffect(() => {
     document.title = "Waxing Tips, News & Guides — The Wax Me Too Journal";
@@ -65,6 +78,8 @@ export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedYears, setExpandedYears] = useState<Set<number>>(new Set([2024, 2020]));
   const [selectedArchiveMonth, setSelectedArchiveMonth] = useState<{ year: number; month: string } | null>(null);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [showAllTags, setShowAllTags] = useState(false);
 
   const toggleYear = (year: number) => {
     setExpandedYears(prev => {
@@ -83,6 +98,7 @@ export default function Blog() {
       setSelectedArchiveMonth({ year, month });
       setActiveCategory("All");
       setSearchQuery("");
+      setActiveTag(null);
     }
   };
 
@@ -90,12 +106,25 @@ export default function Blog() {
     setActiveCategory(cat);
     setSelectedArchiveMonth(null);
     setSearchQuery("");
+    setActiveTag(null);
+  };
+
+  const handleTagClick = (tag: string) => {
+    if (activeTag === tag) {
+      setActiveTag(null);
+    } else {
+      setActiveTag(tag);
+      setActiveCategory("All");
+      setSelectedArchiveMonth(null);
+      setSearchQuery("");
+    }
   };
 
   const handleSearch = (q: string) => {
     setSearchQuery(q);
     setActiveCategory("All");
     setSelectedArchiveMonth(null);
+    setActiveTag(null);
   };
 
   const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -105,6 +134,10 @@ export default function Blog() {
       const d = new Date(post.date);
       return d.getFullYear() === selectedArchiveMonth.year &&
         monthNames[d.getMonth()] === selectedArchiveMonth.month;
+    }
+    if (activeTag) {
+      const tags = (post as any).tags as string[] | undefined;
+      return tags ? tags.includes(activeTag) : false;
     }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
@@ -116,7 +149,7 @@ export default function Blog() {
     return true;
   });
 
-  const showFeatured = !selectedArchiveMonth && !searchQuery && activeCategory === "All";
+  const showFeatured = !selectedArchiveMonth && !searchQuery && activeCategory === "All" && !activeTag;
 
   // Sidebar: recent posts
   const recentPosts = blogPosts.slice(0, 5);
@@ -149,17 +182,19 @@ export default function Blog() {
             <div className="flex-1 min-w-0">
 
               {/* Active filter label */}
-              {(activeCategory !== "All" || searchQuery || selectedArchiveMonth) && (
+              {(activeCategory !== "All" || searchQuery || selectedArchiveMonth || activeTag) && (
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-sm font-body text-[#4A4A4A]">
                     {selectedArchiveMonth
                       ? `Showing: ${selectedArchiveMonth.month} ${selectedArchiveMonth.year}`
-                      : searchQuery
-                        ? `Search results for "${searchQuery}"`
-                        : `Category: ${activeCategory}`}
+                      : activeTag
+                        ? `Tag: #${activeTag}`
+                        : searchQuery
+                          ? `Search results for "${searchQuery}"`
+                          : `Category: ${activeCategory}`}
                   </span>
                   <button
-                    onClick={() => { setActiveCategory("All"); setSearchQuery(""); setSelectedArchiveMonth(null); }}
+                    onClick={() => { setActiveCategory("All"); setSearchQuery(""); setSelectedArchiveMonth(null); setActiveTag(null); }}
                     className="text-xs text-[#CFA7A0] hover:text-[#3B2F2A] underline font-body transition-colors"
                   >
                     Clear filter
@@ -354,6 +389,44 @@ export default function Blog() {
                     );
                   })}
                 </ul>
+              </div>
+
+              {/* Tag Cloud */}
+              <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
+                <h3 className="font-display text-lg text-[#3B2F2A] mb-4 flex items-center gap-2">
+                  <Hash size={16} className="text-[#CFA7A0]" /> Popular Tags
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {(showAllTags ? tagCloud : tagCloud.slice(0, 24)).map(({ tag, count }) => {
+                    const isActive = activeTag === tag;
+                    // Size tag by frequency: top 5 = large, next 10 = medium, rest = small
+                    const rank = tagCloud.findIndex(t => t.tag === tag);
+                    const sizeClass = rank < 5 ? "text-sm font-semibold" : rank < 15 ? "text-xs font-medium" : "text-xs";
+                    return (
+                      <button
+                        key={tag}
+                        onClick={() => handleTagClick(tag)}
+                        title={`${count} post${count !== 1 ? 's' : ''}`}
+                        className={`${sizeClass} px-2.5 py-1 rounded-full border transition-all duration-200 ${
+                          isActive
+                            ? "bg-[#CFA7A0] border-[#CFA7A0] text-white shadow-sm"
+                            : "bg-[#F7F3EE] border-[#D8C6B6] text-[#4A4A4A] hover:bg-[#D8C6B6] hover:border-[#CFA7A0] hover:text-[#3B2F2A]"
+                        }`}
+                      >
+                        #{tag}
+                        {count > 1 && <span className={`ml-1 ${isActive ? "text-white/70" : "text-[#A8B3AA]"}`}>({count})</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+                {tagCloud.length > 24 && (
+                  <button
+                    onClick={() => setShowAllTags(v => !v)}
+                    className="mt-3 text-xs text-[#CFA7A0] hover:text-[#3B2F2A] font-body transition-colors underline"
+                  >
+                    {showAllTags ? "Show fewer tags" : `Show all ${tagCloud.length} tags`}
+                  </button>
+                )}
               </div>
 
               {/* Recent Posts */}
