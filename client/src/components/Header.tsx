@@ -45,7 +45,7 @@ export default function Header() {
   return (
     <>
       {/* Promo Banner */}
-      <div className="promo-banner">
+      <div className="promo-banner" style={{ background: "linear-gradient(90deg, #CFA7A0 0%, #A8B3AA 100%)", color: "#3B2F2A" }}>
         <span>✦ New Clients: Enjoy 20% off your first service — </span>
         <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline">Book Now</a>
       </div>
@@ -91,7 +91,7 @@ export default function Header() {
                       <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-[#D8C6B6] py-2 min-w-[180px] z-50">
                         {serviceDropdown.map((item) => (
                           <Link key={item.href} href={item.href}>
-                            <span className="block px-4 py-2.5 text-sm font-body text-[#4A4A4A] hover:bg-[#F7F3EE] hover:text-[#3B2F2A] transition-colors cursor-pointer">
+                            <span className="block px-4 py-2.5 text-sm font-body text-[#4A4A4A] hover:bg-[#F7F3EE] hover:text-[#A8B3AA] transition-colors cursor-pointer">
                               {item.label}
                             </span>
                           </Link>
@@ -143,11 +143,14 @@ export default function Header() {
         {mobileOpen && (
           <div className="lg:hidden bg-[#F7F3EE] border-t border-[#D8C6B6] shadow-lg">
             <nav className="container py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {navLinks.map((link, i) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className="block py-3 px-2 font-body font-medium text-base border-b border-[#CFA7A0]/20 cursor-pointer transition-colors"
-                    style={{ color: link.highlight ? "#CFA7A0" : "#3B2F2A" }}
+                    className="block py-3 px-2 font-body font-medium text-base border-b cursor-pointer transition-colors"
+                    style={{
+                      color: link.highlight ? "#CFA7A0" : "#3B2F2A",
+                      borderBottomColor: i % 2 === 0 ? "rgba(207,167,160,0.2)" : "rgba(168,179,170,0.2)"
+                    }}
                   >
                     {link.label}
                   </span>

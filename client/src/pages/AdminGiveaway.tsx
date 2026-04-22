@@ -17,11 +17,12 @@ import {
   ToggleLeft, ToggleRight, Mail, Download
 } from "lucide-react";
 
-function StatCard({ icon, label, value, sub }: { icon: React.ReactNode; label: string; value: string | number; sub?: string }) {
+function StatCard({ icon, label, value, sub, accent = "#CFA7A0" }: { icon: React.ReactNode; label: string; value: string | number; sub?: string; accent?: string }) {
+  const isRose = accent === "#CFA7A0";
   return (
-    <div className="rounded-2xl p-6" style={{ background: "#ffffff", border: "1px solid #D8C6B6" }}>
+    <div className="rounded-2xl p-6" style={{ background: "#ffffff", border: "1px solid #D8C6B6", borderTop: `3px solid ${accent}` }}>
       <div className="flex items-start justify-between mb-4">
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(207,167,160,0.15)" }}>
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: isRose ? "rgba(207,167,160,0.12)" : "rgba(168,179,170,0.12)" }}>
           {icon}
         </div>
       </div>
@@ -118,24 +119,28 @@ export default function AdminGiveaway() {
             label="Confirmed Entries"
             value={stats?.confirmedCount ?? "—"}
             sub="In the active drawing pool"
+            accent="#CFA7A0"
           />
           <StatCard
-            icon={<Trophy size={20} style={{ color: "#CFA7A0" }} />}
+            icon={<Trophy size={20} style={{ color: "#A8B3AA" }} />}
             label="Total Winners"
             value={winners?.length ?? "—"}
             sub="All-time monthly draws"
+            accent="#A8B3AA"
           />
           <StatCard
             icon={<Calendar size={20} style={{ color: "#CFA7A0" }} />}
             label="This Month"
             value={thisMonthWinner ? "Winner Drawn" : "No Winner Yet"}
             sub={currentMonthLabel}
+            accent="#CFA7A0"
           />
           <StatCard
-            icon={schedulerStatus?.enabled ? <Play size={20} style={{ color: "#4a7c59" }} /> : <Pause size={20} style={{ color: "#CFA7A0" }} />}
+            icon={schedulerStatus?.enabled ? <Play size={20} style={{ color: "#A8B3AA" }} /> : <Pause size={20} style={{ color: "#A8B3AA" }} />}
             label="Auto-Draw"
             value={schedulerStatus?.enabled ? "Active" : "Paused"}
             sub="1st of each month, 9 AM MT"
+            accent="#A8B3AA"
           />
         </div>
 

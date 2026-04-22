@@ -55,9 +55,9 @@ export default function FAQ() {
         <div className="container">
           <FadeUp>
             <div className="max-w-2xl">
-              <p className="section-label text-[#CFA7A0] mb-3">FAQ Center</p>
+              <p className="section-label-sage mb-3">FAQ Center</p>
               <h1 className="font-display text-5xl md:text-6xl text-white mb-5">
-                Your questions,<br /><em className="text-[#CFA7A0]">answered.</em>
+                Your questions,<br /><em style={{ color: "#A8B3AA" }}>answered.</em>
               </h1>
               <p className="text-[#D8C6B6] font-body leading-relaxed mb-8">
                 We've compiled answers to the questions we hear most often. Browse by category or search for a specific topic.
@@ -88,8 +88,8 @@ export default function FAQ() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-4 text-sm font-body font-500 whitespace-nowrap border-b-2 transition-all ${
                   activeCategory === cat
-                    ? "border-[#CFA7A0] text-[#3B2F2A]"
-                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A]"
+                    ? "border-[#A8B3AA] text-[#3B2F2A]"
+                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A] hover:border-[#A8B3AA]/40"
                 }`}
               >
                 {cat}
@@ -121,12 +121,13 @@ export default function FAQ() {
                         onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
                       >
                         <div className="flex-1">
-                          <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide block mb-1">{faq.category}</span>
+                          <span className="text-xs font-body font-600 uppercase tracking-wide block mb-1" style={{ color: "#A8B3AA" }}>{faq.category}</span>
                           <span className="font-body font-500 text-[#3B2F2A] text-base">{faq.question}</span>
                         </div>
                         <ChevronDown
                           size={18}
-                          className={`text-[#CFA7A0] shrink-0 transition-transform ${openId === faq.id ? "rotate-180" : ""}`}
+                          className={`shrink-0 transition-transform ${openId === faq.id ? "rotate-180" : ""}`}
+                          style={{ color: "#A8B3AA" }}
                         />
                       </button>
                       {openId === faq.id && (

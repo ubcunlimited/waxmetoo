@@ -47,6 +47,8 @@ export default function AdminHub() {
     {
       href: "/admin/giveaway",
       icon: <Gift size={24} style={{ color: "#CFA7A0" }} />,
+      iconBg: "rgba(207,167,160,0.12)",
+      accentColor: "#CFA7A0",
       title: "Giveaway Management",
       description: "View entries, draw monthly winners, manage the auto-draw scheduler, and export entry data.",
       stats: [
@@ -56,7 +58,9 @@ export default function AdminHub() {
     },
     {
       href: "/admin/blog",
-      icon: <BookOpen size={24} style={{ color: "#CFA7A0" }} />,
+      icon: <BookOpen size={24} style={{ color: "#A8B3AA" }} />,
+      iconBg: "rgba(168,179,170,0.12)",
+      accentColor: "#A8B3AA",
       title: "Blog Management",
       description: "Create, edit, and publish blog posts. Manage drafts and archived content.",
       stats: [
@@ -67,6 +71,8 @@ export default function AdminHub() {
     {
       href: "/admin/subscribers",
       icon: <Users size={24} style={{ color: "#CFA7A0" }} />,
+      iconBg: "rgba(207,167,160,0.12)",
+      accentColor: "#CFA7A0",
       title: "Newsletter Subscribers",
       description: "View and manage newsletter subscribers, export lists, and handle unsubscribes.",
       stats: [
@@ -83,7 +89,7 @@ export default function AdminHub() {
         <div className="max-w-4xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#CFA7A0" }}>
+              <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#A8B3AA" }}>
                 Admin Panel
               </p>
               <h1 className="font-serif text-3xl" style={{ color: "#3B2F2A" }}>Wax Me Too Admin</h1>
@@ -106,9 +112,9 @@ export default function AdminHub() {
                 className="rounded-2xl p-6 cursor-pointer transition-all hover:shadow-md group"
                 style={{ background: "#ffffff", border: "1px solid #D8C6B6" }}
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(207,167,160,0.12)" }}>
-                  {section.icon}
-                </div>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: section.iconBg }}>
+                {section.icon}
+              </div>
                 <h2 className="font-serif text-lg mb-2" style={{ color: "#3B2F2A" }}>{section.title}</h2>
                 <p className="text-xs leading-relaxed mb-5" style={{ color: "#A8B3AA" }}>{section.description}</p>
 
@@ -122,7 +128,7 @@ export default function AdminHub() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: "#CFA7A0" }}>
+                <div className="flex items-center gap-1 text-sm font-semibold group-hover:gap-2 transition-all" style={{ color: section.accentColor }}>
                   Manage <ChevronRight size={14} />
                 </div>
               </div>

@@ -105,11 +105,11 @@ export default function AdminSubscribers() {
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
             {[
-              { label: "Total Subscribers", value: stats.total, icon: <Users size={18} />, color: "#3B2F2A" },
-              { label: "Confirmed", value: stats.confirmed, icon: <UserCheck size={18} />, color: "#4a7c59" },
-              { label: "Pending Confirmation", value: stats.total - stats.confirmed, icon: <Mail size={18} />, color: "#CFA7A0" },
+              { label: "Total Subscribers", value: stats.total, icon: <Users size={18} />, color: "#CFA7A0", accent: "#CFA7A0" },
+              { label: "Confirmed", value: stats.confirmed, icon: <UserCheck size={18} />, color: "#A8B3AA", accent: "#A8B3AA" },
+              { label: "Pending Confirmation", value: stats.total - stats.confirmed, icon: <Mail size={18} />, color: "#CFA7A0", accent: "#CFA7A0" },
             ].map(s => (
-              <div key={s.label} className="rounded-2xl p-5" style={{ background: "#fff", border: "1px solid #D8C6B6" }}>
+              <div key={s.label} className="rounded-2xl p-5" style={{ background: "#fff", border: "1px solid #D8C6B6", borderTop: `3px solid ${s.accent}` }}>
                 <div className="flex items-center gap-2 mb-2" style={{ color: s.color }}>{s.icon}</div>
                 <p className="font-display text-3xl font-bold" style={{ color: "#3B2F2A" }}>{s.value}</p>
                 <p className="text-xs" style={{ color: "#A8B3AA" }}>{s.label}</p>

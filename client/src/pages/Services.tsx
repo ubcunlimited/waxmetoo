@@ -63,9 +63,9 @@ export default function Services() {
         <div className="container relative z-10">
           <FadeUp>
             <div className="max-w-2xl">
-              <p className="section-label text-[#CFA7A0] mb-3">Services & Pricing</p>
+              <p className="section-label-sage mb-3">Services &amp; Pricing</p>
               <h1 className="font-display text-5xl md:text-6xl text-white mb-5">
-                Our complete<br /><em className="text-[#CFA7A0]">waxing menu</em>
+                Our complete<br /><em style={{ color: "#A8B3AA" }}>waxing menu</em>
               </h1>
               <p className="text-[#D8C6B6] font-body leading-relaxed mb-6">
                 From Brazilian to brows, every service is performed by licensed estheticians using premium, skin-safe wax. Full pricing listed below — no surprises.
@@ -100,8 +100,8 @@ export default function Services() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-5 py-4 text-sm font-body font-500 whitespace-nowrap border-b-2 transition-all ${
                   activeCategory === cat.id
-                    ? "border-[#CFA7A0] text-[#3B2F2A]"
-                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A] hover:border-[#D8C6B6]"
+                    ? "border-[#A8B3AA] text-[#3B2F2A]"
+                    : "border-transparent text-[#4A4A4A] hover:text-[#3B2F2A] hover:border-[#A8B3AA]/40"
                 }`}
               >
                 {cat.name}
@@ -167,7 +167,7 @@ export default function Services() {
                               <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-4">{service.description}</p>
                               {service.whoItsFor && (
                                 <div className="mb-3">
-                                  <p className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide mb-1">Who It's For</p>
+                                  <p className="text-xs font-body font-600 uppercase tracking-wide mb-1" style={{ color: "#A8B3AA" }}>Who It's For</p>
                                   <p className="text-sm text-[#4A4A4A] font-body">{service.whoItsFor}</p>
                                 </div>
                               )}
@@ -175,13 +175,13 @@ export default function Services() {
                             <div>
                               {service.prep && (
                                 <div className="mb-3">
-                                  <p className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide mb-1">How to Prepare</p>
+                                  <p className="text-xs font-body font-600 uppercase tracking-wide mb-1" style={{ color: "#A8B3AA" }}>How to Prepare</p>
                                   <p className="text-sm text-[#4A4A4A] font-body">{service.prep}</p>
                                 </div>
                               )}
                               {service.aftercare && (
                                 <div className="mb-4">
-                                  <p className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide mb-1">Aftercare</p>
+                                  <p className="text-xs font-body font-600 uppercase tracking-wide mb-1" style={{ color: "#A8B3AA" }}>Aftercare</p>
                                   <p className="text-sm text-[#4A4A4A] font-body">{service.aftercare}</p>
                                 </div>
                               )}

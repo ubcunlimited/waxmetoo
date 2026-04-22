@@ -179,9 +179,9 @@ export default function Blog() {
         <div className="container">
           <FadeUp>
             <div className="max-w-xl">
-              <p className="section-label text-[#CFA7A0] mb-3">Tips & Education</p>
+              <p className="section-label-sage mb-3">Tips &amp; Education</p>
               <h1 className="font-display text-5xl md:text-6xl text-white mb-5">
-                The Wax Me Too<br /><em className="text-[#CFA7A0]">Journal</em>
+                The Wax Me Too<br /><em style={{ color: "#A8B3AA" }}>Journal</em>
               </h1>
               <p className="text-[#D8C6B6] font-body leading-relaxed">
                 Expert waxing tips, prep and aftercare guides, service education, and beauty advice — written by our team of licensed estheticians.
@@ -296,7 +296,7 @@ export default function Blog() {
               {/* Search */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
                 <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
-                  <Search size={16} className="text-[#CFA7A0]" /> Search Posts
+                  <Search size={16} style={{ color: "#A8B3AA" }} /> Search Posts
                 </h3>
                 <div className="relative">
                   <input
@@ -313,7 +313,7 @@ export default function Blog() {
               {/* Categories */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
                 <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
-                  <Tag size={16} className="text-[#CFA7A0]" /> Categories
+                  <Tag size={16} style={{ color: "#A8B3AA" }} /> Categories
                 </h3>
                 <ul className="space-y-1">
                   <li>
@@ -358,7 +358,7 @@ export default function Blog() {
               {/* Archive by Year/Month */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
                 <h3 className="font-display text-lg text-[#3B2F2A] mb-3 flex items-center gap-2">
-                  <Calendar size={16} className="text-[#CFA7A0]" /> Archive
+                  <Calendar size={16} style={{ color: "#A8B3AA" }} /> Archive
                 </h3>
                 <ul className="space-y-1">
                   {archive.map(({ year, months }) => {
@@ -412,7 +412,7 @@ export default function Blog() {
               {/* Tag Cloud */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
                 <h3 className="font-display text-lg text-[#3B2F2A] mb-4 flex items-center gap-2">
-                  <Hash size={16} className="text-[#CFA7A0]" /> Popular Tags
+                  <Hash size={16} style={{ color: "#A8B3AA" }} /> Popular Tags
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {(showAllTags ? tagCloud : tagCloud.slice(0, 24)).map(({ tag, count }) => {
@@ -450,7 +450,7 @@ export default function Blog() {
               {/* Recent Posts */}
               <div className="bg-white rounded-xl border border-[#D8C6B6] p-5 shadow-sm">
                 <h3 className="font-display text-lg text-[#3B2F2A] mb-4 flex items-center gap-2">
-                  <BookOpen size={16} className="text-[#CFA7A0]" /> Recent Posts
+                  <BookOpen size={16} style={{ color: "#A8B3AA" }} /> Recent Posts
                 </h3>
                 <ul className="space-y-4">
                   {recentPosts.map(post => (
@@ -465,8 +465,8 @@ export default function Blog() {
                             />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-xs text-[#CFA7A0] font-body mb-0.5">{post.date}</p>
-                            <p className="text-sm font-body text-[#3B2F2A] leading-snug group-hover:text-[#CFA7A0] transition-colors line-clamp-2">
+                            <p className="text-xs font-body mb-0.5" style={{ color: "#A8B3AA" }}>{post.date}</p>
+                            <p className="text-sm font-body text-[#3B2F2A] leading-snug transition-colors line-clamp-2" style={{ ['--hover-color' as any]: "#A8B3AA" }}>
                               {post.title}
                             </p>
                           </div>
@@ -478,14 +478,15 @@ export default function Blog() {
               </div>
 
               {/* Book CTA */}
-              <div className="bg-[#3B2F2A] rounded-xl p-6 text-center">
+              <div className="rounded-xl p-6 text-center" style={{ background: "linear-gradient(135deg, #3B2F2A 0%, #4a3d38 100%)", border: "1px solid #A8B3AA30" }}>
                 <p className="font-display text-xl text-white mb-2">Ready to get smooth?</p>
-                <p className="text-sm text-[#D8C6B6] font-body mb-4">New clients get 20% off their first service.</p>
+                <p className="text-sm font-body mb-4" style={{ color: "#A8B3AA" }}>New clients get 20% off their first service.</p>
                 <a
                   href="https://app.mangomint.com/waxmetoo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 rounded-lg bg-[#CFA7A0] text-white text-sm font-body font-semibold hover:bg-[#b8918a] transition-colors"
+                  className="block w-full py-3 rounded-lg text-sm font-body font-semibold transition-colors"
+                  style={{ background: "linear-gradient(90deg, #CFA7A0, #A8B3AA)", color: "#3B2F2A" }}
                 >
                   Book Your Appointment
                 </a>

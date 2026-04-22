@@ -86,3 +86,16 @@
 - [x] Admin Blog Management page (/admin/blog) — list, create, edit, delete with search/filter
 - [x] Admin Subscribers page (/admin/subscribers) — list, stats, CSV export, force-unsubscribe
 - [x] Vitest tests: 16 blog + 5 scheduler + 12 giveaway + 1 auth = 34 total, all passing
+
+## Phase 5 — Sage Green (#A8B3AA) Accent Highlights
+
+- [x] Add --sage CSS variable to index.css and define sage utility classes
+- [x] Apply sage green to section eyebrow labels (e.g. "OUR SERVICES", "TESTIMONIALS")
+- [x] Apply sage green to decorative dividers and horizontal rules
+- [x] Apply sage green to tag chips on blog posts and service cards
+- [x] Apply sage green to icon accents (checkmarks, bullets, step numbers)
+- [x] Apply sage green to secondary nav link hover states
+- [x] Apply sage green tint to alternating section backgrounds
+- [x] Apply sage green to footer accent elements
+- [x] Apply sage green to giveaway step indicators and share panel
+- [x] Apply sage green to admin stat cards and table headers

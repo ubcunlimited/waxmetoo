@@ -1212,7 +1212,7 @@ export default function BlogPost() {
           <FadeUp>
             <div className="max-w-2xl">
               <div className="flex flex-wrap items-center gap-2 mb-5">
-                <span className="bg-[#CFA7A0]/20 border border-[#CFA7A0]/40 text-[#CFA7A0] text-xs font-body font-semibold uppercase tracking-widest px-3 py-1 rounded-full">{post.category}</span>
+                <span className="text-xs font-body font-semibold uppercase tracking-widest px-3 py-1 rounded-full" style={{ background: "rgba(168,179,170,0.2)", border: "1px solid rgba(168,179,170,0.4)", color: "#A8B3AA" }}>{post.category}</span>
                 <span className="flex items-center gap-1 text-xs text-[#D8C6B6] font-body">
                   <Clock size={11} /> {post.readTime}
                 </span>
@@ -1318,7 +1318,7 @@ export default function BlogPost() {
                 <div className="mt-10 rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #3B2F2A 0%, #5a4540 100%)' }}>
                   <div className="p-8 flex flex-col md:flex-row items-center gap-6">
                     <div className="flex-1">
-                      <p className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-widest mb-2">New Client Special</p>
+                      <p className="text-xs font-body font-semibold uppercase tracking-widest mb-2" style={{ color: "#A8B3AA" }}>New Client Special</p>
                       <h3 className="font-display text-2xl text-white mb-2">Ready to get smooth?</h3>
                       <p className="text-[#D8C6B6] font-body text-sm">New clients receive 20% off their first service at any of our 6 Utah locations.</p>
                     </div>
@@ -1351,8 +1351,8 @@ export default function BlogPost() {
                                 />
                               </div>
                               <div className="p-4">
-                                <span className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide">{p.category}</span>
-                                <h3 className="font-display text-base text-[#3B2F2A] mt-1 leading-snug group-hover:text-[#CFA7A0] transition-colors line-clamp-2">{p.title}</h3>
+                                <span className="text-xs font-body font-semibold uppercase tracking-wide" style={{ color: "#A8B3AA" }}>{p.category}</span>
+                                <h3 className="font-display text-base text-[#3B2F2A] mt-1 leading-snug group-hover:text-[#A8B3AA] transition-colors line-clamp-2">{p.title}</h3>
                                 <p className="text-xs text-[#A8B3AA] font-body mt-2 flex items-center gap-1">
                                   <Clock size={10} /> {p.readTime}
                                 </p>
@@ -1385,7 +1385,7 @@ export default function BlogPost() {
               {/* Book Now CTA */}
               <FadeUp>
                 <div className="bg-[#3B2F2A] rounded-xl p-5">
-                  <p className="text-xs font-body font-semibold text-[#CFA7A0] uppercase tracking-wide mb-2">New Client Special</p>
+                  <p className="text-xs font-body font-semibold uppercase tracking-wide mb-2" style={{ color: "#A8B3AA" }}>New Client Special</p>
                   <p className="font-display text-xl text-white mb-1">20% off your first service</p>
                   <p className="text-xs text-[#D8C6B6] font-body mb-3">6 Utah locations. Book online in minutes.</p>
                   <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose text-sm py-2.5 w-full text-center block">
@@ -1411,7 +1411,7 @@ export default function BlogPost() {
 
               {/* Quick Links */}
               <FadeUp delay={80}>
-                <div className="bg-white rounded-xl p-4 shadow-sm border-t-4 border-[#CFA7A0]">
+                <div className="bg-white rounded-xl p-4 shadow-sm" style={{ borderTop: "4px solid", borderImage: "linear-gradient(90deg, #CFA7A0, #A8B3AA) 1" }}>
                   <h3 className="font-display text-base text-[#3B2F2A] mb-3">Quick Links</h3>
                   <ul className="space-y-1.5">
                     {[
@@ -1424,8 +1424,8 @@ export default function BlogPost() {
                     ].map((link) => (
                       <li key={link.href}>
                         <Link href={link.href}>
-                          <span className="text-sm font-body text-[#4A4A4A] hover:text-[#CFA7A0] transition-colors cursor-pointer flex items-center gap-1.5">
-                            <ArrowRight size={11} className="text-[#CFA7A0]" /> {link.label}
+                          <span className="text-sm font-body text-[#4A4A4A] hover:text-[#A8B3AA] transition-colors cursor-pointer flex items-center gap-1.5">
+                            <ArrowRight size={11} style={{ color: "#A8B3AA" }} /> {link.label}
                           </span>
                         </Link>
                       </li>
@@ -1454,15 +1454,15 @@ export default function BlogPost() {
                     ))}
                   </ul>
                   <Link href="/blog">
-                    <span className="text-xs text-[#CFA7A0] hover:underline cursor-pointer mt-3 block">View all posts →</span>
+                    <span className="text-xs hover:underline cursor-pointer mt-3 block" style={{ color: "#A8B3AA" }}>View all posts →</span>
                   </Link>
                 </div>
               </FadeUp>
 
               {/* Blog Archive Tree */}
               <FadeUp delay={120}>
-                <div className="bg-white rounded-xl p-4 shadow-sm border-t-4 border-[#D8C6B6]">
-                  <h3 className="font-display text-base text-[#3B2F2A] mb-3 flex items-center gap-2"><Calendar size={14} className="text-[#D8C6B6]" /> Blog Archive</h3>
+                <div className="bg-white rounded-xl p-4 shadow-sm" style={{ borderTop: "4px solid #A8B3AA" }}>
+                  <h3 className="font-display text-base text-[#3B2F2A] mb-3 flex items-center gap-2"><Calendar size={14} style={{ color: "#A8B3AA" }} /> Blog Archive</h3>
                   <div className="space-y-1" style={{ maxHeight: '280px', overflowY: 'auto' }}>
                     {sortedYears.map(year => {
                       const yearPosts = Object.values(archiveTree[year]).flat();

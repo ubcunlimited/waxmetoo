@@ -152,7 +152,7 @@ export default function Home() {
             {trustBadges.map((badge, i) => (
               <FadeUp key={badge.label} delay={i * 60}>
                 <div className="flex flex-col items-center text-center gap-2 py-2">
-                  <span className="text-2xl">{badge.icon}</span>
+                  <span className="text-2xl" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>{badge.icon}</span>
                   <p className="text-xs font-body font-500 text-[#4A4A4A] leading-tight">{badge.label}</p>
                 </div>
               </FadeUp>
@@ -180,14 +180,14 @@ export default function Home() {
             {featuredServices.map((service, i) => (
               <FadeUp key={service.name} delay={i * 80}>
                 <Link href={service.href}>
-                  <div className="card-service group cursor-pointer p-6 bg-white">
+                  <div className="card-service group cursor-pointer p-6 bg-white" style={{ borderTop: `3px solid ${i % 2 === 0 ? "#CFA7A0" : "#A8B3AA"}` }}>
                     <div className="flex items-start justify-between mb-3">
-                      <span className="text-2xl text-[#CFA7A0]">{service.icon}</span>
-                      <span className="text-xs font-body font-600 text-[#CFA7A0] tracking-wide">{service.price}</span>
+                      <span className="text-2xl" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>{service.icon}</span>
+                      <span className="text-xs font-body font-600 tracking-wide" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>{service.price}</span>
                     </div>
                     <h3 className="font-display text-xl text-[#3B2F2A] mb-2">{service.name}</h3>
                     <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-4">{service.desc}</p>
-                    <span className="text-xs font-body font-600 text-[#CFA7A0] tracking-wide uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <span className="text-xs font-body font-600 tracking-wide uppercase flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>
                       Learn More <ArrowRight size={12} />
                     </span>
                   </div>
@@ -238,14 +238,14 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Women-owned and operated since 2007",
-                    "Eco-friendly, skin-safe wax products",
-                    "Strict sanitation — no double-dipping, ever",
-                    "Private rooms for every service",
+                    { text: "Women-owned and operated since 2007", sage: false },
+                    { text: "Eco-friendly, skin-safe wax products", sage: true },
+                    { text: "Strict sanitation — no double-dipping, ever", sage: false },
+                    { text: "Private rooms for every service", sage: true },
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 font-body text-sm text-[#4A4A4A]">
-                      <CheckCircle size={16} className="text-[#CFA7A0] shrink-0" />
-                      {item}
+                    <li key={item.text} className="flex items-center gap-3 font-body text-sm text-[#4A4A4A]">
+                      <CheckCircle size={16} className="shrink-0" style={{ color: item.sage ? "#A8B3AA" : "#CFA7A0" }} />
+                      {item.text}
                     </li>
                   ))}
                 </ul>
@@ -305,7 +305,7 @@ export default function Home() {
           {/* Featured Testimonial */}
           <FadeUp delay={100}>
             <div className="max-w-2xl mx-auto mb-10">
-              <div className="card-testimonial text-center">
+              <div className="card-testimonial-sage text-center">
                 <div className="flex justify-center mb-3">
                   {[1,2,3,4,5].map(i => <Star key={i} size={18} className="fill-[#CFA7A0] text-[#CFA7A0]" />)}
                 </div>
@@ -313,14 +313,20 @@ export default function Home() {
                   "{testimonials[activeTestimonial].text}"
                 </p>
                 <p className="font-body text-sm font-600 text-[#4A4A4A]">{testimonials[activeTestimonial].name}</p>
-                <p className="font-body text-xs text-[#CFA7A0] mt-1">{testimonials[activeTestimonial].service} · {testimonials[activeTestimonial].location}</p>
+                <p className="font-body text-xs mt-1" style={{ color: "#A8B3AA" }}>{testimonials[activeTestimonial].service} · {testimonials[activeTestimonial].location}</p>
               </div>
               <div className="flex justify-center gap-2 mt-5">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveTestimonial(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${i === activeTestimonial ? "bg-[#CFA7A0] w-5" : "bg-[#D8C6B6]"}`}
+                    className="w-2 h-2 rounded-full transition-all"
+                    style={{
+                      width: i === activeTestimonial ? "1.25rem" : undefined,
+                      background: i === activeTestimonial
+                        ? (i % 2 === 0 ? "#A8B3AA" : "#CFA7A0")
+                        : "#D8C6B6"
+                    }}
                   />
                 ))}
               </div>
@@ -331,9 +337,16 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.slice(0, 3).map((t, i) => (
               <FadeUp key={t.id} delay={i * 80}>
-                <div className="bg-white rounded-lg p-5 shadow-sm">
+                <div
+                  className="bg-white rounded-lg p-5 shadow-sm"
+                  style={{ borderLeft: `3px solid ${i % 2 === 0 ? "#CFA7A0" : "#A8B3AA"}` }}
+                >
                   <div className="flex mb-2">
-                    {[1,2,3,4,5].map(s => <Star key={s} size={13} className="fill-[#CFA7A0] text-[#CFA7A0]" />)}
+                    {[1,2,3,4,5].map(s => (
+                      <Star key={s} size={13}
+                        style={{ fill: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA", color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}
+                      />
+                    ))}
                   </div>
                   <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-3">"{t.text.substring(0, 120)}..."</p>
                   <p className="text-xs font-600 text-[#3B2F2A] font-body">{t.name} · {t.location}</p>
@@ -349,7 +362,7 @@ export default function Home() {
         <div className="container">
           <FadeUp>
             <div className="text-center mb-12">
-              <p className="section-label mb-3">Find Us</p>
+              <p className="section-label-sage mb-3">Find Us</p>
               <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A] mb-4">
                 From Weber County to Utah County
               </h2>
@@ -365,7 +378,7 @@ export default function Home() {
                 <div className="location-card cursor-pointer" onClick={() => window.location.href = `/locations/${loc.id}`}>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
-                      <MapPin size={16} className="text-[#CFA7A0]" />
+                      <MapPin size={16} style={{ color: "#A8B3AA" }} />
                       <h3 className="font-display text-xl text-[#3B2F2A]">{loc.name}</h3>
                     </div>
                     <p className="text-xs text-[#4A4A4A] font-body mb-2">{loc.address}</p>
@@ -409,7 +422,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <FadeUp>
               <div>
-                <p className="section-label mb-3">Common Questions</p>
+                <p className="section-label-sage mb-3">Common Questions</p>
                 <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A] mb-5">
                   We've got answers
                 </h2>
@@ -433,7 +446,8 @@ export default function Home() {
                       <span className="font-body font-500 text-[#3B2F2A] text-sm">{faq.question}</span>
                       <ChevronDown
                         size={16}
-                        className={`text-[#CFA7A0] shrink-0 transition-transform ${openFaq === faq.id ? "rotate-180" : ""}`}
+                        className={`shrink-0 transition-transform ${openFaq === faq.id ? "rotate-180" : ""}`}
+                        style={{ color: "#A8B3AA" }}
                       />
                     </button>
                     {openFaq === faq.id && (
@@ -455,8 +469,7 @@ export default function Home() {
           <FadeUp>
             <div className="flex items-end justify-between mb-10">
               <div>
-                <p className="section-label mb-3">Tips & Education</p>
-                <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A]">
+                <p className="section-label-sage mb-3">Tips &amp; Education</p>             <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A]">
                   From the journal
                 </h2>
               </div>
@@ -482,9 +495,9 @@ export default function Home() {
                     </div>
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-body font-600 text-[#CFA7A0] uppercase tracking-wide">{post.category}</span>
+                        <span className="text-xs font-body font-600 uppercase tracking-wide" style={{ color: "#A8B3AA" }}>{post.category}</span>
                         <span className="text-[#D8C6B6]">·</span>
-                        <span className="text-xs text-[#A8B3AA] font-body">{post.readTime}</span>
+                        <span className="text-xs font-body" style={{ color: "#CFA7A0" }}>{post.readTime}</span>
                       </div>
                       <h3 className="font-display text-lg text-[#3B2F2A] mb-2 leading-snug">{post.title}</h3>
                       <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">{post.excerpt}</p>

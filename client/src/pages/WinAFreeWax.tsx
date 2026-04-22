@@ -75,10 +75,10 @@ function SocialSharePanel() {
   return (
     <div
       className="rounded-2xl p-6"
-      style={{ background: "#ffffff", border: "1px solid #D8C6B6" }}
+      style={{ background: "#ffffff", border: "1px solid #A8B3AA", borderTop: "3px solid #A8B3AA" }}
     >
       <div className="flex items-center gap-2 mb-3">
-        <Share2 size={18} style={{ color: "#CFA7A0" }} />
+        <Share2 size={18} style={{ color: "#A8B3AA" }} />
         <h3 className="font-serif text-lg" style={{ color: "#3B2F2A" }}>
           Share & Help a Friend Win!
         </h3>
@@ -117,9 +117,9 @@ function SocialSharePanel() {
         onClick={handleCopy}
         className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-semibold transition-all"
         style={{
-          background: copied ? "rgba(207,167,160,0.15)" : "#F7F3EE",
-          color: copied ? "#CFA7A0" : "#3B2F2A",
-          border: "1.5px solid #D8C6B6",
+          background: copied ? "rgba(168,179,170,0.15)" : "#F7F3EE",
+          color: copied ? "#A8B3AA" : "#3B2F2A",
+          border: `1.5px solid ${copied ? "#A8B3AA" : "#D8C6B6"}`,
         }}
       >
         {copied ? <Check size={14} /> : <Copy size={14} />}
@@ -189,13 +189,13 @@ export default function WinAFreeWax() {
         }}
       >
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10" style={{ background: "#CFA7A0", transform: "translate(30%, -30%)" }} />
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10" style={{ background: "#D8C6B6", transform: "translate(-30%, 30%)" }} />
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10" style={{ background: "#A8B3AA", transform: "translate(-30%, 30%)" }} />
 
         <div className="relative z-10 text-center px-6 py-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: "rgba(207,167,160,0.2)", border: "1px solid rgba(207,167,160,0.4)" }}>
-            <Gift size={16} style={{ color: "#CFA7A0" }} />
-            <span className="text-sm font-medium" style={{ color: "#CFA7A0", letterSpacing: "0.05em" }}>Monthly Giveaway</span>
+            style={{ background: "rgba(168,179,170,0.2)", border: "1px solid rgba(168,179,170,0.4)" }}>
+            <Gift size={16} style={{ color: "#A8B3AA" }} />
+            <span className="text-sm font-medium" style={{ color: "#A8B3AA", letterSpacing: "0.05em" }}>Monthly Giveaway</span>
           </div>
           <h1 className="font-serif mb-4" style={{ color: "#F7F3EE", fontSize: "clamp(2.2rem, 5vw, 3.5rem)", lineHeight: 1.15 }}>
             Win a Free Wax
@@ -348,13 +348,13 @@ export default function WinAFreeWax() {
 
               <div className="space-y-4">
                 {[
-                  { icon: <Gift size={18} style={{ color: "#CFA7A0" }} />, title: "1. Enter Your Info", desc: "Fill out the simple form with your name and email address." },
-                  { icon: <Mail size={18} style={{ color: "#CFA7A0" }} />, title: "2. Confirm Your Email", desc: "Click the confirmation link we send you to secure your entry." },
-                  { icon: <Calendar size={18} style={{ color: "#CFA7A0" }} />, title: "3. Monthly Drawing", desc: "One winner is randomly selected at the start of each month." },
-                  { icon: <Star size={18} style={{ color: "#CFA7A0" }} />, title: "4. Enjoy Your Free Wax!", desc: "Winners are notified by email and can book at any location." },
+                  { icon: <Gift size={18} style={{ color: "#CFA7A0" }} />, title: "1. Enter Your Info", desc: "Fill out the simple form with your name and email address.", sage: false },
+                  { icon: <Mail size={18} style={{ color: "#A8B3AA" }} />, title: "2. Confirm Your Email", desc: "Click the confirmation link we send you to secure your entry.", sage: true },
+                  { icon: <Calendar size={18} style={{ color: "#CFA7A0" }} />, title: "3. Monthly Drawing", desc: "One winner is randomly selected at the start of each month.", sage: false },
+                  { icon: <Star size={18} style={{ color: "#A8B3AA" }} />, title: "4. Enjoy Your Free Wax!", desc: "Winners are notified by email and can book at any location.", sage: true },
                 ].map((step, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl" style={{ background: "#ffffff", border: "1px solid #D8C6B6" }}>
-                    <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(207,167,160,0.15)" }}>
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl" style={{ background: "#ffffff", border: `1px solid ${step.sage ? "#A8B3AA40" : "#D8C6B6"}` }}>
+                    <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: step.sage ? "rgba(168,179,170,0.15)" : "rgba(207,167,160,0.15)" }}>
                       {step.icon}
                     </div>
                     <div>
@@ -379,12 +379,12 @@ export default function WinAFreeWax() {
       </section>
 
       {/* CTA Strip */}
-      <section className="py-12 px-6 text-center" style={{ background: "#3B2F2A" }}>
+      <section className="py-12 px-6 text-center" style={{ background: "linear-gradient(135deg, #3B2F2A 0%, #4a3d38 100%)" }}>
         <p className="font-serif text-xl mb-2" style={{ color: "#F7F3EE" }}>Can't wait to win? Book your appointment today.</p>
-        <p className="text-sm mb-6" style={{ color: "#A8B3AA" }}>Professional waxing services starting at $12 — From Brows to Toes & Anything in Between!™</p>
+        <p className="text-sm mb-6" style={{ color: "#A8B3AA" }}>Professional waxing services starting at $12 — From Brows to Toes &amp; Anything in Between!™</p>
         <a href="https://app.mangomint.com/waxmetoo" target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-sm transition-all"
-          style={{ background: "#CFA7A0", color: "#ffffff" }}>
+          style={{ background: "linear-gradient(90deg, #CFA7A0, #A8B3AA)", color: "#3B2F2A" }}>
           Book Now <ChevronRight size={16} />
         </a>
       </section>

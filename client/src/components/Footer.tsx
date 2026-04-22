@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#3B2F2A] text-[#D8C6B6]">
       {/* Newsletter Strip */}
-      <div className="bg-[#CFA7A0]">
+      <div style={{ background: "linear-gradient(135deg, #CFA7A0 0%, #A8B3AA 100%)" }}>
         <div className="container py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -65,7 +65,7 @@ export default function Footer() {
                 href="https://facebook.com/waxmetoo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#4a3d38] flex items-center justify-center hover:bg-[#CFA7A0] hover:text-[#3B2F2A] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#4a3d38] flex items-center justify-center hover:bg-[#A8B3AA] hover:text-[#3B2F2A] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={16} />
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-body font-600 text-xs tracking-widest uppercase text-[#CFA7A0] mb-5">Services</h4>
+            <h4 className="font-body font-600 text-xs tracking-widest uppercase mb-5" style={{ color: "#A8B3AA" }}>Services</h4>
             <ul className="space-y-2.5">
               {["Brazilian Wax", "Bikini Wax", "Deep Bikini Wax", "Brow Wax", "Underarm Wax", "Full Leg Wax", "Men's Waxing", "Tinting"].map((s) => (
                 <li key={s}>
@@ -89,7 +89,7 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="font-body font-600 text-xs tracking-widest uppercase text-[#CFA7A0] mb-5">Quick Links</h4>
+            <h4 className="font-body font-600 text-xs tracking-widest uppercase mb-5" style={{ color: "#CFA7A0" }}>Quick Links</h4>
             <ul className="space-y-2.5">
               {[
                 { label: "First Visit", href: "/first-visit" },
@@ -112,7 +112,7 @@ export default function Footer() {
 
           {/* Locations Column */}
           <div>
-            <h4 className="font-body font-600 text-xs tracking-widest uppercase text-[#CFA7A0] mb-5">Our Locations</h4>
+            <h4 className="font-body font-600 text-xs tracking-widest uppercase mb-5" style={{ color: "#A8B3AA" }}>Our Locations</h4>
             <ul className="space-y-4">
               {locations.map((loc) => (
                 <li key={loc.id}>
@@ -131,7 +131,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#4a3d38]">
+      <div style={{ borderTop: "1px solid", borderImage: "linear-gradient(90deg, #4a3d38, #A8B3AA40, #4a3d38) 1" }}>
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-[#7a6a62]">
             © {new Date().getFullYear()} Wax Me Too. All rights reserved. Women-Owned · Est. 2007 · Utah
