@@ -109,6 +109,249 @@ export const locations = [
   },
 ];
 
+// ─── Service data — prices from pricingforwaxmetoo2.xlsx ─────────────────────
+// Card price = cash × 1.03 (rounded to nearest cent)
+// Structure mirrors the user-requested category hierarchy:
+//   Most Popular | For the Ladies (6 sub-cats) | For the Men (5 sub-cats)
+
+export type ServiceItem = {
+  id: string;
+  name: string;
+  tagline?: string;
+  description?: string;
+  whoItsFor?: string;
+  prep?: string;
+  aftercare?: string;
+  priceCash: number;
+  priceCard: number;
+  duration?: string;
+  popular?: boolean;
+  note?: string;
+};
+
+export type SubCategory = {
+  id: string;
+  title: string;
+  items: ServiceItem[];
+};
+
+export type TopSection = {
+  id: string;
+  label: string;
+  heading: string;
+  subCategories: SubCategory[];
+};
+
+export const mostPopular: ServiceItem[] = [
+  {
+    id: "brazilian",
+    name: "Brazilian Wax",
+    tagline: "Our signature service. Complete, clean, confident.",
+    description: "The Brazilian wax removes all or nearly all hair from the bikini area — front, back, and everything in between. Our estheticians are trained to make this service as comfortable as possible, using premium hard wax that grips the hair, not the skin.",
+    whoItsFor: "Anyone who wants a clean, smooth result with long-lasting confidence. First-timers are always welcome — we'll walk you through every step.",
+    prep: "Let hair grow to at least ¼ inch (about 3–4 weeks of growth). Exfoliate 24 hours before. Avoid scheduling during your period if possible.",
+    aftercare: "Avoid heat, friction, and tight clothing for 24–48 hours. Exfoliate gently after 48 hours to prevent ingrown hairs.",
+    priceCash: 65,
+    priceCard: 66.95,
+    duration: "30–45 min",
+    popular: true,
+  },
+  {
+    id: "deep-bikini",
+    name: "Deep Bikini Wax",
+    tagline: "More coverage, more confidence.",
+    description: "The deep bikini wax goes further than a standard bikini — removing more hair from the front and sides while leaving a small strip or triangle. The perfect middle ground between bikini and Brazilian.",
+    whoItsFor: "Great for those who want more coverage removed than a standard bikini but aren't ready for a full Brazilian.",
+    prep: "Same as Brazilian — ¼ inch minimum hair growth.",
+    aftercare: "Avoid heat and friction for 24 hours. Moisturize daily.",
+    priceCash: 55,
+    priceCard: 56.65,
+    duration: "25–35 min",
+    popular: true,
+  },
+  {
+    id: "bikini",
+    name: "Bikini Wax",
+    tagline: "Clean lines, effortless confidence.",
+    description: "A classic bikini wax removes hair along the bikini line — everything that would show in a swimsuit. Clean, precise, and quick.",
+    whoItsFor: "Perfect for those who prefer a natural look with clean edges, or as a starting point before trying a Brazilian.",
+    prep: "Hair should be at least ¼ inch long. Avoid sun exposure on the area for 24 hours before.",
+    aftercare: "Keep the area clean and moisturized. Avoid tight underwear for 24 hours.",
+    priceCash: 45,
+    priceCard: 46.35,
+    duration: "20–30 min",
+    popular: true,
+  },
+  {
+    id: "manzilian",
+    name: "Manzilian",
+    tagline: "The male Brazilian. Clean, confident, professional.",
+    description: "Our Manzilian is the male equivalent of a Brazilian wax — removing all or nearly all hair from the male bikini area. Performed by experienced, discreet estheticians in a private room.",
+    whoItsFor: "Men who want a clean, smooth result with long-lasting confidence.",
+    prep: "Hair should be at least ¼ inch. Shower before your appointment.",
+    aftercare: "Avoid heat and friction for 24–48 hours. Wear loose, breathable clothing.",
+    priceCash: 90,
+    priceCard: 92.70,
+    duration: "45–60 min",
+    popular: true,
+  },
+];
+
+export const ladiesSections: SubCategory[] = [
+  {
+    id: "bikini-area",
+    title: "Bikini Area",
+    items: [
+      {
+        id: "l-brazilian",
+        name: "Brazilian Wax",
+        tagline: "Our signature service. Complete, clean, confident.",
+        description: "Removes all or nearly all hair from the bikini area — front, back, and everything in between.",
+        priceCash: 65,
+        priceCard: 66.95,
+        duration: "30–45 min",
+        popular: true,
+      },
+      {
+        id: "l-deep-bikini",
+        name: "Deep Bikini Wax",
+        tagline: "More coverage, more confidence.",
+        description: "Goes further than a standard bikini — removing more hair from the front and sides.",
+        priceCash: 55,
+        priceCard: 56.65,
+        duration: "25–35 min",
+      },
+      {
+        id: "l-bikini",
+        name: "Bikini Wax",
+        tagline: "Clean lines, effortless confidence.",
+        description: "Removes hair along the bikini line — everything that would show in a swimsuit.",
+        priceCash: 45,
+        priceCard: 46.35,
+        duration: "20–30 min",
+      },
+    ],
+  },
+  {
+    id: "combos",
+    title: "Combos",
+    items: [
+      { id: "l-braz-brow", name: "Brazilian & Brow", priceCash: 85, priceCard: 87.55, duration: "45–55 min" },
+      { id: "l-braz-underarm", name: "Brazilian & Underarm", priceCash: 85, priceCard: 87.55, duration: "45–55 min" },
+      { id: "l-braz-lower-leg", name: "Brazilian & Lower Leg", priceCash: 105, priceCard: 108.15, duration: "60–75 min" },
+      { id: "l-deep-brow", name: "Deep Bikini & Brow", priceCash: 85, priceCard: 87.55, duration: "40–50 min" },
+      { id: "l-deep-underarm", name: "Deep Bikini & Underarm", priceCash: 75, priceCard: 77.25, duration: "40–50 min" },
+      { id: "l-deep-lower-leg", name: "Deep Bikini & Lower Leg", priceCash: 90, priceCard: 92.70, duration: "55–65 min" },
+    ],
+  },
+  {
+    id: "arms-legs",
+    title: "Arms & Legs",
+    items: [
+      { id: "l-half-arm", name: "1/2 Arm", priceCash: 45, priceCard: 46.35, duration: "20–25 min" },
+      { id: "l-full-arm", name: "Full Arm", priceCash: 50, priceCard: 51.50, duration: "30–40 min" },
+      { id: "l-shoulders", name: "Shoulders", priceCash: 25, priceCard: 25.75, duration: "15–20 min" },
+      { id: "l-underarms", name: "Underarms", priceCash: 20, priceCard: 20.60, duration: "15 min" },
+      { id: "l-lower-leg", name: "Lower Leg", priceCash: 50, priceCard: 51.50, duration: "25–35 min" },
+      { id: "l-thighs", name: "Thighs", priceCash: 55, priceCard: 56.65, duration: "25–35 min" },
+      { id: "l-full-leg", name: "Full Leg", priceCash: 90, priceCard: 92.70, duration: "45–60 min" },
+      { id: "l-toes", name: "Toes", priceCash: 10, priceCard: 10.30, duration: "5–10 min" },
+    ],
+  },
+  {
+    id: "face-waxing",
+    title: "Face Waxing",
+    items: [
+      { id: "l-full-face-brow", name: "Full Face & Brow", priceCash: 58, priceCard: 59.74, duration: "40–50 min", popular: true },
+      { id: "l-full-face", name: "Full Face", priceCash: 48, priceCard: 49.44, duration: "35–45 min" },
+      { id: "l-brow-design", name: "Eyebrow Design", priceCash: 20, priceCard: 20.60, duration: "15–20 min", popular: true },
+      { id: "l-lip", name: "Lip", priceCash: 20, priceCard: 20.60, duration: "10 min" },
+      { id: "l-chin", name: "Chin", priceCash: 20, priceCard: 20.60, duration: "10 min" },
+      { id: "l-cheeks", name: "Cheeks", priceCash: 20, priceCard: 20.60, duration: "10–15 min" },
+    ],
+  },
+  {
+    id: "other-body",
+    title: "Other Body Parts",
+    items: [
+      { id: "l-derriere", name: "Cheeks (Not the Face Ones)", priceCash: 20, priceCard: 20.60, duration: "15–20 min" },
+      { id: "l-stomach", name: "Stomach", priceCash: 20, priceCard: 20.60, duration: "15–20 min" },
+      { id: "l-happy-trail", name: "Happy Trails", priceCash: 10, priceCard: 10.30, duration: "10 min" },
+    ],
+  },
+  {
+    id: "tinting",
+    title: "Tinting",
+    items: [
+      { id: "l-lash-tint", name: "Lash Tint", priceCash: 20, priceCard: 20.60, duration: "20–25 min" },
+      { id: "l-brow-tint", name: "Brow Tint", priceCash: 20, priceCard: 20.60, duration: "15–20 min" },
+      { id: "l-brow-wax-tint", name: "Brow Wax & Tint", priceCash: 35, priceCard: 36.05, duration: "30 min", popular: true },
+    ],
+  },
+];
+
+export const menSections: SubCategory[] = [
+  {
+    id: "m-face",
+    title: "Face Waxing",
+    items: [
+      { id: "m-brow", name: "Brow", priceCash: 20, priceCard: 20.60, duration: "15 min" },
+      { id: "m-nose", name: "Nose", priceCash: 20, priceCard: 20.60, duration: "10 min" },
+      { id: "m-ears", name: "Ears", priceCash: 20, priceCard: 20.60, duration: "10 min" },
+    ],
+  },
+  {
+    id: "m-combos",
+    title: "Combos",
+    items: [
+      { id: "m-brows-nose-ears", name: "Brows, Nose & Ears", priceCash: 47, priceCard: 48.41, duration: "25–30 min" },
+      { id: "m-nose-ears", name: "Nose & Ears", priceCash: 36, priceCard: 37.08, duration: "15–20 min" },
+      { id: "m-nose-addon", name: "Nose as Add-on", priceCash: 18, priceCard: 18.54, duration: "10 min", note: "Add-on to another service" },
+      { id: "m-ears-addon", name: "Ears as Add-on", priceCash: 18, priceCard: 18.54, duration: "10 min", note: "Add-on to another service" },
+    ],
+  },
+  {
+    id: "m-below-belt",
+    title: "Below the Belt",
+    items: [
+      {
+        id: "m-manzilian",
+        name: "Male Brazilian (The Manzilian)",
+        tagline: "The male Brazilian. Clean, confident, professional.",
+        description: "Full male Brazilian wax performed by experienced, discreet estheticians in a private room.",
+        priceCash: 90,
+        priceCard: 92.70,
+        duration: "45–60 min",
+        popular: true,
+      },
+      { id: "m-derriere", name: "Derriere Cheeks", priceCash: 35, priceCard: 36.05, duration: "20–25 min" },
+    ],
+  },
+  {
+    id: "m-arms-legs",
+    title: "Arms & Legs",
+    items: [
+      { id: "m-half-arm", name: "1/2 Arm (Elbow to Knuckles)", priceCash: 45, priceCard: 46.35, duration: "20–25 min" },
+      { id: "m-full-arm", name: "Full Arm", priceCash: 55, priceCard: 56.65, duration: "30–40 min" },
+      { id: "m-underarm", name: "Underarm", priceCash: 25, priceCard: 25.75, duration: "15 min" },
+      { id: "m-half-leg", name: "1/2 Leg", priceCash: 55, priceCard: 56.65, duration: "25–35 min" },
+      { id: "m-full-leg", name: "Full Leg", priceCash: 100, priceCard: 103.00, duration: "45–60 min" },
+      { id: "m-bike-shorts", name: "Bike Shorts Area (Legs Only)", priceCash: 45, priceCard: 46.35, duration: "25–30 min" },
+    ],
+  },
+  {
+    id: "m-neck-stomach",
+    title: "Neck to Stomach",
+    items: [
+      { id: "m-full-back", name: "Full Back", priceCash: 65, priceCard: 66.95, duration: "30–40 min" },
+      { id: "m-chest", name: "Chest", priceCash: 55, priceCard: 56.65, duration: "30–40 min" },
+      { id: "m-chest-stomach", name: "Chest / Stomach Combo", priceCash: 65, priceCard: 66.95, duration: "40–50 min" },
+      { id: "m-neckline", name: "Neckline", priceCash: 10, priceCard: 10.30, duration: "10 min" },
+    ],
+  },
+];
+
+// Legacy serviceCategories kept for any code that still references it
 export const serviceCategories = [
   {
     id: "womens-waxing",

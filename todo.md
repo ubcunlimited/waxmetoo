@@ -99,3 +99,9 @@
 - [x] Apply sage green to footer accent elements
 - [x] Apply sage green to giveaway step indicators and share panel
 - [x] Apply sage green to admin stat cards and table headers
+
+## Phase 6 — Pricing Update from Spreadsheet
+
+- [x] Parse pricingforwaxmetoo2.xlsx and extract all service/price data
+- [x] Rewrite Services page with new category hierarchy (Most Popular, Ladies sections, Men sections)
+- [x] Apply real prices from spreadsheet to all service items
