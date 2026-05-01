@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Star, ChevronDown, MapPin, ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
-import { serviceCategories, testimonials, locations, faqs, blogPosts, trustBadges, BOOKING_URL } from "@/lib/data";
+import { mostPopular, testimonials, locations, faqs, blogPosts, trustBadges, BOOKING_URL } from "@/lib/data";
 
 // Scroll-triggered fade-up hook
 function useFadeUp() {
@@ -42,14 +42,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-const featuredServices = [
-  { name: "Brazilian Wax", price: "from $55", icon: "✦", desc: "Our signature service. Complete, clean, confident.", href: "/services#brazilian" },
-  { name: "Bikini Wax", price: "from $35", icon: "◆", desc: "Clean lines, effortless confidence.", href: "/services#bikini" },
-  { name: "Deep Bikini Wax", price: "from $45", icon: "◇", desc: "More coverage, more confidence.", href: "/services#deep-bikini" },
-  { name: "Brow Wax", price: "from $18", icon: "◈", desc: "Your best brows. Every time.", href: "/services#brow-wax" },
-  { name: "Underarm Wax", price: "from $20", icon: "✧", desc: "Smooth underarms that last for weeks.", href: "/services#underarm" },
-  { name: "Full Leg Wax", price: "from $65", icon: "❋", desc: "Silky smooth from hip to toe.", href: "/services#full-leg" },
-];
+// Icons mapped by service id — falls back to a neutral glyph
+const SERVICE_ICONS: Record<string, string> = {
+  brazilian: "✦",
+  "deep-bikini": "◇",
+  bikini: "◆",
+  manzilian: "◈",
+};
+const DEFAULT_ICONS = ["✦", "◆", "◇", "◈", "✧", "❋"];
 
 export default function Home() {
   useEffect(() => {
@@ -177,23 +177,30 @@ export default function Home() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {featuredServices.map((service, i) => (
-              <FadeUp key={service.name} delay={i * 80}>
-                <Link href={service.href}>
-                  <div className="card-service group cursor-pointer p-6 bg-white" style={{ borderTop: `3px solid ${i % 2 === 0 ? "#CFA7A0" : "#A8B3AA"}` }}>
-                    <div className="flex items-start justify-between mb-3">
-                      <span className="text-2xl" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>{service.icon}</span>
-                      <span className="text-xs font-body font-600 tracking-wide" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>{service.price}</span>
+            {mostPopular.slice(0, 6).map((service, i) => {
+              const accent = i % 2 === 0 ? "#CFA7A0" : "#A8B3AA";
+              const icon = SERVICE_ICONS[service.id] ?? DEFAULT_ICONS[i % DEFAULT_ICONS.length];
+              const displayPrice = `$${service.price % 1 === 0 ? service.price : service.price.toFixed(2)}`;
+              return (
+                <FadeUp key={service.id} delay={i * 80}>
+                  <Link href={`/services?tab=popular`}>
+                    <div className="card-service group cursor-pointer p-6 bg-white" style={{ borderTop: `3px solid ${accent}` }}>
+                      <div className="flex items-start justify-between mb-3">
+                        <span className="text-2xl" style={{ color: accent }}>{icon}</span>
+                        <span className="text-xs font-body font-600 tracking-wide" style={{ color: accent }}>{displayPrice}</span>
+                      </div>
+                      <h3 className="font-display text-xl text-[#3B2F2A] mb-2">{service.name}</h3>
+                      <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-4">
+                        {service.tagline ?? service.description ?? ""}
+                      </p>
+                      <span className="text-xs font-body font-600 tracking-wide uppercase flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: accent }}>
+                        Learn More <ArrowRight size={12} />
+                      </span>
                     </div>
-                    <h3 className="font-display text-xl text-[#3B2F2A] mb-2">{service.name}</h3>
-                    <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mb-4">{service.desc}</p>
-                    <span className="text-xs font-body font-600 tracking-wide uppercase flex items-center gap-1 group-hover:gap-2 transition-all" style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }}>
-                      Learn More <ArrowRight size={12} />
-                    </span>
-                  </div>
-                </Link>
-              </FadeUp>
-            ))}
+                  </Link>
+                </FadeUp>
+              );
+            })}
           </div>
 
           <FadeUp delay={200}>

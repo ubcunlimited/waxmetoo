@@ -114,3 +114,8 @@
 - [x] Remove cash/card column header and dual-price display from PriceRow
 - [x] Remove cash/card references from expanded service detail panels
 - [x] Remove cash discount language from FAQ (data.ts + BlogPost.tsx + Terms.tsx)
+
+## Phase 8 — Homepage Most Popular Sync
+
+- [x] Replace hardcoded homepage service cards with dynamic mostPopular data array
+- [x] Link each card to /services?tab=popular for direct navigation
