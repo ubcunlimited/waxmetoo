@@ -121,7 +121,7 @@ function getArticleContent(slug: string): string {
         <ul>
           <li><strong>Locally owned and operated by women.</strong> We're not a franchise. We're not backed by outside investors. When you wax with us, you're supporting Utah women directly.</li>
           <li><strong>Sinks in every treatment room.</strong> We believe your esthetician should wash her hands in front of you before every service — and our rooms are designed to make that possible.</li>
-          <li><strong>No memberships. No pressure.</strong> Transparent pricing, no stored credit card details, and a "no hairs left behind" guarantee on every service.</li>
+          <li><strong>No memberships. No pressure.</strong> Transparent pricing and a "no hairs left behind" guarantee on every service.</li>
           <li><strong>Privacy and dignity.</strong> We step out of the room while you prepare, ensuring you always feel comfortable and respected.</li>
         </ul>
 
@@ -834,7 +834,7 @@ function getArticleContent(slug: string): string {
         <h2>Q: How long does the appointment take?</h2>
         <p>A: We schedule Brazilian wax appointments for 30 minutes. The actual waxing typically takes about 15 minutes — the extra time ensures you never feel rushed.</p>
         <h2>Q: How much does it cost?</h2>
-        <p>A: Our Brazilian wax is $60. New clients receive 20% off their first service. We also offer a cash discount — ask about our cash pricing when you book.</p>
+        <p>A: Our Brazilian wax is $65. New clients receive 20% off their first service — see our full pricing at waxmetoo.com.</p>
         <h2>Q: How long does hair need to be?</h2>
         <p>A: At least ¼ inch — roughly 10–14 days of growth from your last shave. If you're not sure, err on the side of more growth rather than less.</p>
         <h2>Q: Will it hurt?</h2>

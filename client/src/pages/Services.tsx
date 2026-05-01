@@ -23,9 +23,9 @@ import {
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function PriceRow({ item, showCash }: { item: ServiceItem; showCash: boolean }) {
-  const price = showCash ? item.priceCash : item.priceCard;
-  const displayPrice = price % 1 === 0 ? `$${price}` : `$${price.toFixed(2)}`;
+function PriceRow({ item }: { item: ServiceItem }) {
+  const displayPrice =
+    item.price % 1 === 0 ? `$${item.price}` : `$${item.price.toFixed(2)}`;
 
   return (
     <div
@@ -68,11 +68,9 @@ function PriceRow({ item, showCash }: { item: ServiceItem; showCash: boolean }) 
 
 function SubCategoryPanel({
   sub,
-  showCash,
   defaultOpen = true,
 }: {
   sub: SubCategory;
-  showCash: boolean;
   defaultOpen?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
@@ -100,10 +98,35 @@ function SubCategoryPanel({
       {open && (
         <div className="px-5 pb-2 pt-1" style={{ background: "#ffffff" }}>
           {sub.items.map((item) => (
-            <PriceRow key={item.id} item={item} showCash={showCash} />
+            <PriceRow key={item.id} item={item} />
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+// ─── Booking CTA block ────────────────────────────────────────────────────────
+
+function BookingCTA() {
+  return (
+    <div
+      className="mt-6 rounded-2xl p-6 text-center"
+      style={{ background: "linear-gradient(135deg, #3B2F2A, #5a4540)" }}
+    >
+      <p className="font-serif text-xl text-white mb-2">Ready to book?</p>
+      <p className="text-sm mb-4" style={{ color: "#D8C6B6" }}>
+        First visit? New clients enjoy 20% off their first service.
+      </p>
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-8 py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
+        style={{ background: "#CFA7A0", color: "#ffffff" }}
+      >
+        Book Your Appointment
+      </a>
     </div>
   );
 }
@@ -114,7 +137,6 @@ type Tab = "popular" | "ladies" | "men";
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState<Tab>("popular");
-  const [showCash, setShowCash] = useState(false);
 
   // Dynamic SEO
   useEffect(() => {
@@ -148,8 +170,7 @@ export default function Services() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url(/manus-storage/hero-services_3fc5840d.jpg)",
+            backgroundImage: "url(/manus-storage/hero-services_3fc5840d.jpg)",
           }}
         />
         <div className="absolute inset-0 bg-[#3B2F2A]/80" />
@@ -162,58 +183,16 @@ export default function Services() {
               <em style={{ color: "#A8B3AA" }}>waxing menu</em>
             </h1>
             <p
-              className="font-body leading-relaxed mb-6 text-lg"
+              className="font-body leading-relaxed text-lg"
               style={{ color: "#D8C6B6" }}
             >
               From Brazilian to brows, every service is performed by licensed
               estheticians using premium, skin-safe wax. Full pricing listed
               below — no surprises.
             </p>
-
-            {/* Cash / Card toggle */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-body" style={{ color: "#D8C6B6" }}>
-                Show prices as:
-              </span>
-              <button
-                onClick={() => setShowCash(false)}
-                className="px-4 py-2 rounded text-sm font-semibold transition-all"
-                style={{
-                  background: !showCash ? "#CFA7A0" : "#4a3d38",
-                  color: !showCash ? "#3B2F2A" : "#D8C6B6",
-                }}
-              >
-                Card
-              </button>
-              <button
-                onClick={() => setShowCash(true)}
-                className="px-4 py-2 rounded text-sm font-semibold transition-all"
-                style={{
-                  background: showCash ? "#CFA7A0" : "#4a3d38",
-                  color: showCash ? "#3B2F2A" : "#D8C6B6",
-                }}
-              >
-                Cash
-              </button>
-            </div>
           </div>
         </div>
       </section>
-
-      {/* ── Cash / Card note ── */}
-      <div
-        className="border-b"
-        style={{ background: "#ffffff", borderColor: "#E8DDD6" }}
-      >
-        <div className="container py-3">
-          <p className="text-xs" style={{ color: "#4A4A4A" }}>
-            <strong>Pricing note:</strong> Cash pricing reflects a small
-            discount for clients who pay with cash. Card prices include a 3%
-            processing fee. Both prices are listed transparently — no hidden
-            fees, ever.
-          </p>
-        </div>
-      </div>
 
       {/* ── Tab bar ── */}
       <div
@@ -230,8 +209,7 @@ export default function Services() {
                 style={{
                   borderBottomColor:
                     activeTab === tab.id ? "#A8B3AA" : "transparent",
-                  color:
-                    activeTab === tab.id ? "#3B2F2A" : "#4A4A4A",
+                  color: activeTab === tab.id ? "#3B2F2A" : "#4A4A4A",
                 }}
               >
                 {tab.label}
@@ -269,10 +247,7 @@ export default function Services() {
                 {/* Column header */}
                 <div
                   className="flex items-center justify-between px-5 py-3 border-b"
-                  style={{
-                    borderColor: "#F0EAE4",
-                    background: "#FBF8F5",
-                  }}
+                  style={{ borderColor: "#F0EAE4", background: "#FBF8F5" }}
                 >
                   <span
                     className="text-xs font-semibold"
@@ -282,41 +257,19 @@ export default function Services() {
                   </span>
                   <span
                     className="text-xs font-semibold"
-                    style={{ color: showCash ? "#3B2F2A" : "#CFA7A0" }}
+                    style={{ color: "#CFA7A0" }}
                   >
-                    {showCash ? "Cash Price" : "Card Price"}
+                    Price
                   </span>
                 </div>
                 <div className="px-5 pb-2 pt-1">
                   {mostPopular.map((item) => (
-                    <PriceRow key={item.id} item={item} showCash={showCash} />
+                    <PriceRow key={item.id} item={item} />
                   ))}
                 </div>
               </div>
 
-              {/* CTA */}
-              <div
-                className="rounded-2xl p-6 text-center"
-                style={{
-                  background: "linear-gradient(135deg, #3B2F2A, #5a4540)",
-                }}
-              >
-                <p className="font-serif text-xl text-white mb-2">
-                  Ready to book?
-                </p>
-                <p className="text-sm mb-4" style={{ color: "#D8C6B6" }}>
-                  First visit? New clients enjoy 20% off their first service.
-                </p>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
-                  style={{ background: "#CFA7A0", color: "#ffffff" }}
-                >
-                  Book Your Appointment
-                </a>
-              </div>
+              <BookingCTA />
             </div>
           )}
 
@@ -331,42 +284,18 @@ export default function Services() {
                 Full Body Waxing Services — For the Ladies
               </h2>
               <p className="text-sm mb-6" style={{ color: "#4A4A4A" }}>
-                Click any category to expand or collapse its price list. Prices
-                shown as {showCash ? "cash" : "card"} — toggle above to switch.
+                Click any category to expand or collapse its price list.
               </p>
 
               {ladiesSections.map((sub, i) => (
                 <SubCategoryPanel
                   key={sub.id}
                   sub={sub}
-                  showCash={showCash}
                   defaultOpen={i === 0}
                 />
               ))}
 
-              {/* CTA */}
-              <div
-                className="mt-6 rounded-2xl p-6 text-center"
-                style={{
-                  background: "linear-gradient(135deg, #3B2F2A, #5a4540)",
-                }}
-              >
-                <p className="font-serif text-xl text-white mb-2">
-                  Ready to book?
-                </p>
-                <p className="text-sm mb-4" style={{ color: "#D8C6B6" }}>
-                  First visit? New clients enjoy 20% off their first service.
-                </p>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
-                  style={{ background: "#CFA7A0", color: "#ffffff" }}
-                >
-                  Book Your Appointment
-                </a>
-              </div>
+              <BookingCTA />
             </div>
           )}
 
@@ -382,42 +311,18 @@ export default function Services() {
               </h2>
               <p className="text-sm mb-6" style={{ color: "#4A4A4A" }}>
                 Clean, professional waxing services designed for men. No
-                judgment, just results. Prices shown as{" "}
-                {showCash ? "cash" : "card"} — toggle above to switch.
+                judgment, just results.
               </p>
 
               {menSections.map((sub, i) => (
                 <SubCategoryPanel
                   key={sub.id}
                   sub={sub}
-                  showCash={showCash}
                   defaultOpen={i === 0}
                 />
               ))}
 
-              {/* CTA */}
-              <div
-                className="mt-6 rounded-2xl p-6 text-center"
-                style={{
-                  background: "linear-gradient(135deg, #3B2F2A, #5a4540)",
-                }}
-              >
-                <p className="font-serif text-xl text-white mb-2">
-                  Ready to book?
-                </p>
-                <p className="text-sm mb-4" style={{ color: "#D8C6B6" }}>
-                  First visit? New clients enjoy 20% off their first service.
-                </p>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-8 py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
-                  style={{ background: "#CFA7A0", color: "#ffffff" }}
-                >
-                  Book Your Appointment
-                </a>
-              </div>
+              <BookingCTA />
             </div>
           )}
 

@@ -105,3 +105,12 @@
 - [x] Parse pricingforwaxmetoo2.xlsx and extract all service/price data
 - [x] Rewrite Services page with new category hierarchy (Most Popular, Ladies sections, Men sections)
 - [x] Apply real prices from spreadsheet to all service items
+
+## Phase 7 — Pricing Simplification
+
+- [x] Remove priceCard from all ServiceItem entries in data.ts
+- [x] Remove cash/card toggle from Services page hero
+- [x] Remove "Pricing note" cash discount banner from Services page
+- [x] Remove cash/card column header and dual-price display from PriceRow
+- [x] Remove cash/card references from expanded service detail panels
+- [x] Remove cash discount language from FAQ (data.ts + BlogPost.tsx + Terms.tsx)

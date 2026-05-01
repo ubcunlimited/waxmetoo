@@ -27,7 +27,7 @@ export default function Terms() {
             </div>
             <div>
               <h2 className="font-display text-2xl text-[#3B2F2A] mb-3">4. Pricing</h2>
-              <p>Prices are subject to change without notice. Both cash and credit card pricing are displayed on our services page. The displayed prices are for reference only; final pricing may vary by location. We reserve the right to modify pricing at any time.</p>
+              <p>Prices are subject to change without notice. Pricing is displayed on our services page. The displayed prices are for reference only; final pricing may vary by location. We reserve the right to modify pricing at any time.</p>
             </div>
             <div>
               <h2 className="font-display text-2xl text-[#3B2F2A] mb-3">5. Promotions and Offers</h2>
