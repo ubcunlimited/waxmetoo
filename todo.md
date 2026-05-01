@@ -119,3 +119,7 @@
 
 - [x] Replace hardcoded homepage service cards with dynamic mostPopular data array
 - [x] Link each card to /services?tab=popular for direct navigation
+
+## Phase 9 — Homepage Services Grid Layout
+
+- [x] Change homepage services grid from lg:grid-cols-3 to lg:grid-cols-2

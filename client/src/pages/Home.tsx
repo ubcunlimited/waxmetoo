@@ -176,7 +176,7 @@ export default function Home() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {mostPopular.slice(0, 6).map((service, i) => {
               const accent = i % 2 === 0 ? "#CFA7A0" : "#A8B3AA";
               const icon = SERVICE_ICONS[service.id] ?? DEFAULT_ICONS[i % DEFAULT_ICONS.length];
