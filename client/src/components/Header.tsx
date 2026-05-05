@@ -16,7 +16,6 @@ const navLinks: { label: string; href: string; hasDropdown?: boolean; highlight?
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
-  { label: "🎁 Win a Free Wax", href: "/win-a-free-wax", highlight: true },
 ];
 
 const serviceDropdown = [
@@ -135,17 +134,7 @@ export default function Header() {
               )}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-sm py-3 px-6"
-              >
-                Book Now
-              </a>
-            </div>
+
 
             {/* Mobile Menu Toggle */}
             <button

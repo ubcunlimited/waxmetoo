@@ -136,26 +136,26 @@
 ## Phase 11 — waxdoc.docx Changes
 
 ### Header / Promo Banner
-- [ ] Add Book Now pill button to the top promo banner
-- [ ] Add Win a Free Wax button to the top promo banner
-- [ ] Keep "New Clients: Enjoy 20% off" text but replace plain "Book Now" text with pill button
+- [x] Add Book Now pill button to the top promo banner
+- [x] Add Win a Free Wax button to the top promo banner
+- [x] Keep "New Clients: Enjoy 20% off" text but replace plain "Book Now" text with pill button
 
 ### First Visit Page
-- [ ] Add "nerves" after "First-time" in the hero copy
-- [ ] Update "Completely private" bullet copy (add laughter/music line)
-- [ ] Update "Efficient & Respectful" bullet copy (change "stay on schedule" to "do our best to stay on time")
-- [ ] Add new "Sinks in every treatment room" bullet point
-- [ ] Rewrite "Arrive & check in" step (Mangomint app / text message check-in)
-- [ ] Delete "Meet your esthetician" step
-- [ ] Rewrite "Your Service" step (treatment room, preparation, privacy for intimate services)
-- [ ] Remove any suggestion that clients shouldn't wax on their period
-- [ ] Add highlighted callout box: Accutane, AHA, and retinol users cannot wax
-- [ ] Change "3-4 weeks of shaving" to "10 days from shaving" everywhere on the site
+- [x] Add "nerves" after "First-time" in the hero copy
+- [x] Update "Completely private" bullet copy (add laughter/music line)
+- [x] Update "Efficient & Respectful" bullet copy (change "stay on schedule" to "do our best to stay on time")
+- [x] Add new "Sinks in every treatment room" bullet point
+- [x] Rewrite "Arrive & check in" step (Mangomint app / text message check-in)
+- [x] Delete "Meet your esthetician" step
+- [x] Rewrite "Your Service" step (treatment room, preparation, privacy for intimate services)
+- [x] Remove any suggestion that clients shouldn't wax on their period (First Visit, Before Care, FAQ)
+- [x] Add highlighted callout box: Accutane, AHA, and retinol users cannot wax (First Visit + Before Care)
+- [x] Change "3-4 weeks of shaving" to "10 days from shaving" everywhere on the site (First Visit, Before Care, FAQ)
 
 ### Before Care / After Care Pages
-- [ ] Replace "avoid hot showers and baths" with "don't swim in Utah Lake" (funny tone)
-- [ ] Delete "avoid heavy exercise" from after care
-- [ ] Delete "wear loose comfortable clothing" from after care
-- [ ] Delete "Avoid Caffeine" from before/after care
-- [ ] Add PFB product note under ingrown hair prevention in after care
-- [ ] Add military and student discount highlight (First Visit or relevant page)
+- [x] Replace "avoid hot showers and baths" with "don't swim in Utah Lake" (funny tone)
+- [x] Delete "avoid heavy exercise" from after care
+- [x] Delete "wear loose comfortable clothing" from after care
+- [x] Delete "Avoid Caffeine" from before/after care
+- [x] Add PFB product note under ingrown hair prevention in after care
+- [x] Add military and student discount highlight (First Visit page — sage green callout card)
