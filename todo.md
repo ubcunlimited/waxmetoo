@@ -159,3 +159,8 @@
 - [x] Delete "Avoid Caffeine" from before/after care
 - [x] Add PFB product note under ingrown hair prevention in after care
 - [x] Add military and student discount highlight (First Visit page — sage green callout card)
+
+## Phase 12 — Men's Services Accordion
+
+- [x] Reorder menSections in data.ts: Below the Belt, Combos, Arms & Legs, Neck to Stomach, Face Waxing
+- [x] Services page accordion: single-open behavior (opening one closes the others), first item open by default

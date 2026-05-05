@@ -278,22 +278,11 @@ export const ladiesSections: SubCategory[] = [
 
 export const menSections: SubCategory[] = [
   {
-    id: "m-face",
-    title: "Face Waxing",
+    id: "m-below-belt",
+    title: "Below the Belt",
     items: [
-      { id: "m-brow", name: "Brow", tagline: "Groomed brows, clean look.", description: "Clean up the brow line and remove unwanted hair between the brows.", price: 20, duration: "15 min" },
-      { id: "m-nose", name: "Nose", tagline: "Quick, clean, effective.", description: "Safe, quick nose wax that removes visible nasal hair.", price: 20, duration: "10 min" },
-      { id: "m-ears", name: "Ears", tagline: "Discreet and effective.", description: "Removes unwanted ear hair quickly and cleanly.", price: 20, duration: "10 min" },
-      { id: "m-brow-nose-ears", name: "Brow, Nose & Ears", tagline: "Complete facial grooming.", description: "Brow, nose, and ear wax in one visit.", price: 47, duration: "30 min" },
-      { id: "m-nose-ears", name: "Nose & Ears", tagline: "Double clean.", description: "Nose and ear wax together.", price: 36, duration: "20 min" },
-      { id: "m-nose-addon", name: "Nose (add-on)", tagline: "Add to any service.", description: "Nose wax added onto another service.", price: 18, duration: "10 min" },
-      { id: "m-ears-addon", name: "Ears (add-on)", tagline: "Add to any service.", description: "Ear wax added onto another service.", price: 18, duration: "10 min" },
-      { id: "m-full-face-brow", name: "Full Face & Brow", tagline: "Complete facial waxing.", description: "Full face wax including brow shaping.", price: 58, duration: "40–50 min" },
-      { id: "m-full-face", name: "Full Face (Lip, Chin, Cheeks)", tagline: "Smooth all over.", description: "Lip, chin, and cheeks waxed in one appointment.", price: 48, duration: "35–45 min" },
-      { id: "m-brow-design", name: "Eyebrow Design", tagline: "Sculpted, defined brows.", description: "Precision eyebrow shaping and design.", price: 20, duration: "20 min" },
-      { id: "m-lip", name: "Lip", tagline: "Quick, clean, effective.", description: "Upper lip wax.", price: 20, duration: "10 min" },
-      { id: "m-chin", name: "Chin", tagline: "Clean chin.", description: "Removes unwanted chin hair.", price: 20, duration: "10 min" },
-      { id: "m-cheeks", name: "Cheeks (Face)", tagline: "Smooth cheeks.", description: "Removes peach fuzz and unwanted hair from the cheeks.", price: 20, duration: "15 min" },
+      { id: "m-manzilian", name: "Manzilian (Male Brazilian)", tagline: "The male Brazilian. Clean, confident, professional.", description: "Full male Brazilian wax performed by experienced, discreet estheticians in a private room.", price: 85, priceNew: 90, duration: "45–60 min", popular: true },
+      { id: "m-derriere", name: "Derriere Cheeks", tagline: "Smooth and clean.", description: "Waxing of the derriere cheeks.", price: 35, duration: "20 min" },
     ],
   },
   {
@@ -302,14 +291,6 @@ export const menSections: SubCategory[] = [
     items: [
       { id: "m-combo-bz-brow", name: "Manzilian + Brow", tagline: "Two essentials, one appointment.", description: "Manzilian plus eyebrow wax in a single visit.", price: 80, priceNew: 85, duration: "60–75 min" },
       { id: "m-combo-bz-ua", name: "Manzilian + Underarm", tagline: "Smooth all over.", description: "Manzilian plus underarm wax.", price: 80, priceNew: 85, duration: "60–75 min" },
-    ],
-  },
-  {
-    id: "m-below-belt",
-    title: "Below the Belt",
-    items: [
-      { id: "m-manzilian", name: "Manzilian (Male Brazilian)", tagline: "The male Brazilian. Clean, confident, professional.", description: "Full male Brazilian wax performed by experienced, discreet estheticians in a private room.", price: 85, priceNew: 90, duration: "45–60 min", popular: true },
-      { id: "m-derriere", name: "Derriere Cheeks", tagline: "Smooth and clean.", description: "Waxing of the derriere cheeks.", price: 35, duration: "20 min" },
     ],
   },
   {
@@ -332,6 +313,25 @@ export const menSections: SubCategory[] = [
       { id: "m-full-back", name: "Full Back", tagline: "Clean back, confident you.", description: "Professional back waxing for men.", price: 60, priceNew: 65, duration: "30–40 min" },
       { id: "m-chest", name: "Chest", tagline: "Smooth chest, lasting results.", description: "Full chest waxing for a clean, defined look.", price: 50, priceNew: 55, duration: "30–40 min" },
       { id: "m-chest-stomach", name: "Chest/Stomach Combined", tagline: "The complete package.", description: "Chest and stomach waxed together.", price: 60, priceNew: 65, duration: "40–50 min" },
+    ],
+  },
+  {
+    id: "m-face",
+    title: "Face Waxing",
+    items: [
+      { id: "m-brow", name: "Brow", tagline: "Groomed brows, clean look.", description: "Clean up the brow line and remove unwanted hair between the brows.", price: 20, duration: "15 min" },
+      { id: "m-nose", name: "Nose", tagline: "Quick, clean, effective.", description: "Safe, quick nose wax that removes visible nasal hair.", price: 20, duration: "10 min" },
+      { id: "m-ears", name: "Ears", tagline: "Discreet and effective.", description: "Removes unwanted ear hair quickly and cleanly.", price: 20, duration: "10 min" },
+      { id: "m-brow-nose-ears", name: "Brow, Nose & Ears", tagline: "Complete facial grooming.", description: "Brow, nose, and ear wax in one visit.", price: 47, duration: "30 min" },
+      { id: "m-nose-ears", name: "Nose & Ears", tagline: "Double clean.", description: "Nose and ear wax together.", price: 36, duration: "20 min" },
+      { id: "m-nose-addon", name: "Nose (add-on)", tagline: "Add to any service.", description: "Nose wax added onto another service.", price: 18, duration: "10 min" },
+      { id: "m-ears-addon", name: "Ears (add-on)", tagline: "Add to any service.", description: "Ear wax added onto another service.", price: 18, duration: "10 min" },
+      { id: "m-full-face-brow", name: "Full Face & Brow", tagline: "Complete facial waxing.", description: "Full face wax including brow shaping.", price: 58, duration: "40–50 min" },
+      { id: "m-full-face", name: "Full Face (Lip, Chin, Cheeks)", tagline: "Smooth all over.", description: "Lip, chin, and cheeks waxed in one appointment.", price: 48, duration: "35–45 min" },
+      { id: "m-brow-design", name: "Eyebrow Design", tagline: "Sculpted, defined brows.", description: "Precision eyebrow shaping and design.", price: 20, duration: "20 min" },
+      { id: "m-lip", name: "Lip", tagline: "Quick, clean, effective.", description: "Upper lip wax.", price: 20, duration: "10 min" },
+      { id: "m-chin", name: "Chin", tagline: "Clean chin.", description: "Removes unwanted chin hair.", price: 20, duration: "10 min" },
+      { id: "m-cheeks", name: "Cheeks (Face)", tagline: "Smooth cheeks.", description: "Removes peach fuzz and unwanted hair from the cheeks.", price: 20, duration: "15 min" },
     ],
   },
 ];

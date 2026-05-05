@@ -148,27 +148,26 @@ function June1Banner() {
   );
 }
 
-// ─── SubCategoryPanel ─────────────────────────────────────────────────────────
-
+/// ─── SubCategoryPanel ─────────────────────────────────────────────────────────
 function SubCategoryPanel({
   sub,
-  defaultOpen = true,
+  open,
+  onToggle,
 }: {
   sub: SubCategory;
-  defaultOpen?: boolean;
+  open: boolean;
+  onToggle: () => void;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
   const hasChanges = sub.items.some(
     (it) => it.priceNew !== undefined && it.priceNew !== it.price
   );
-
   return (
     <div
       className="rounded-2xl overflow-hidden mb-4"
       style={{ border: "1px solid #E8DDD6" }}
     >
       <button
-        onClick={() => setOpen((o) => !o)}
+        onClick={onToggle}
         className="w-full flex items-center justify-between px-5 py-4 text-left transition-colors"
         style={{ background: open ? "#FBF8F5" : "#ffffff" }}
       >
@@ -207,6 +206,57 @@ function SubCategoryPanel({
 }
 
 // ─── Booking CTA block ────────────────────────────────────────────────────────
+
+// ─── Single-open accordion wrappers ───────────────────────────────────────────────
+function LadiesAccordion() {
+  const [openId, setOpenId] = useState<string>(ladiesSections[0]?.id ?? "");
+  return (
+    <div>
+      <p className="section-label-sage mb-2">For the Ladies</p>
+      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
+        Full Body Waxing Services — For the Ladies
+      </h2>
+      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+        Tap a category to expand its price list. Only one section is open at a time.
+      </p>
+      <June1Banner />
+      {ladiesSections.map((sub) => (
+        <SubCategoryPanel
+          key={sub.id}
+          sub={sub}
+          open={openId === sub.id}
+          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
+        />
+      ))}
+      <BookingCTA />
+    </div>
+  );
+}
+
+function MenAccordion() {
+  const [openId, setOpenId] = useState<string>(menSections[0]?.id ?? "");
+  return (
+    <div>
+      <p className="section-label-sage mb-2">For the Men</p>
+      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
+        Full Body Waxing Services — For the Men
+      </h2>
+      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+        Clean, professional waxing services designed for men. No judgment, just results.
+      </p>
+      <June1Banner />
+      {menSections.map((sub) => (
+        <SubCategoryPanel
+          key={sub.id}
+          sub={sub}
+          open={openId === sub.id}
+          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
+        />
+      ))}
+      <BookingCTA />
+    </div>
+  );
+}
 
 function BookingCTA() {
   return (
@@ -372,59 +422,11 @@ export default function Services() {
 
           {/* For the Ladies */}
           {activeTab === "ladies" && (
-            <div>
-              <p className="section-label-sage mb-2">For the Ladies</p>
-              <h2
-                className="font-serif text-2xl font-bold mb-2"
-                style={{ color: "#3B2F2A" }}
-              >
-                Full Body Waxing Services — For the Ladies
-              </h2>
-              <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
-                Click any category to expand or collapse its price list.
-              </p>
-
-              <June1Banner />
-
-              {ladiesSections.map((sub, i) => (
-                <SubCategoryPanel
-                  key={sub.id}
-                  sub={sub}
-                  defaultOpen={i === 0}
-                />
-              ))}
-
-              <BookingCTA />
-            </div>
+            <LadiesAccordion />
           )}
-
           {/* For the Men */}
           {activeTab === "men" && (
-            <div>
-              <p className="section-label-sage mb-2">For the Men</p>
-              <h2
-                className="font-serif text-2xl font-bold mb-2"
-                style={{ color: "#3B2F2A" }}
-              >
-                Full Body Waxing Services — For the Men
-              </h2>
-              <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
-                Clean, professional waxing services designed for men. No
-                judgment, just results.
-              </p>
-
-              <June1Banner />
-
-              {menSections.map((sub, i) => (
-                <SubCategoryPanel
-                  key={sub.id}
-                  sub={sub}
-                  defaultOpen={i === 0}
-                />
-              ))}
-
-              <BookingCTA />
-            </div>
+            <MenAccordion />
           )}
 
         </div>
