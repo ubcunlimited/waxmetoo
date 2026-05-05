@@ -1,6 +1,16 @@
+/*
+ * WAX ME TOO — Before Care Page
+ * Updated per waxdoc.docx:
+ *   - "3–4 weeks from shaving" → "10 days from shaving"
+ *   - Removed "Wear loose, comfortable clothing"
+ *   - Removed "Avoid caffeine on appointment day"
+ *   - Removed "Schedule wisely" (period reference)
+ *   - Accutane / AHA / retinol callout box retained and strengthened
+ */
+
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 
@@ -20,16 +30,13 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const beforeCareItems = [
-  { title: "Let hair grow to ¼ inch", desc: "This is approximately 3–4 weeks of growth after shaving. Hair that is too short won't grip properly; hair that is too long may be trimmed before waxing." },
+  { title: "Let hair grow to ¼ inch", desc: "This is approximately 10 days of growth after shaving. Hair that is too short won't grip properly; hair that is too long may be trimmed before waxing." },
   { title: "Exfoliate 24–48 hours before", desc: "Gentle exfoliation removes dead skin cells and helps the wax grip hair more effectively. Use a soft scrub or exfoliating mitt — nothing too abrasive." },
   { title: "Skip lotion on appointment day", desc: "Avoid applying lotion, oils, or body butter to the area on the day of your appointment. These create a barrier that can interfere with wax adhesion." },
-  { title: "Wear loose, comfortable clothing", desc: "Especially for bikini, Brazilian, and leg services. Tight clothing can cause friction and irritation on freshly waxed skin." },
   { title: "Consider ibuprofen beforehand", desc: "If you're concerned about discomfort, take an over-the-counter pain reliever like ibuprofen 30–45 minutes before your appointment." },
-  { title: "Avoid caffeine on appointment day", desc: "Caffeine can heighten skin sensitivity. Skipping your morning coffee may make your experience more comfortable." },
   { title: "Stay hydrated", desc: "Well-hydrated skin waxes more cleanly. Drink plenty of water in the days leading up to your appointment." },
   { title: "Avoid sun exposure", desc: "Avoid sunbathing, tanning beds, or prolonged sun exposure on the areas to be waxed for at least 24 hours before your appointment." },
-  { title: "Skip retinol and AHAs", desc: "If you use retinol, AHAs, or other exfoliating skincare products, avoid applying them to the wax area for 3–5 days before your appointment." },
-  { title: "Schedule wisely", desc: "If possible, avoid scheduling bikini or Brazilian services during your menstrual cycle, as skin sensitivity is heightened during this time." },
+  { title: "Skip retinol and AHAs on the area", desc: "If you use retinol, AHAs, or other exfoliating skincare products, avoid applying them to the wax area for at least 5–7 days before your appointment and let your esthetician know." },
 ];
 
 export default function BeforeCare() {
@@ -59,13 +66,36 @@ export default function BeforeCare() {
         </div>
       </section>
 
+      {/* Accutane / AHA / Retinol Warning */}
+      <div className="bg-[#FFF8F0]">
+        <div className="container py-6">
+          <div
+            className="rounded-xl p-5 flex gap-4 items-start max-w-3xl mx-auto"
+            style={{ background: "rgba(207,167,160,0.12)", border: "1.5px solid #CFA7A0" }}
+          >
+            <AlertTriangle size={24} className="shrink-0 mt-0.5" style={{ color: "#CFA7A0" }} />
+            <div>
+              <p className="font-display text-lg text-[#3B2F2A] font-semibold mb-1">
+                Important: Accutane, AHA &amp; Retinol Users — Please Read
+              </p>
+              <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">
+                <strong>If you are currently taking Accutane (isotretinoin), you cannot receive waxing services.</strong> Accutane thins the skin and waxing can cause serious skin lifting and damage. You must be off Accutane for at least 6 months before waxing.
+              </p>
+              <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mt-2">
+                <strong>If you use AHA (alpha hydroxy acid) or retinol products</strong> — including prescription tretinoin, Retin-A, or over-the-counter retinol serums — you cannot be waxed on areas where those products are applied. Please discontinue use on the area for at least 5–7 days before your appointment and let your esthetician know.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="py-16 bg-[#F7F3EE]">
         <div className="container max-w-3xl mx-auto">
           <div className="space-y-4">
             {beforeCareItems.map((item, i) => (
               <FadeUp key={item.title} delay={i * 50}>
                 <div className="bg-white rounded-lg p-5 shadow-sm flex gap-4">
-                  <CheckCircle size={20} className="text-[#CFA7A0] shrink-0 mt-0.5" />
+                  <CheckCircle size={20} style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }} className="shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-body font-600 text-[#3B2F2A] mb-1">{item.title}</h3>
                     <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">{item.desc}</p>

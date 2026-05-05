@@ -132,3 +132,30 @@
 - [x] Redesign Services page PriceRow to show current price and upcoming price side-by-side
 - [x] Add June 1 notice banner and "Price update" badge on subcategory panels with changes
 - [x] Update homepage mostPopular cards to reflect current pricing (synced via data.ts)
+
+## Phase 11 — waxdoc.docx Changes
+
+### Header / Promo Banner
+- [ ] Add Book Now pill button to the top promo banner
+- [ ] Add Win a Free Wax button to the top promo banner
+- [ ] Keep "New Clients: Enjoy 20% off" text but replace plain "Book Now" text with pill button
+
+### First Visit Page
+- [ ] Add "nerves" after "First-time" in the hero copy
+- [ ] Update "Completely private" bullet copy (add laughter/music line)
+- [ ] Update "Efficient & Respectful" bullet copy (change "stay on schedule" to "do our best to stay on time")
+- [ ] Add new "Sinks in every treatment room" bullet point
+- [ ] Rewrite "Arrive & check in" step (Mangomint app / text message check-in)
+- [ ] Delete "Meet your esthetician" step
+- [ ] Rewrite "Your Service" step (treatment room, preparation, privacy for intimate services)
+- [ ] Remove any suggestion that clients shouldn't wax on their period
+- [ ] Add highlighted callout box: Accutane, AHA, and retinol users cannot wax
+- [ ] Change "3-4 weeks of shaving" to "10 days from shaving" everywhere on the site
+
+### Before Care / After Care Pages
+- [ ] Replace "avoid hot showers and baths" with "don't swim in Utah Lake" (funny tone)
+- [ ] Delete "avoid heavy exercise" from after care
+- [ ] Delete "wear loose comfortable clothing" from after care
+- [ ] Delete "Avoid Caffeine" from before/after care
+- [ ] Add PFB product note under ingrown hair prevention in after care
+- [ ] Add military and student discount highlight (First Visit or relevant page)

@@ -1,6 +1,15 @@
+/*
+ * WAX ME TOO — After Care Page
+ * Updated per waxdoc.docx:
+ *   - "Avoid hot showers and baths" → "Don't swim in Utah Lake" (funny replacement)
+ *   - Removed "No heavy exercise"
+ *   - Removed "Wear loose clothing" from do list
+ *   - Added PFB product note under ingrown hair prevention
+ */
+
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 
@@ -22,16 +31,14 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 const doItems = [
   { title: "Keep the area clean", desc: "Gently cleanse waxed areas with a mild, fragrance-free cleanser. Pat dry — don't rub." },
   { title: "Apply a gentle moisturizer", desc: "Use a fragrance-free, alcohol-free moisturizer to soothe and hydrate the skin. Aloe vera gel is also excellent for calming any redness." },
-  { title: "Wear loose clothing", desc: "For the first 24 hours, wear loose, breathable clothing over waxed areas to minimize friction and allow skin to breathe." },
   { title: "Start exfoliating after 48 hours", desc: "Beginning 48 hours after your wax, gently exfoliate the area 2–3 times per week. This is the most effective way to prevent ingrown hairs." },
   { title: "Moisturize daily", desc: "Daily moisturizing keeps skin soft, reduces irritation, and helps maintain smooth results between appointments." },
   { title: "Book your next appointment", desc: "For best results, schedule your next appointment 4–6 weeks out. Regular waxing leads to finer, sparser regrowth over time." },
 ];
 
 const dontItems = [
-  { title: "Avoid hot showers and baths", desc: "For the first 24–48 hours, stick to lukewarm water. Hot water can irritate freshly waxed skin and open pores." },
+  { title: "Don't swim in Utah Lake", desc: "Seriously — freshly waxed skin and questionable water don't mix. Avoid pools, hot tubs, and any open water for 24–48 hours after your wax." },
   { title: "Skip the sauna and steam room", desc: "Avoid saunas, steam rooms, and hot tubs for at least 48 hours after waxing." },
-  { title: "No heavy exercise", desc: "Avoid workouts that cause heavy sweating for 24 hours. Sweat can irritate open follicles and increase the risk of breakouts." },
   { title: "Avoid direct sun exposure", desc: "Keep waxed areas out of direct sunlight for 24–48 hours. Freshly waxed skin is more susceptible to sun damage and hyperpigmentation." },
   { title: "Don't pick or scratch", desc: "If you experience any bumps or ingrown hairs, resist the urge to pick or scratch. This can cause scarring and infection." },
   { title: "Skip retinol and AHAs", desc: "Avoid applying exfoliating skincare products (retinol, AHAs, BHAs) to waxed areas for at least 3–5 days." },
@@ -73,7 +80,7 @@ export default function AfterCare() {
                   <CheckCircle size={20} className="text-[#CFA7A0]" /> What to do
                 </h2>
                 <div className="space-y-3">
-                  {doItems.map((item, i) => (
+                  {doItems.map((item) => (
                     <div key={item.title} className="bg-white rounded-lg p-4 shadow-sm">
                       <h3 className="font-body font-600 text-[#3B2F2A] text-sm mb-1">{item.title}</h3>
                       <p className="text-xs text-[#4A4A4A] font-body leading-relaxed">{item.desc}</p>
@@ -100,15 +107,32 @@ export default function AfterCare() {
             </FadeUp>
           </div>
 
+          {/* Ingrown Hair Prevention — with PFB product note */}
           <FadeUp delay={200}>
-            <div className="mt-10 max-w-4xl mx-auto bg-[#A8B3AA] rounded-lg p-6 text-center">
-              <h2 className="font-display text-2xl text-[#3B2F2A] mb-3">Ingrown hair prevention</h2>
-              <p className="text-[#3B2F2A]/80 font-body mb-2 max-w-xl mx-auto">
+            <div className="mt-10 max-w-4xl mx-auto bg-[#A8B3AA] rounded-lg p-6">
+              <h2 className="font-display text-2xl text-[#3B2F2A] mb-3 text-center">Ingrown hair prevention</h2>
+              <p className="text-[#3B2F2A]/80 font-body mb-3 max-w-xl mx-auto text-center">
                 The most effective way to prevent ingrown hairs is consistent, gentle exfoliation starting 48 hours after your wax. Use a soft exfoliating scrub or mitt 2–3 times per week, and moisturize daily.
               </p>
-              <p className="text-[#3B2F2A]/80 font-body text-sm max-w-xl mx-auto">
+              <p className="text-[#3B2F2A]/80 font-body text-sm max-w-xl mx-auto text-center mb-5">
                 With regular waxing appointments, ingrown hairs typically become much less of an issue over time as hair grows back finer and sparser.
               </p>
+
+              {/* PFB product callout */}
+              <div
+                className="rounded-xl p-4 flex gap-3 items-start max-w-xl mx-auto"
+                style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(59,47,42,0.2)" }}
+              >
+                <Sparkles size={20} className="shrink-0 mt-0.5 text-[#3B2F2A]" />
+                <div>
+                  <p className="font-body font-semibold text-[#3B2F2A] text-sm mb-1">
+                    Ask about PFB — our favourite ingrown hair treatment
+                  </p>
+                  <p className="text-xs text-[#3B2F2A]/80 font-body leading-relaxed">
+                    After a Brazilian wax, your esthetician will apply PFB directly to your skin. You can also pick up a sample size for just <strong>$3</strong> to take home — it's the easiest thing you can do to keep your skin bump-free between appointments.
+                  </p>
+                </div>
+              </div>
             </div>
           </FadeUp>
 

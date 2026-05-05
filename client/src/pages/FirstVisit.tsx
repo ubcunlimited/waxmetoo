@@ -2,11 +2,14 @@
  * WAX ME TOO — First Visit Page
  * Design: Modern Feminine Craft
  * Purpose: Reduce hesitation, increase first-time conversions
+ * Updated per waxdoc.docx: copy edits, step rewrites, Accutane/AHA/retinol callout,
+ *   removed period/caffeine/exercise/loose-clothing references, added PFB note,
+ *   added military/student discount callout.
  */
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { CheckCircle, Shield, Leaf, Star, Clock, Heart } from "lucide-react";
+import { CheckCircle, Shield, Leaf, Star, Clock, Heart, Droplets, AlertTriangle, BadgePercent } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 
@@ -25,6 +28,11 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
+// Steps updated per waxdoc.docx:
+// - Step 02: "3–4 weeks" → "10 days"
+// - Step 03: rewritten to Mangomint app / text check-in
+// - Step 04 ("Meet your esthetician"): DELETED
+// - Step 05 ("Your service"): rewritten for treatment room / privacy
 const steps = [
   {
     number: "01",
@@ -34,35 +42,34 @@ const steps = [
   {
     number: "02",
     title: "Prepare at home",
-    description: "Let hair grow to at least ¼ inch (3–4 weeks from shaving). Gently exfoliate 24 hours before. Avoid lotion on the day of your appointment.",
+    description: "Let hair grow to at least ¼ inch (10 days from shaving). Gently exfoliate 24 hours before. Avoid lotion on the day of your appointment.",
   },
   {
     number: "03",
     title: "Arrive & check in",
-    description: "Arrive a few minutes early. You'll be greeted warmly and taken to your private treatment room. No waiting in a crowded lobby.",
+    description: "Arrive and check in via the Mangomint app — or check in via the text message you received. Have a seat and your waxer will be with you as soon as she can.",
   },
   {
     number: "04",
-    title: "Meet your esthetician",
-    description: "Your esthetician will introduce themselves, ask about your goals, and walk you through the service before beginning. Questions are always welcome.",
+    title: "Your service",
+    description: "Welcome to the treatment room! Your esthetician will guide you through preparation and answer any questions. For intimate services you will have privacy while you get ready.",
   },
   {
     number: "05",
-    title: "Your service",
-    description: "Relax in your private room. Your esthetician works efficiently and professionally. Most services take 15–45 minutes depending on the area.",
-  },
-  {
-    number: "06",
     title: "Aftercare & rebooking",
     description: "You'll receive aftercare guidance before you leave. We recommend booking your next appointment before you go to maintain your results.",
   },
 ];
 
+// Reassurances updated per waxdoc.docx:
+// - "Completely private": added laughter/music line
+// - "Efficient & respectful": "stay on schedule" → "do our best to stay on time"
+// - New "Sinks in every treatment room" card added
 const reassurances = [
   {
     icon: Shield,
     title: "Completely private",
-    description: "Every service takes place in a private room. Just you and your esthetician — no open-floor settings, no shared spaces.",
+    description: "Every service takes place in a private room — just you and your esthetician. Expect some laughter and loud music.",
   },
   {
     icon: Heart,
@@ -75,9 +82,9 @@ const reassurances = [
     description: "We use fresh, single-use applicators for every client. No double-dipping. Rooms are fully sanitized between every appointment.",
   },
   {
-    icon: Leaf,
-    title: "Eco-friendly products",
-    description: "We use premium, eco-conscious wax products that are gentle on skin and kind to the environment.",
+    icon: Droplets,
+    title: "Sinks in every treatment room",
+    description: "We believe proper washing up should never happen behind the scenes. Your esthetician will wash her hands in front of you before every service.",
   },
   {
     icon: Star,
@@ -87,7 +94,12 @@ const reassurances = [
   {
     icon: Clock,
     title: "Efficient & respectful",
-    description: "We respect your time. Services are performed efficiently without rushing, and we always stay on schedule.",
+    description: "We respect your time. Services are performed efficiently without rushing, and we will do our best to stay on time.",
+  },
+  {
+    icon: Leaf,
+    title: "Eco-friendly products",
+    description: "We use premium, eco-conscious wax products that are gentle on skin and kind to the environment.",
   },
 ];
 
@@ -96,7 +108,7 @@ export default function FirstVisit() {
     document.title = "First Visit Guide — What to Expect at Wax Me Too | Utah Waxing";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
     if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Everything first-time clients need to know before their first waxing appointment at Wax Me Too. What to expect, how to prepare, what to wear, and what happens during your first Brazilian wax.";
+    m.content = "Everything first-time clients need to know before their first waxing appointment at Wax Me Too. What to expect, how to prepare, and what happens during your first Brazilian wax.";
     return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
   }, []);
 
@@ -106,9 +118,7 @@ export default function FirstVisit() {
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(/manus-storage/first-visit_66b40ffa.jpg)`,
-          }}
+          style={{ backgroundImage: `url(/manus-storage/first-visit_66b40ffa.jpg)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B2F2A]/85 to-[#3B2F2A]/50" />
         <div className="container relative z-10 py-24">
@@ -118,8 +128,8 @@ export default function FirstVisit() {
               <h1 className="font-display text-5xl md:text-6xl text-white leading-tight mb-5">
                 Your first visit,<br /><em className="text-[#CFA7A0]">made easy.</em>
               </h1>
-              <p className="text-[#D8C6B6] font-body text-lg leading-relaxed mb-8">
-                We know first-time waxing can feel intimidating. This guide covers everything you need to know — from preparation to aftercare — so you can walk in feeling confident.
+              <p className="text-[#D8C6B6] font-body text-lg leading-relaxed mb-4">
+                First-time nerves waxing is completely normal, and our estheticians are experienced at making new clients feel at ease. You'll be taken to a private room, given a moment to prepare, and your esthetician will walk you through every step before they begin. Most clients are surprised by how manageable the experience is — especially when they return regularly.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">
@@ -146,6 +156,29 @@ export default function FirstVisit() {
         </div>
       </div>
 
+      {/* ── IMPORTANT: Accutane / AHA / Retinol Warning Box ── */}
+      <div className="bg-[#FFF8F0] border-l-4 border-[#CFA7A0] py-0">
+        <div className="container py-6">
+          <div
+            className="rounded-xl p-5 flex gap-4 items-start"
+            style={{ background: "rgba(207,167,160,0.12)", border: "1.5px solid #CFA7A0" }}
+          >
+            <AlertTriangle size={24} className="shrink-0 mt-0.5" style={{ color: "#CFA7A0" }} />
+            <div>
+              <p className="font-display text-lg text-[#3B2F2A] font-semibold mb-1">
+                Important: Accutane, AHA &amp; Retinol Users — Please Read
+              </p>
+              <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">
+                <strong>If you are currently taking Accutane (isotretinoin), you cannot receive waxing services.</strong> Accutane thins the skin and waxing can cause serious skin lifting and damage. You must be off Accutane for at least 6 months before waxing.
+              </p>
+              <p className="text-sm text-[#4A4A4A] font-body leading-relaxed mt-2">
+                <strong>If you use AHA (alpha hydroxy acid) or retinol products</strong> — including prescription tretinoin, Retin-A, or over-the-counter retinol serums — you cannot be waxed on areas where those products are applied. These ingredients thin and sensitize the skin, making it prone to tearing during waxing. Please discontinue use on the area for at least 5–7 days before your appointment and let your esthetician know.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Reassurance Grid */}
       <section className="py-20 bg-[#F7F3EE]">
         <div className="container">
@@ -165,8 +198,11 @@ export default function FirstVisit() {
             {reassurances.map((item, i) => (
               <FadeUp key={item.title} delay={i * 70}>
                 <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <div className="w-10 h-10 rounded-full bg-[#CFA7A0]/15 flex items-center justify-center mb-4">
-                    <item.icon size={20} className="text-[#CFA7A0]" />
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
+                    style={{ background: i % 2 === 0 ? "rgba(207,167,160,0.15)" : "rgba(168,179,170,0.15)" }}
+                  >
+                    <item.icon size={20} style={{ color: i % 2 === 0 ? "#CFA7A0" : "#A8B3AA" }} />
                   </div>
                   <h3 className="font-display text-xl text-[#3B2F2A] mb-2">{item.title}</h3>
                   <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">{item.description}</p>
@@ -228,14 +264,14 @@ export default function FirstVisit() {
                 Here's the good news: it gets significantly easier with each visit. As you wax regularly, hair grows back finer and sparser, which means less discomfort over time. Many regular clients barely notice it at all.
               </p>
               <p className="text-[#4A4A4A] font-body leading-relaxed font-500">
-                Tips to minimize discomfort: take ibuprofen 30 minutes before, avoid caffeine on the day of your appointment, and breathe steadily during the service.
+                Tip: taking ibuprofen 30 minutes before your appointment can help take the edge off.
               </p>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* What to Wear / Prepare */}
+      {/* Before / After care quick lists */}
       <section className="py-20 bg-[#F7F3EE]">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -244,13 +280,10 @@ export default function FirstVisit() {
                 <h3 className="font-display text-2xl text-[#3B2F2A] mb-5">Before your appointment</h3>
                 <ul className="space-y-3">
                   {[
-                    "Let hair grow to at least ¼ inch (3–4 weeks from shaving)",
+                    "Let hair grow to at least ¼ inch (10 days from shaving)",
                     "Gently exfoliate the area 24–48 hours before",
                     "Avoid applying lotion or oils on the day of your appointment",
-                    "Wear loose, comfortable clothing — especially for bikini/leg services",
                     "Take ibuprofen 30 minutes before if you're concerned about discomfort",
-                    "Avoid scheduling during your menstrual cycle if possible (increased sensitivity)",
-                    "Stay hydrated and avoid caffeine on the day of your appointment",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-body text-[#4A4A4A]">
                       <CheckCircle size={16} className="text-[#CFA7A0] shrink-0 mt-0.5" />
@@ -273,13 +306,10 @@ export default function FirstVisit() {
                 <h3 className="font-display text-2xl text-[#3B2F2A] mb-5">After your appointment</h3>
                 <ul className="space-y-3">
                   {[
-                    "Avoid hot showers, saunas, and steam rooms for 24–48 hours",
-                    "Skip tight clothing for 24 hours to prevent irritation",
+                    "Don't swim in Utah Lake for 24–48 hours (or any hot tub/pool)",
                     "Avoid sun exposure on waxed areas for 24 hours",
-                    "Hold off on exercise that causes heavy sweating for 24 hours",
                     "Apply a gentle, fragrance-free moisturizer",
-                    "After 48 hours: begin gentle exfoliation 2–3 times per week",
-                    "Exfoliate regularly to prevent ingrown hairs",
+                    "After 48 hours: begin gentle exfoliation 2–3 times per week to prevent ingrown hairs",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-body text-[#4A4A4A]">
                       <CheckCircle size={16} className="text-[#A8B3AA] shrink-0 mt-0.5" />
@@ -297,6 +327,28 @@ export default function FirstVisit() {
               </div>
             </FadeUp>
           </div>
+        </div>
+      </section>
+
+      {/* Military & Student Discount Callout */}
+      <section className="py-10 bg-white">
+        <div className="container">
+          <FadeUp>
+            <div
+              className="rounded-2xl p-6 flex gap-4 items-start max-w-2xl mx-auto"
+              style={{ background: "rgba(168,179,170,0.15)", border: "1.5px solid #A8B3AA" }}
+            >
+              <BadgePercent size={28} className="shrink-0 mt-0.5" style={{ color: "#A8B3AA" }} />
+              <div>
+                <p className="font-display text-xl text-[#3B2F2A] font-semibold mb-1">
+                  Military &amp; Student Discounts
+                </p>
+                <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">
+                  We proudly offer discounts for active-duty military, veterans, and students. Just mention it when you book or at check-in — we appreciate your service and your studies.
+                </p>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 

@@ -45,9 +45,28 @@ export default function Header() {
   return (
     <>
       {/* Promo Banner */}
-      <div className="promo-banner" style={{ background: "linear-gradient(90deg, #CFA7A0 0%, #A8B3AA 100%)", color: "#3B2F2A" }}>
-        <span>✦ New Clients: Enjoy 20% off your first service — </span>
-        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="font-semibold underline">Book Now</a>
+      <div
+        className="promo-banner flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2 text-center"
+        style={{ background: "linear-gradient(90deg, #CFA7A0 0%, #A8B3AA 100%)", color: "#3B2F2A" }}
+      >
+        <span className="text-sm font-medium">✦ New Clients: Enjoy 20% off your first service</span>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-xs font-bold px-3 py-1 rounded-full transition-opacity hover:opacity-80"
+          style={{ background: "#3B2F2A", color: "#F7F3EE" }}
+        >
+          Book Now
+        </a>
+        <span className="text-sm opacity-60 hidden sm:inline">·</span>
+        <a
+          href="/win-a-free-wax"
+          className="inline-flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full transition-opacity hover:opacity-80"
+          style={{ background: "rgba(59,47,42,0.15)", color: "#3B2F2A", border: "1px solid rgba(59,47,42,0.25)" }}
+        >
+          🎁 Win a Free Wax
+        </a>
       </div>
 
       {/* Main Header */}
