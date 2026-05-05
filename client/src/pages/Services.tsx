@@ -1,16 +1,18 @@
 /*
  * WAX ME TOO — Services & Pricing Page
- * Category hierarchy (from pricingforwaxmetoo2.xlsx):
+ * Category hierarchy (from wax_me_too_pricing_sheet_june_1_2026.xlsx):
  *   Most Popular
  *   Full Body Waxing Services for the Ladies
  *     Bikini Area | Combos | Arms & Legs | Face Waxing | Other Body Parts | Tinting
  *   Full Body Waxing Services for Men
  *     Face Waxing | Combos | Below the Belt | Arms & Legs | Neck to Stomach
+ *
+ * Dual pricing: current price shown alongside June 1 2026 guaranteed price.
  */
 
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { ChevronDown, ChevronUp, Star, ArrowRight } from "lucide-react";
+import { ChevronDown, ChevronUp, Star, ArrowRight, CalendarClock } from "lucide-react";
 import Layout from "@/components/Layout";
 import {
   mostPopular,
@@ -21,18 +23,24 @@ import {
   BOOKING_URL,
 } from "@/lib/data";
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function fmt(n: number) {
+  return `$${n % 1 === 0 ? n : n.toFixed(2)}`;
+}
+
+// ─── PriceRow — shows current price and upcoming June 1 price side-by-side ───
 
 function PriceRow({ item }: { item: ServiceItem }) {
-  const displayPrice =
-    item.price % 1 === 0 ? `$${item.price}` : `$${item.price.toFixed(2)}`;
+  const hasPriceChange = item.priceNew !== undefined && item.priceNew !== item.price;
 
   return (
     <div
-      className="flex items-center justify-between py-3 border-b last:border-0"
+      className="flex items-start justify-between py-3 border-b last:border-0 gap-3"
       style={{ borderColor: "#F0EAE4" }}
     >
-      <div className="flex-1 min-w-0 pr-4">
+      {/* Left: name + badges + meta */}
+      <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-sm font-medium" style={{ color: "#3B2F2A" }}>
             {item.name}
@@ -40,31 +48,107 @@ function PriceRow({ item }: { item: ServiceItem }) {
           {item.popular && (
             <span
               className="text-xs px-2 py-0.5 rounded-full"
-              style={{ background: "rgba(207,167,160,0.2)", color: "#CFA7A0" }}
+              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0" }}
             >
               Popular
             </span>
           )}
         </div>
-        {item.note && (
-          <p className="text-xs mt-0.5" style={{ color: "#A8B3AA" }}>
-            {item.note}
-          </p>
-        )}
         {item.duration && (
           <p className="text-xs mt-0.5" style={{ color: "#A8B3AA" }}>
             {item.duration}
           </p>
         )}
+        {item.note && (
+          <p className="text-xs mt-0.5 italic" style={{ color: "#A8B3AA" }}>
+            {item.note}
+          </p>
+        )}
       </div>
-      <div className="flex-shrink-0 text-right">
-        <p className="text-lg font-bold" style={{ color: "#3B2F2A" }}>
-          {displayPrice}
-        </p>
+
+      {/* Right: price columns */}
+      <div className="flex-shrink-0 flex items-center gap-3 text-right">
+        {/* Current price */}
+        <div className="text-right">
+          <p className="text-xs font-medium mb-0.5" style={{ color: "#A8B3AA" }}>
+            Current
+          </p>
+          <p
+            className="text-base font-bold"
+            style={{ color: hasPriceChange ? "#9CA3AF" : "#3B2F2A", textDecoration: hasPriceChange ? "line-through" : "none" }}
+          >
+            {fmt(item.price)}
+          </p>
+        </div>
+
+        {/* June 1 price — only shown when there is a change */}
+        {hasPriceChange && (
+          <>
+            <div
+              className="w-px self-stretch"
+              style={{ background: "#E8DDD6" }}
+            />
+            <div className="text-right">
+              <p className="text-xs font-semibold mb-0.5" style={{ color: "#CFA7A0" }}>
+                June 1
+              </p>
+              <p className="text-base font-bold" style={{ color: "#3B2F2A" }}>
+                {fmt(item.priceNew!)}
+              </p>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 }
+
+// ─── Column header row ────────────────────────────────────────────────────────
+
+function PriceHeader({ hasChanges }: { hasChanges: boolean }) {
+  return (
+    <div
+      className="flex items-center justify-between px-5 py-3 border-b"
+      style={{ borderColor: "#F0EAE4", background: "#FBF8F5" }}
+    >
+      <span className="text-xs font-semibold" style={{ color: "#A8B3AA" }}>
+        Service
+      </span>
+      {hasChanges ? (
+        <div className="flex items-center gap-3">
+          <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>
+            Current
+          </span>
+          <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>
+            June 1
+          </span>
+        </div>
+      ) : (
+        <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>
+          Price
+        </span>
+      )}
+    </div>
+  );
+}
+
+// ─── June 1 notice banner ─────────────────────────────────────────────────────
+
+function June1Banner() {
+  return (
+    <div
+      className="flex items-start gap-3 rounded-xl px-4 py-3 mb-6"
+      style={{ background: "rgba(207,167,160,0.12)", border: "1px solid rgba(207,167,160,0.35)" }}
+    >
+      <CalendarClock size={18} className="flex-shrink-0 mt-0.5" style={{ color: "#CFA7A0" }} />
+      <p className="text-sm leading-relaxed" style={{ color: "#3B2F2A" }}>
+        <strong>Pricing update effective June 1, 2026.</strong> Where two prices are shown, the left column is today's price and the right column (in rose) is the new guaranteed price across all Wax Me Too locations.
+      </p>
+    </div>
+  );
+}
+
+// ─── SubCategoryPanel ─────────────────────────────────────────────────────────
 
 function SubCategoryPanel({
   sub,
@@ -74,6 +158,9 @@ function SubCategoryPanel({
   defaultOpen?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const hasChanges = sub.items.some(
+    (it) => it.priceNew !== undefined && it.priceNew !== it.price
+  );
 
   return (
     <div
@@ -85,21 +172,34 @@ function SubCategoryPanel({
         className="w-full flex items-center justify-between px-5 py-4 text-left transition-colors"
         style={{ background: open ? "#FBF8F5" : "#ffffff" }}
       >
-        <span
-          className="font-serif text-base font-semibold"
-          style={{ color: "#3B2F2A" }}
-        >
-          {sub.title}
-        </span>
+        <div className="flex items-center gap-2">
+          <span
+            className="font-serif text-base font-semibold"
+            style={{ color: "#3B2F2A" }}
+          >
+            {sub.title}
+          </span>
+          {hasChanges && (
+            <span
+              className="text-xs px-2 py-0.5 rounded-full font-medium"
+              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0" }}
+            >
+              Price update
+            </span>
+          )}
+        </div>
         <span style={{ color: "#A8B3AA" }}>
           {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </span>
       </button>
       {open && (
-        <div className="px-5 pb-2 pt-1" style={{ background: "#ffffff" }}>
-          {sub.items.map((item) => (
-            <PriceRow key={item.id} item={item} />
-          ))}
+        <div style={{ background: "#ffffff" }}>
+          <PriceHeader hasChanges={hasChanges} />
+          <div className="px-5 pb-2 pt-1">
+            {sub.items.map((item) => (
+              <PriceRow key={item.id} item={item} />
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -138,6 +238,13 @@ type Tab = "popular" | "ladies" | "men";
 export default function Services() {
   const [activeTab, setActiveTab] = useState<Tab>("popular");
 
+  // Handle ?tab= query param for deep-linking
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get("tab");
+    if (t === "ladies" || t === "men" || t === "popular") setActiveTab(t);
+  }, []);
+
   // Dynamic SEO
   useEffect(() => {
     document.title =
@@ -162,6 +269,11 @@ export default function Services() {
     { id: "ladies", label: "For the Ladies" },
     { id: "men", label: "For the Men" },
   ];
+
+  // Determine if the popular list has any price changes
+  const popularHasChanges = mostPopular.some(
+    (it) => it.priceNew !== undefined && it.priceNew !== it.price
+  );
 
   return (
     <Layout>
@@ -235,33 +347,18 @@ export default function Services() {
                   Most Popular Services
                 </h2>
               </div>
-              <p className="text-sm mb-6" style={{ color: "#4A4A4A" }}>
+              <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
                 Our most-requested services — loved by clients across all our
                 Utah locations.
               </p>
+
+              <June1Banner />
 
               <div
                 className="rounded-2xl overflow-hidden mb-8"
                 style={{ border: "1px solid #E8DDD6", background: "#ffffff" }}
               >
-                {/* Column header */}
-                <div
-                  className="flex items-center justify-between px-5 py-3 border-b"
-                  style={{ borderColor: "#F0EAE4", background: "#FBF8F5" }}
-                >
-                  <span
-                    className="text-xs font-semibold"
-                    style={{ color: "#A8B3AA" }}
-                  >
-                    Service
-                  </span>
-                  <span
-                    className="text-xs font-semibold"
-                    style={{ color: "#CFA7A0" }}
-                  >
-                    Price
-                  </span>
-                </div>
+                <PriceHeader hasChanges={popularHasChanges} />
                 <div className="px-5 pb-2 pt-1">
                   {mostPopular.map((item) => (
                     <PriceRow key={item.id} item={item} />
@@ -283,9 +380,11 @@ export default function Services() {
               >
                 Full Body Waxing Services — For the Ladies
               </h2>
-              <p className="text-sm mb-6" style={{ color: "#4A4A4A" }}>
+              <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
                 Click any category to expand or collapse its price list.
               </p>
+
+              <June1Banner />
 
               {ladiesSections.map((sub, i) => (
                 <SubCategoryPanel
@@ -309,10 +408,12 @@ export default function Services() {
               >
                 Full Body Waxing Services — For the Men
               </h2>
-              <p className="text-sm mb-6" style={{ color: "#4A4A4A" }}>
+              <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
                 Clean, professional waxing services designed for men. No
                 judgment, just results.
               </p>
+
+              <June1Banner />
 
               {menSections.map((sub, i) => (
                 <SubCategoryPanel

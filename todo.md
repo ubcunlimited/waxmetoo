@@ -123,3 +123,12 @@
 ## Phase 9 — Homepage Services Grid Layout
 
 - [x] Change homepage services grid from lg:grid-cols-3 to lg:grid-cols-2
+
+## Phase 10 — Dual Pricing (Current + June 1 2026)
+
+- [x] Parse wax_me_too_pricing_sheet_june_1_2026.xlsx and extract all current and new prices
+- [x] Update data.ts ServiceItem type to include priceNew (June 1) alongside price (current)
+- [x] Update all service items in data.ts with correct current and June 1 prices
+- [x] Redesign Services page PriceRow to show current price and upcoming price side-by-side
+- [x] Add June 1 notice banner and "Price update" badge on subcategory panels with changes
+- [x] Update homepage mostPopular cards to reflect current pricing (synced via data.ts)
