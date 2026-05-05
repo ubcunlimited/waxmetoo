@@ -164,3 +164,10 @@
 
 - [x] Reorder menSections in data.ts: Below the Belt, Combos, Arms & Legs, Neck to Stomach, Face Waxing
 - [x] Services page accordion: single-open behavior (opening one closes the others), first item open by default
+
+## Phase 13 — Copy Edits (FAQ, Hair Length, Clothing)
+
+- [x] Update "Is it embarrassing to get a Brazilian wax?" FAQ answer with body-positive language
+- [x] Add period note "On your period? No problem. We will work around the string." to FAQ
+- [x] Fix hair length copy to: 1/4 inch long, 10 days after shaving, 3-4 weeks after waxing
+- [x] Remove all "loose/comfortable clothing" references site-wide (BlogPost.tsx x9, data.ts, FAQ auto-synced)

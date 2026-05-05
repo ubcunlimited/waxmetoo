@@ -137,7 +137,7 @@ function getArticleContent(slug: string): string {
 
         <h2>Timing Is Everything: When to Book Before Your Trip</h2>
         <p>The golden rule of pre-vacation waxing: <strong>book your appointment 2–3 days before you leave.</strong> This gives your skin time to settle after the service while ensuring you arrive at your destination completely hair-free. That means up to 2–3 weeks of smooth skin without a single thought about shaving.</p>
-        <p>One important note: your hair needs to be at least <strong>¼ inch long</strong> (roughly 10 days of growth from your last shave) for the wax to grip effectively. If you've been shaving regularly, stop at least 10 days before your appointment.</p>
+        <p>One important note: your hair needs to be at least <strong>¼ inch long</strong> (roughly 10 days of growth after shaving, or 3 to 4 weeks after waxing) for the wax to grip effectively. If you've been shaving regularly, stop at least 10 days before your appointment.</p>
         <p>If you're a first-time waxer, we strongly recommend <strong>not waiting until the day before your vacation</strong> to try it out. While most clients experience only mild, temporary redness, a small number may have a skin reaction. Give yourself time to see how your skin responds before your trip.</p>
 
         <h2>Questions to Ask Before Choosing a Waxing Salon</h2>
@@ -519,7 +519,6 @@ function getArticleContent(slug: string): string {
         <ul>
           <li><strong>Exfoliate regularly.</strong> Begin gentle exfoliation 48 hours after your wax and continue 2–3 times per week. This removes dead skin cells that can trap growing hairs.</li>
           <li><strong>Moisturize daily.</strong> Hydrated skin allows hair to grow through the surface more easily. Use a fragrance-free, non-comedogenic lotion on waxed areas daily.</li>
-          <li><strong>Wear loose clothing.</strong> For 24–48 hours after your wax, avoid tight clothing that creates friction against the skin.</li>
           <li><strong>Avoid heat.</strong> Skip hot showers, saunas, and intense exercise for 24 hours after waxing — heat can cause inflammation that contributes to ingrown hairs.</li>
           <li><strong>Don't shave between appointments.</strong> Shaving between waxing sessions disrupts the hair growth cycle and increases the risk of ingrown hairs.</li>
         </ul>
@@ -539,7 +538,6 @@ function getArticleContent(slug: string): string {
           <li><strong>Sun exposure.</strong> Waxed skin is more susceptible to UV damage. If you must be in the sun, apply SPF 30 or higher to waxed areas.</li>
           <li><strong>Swimming pools or hot tubs.</strong> Chlorine and bacteria in pools can irritate open follicles.</li>
           <li><strong>Intense exercise.</strong> Sweat and friction can cause irritation and increase the risk of ingrown hairs.</li>
-          <li><strong>Tight clothing.</strong> Wear loose, breathable fabrics to minimize friction against the skin.</li>
           <li><strong>Fragranced products.</strong> Avoid perfumes, scented lotions, and deodorants on waxed areas for 24 hours.</li>
         </ul>
         <h2>Days 2–7: Building Your Aftercare Routine</h2>
@@ -558,7 +556,7 @@ function getArticleContent(slug: string): string {
         <p>The secret to a great waxing experience starts before you ever walk through our door. Proper preparation ensures the wax can grip hair effectively, reduces discomfort, and minimizes the risk of irritation. Here's <strong>Wax Me Too's</strong> complete before-care guide.</p>
 <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&auto=format&fit=crop" alt="Waxing before care preparation guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Hair Length: The Most Important Factor</h2>
-        <p>For waxing to work effectively, your hair needs to be at least <strong>¼ inch long</strong> — roughly the length of a grain of rice. This is approximately 10–14 days of growth from your last shave. If your hair is too short, the wax won't be able to grip it properly, leading to incomplete results.</p>
+        <p>For waxing to work effectively, your hair needs to be at least <strong>¼ inch long</strong> — roughly the length of a grain of rice. This is approximately 10 days of growth after shaving, or 3 to 4 weeks after waxing. If your hair is too short, the wax won't be able to grip it properly, leading to incomplete results.</p>
         <p>If your hair is longer than ½ inch, don't worry — we can trim it for you. Just let your esthetician know when you arrive.</p>
         <h2>The Week Before Your Appointment</h2>
         <ul>
@@ -570,7 +568,6 @@ function getArticleContent(slug: string): string {
         <h2>The Day of Your Appointment</h2>
         <ul>
           <li><strong>Shower and cleanse the area.</strong> Come to your appointment with clean skin, free of lotions, oils, and perfumes.</li>
-          <li><strong>Wear comfortable, loose clothing.</strong> Especially for bikini and leg waxing — tight clothing can irritate freshly waxed skin.</li>
           <li><strong>Avoid caffeine and alcohol.</strong> Both can increase skin sensitivity.</li>
           <li><strong>Take an OTC pain reliever if desired.</strong> Some clients find that taking ibuprofen 30–45 minutes before their appointment reduces discomfort.</li>
         </ul>
@@ -585,7 +582,7 @@ function getArticleContent(slug: string): string {
         <h2>Does waxing hurt?</h2>
         <p>This is the question we hear most often. The honest answer: it depends. Most clients describe the sensation as a quick, sharp sting that passes immediately. The bikini and Brazilian areas tend to be more sensitive than legs or arms. The good news: it gets significantly easier with each subsequent visit. By your third or fourth wax, most clients find the experience quite manageable.</p>
         <h2>How long does hair need to be?</h2>
-        <p>Hair should be at least ¼ inch long — roughly 10–14 days of growth from your last shave. If you're not sure, it's always better to let it grow a bit longer rather than coming in too soon.</p>
+        <p>Hair should be at least ¼ inch long — roughly 10 days of growth after shaving, or 3 to 4 weeks after waxing. If you're not sure, it's always better to let it grow a bit longer rather than coming in too soon.</p>
         <h2>How long do results last?</h2>
         <p>Most clients enjoy smooth skin for 3–6 weeks after a professional wax. Results vary based on individual hair growth rates and the area waxed.</p>
         <h2>Can I wax if I'm pregnant?</h2>
@@ -676,14 +673,13 @@ function getArticleContent(slug: string): string {
           <li>Stop shaving at least 10 days before your appointment to allow ¼ inch of growth</li>
           <li>Exfoliate gently 24–48 hours before your appointment</li>
           <li>Shower and cleanse the area on the day of your appointment</li>
-          <li>Wear loose, comfortable underwear and clothing</li>
         </ul>
         <h2>Step 3: Arriving at the Studio</h2>
         <p>When you arrive, you'll be greeted by your esthetician, who will briefly review the service with you and answer any questions. You'll be shown to a private treatment room where you'll have complete privacy to prepare.</p>
         <h2>Step 4: The Service</h2>
         <p>Your esthetician will cleanse the area, apply warm wax in small sections, and remove it quickly and efficiently. The sensation is a quick, sharp sting that passes immediately — most clients are surprised by how manageable it is. Your esthetician will work methodically to ensure complete coverage and clean results.</p>
         <h2>Step 5: Aftercare</h2>
-        <p>After your service, your esthetician will apply a soothing aftercare product and review aftercare instructions with you. Plan to wear loose clothing for the rest of the day and avoid heat, exercise, and sun exposure for 24 hours.</p>
+        <p>After your service, your esthetician will apply a soothing aftercare product and review aftercare instructions with you. Avoid heat, sun exposure, and pools for 24 hours.</p>
         <p>Ready to book? Visit waxmetoo.com. New clients receive 20% off their first service.</p>
       `;
 
@@ -781,7 +777,6 @@ function getArticleContent(slug: string): string {
         <h2>Aftercare Tips for Underarms</h2>
         <ul>
           <li>Avoid deodorant for 24 hours after your wax</li>
-          <li>Wear loose, breathable clothing to minimize friction</li>
           <li>Avoid heat and sweating for 24 hours</li>
           <li>Begin gentle exfoliation 48 hours after your wax to prevent ingrown hairs</li>
         </ul>
@@ -836,11 +831,11 @@ function getArticleContent(slug: string): string {
         <h2>Q: How much does it cost?</h2>
         <p>A: Our Brazilian wax is $65. New clients receive 20% off their first service — see our full pricing at waxmetoo.com.</p>
         <h2>Q: How long does hair need to be?</h2>
-        <p>A: At least ¼ inch — roughly 10–14 days of growth from your last shave. If you're not sure, err on the side of more growth rather than less.</p>
+        <p>A: At least ¼ inch — roughly 10 days of growth after shaving, or 3 to 4 weeks after waxing. If you're not sure, err on the side of more growth rather than less.</p>
         <h2>Q: Will it hurt?</h2>
         <p>A: There's a sensation — a quick, sharp sting that passes immediately. Most clients are surprised by how manageable it is. It gets significantly easier with each subsequent visit.</p>
         <h2>Q: How do I prepare?</h2>
-        <p>A: Stop shaving at least 10 days before your appointment. Exfoliate gently 24–48 hours before. Shower and cleanse the area on the day of your appointment. Wear loose, comfortable clothing.</p>
+        <p>A: Stop shaving at least 10 days before your appointment. Exfoliate gently 24–48 hours before. Shower and cleanse the area on the day of your appointment.</p>
         <p>Ready to book? Visit waxmetoo.com. New clients receive 20% off their first service.</p>
       `;
 
@@ -896,14 +891,12 @@ function getArticleContent(slug: string): string {
         <h2>Day of Appointment</h2>
         <ul>
           <li>Shower and cleanse the area</li>
-          <li>Wear loose, comfortable clothing</li>
           <li>Avoid caffeine and alcohol</li>
         </ul>
         <h2>After Your Appointment</h2>
         <ul>
           <li>Avoid sun exposure for 24 hours</li>
           <li>Skip the pool or hot tub for 24 hours</li>
-          <li>Wear loose clothing to minimize friction</li>
           <li>Pack SPF for freshly waxed areas</li>
         </ul>
         <h2>Book Your Pre-Vacation Wax</h2>

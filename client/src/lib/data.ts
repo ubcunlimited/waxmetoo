@@ -348,13 +348,13 @@ export const faqs = [
     id: 2,
     category: "First Visit",
     question: "Is it embarrassing to get a Brazilian wax?",
-    answer: "Not at all — and we hear this question often. Our estheticians are licensed professionals who perform these services every day. To them, it's simply their craft. You'll be treated with complete respect and discretion. Many clients who were nervous before their first visit become regulars because of how comfortable the experience actually is.",
+    answer: "Not at all — and we hear this question often. We welcome all bodies — all shapes, sizes, and stages — and our goal is always the same: to make you feel comfortable, confident, and completely at ease. Our estheticians are licensed professionals who perform these services every day. To them, it's simply their craft. You'll be treated with complete respect and discretion. On your period? No problem. We will work around the string. Many clients who were nervous before their first visit become regulars because of how comfortable the experience actually is.",
   },
   {
     id: 3,
     category: "Preparation",
     question: "How long does my hair need to be?",
-    answer: "Hair should be at least ¼ inch long — roughly 3–4 weeks of growth after shaving. If it's too short, the wax won't grip properly. If it's longer than ½ inch, we may trim it before waxing. When in doubt, let it grow a bit more than you think you need.",
+    answer: "Hair should be at least ¼ inch long — roughly 10 days of growth after shaving, or 3 to 4 weeks after waxing. If it's too short, the wax won't grip properly. If it's longer than ½ inch, we may trim it before waxing. When in doubt, let it grow a bit more than you think you need.",
   },
   {
     id: 4,
