@@ -4,6 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { giveawayRouter } from "./giveawayRouter";
 import { blogRouter } from "./blogRouter";
+import { mascotRouter } from "./mascotRouter";
 
 export const appRouter = router({
   system: systemRouter,
@@ -19,6 +20,7 @@ export const appRouter = router({
   }),
   giveaway: giveawayRouter,
   blog: blogRouter,
+  mascot: mascotRouter,
 });
 
 export type AppRouter = typeof appRouter;

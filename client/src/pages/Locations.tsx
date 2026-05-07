@@ -177,12 +177,7 @@ export default function Locations() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ bottom: "300px", right: "-20px" }}
-        transform="scaleX(-1) rotate(-5deg)"
-        size={82}
-        baseOpacity={0.52}
-      />
+    <MascotEasterEgg pageId="locations" />
     </Layout>
   );
 }

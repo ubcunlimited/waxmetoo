@@ -22,6 +22,10 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ScrollToTop from "./components/ScrollToTop";
 
+// Mascot hunt pages
+import Register from "./pages/Register";
+import MascotHunt from "./pages/MascotHunt";
+
 // Giveaway pages
 import WinAFreeWax from "./pages/WinAFreeWax";
 import GiveawayConfirm from "./pages/GiveawayConfirm";
@@ -53,6 +57,9 @@ function Router() {
       {/* Giveaway */}
       <Route path="/win-a-free-wax" component={WinAFreeWax} />
       <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
+      {/* Mascot Hunt */}
+      <Route path="/register" component={Register} />
+      <Route path="/mascot-hunt" component={MascotHunt} />
       {/* Admin */}
       <Route path="/admin" component={AdminHub} />
       <Route path="/admin/giveaway" component={AdminGiveaway} />

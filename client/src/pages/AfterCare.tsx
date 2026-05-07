@@ -147,12 +147,7 @@ export default function AfterCare() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ bottom: "200px", right: "-22px" }}
-        transform="scaleX(-1) rotate(9deg)"
-        size={82}
-        baseOpacity={0.5}
-      />
+    <MascotEasterEgg pageId="aftercare" />
     </Layout>
   );
 }

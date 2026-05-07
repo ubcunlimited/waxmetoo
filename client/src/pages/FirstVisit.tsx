@@ -377,12 +377,7 @@ export default function FirstVisit() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ bottom: "260px", left: "-16px" }}
-        transform="rotate(6deg)"
-        size={82}
-        baseOpacity={0.5}
-      />
+    <MascotEasterEgg pageId="firstvisit" />
     </Layout>
   );
 }

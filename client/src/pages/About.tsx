@@ -239,12 +239,7 @@ export default function About() {
           </div>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ top: "48%", right: "-24px" }}
-        transform="scaleX(-1) rotate(11deg)"
-        size={82}
-        baseOpacity={0.46}
-      />
+    <MascotEasterEgg pageId="about" />
     </Layout>
   );
 }

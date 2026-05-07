@@ -194,3 +194,17 @@
 - [x] Update MascotEasterEgg component: 82px tall (≈2 inches), 45-52% opacity, low saturation filter
 - [x] Each page gets a unique hiding spot — partially off left/right edge, rotated, flipped on 11 pages
 - [x] Add subtle CSS: low opacity + saturate(0.7) filter until hovered, then full color + scale(1.18)
+
+## Phase 17 — Mascot Hunt Redesign + Reward System
+
+- [x] Generate mascot pose variants: laying down (horizontal), peeking sideways, sitting/crouching
+- [x] Remove fixed positioning — mascot scrolls with page content (absolute/relative in page flow)
+- [x] Mascot peeks behind real elements: card edges, section dividers, footer, image overlaps
+- [x] Vary size per page: 100-280px wide, larger than previous 82px
+- [x] DB schema: mascot_finds table (userId, pageId, foundAt) + mascot_rewards table (discountCode)
+- [x] tRPC: recordFind, getProgress procedures (mascotRouter.ts)
+- [x] Account registration page (/register) — explains hunt, links to Manus OAuth sign-in
+- [x] Mascot hunt progress tracker (/mascot-hunt) — grid of 11 pages, found/not-found status, progress bar
+- [x] Reward: one-time 15% discount code generated when all 11 mascots found (one per user)
+- [x] Discount code stored in mascot_rewards table, shown with copy button, cannot be claimed twice
+- [x] Vitest tests: 7 mascot tests — all passing (41 total tests across 5 test files)

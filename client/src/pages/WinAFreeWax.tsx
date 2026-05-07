@@ -389,12 +389,7 @@ export default function WinAFreeWax() {
           Book Now <ChevronRight size={16} />
         </a>
       </section>
-    <MascotEasterEgg
-        style={{ bottom: "220px", left: "-16px" }}
-        transform="rotate(-9deg)"
-        size={82}
-        baseOpacity={0.5}
-      />
+    <MascotEasterEgg pageId="winafreewax" />
     </Layout>
   );
 }

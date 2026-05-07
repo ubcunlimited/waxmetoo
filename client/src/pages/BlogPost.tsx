@@ -1515,12 +1515,7 @@ export default function BlogPost() {
         </div>
       </section>
 
-    <MascotEasterEgg
-        style={{ top: "55%", right: "-24px" }}
-        transform="scaleX(-1) rotate(-10deg)"
-        size={82}
-        baseOpacity={0.45}
-      />
+    <MascotEasterEgg pageId="blogpost" />
     </Layout>
   );
 }

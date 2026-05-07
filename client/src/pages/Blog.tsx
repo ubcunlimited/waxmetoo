@@ -517,12 +517,7 @@ export default function Blog() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ bottom: "180px", left: "-22px" }}
-        transform="rotate(12deg)"
-        size={82}
-        baseOpacity={0.52}
-      />
+    <MascotEasterEgg pageId="blog" />
     </Layout>
   );
 }

@@ -166,12 +166,7 @@ export default function FAQ() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ top: "60%", left: "-18px" }}
-        transform="rotate(-7deg)"
-        size={82}
-        baseOpacity={0.48}
-      />
+    <MascotEasterEgg pageId="faq" />
     </Layout>
   );
 }

@@ -118,12 +118,7 @@ export default function BeforeCare() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg
-        style={{ top: "42%", left: "-20px" }}
-        transform="rotate(-14deg)"
-        size={82}
-        baseOpacity={0.47}
-      />
+    <MascotEasterEgg pageId="beforecare" />
     </Layout>
   );
 }

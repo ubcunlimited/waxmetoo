@@ -1,99 +1,170 @@
 /**
  * MascotEasterEgg — Where's Waldo-style hidden mascot
  *
- * Renders a tiny (~80px tall, ≈2 inches at 96dpi) version of the Wax Me Too
- * mascot at a fixed position on the page. Each page passes its own unique
- * position and transform so she appears in a different sneaky spot every time.
- *
- * She is intentionally low-opacity and partially clipped to make her hard to
- * spot — the game is to find her on every page!
- *
- * On hover the opacity rises and a tooltip appears: "You found me! 💅"
+ * Renders INLINE (scrolls with the page, not fixed).
+ * Each pageId gets a unique pose, size, and offset so she peeks
+ * behind real elements. Click her to record the find.
  */
 
 import { useState } from "react";
+import { trpc } from "@/lib/trpc";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { Link } from "wouter";
 
-interface MascotEasterEggProps {
-  /** Inline style position — e.g. { bottom: "120px", right: "18px" } */
-  style?: React.CSSProperties;
-  /** Optional CSS transform to rotate / flip / skew her */
-  transform?: string;
-  /** Height in px (default 82 ≈ 2 inches at 96dpi). Width auto-scales 2:3 ratio. */
-  size?: number;
-  /** z-index (default 40) */
-  zIndex?: number;
-  /** Base opacity when not hovered (default 0.55 — hard to spot but not invisible) */
-  baseOpacity?: number;
-}
+// ─── Asset URLs ──────────────────────────────────────────────────────────────
+const STANDING = "/manus-storage/mascot_v2_transparent_835c9480.png";
+const LAYING   = "/manus-storage/mascot_laying_t_4ff4c059.png";
+const PEEKING  = "/manus-storage/mascot_peeking_t_26e6c284.png";
+const SITTING  = "/manus-storage/mascot_sitting_t_2696d23e.png";
 
-const MASCOT_URL = "/manus-storage/mascot_v2_transparent_835c9480.png";
+// ─── Per-page config ──────────────────────────────────────────────────────────
+type Cfg = {
+  src: string;
+  /** Width of the rendered image in px */
+  w: number;
+  /** Absolute offset applied to the container (which has position:relative on parent) */
+  offset: React.CSSProperties;
+  /** Base opacity */
+  opacity: number;
+};
 
-export default function MascotEasterEgg({
-  style,
-  transform,
-  size = 82,
-  zIndex = 40,
-  baseOpacity = 0.55,
-}: MascotEasterEggProps) {
+const CONFIGS: Record<string, Cfg> = {
+  home: {
+    src: LAYING, w: 280,
+    offset: { position: "absolute", bottom: -30, right: "6%", zIndex: 5 },
+    opacity: 0.52,
+  },
+  services: {
+    src: PEEKING, w: 150,
+    offset: { position: "absolute", top: 10, left: -35, zIndex: 5 },
+    opacity: 0.48,
+  },
+  blog: {
+    src: SITTING, w: 140,
+    offset: { position: "absolute", bottom: -50, right: "4%", zIndex: 5 },
+    opacity: 0.50,
+  },
+  blogpost: {
+    src: PEEKING, w: 130,
+    offset: { position: "absolute", top: 20, right: -28, zIndex: 5, transform: "scaleX(-1)" },
+    opacity: 0.48,
+  },
+  firstvisit: {
+    src: STANDING, w: 120,
+    offset: { position: "absolute", bottom: -90, left: "2%", zIndex: 5 },
+    opacity: 0.46,
+  },
+  beforecare: {
+    src: LAYING, w: 220,
+    offset: { position: "absolute", bottom: -10, left: "10%", zIndex: 5, transform: "scaleX(-1)" },
+    opacity: 0.50,
+  },
+  aftercare: {
+    src: SITTING, w: 130,
+    offset: { position: "absolute", top: -45, right: "1%", zIndex: 5 },
+    opacity: 0.48,
+  },
+  faq: {
+    src: PEEKING, w: 140,
+    offset: { position: "absolute", top: 50, right: -30, zIndex: 5 },
+    opacity: 0.50,
+  },
+  locations: {
+    src: LAYING, w: 240,
+    offset: { position: "absolute", bottom: -20, left: "50%", zIndex: 5, transform: "translateX(-50%)" },
+    opacity: 0.52,
+  },
+  about: {
+    src: SITTING, w: 125,
+    offset: { position: "absolute", top: -35, left: "0%", zIndex: 5 },
+    opacity: 0.47,
+  },
+  winafreewax: {
+    src: STANDING, w: 115,
+    offset: { position: "absolute", bottom: -95, right: "0%", zIndex: 5 },
+    opacity: 0.48,
+  },
+};
+
+// ─── Component ────────────────────────────────────────────────────────────────
+export default function MascotEasterEgg({ pageId }: { pageId: string }) {
+  const cfg = CONFIGS[pageId];
+  const { isAuthenticated } = useAuth();
   const [found, setFound] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const recordFind = trpc.mascot.recordFind.useMutation({
+    onSuccess: () => setFound(true),
+  });
+
+  if (!cfg) return null;
+
+  const handleClick = () => {
+    if (!found) {
+      if (isAuthenticated) recordFind.mutate({ pageId });
+      setFound(true);
+    }
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3800);
+  };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        zIndex,
-        cursor: "pointer",
-        userSelect: "none",
-        lineHeight: 0,
-        ...style,
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={() => setFound(true)}
-    >
-      {/* Tooltip — only appears on hover */}
-      {hovered && (
-        <div
-          style={{
+    /* Zero-height wrapper so the mascot doesn't push layout */
+    <div style={{ position: "relative", height: 0, overflow: "visible", pointerEvents: "none" }}>
+      <div style={{ ...cfg.offset, pointerEvents: "auto", lineHeight: 0 }}>
+        {/* Pop-up bubble */}
+        {showPopup && (
+          <div style={{
             position: "absolute",
-            bottom: "calc(100% + 6px)",
+            bottom: "calc(100% + 8px)",
             left: "50%",
             transform: "translateX(-50%)",
             background: "#3B2F2A",
-            color: "#FBF8F5",
-            fontSize: "11px",
+            color: "#fff",
+            borderRadius: 14,
+            padding: "9px 16px",
+            fontSize: 13,
             fontWeight: 700,
             whiteSpace: "nowrap",
-            padding: "4px 12px",
-            borderRadius: "20px",
-            pointerEvents: "none",
-            boxShadow: "0 2px 8px rgba(59,47,42,0.22)",
-            zIndex: zIndex + 1,
-          }}
-        >
-          {found ? "Found me again! 💅" : "You found me! 💅"}
-        </div>
-      )}
+            zIndex: 9999,
+            boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
+            pointerEvents: "auto",
+          }}>
+            {isAuthenticated
+              ? <>💅 Found! <Link href="/mascot-hunt" style={{ color: "#CFA7A0", textDecoration: "underline" }}>See progress</Link></>
+              : <><Link href="/register" style={{ color: "#CFA7A0", textDecoration: "underline" }}>Create account</Link> to track finds!</>
+            }
+          </div>
+        )}
 
-      {/* Mascot image */}
-      <img
-        src={MASCOT_URL}
-        alt="Hidden mascot — you found her!"
-        width={Math.round(size * (2 / 3))}
-        height={size}
-        style={{
-          display: "block",
-          transform: hovered
-            ? (transform ? `${transform} scale(1.18)` : "scale(1.18)")
-            : (transform ?? "none"),
-          opacity: hovered ? 1 : baseOpacity,
-          filter: hovered
-            ? "drop-shadow(0 2px 6px rgba(59,47,42,0.35))"
-            : "drop-shadow(0 1px 2px rgba(59,47,42,0.12)) saturate(0.7)",
-          transition: "transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease",
-        }}
-      />
+        {/* Mascot image */}
+        <img
+          src={cfg.src}
+          alt="Hidden mascot"
+          width={cfg.w}
+          onClick={handleClick}
+          style={{
+            cursor: "pointer",
+            display: "block",
+            opacity: cfg.opacity,
+            filter: `saturate(0.65) drop-shadow(0 1px 3px rgba(59,47,42,0.15))`,
+            transition: "opacity 0.22s, filter 0.22s, transform 0.2s",
+            /* preserve any transform from offset (e.g. scaleX(-1)) */
+            transform: (cfg.offset.transform as string) ?? "none",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.opacity = "1";
+            e.currentTarget.style.filter = "saturate(1) drop-shadow(0 3px 8px rgba(59,47,42,0.3))";
+            const base = (cfg.offset.transform as string) ?? "";
+            e.currentTarget.style.transform = base ? `${base} scale(1.12)` : "scale(1.12)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.opacity = String(cfg.opacity);
+            e.currentTarget.style.filter = "saturate(0.65) drop-shadow(0 1px 3px rgba(59,47,42,0.15))";
+            e.currentTarget.style.transform = (cfg.offset.transform as string) ?? "none";
+          }}
+        />
+      </div>
     </div>
   );
 }
