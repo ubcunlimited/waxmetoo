@@ -602,8 +602,10 @@ export default function Home() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "160px", left: "14px" }}
-        size={44}
+        style={{ bottom: "340px", left: "-18px" }}
+        transform="rotate(-8deg)"
+        size={82}
+        baseOpacity={0.5}
       />
     </Layout>
   );

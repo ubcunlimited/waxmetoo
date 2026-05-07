@@ -167,9 +167,10 @@ export default function FAQ() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ top: "400px", right: "8px" }}
-        size={46}
-      transform="scaleX(-1) rotate(-8deg)"
+        style={{ top: "60%", left: "-18px" }}
+        transform="rotate(-7deg)"
+        size={82}
+        baseOpacity={0.48}
       />
     </Layout>
   );

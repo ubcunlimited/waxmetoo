@@ -390,9 +390,10 @@ export default function WinAFreeWax() {
         </a>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "200px", left: "12px" }}
-        size={46}
-      transform="rotate(-10deg)"
+        style={{ bottom: "220px", left: "-16px" }}
+        transform="rotate(-9deg)"
+        size={82}
+        baseOpacity={0.5}
       />
     </Layout>
   );

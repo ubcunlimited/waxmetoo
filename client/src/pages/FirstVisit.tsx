@@ -378,9 +378,10 @@ export default function FirstVisit() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "280px", right: "12px" }}
-        size={46}
-      transform="rotate(-12deg)"
+        style={{ bottom: "260px", left: "-16px" }}
+        transform="rotate(6deg)"
+        size={82}
+        baseOpacity={0.5}
       />
     </Layout>
   );

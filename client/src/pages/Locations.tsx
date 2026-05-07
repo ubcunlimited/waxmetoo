@@ -178,9 +178,10 @@ export default function Locations() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "240px", right: "10px" }}
-        size={42}
-      transform="rotate(10deg)"
+        style={{ bottom: "300px", right: "-20px" }}
+        transform="scaleX(-1) rotate(-5deg)"
+        size={82}
+        baseOpacity={0.52}
       />
     </Layout>
   );

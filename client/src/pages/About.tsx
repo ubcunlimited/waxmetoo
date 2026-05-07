@@ -240,9 +240,10 @@ export default function About() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ top: "560px", left: "8px" }}
-        size={44}
-      transform="scaleX(-1) rotate(-5deg)"
+        style={{ top: "48%", right: "-24px" }}
+        transform="scaleX(-1) rotate(11deg)"
+        size={82}
+        baseOpacity={0.46}
       />
     </Layout>
   );

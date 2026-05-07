@@ -119,9 +119,10 @@ export default function BeforeCare() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ top: "520px", left: "10px" }}
-        size={42}
-      transform="scaleX(-1)"
+        style={{ top: "42%", left: "-20px" }}
+        transform="rotate(-14deg)"
+        size={82}
+        baseOpacity={0.47}
       />
     </Layout>
   );

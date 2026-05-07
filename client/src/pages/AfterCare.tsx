@@ -148,9 +148,10 @@ export default function AfterCare() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "180px", left: "16px" }}
-        size={44}
-      transform="rotate(6deg)"
+        style={{ bottom: "200px", right: "-22px" }}
+        transform="scaleX(-1) rotate(9deg)"
+        size={82}
+        baseOpacity={0.5}
       />
     </Layout>
   );

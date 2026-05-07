@@ -518,9 +518,10 @@ export default function Blog() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ bottom: "220px", left: "8px" }}
-        size={42}
-      transform="rotate(-8deg)"
+        style={{ bottom: "180px", left: "-22px" }}
+        transform="rotate(12deg)"
+        size={82}
+        baseOpacity={0.52}
       />
     </Layout>
   );

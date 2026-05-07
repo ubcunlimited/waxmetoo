@@ -489,9 +489,10 @@ export default function Services() {
         </div>
       </section>
     <MascotEasterEgg
-        style={{ top: "340px", right: "10px" }}
-        size={46}
-      transform="scaleX(-1)"
+        style={{ top: "38%", right: "-20px" }}
+        transform="scaleX(-1) rotate(5deg)"
+        size={82}
+        baseOpacity={0.48}
       />
     </Layout>
   );

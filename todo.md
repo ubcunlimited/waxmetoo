@@ -186,3 +186,11 @@
 - [x] Create MascotEasterEgg component with unique position/pose per page
 - [x] Add hidden mascot to: Home, Services, Blog, BlogPost, FirstVisit, BeforeCare, AfterCare, FAQ, Locations, About, WinAFreeWax (11 pages)
 - [x] Add a fun tooltip on hover: "You found me! 💅"
+
+## Phase 16 — Mascot Redesign (Where's Waldo Game)
+
+- [x] Regenerate mascot: full-body, mini skirt knee dress, bare feet, red updo, transparent background
+- [x] Upload new mascot PNG to webdev static assets (/manus-storage/mascot_v2_transparent_835c9480.png)
+- [x] Update MascotEasterEgg component: 82px tall (≈2 inches), 45-52% opacity, low saturation filter
+- [x] Each page gets a unique hiding spot — partially off left/right edge, rotated, flipped on 11 pages
+- [x] Add subtle CSS: low opacity + saturate(0.7) filter until hovered, then full color + scale(1.18)
