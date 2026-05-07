@@ -174,10 +174,10 @@
 
 ## Phase 14 — Auto-Hide Current Pricing After June 1, 2026
 
-- [ ] Add isPastJune1 constant (new Date() >= new Date('2026-06-01')) to Services.tsx
-- [ ] Conditionally hide the current price column and "Price update" badge when isPastJune1 is true
-- [ ] Rename the "From June 1" label to just the price when isPastJune1 is true (no more "upcoming" framing)
-- [ ] Remove the June 1 notice banner when isPastJune1 is true
+- [x] Add isPastJune1 constant (new Date() >= new Date('2026-06-01')) to Services.tsx
+- [x] Conditionally hide the current price column and "Price update" badge when isPastJune1 is true
+- [x] Rename the "From June 1" label to just the price when isPastJune1 is true (no more "upcoming" framing)
+- [x] Remove the June 1 notice banner when isPastJune1 is true
 
 ## Phase 15 — Mascot Easter Egg (Where's Waldo)
 

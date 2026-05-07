@@ -30,10 +30,19 @@ function fmt(n: number) {
   return `$${n % 1 === 0 ? n : n.toFixed(2)}`;
 }
 
+/**
+ * After June 1 2026 the old prices are retired — hide the "current" column
+ * and the notice banner automatically so no manual update is needed.
+ */
+const JUNE_1_2026 = new Date("2026-06-01T00:00:00");
+const isPastJune1 = new Date() >= JUNE_1_2026;
+
 // ─── PriceRow — shows current price and upcoming June 1 price side-by-side ───
 
 function PriceRow({ item }: { item: ServiceItem }) {
-  const hasPriceChange = item.priceNew !== undefined && item.priceNew !== item.price;
+  const hasPriceChange = !isPastJune1 && item.priceNew !== undefined && item.priceNew !== item.price;
+  // After June 1, display the new price (if set) as the single price
+  const displayPrice = isPastJune1 && item.priceNew !== undefined ? item.priceNew : item.price;
 
   return (
     <div
@@ -115,7 +124,7 @@ function PriceHeader({ hasChanges }: { hasChanges: boolean }) {
       <span className="text-xs font-semibold" style={{ color: "#A8B3AA" }}>
         Service
       </span>
-      {hasChanges ? (
+      {!isPastJune1 && hasChanges ? (
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>
             Current
@@ -136,6 +145,7 @@ function PriceHeader({ hasChanges }: { hasChanges: boolean }) {
 // ─── June 1 notice banner ─────────────────────────────────────────────────────
 
 function June1Banner() {
+  if (isPastJune1) return null;
   return (
     <div
       className="flex items-start gap-3 rounded-xl px-4 py-3 mb-6"
@@ -179,7 +189,7 @@ function SubCategoryPanel({
           >
             {sub.title}
           </span>
-          {hasChanges && (
+          {!isPastJune1 && hasChanges && (
             <span
               className="text-xs px-2 py-0.5 rounded-full font-medium"
               style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0" }}
