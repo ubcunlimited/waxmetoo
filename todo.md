@@ -252,3 +252,8 @@
 - [x] App.tsx: /admin/mascot route registered
 - [x] MascotHunt.tsx: unfound grid cards show "Hover for a hint…" placeholder; tooltip bubble appears on hover with hint text and arrow
 - [x] 47 tests passing (5 test files), 0 TypeScript errors
+
+## Phase 21 — Footer Mascot Hunt Promo
+
+- [x] Footer: add Mascot Hunt promo strip above bottom bar (🔍 headline, 20% discount callout, "Start the Hunt →" pill button)
+- [x] Footer Quick Links: added "Win a Free Wax" link
