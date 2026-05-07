@@ -34,6 +34,7 @@ import AdminGiveaway from "./pages/AdminGiveaway";
 import AdminBlog from "./pages/AdminBlog";
 import AdminSubscribers from "./pages/AdminSubscribers";
 import AdminHub from "./pages/AdminHub";
+import AdminMascot from "./pages/AdminMascot";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/admin/giveaway" component={AdminGiveaway} />
       <Route path="/admin/blog" component={AdminBlog} />
       <Route path="/admin/subscribers" component={AdminSubscribers} />
+      <Route path="/admin/mascot" component={AdminMascot} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -238,3 +238,17 @@
 - [x] CongratsModal: Full Name / Phone / Email form → calls claimReward → shows discount code with copy button
 - [x] MascotHunt page: reward card shown when already claimed (code + copy button + earned date)
 - [x] 47 tests passing (5 test files), 0 TypeScript errors
+
+## Phase 20 — Admin Mascot Page, Reward Email & Hint Tooltips
+
+- [x] server/mascotEmail.ts: branded HTML reward confirmation email (matches site style)
+- [x] server/mascotRouter.ts: claimReward now sends confirmation email to submitted address on first claim
+- [x] server/mascotDb.ts: getAllRewards() — joins mascot_rewards with users table, ordered newest first
+- [x] server/mascotDb.ts: getMascotStats() — returns totalClaimed and totalFinds counts
+- [x] server/mascotRouter.ts: adminGetRewards procedure (admin-only)
+- [x] server/mascotRouter.ts: adminStats procedure (admin-only)
+- [x] AdminMascot.tsx: /admin/mascot page with stats cards, searchable table, CSV export, staff redemption guide
+- [x] AdminHub.tsx: Mascot Hunt Claims card added with live stats
+- [x] App.tsx: /admin/mascot route registered
+- [x] MascotHunt.tsx: unfound grid cards show "Hover for a hint…" placeholder; tooltip bubble appears on hover with hint text and arrow
+- [x] 47 tests passing (5 test files), 0 TypeScript errors

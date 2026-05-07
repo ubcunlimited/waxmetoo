@@ -427,10 +427,10 @@ export default function MascotHunt() {
               return (
                 <div
                   key={pageId}
-                  className={`relative bg-white rounded-xl border p-4 transition-all duration-200 ${
+                  className={`group relative bg-white rounded-xl border p-4 transition-all duration-200 ${
                     isFound
                       ? "border-[#A8B3AA] shadow-sm"
-                      : "border-[#E8E0D8] hover:border-[#D4A0A0] hover:shadow-sm"
+                      : "border-[#E8E0D8] hover:border-[#D4A0A0] hover:shadow-md cursor-pointer"
                   }`}
                 >
                   <div className="flex items-start justify-between mb-2">
@@ -442,12 +442,51 @@ export default function MascotHunt() {
                       {isFound ? "✓ Found" : "Not yet found"}
                     </span>
                     {isFound && <span className="text-lg">💅</span>}
+                    {!isFound && (
+                      <span className="text-xs text-[#C0A898] opacity-0 group-hover:opacity-100 transition-opacity duration-150 select-none">
+                        💡 hint
+                      </span>
+                    )}
                   </div>
                   <h3 className="font-semibold text-[#3D1A1A] text-sm mb-1">{info.label}</h3>
-                  {isFound
-                    ? <p className="text-xs text-[#A8B3AA]">You found her here!</p>
-                    : <p className="text-xs text-[#9A8A7A] italic">{info.hint}</p>
-                  }
+
+                  {isFound ? (
+                    <p className="text-xs text-[#A8B3AA]">You found her here!</p>
+                  ) : (
+                    /* Hint: hidden by default, revealed on hover */
+                    <div className="relative h-5 overflow-visible">
+                      {/* Placeholder so the card keeps its height */}
+                      <p className="text-xs text-[#C8BEB4] italic select-none">
+                        Hover for a hint…
+                      </p>
+                      {/* Tooltip bubble */}
+                      <div
+                        className="
+                          absolute bottom-full left-0 mb-2 z-20
+                          bg-[#3D1A1A] text-white text-xs rounded-lg px-3 py-2
+                          shadow-lg pointer-events-none whitespace-nowrap
+                          opacity-0 group-hover:opacity-100
+                          translate-y-1 group-hover:translate-y-0
+                          transition-all duration-200
+                        "
+                        style={{ maxWidth: "220px", whiteSpace: "normal" }}
+                      >
+                        <span className="text-[#CFA7A0] mr-1">🔍</span>
+                        {info.hint}
+                        {/* Arrow */}
+                        <span
+                          className="absolute top-full left-4"
+                          style={{
+                            width: 0, height: 0,
+                            borderLeft: "6px solid transparent",
+                            borderRight: "6px solid transparent",
+                            borderTop: "6px solid #3D1A1A",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   <Link href={info.path} className="absolute inset-0 rounded-xl" aria-label={`Go to ${info.label}`} />
                 </div>
               );

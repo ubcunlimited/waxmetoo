@@ -149,6 +149,59 @@ export async function claimReward(
 }
 
 /**
+ * Get all claimed rewards (admin use).
+ * Returns rewards joined with user info, ordered newest first.
+ */
+export async function getAllRewards(): Promise<
+  Array<MascotReward & { userName: string | null; userEmail: string | null }>
+> {
+  const db = await getDb();
+  if (!db) return [];
+
+  // Import users table for the join
+  const { users } = await import("../drizzle/schema");
+  const { desc } = await import("drizzle-orm");
+
+  const rows = await db
+    .select({
+      id: mascotRewards.id,
+      userId: mascotRewards.userId,
+      discountCode: mascotRewards.discountCode,
+      discountPercent: mascotRewards.discountPercent,
+      fullName: mascotRewards.fullName,
+      phone: mascotRewards.phone,
+      email: mascotRewards.email,
+      claimedAt: mascotRewards.claimedAt,
+      usedAt: mascotRewards.usedAt,
+      userName: users.name,
+      userEmail: users.email,
+    })
+    .from(mascotRewards)
+    .leftJoin(users, eq(mascotRewards.userId, users.id))
+    .orderBy(desc(mascotRewards.claimedAt));
+
+  return rows as Array<MascotReward & { userName: string | null; userEmail: string | null }>;
+}
+
+/**
+ * Get total number of claimed rewards and total finds (admin stats).
+ */
+export async function getMascotStats(): Promise<{ totalClaimed: number; totalFinds: number }> {
+  const db = await getDb();
+  if (!db) return { totalClaimed: 0, totalFinds: 0 };
+
+  const { count } = await import("drizzle-orm");
+
+  const [rewardCount] = await db.select({ value: count() }).from(mascotRewards);
+  const [findCount] = await db.select({ value: count() }).from(mascotFinds);
+
+  return {
+    totalClaimed: Number(rewardCount?.value ?? 0),
+    totalFinds: Number(findCount?.value ?? 0),
+  };
+}
+
+/**
  * Get progress without auto-creating a reward.
  * Used by getProgress to show current state without side effects.
  */

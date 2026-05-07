@@ -7,9 +7,19 @@ import {
   getOrCreateReward,
   resetUserFinds,
   claimReward,
+  getAllRewards,
+  getMascotStats,
   ALL_PAGE_IDS,
   TOTAL_MASCOTS,
 } from "./mascotDb";
+import { sendMascotRewardEmail } from "./mascotEmail";
+
+/** Admin-only guard reused across procedures */
+function requireAdmin(role: string) {
+  if (role !== "admin") {
+    throw new TRPCError({ code: "FORBIDDEN", message: "Admin access required." });
+  }
+}
 
 export const mascotRouter = router({
   /**
@@ -73,6 +83,7 @@ export const mascotRouter = router({
    * Claim the 20% discount reward after finding all 11 mascots.
    * Requires full name, phone, and email.
    * One-time only — subsequent calls return the existing reward.
+   * Sends a confirmation email on first claim.
    */
   claimReward: protectedProcedure
     .input(
@@ -106,6 +117,18 @@ export const mascotRouter = router({
         });
       }
 
+      // Send confirmation email only on first claim
+      if (isNew) {
+        sendMascotRewardEmail({
+          to: input.email,
+          fullName: input.fullName,
+          discountCode: reward.discountCode,
+          discountPercent: reward.discountPercent,
+        }).catch((err) =>
+          console.error("[MascotRouter] Failed to send reward email:", err)
+        );
+      }
+
       return {
         isNew,
         discountCode: reward.discountCode,
@@ -121,5 +144,36 @@ export const mascotRouter = router({
   resetHunt: protectedProcedure.mutation(async ({ ctx }) => {
     await resetUserFinds(ctx.user.id);
     return { success: true };
+  }),
+
+  // ─── Admin procedures ────────────────────────────────────────────────────────
+
+  /**
+   * Get all claimed rewards with user details (admin only).
+   */
+  adminGetRewards: protectedProcedure.query(async ({ ctx }) => {
+    requireAdmin(ctx.user.role);
+    const rewards = await getAllRewards();
+    return rewards.map((r) => ({
+      id: r.id,
+      userId: r.userId,
+      discountCode: r.discountCode,
+      discountPercent: r.discountPercent,
+      fullName: r.fullName,
+      phone: r.phone,
+      email: r.email,
+      claimedAt: r.claimedAt,
+      usedAt: r.usedAt,
+      userName: r.userName,
+      userEmail: r.userEmail,
+    }));
+  }),
+
+  /**
+   * Get aggregate mascot hunt stats (admin only).
+   */
+  adminStats: protectedProcedure.query(async ({ ctx }) => {
+    requireAdmin(ctx.user.role);
+    return getMascotStats();
   }),
 });

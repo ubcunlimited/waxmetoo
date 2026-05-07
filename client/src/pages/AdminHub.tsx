@@ -43,6 +43,10 @@ export default function AdminHub() {
   }
   if (!user || user.role !== "admin") return null;
 
+  const { data: mascotStats } = trpc.mascot.adminStats.useQuery(
+    undefined, { enabled: !!user && user.role === "admin" }
+  );
+
   const sections = [
     {
       href: "/admin/giveaway",
@@ -78,6 +82,18 @@ export default function AdminHub() {
       stats: [
         { label: "Total Subscribers", value: subscriberStats?.total ?? "—" },
         { label: "Confirmed", value: subscriberStats?.confirmed ?? "—" },
+      ],
+    },
+    {
+      href: "/admin/mascot",
+      icon: <Trophy size={24} style={{ color: "#A8B3AA" }} />,
+      iconBg: "rgba(168,179,170,0.12)",
+      accentColor: "#A8B3AA",
+      title: "Mascot Hunt Claims",
+      description: "View all users who found all 11 mascots and claimed their 20% discount code.",
+      stats: [
+        { label: "Rewards Claimed", value: mascotStats?.totalClaimed ?? "—" },
+        { label: "Total Finds", value: mascotStats?.totalFinds ?? "—" },
       ],
     },
   ];
