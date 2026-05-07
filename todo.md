@@ -218,3 +218,23 @@
 - [x] Celebration bubble appears on click ("💅 Found her! See progress" or "Create account to track finds!")
 - [x] Bubble fades out gracefully before mascot disappears
 - [x] 0 TypeScript errors, 42 tests passing
+
+## Phase 19 — Mascot Hunt Enhancements
+
+- [x] DB schema: mascot_rewards updated with fullName/phone/email columns, discount changed to 20%
+- [x] DB migration pushed (drizzle/0004_loving_dragon_lord.sql)
+- [x] server/mascotDb.ts: resetUserFinds() helper deletes all finds for a user
+- [x] server/mascotDb.ts: claimReward() stores contact info (fullName, phone, email) alongside discount code
+- [x] server/mascotDb.ts: getOrCreateReward() no longer auto-creates reward (explicit claim required)
+- [x] server/mascotRouter.ts: resetHunt procedure — clears DB finds for authenticated user
+- [x] server/mascotRouter.ts: claimReward procedure — validates all 11 found, stores contact info, returns 20% code
+- [x] MascotHuntBadge component — fixed bottom-left floating pill showing "🔍 X / 11" live
+- [x] Badge updates instantly via custom "mascot-found" event dispatched from MascotEasterEgg
+- [x] Badge hidden on /mascot-hunt page, invisible until first mascot found
+- [x] Badge turns green with 🎉 and "Claim reward!" text when all 11 found
+- [x] App.tsx: MascotHuntBadge mounted globally
+- [x] MascotHunt page: Reset Hunt button with confirmation step (clears DB + localStorage)
+- [x] MascotHunt page: Congratulations modal auto-opens on completion (if not yet claimed)
+- [x] CongratsModal: Full Name / Phone / Email form → calls claimReward → shows discount code with copy button
+- [x] MascotHunt page: reward card shown when already claimed (code + copy button + earned date)
+- [x] 47 tests passing (5 test files), 0 TypeScript errors

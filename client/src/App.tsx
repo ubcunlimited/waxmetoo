@@ -25,6 +25,7 @@ import ScrollToTop from "./components/ScrollToTop";
 // Mascot hunt pages
 import Register from "./pages/Register";
 import MascotHunt from "./pages/MascotHunt";
+import MascotHuntBadge from "./components/MascotHuntBadge";
 
 // Giveaway pages
 import WinAFreeWax from "./pages/WinAFreeWax";
@@ -79,6 +80,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <MascotHuntBadge />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

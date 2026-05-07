@@ -12,6 +12,8 @@ vi.mock("./mascotDb", () => ({
   getUserFinds: vi.fn(),
   hasAllFinds: vi.fn(),
   getOrCreateReward: vi.fn(),
+  resetUserFinds: vi.fn(),
+  claimReward: vi.fn(),
 }));
 
 import * as mascotDb from "./mascotDb";
@@ -93,7 +95,7 @@ describe("mascot.recordFind", () => {
         id: 1,
         userId: 42,
         discountCode: "WAXHUNT-42-ABCDEF",
-        discountPercent: 15,
+        discountPercent: 20,
         claimedAt: new Date(),
         usedAt: null,
       },
@@ -108,8 +110,6 @@ describe("mascot.recordFind", () => {
     expect(result.found).toHaveLength(11);
     expect(result.reward).not.toBeNull();
     expect(result.reward?.discountCode).toBe("WAXHUNT-42-ABCDEF");
-    expect(result.reward?.discountPercent).toBe(15);
-    expect(result.rewardIsNew).toBe(true);
   });
 
   it("rejects invalid pageIds not in the official list", async () => {
@@ -160,7 +160,7 @@ describe("mascot.getProgress", () => {
         id: 2,
         userId: 42,
         discountCode: "WAXHUNT-42-XYZ123",
-        discountPercent: 15,
+        discountPercent: 20,
         claimedAt: new Date(),
         usedAt: null,
       },
@@ -179,5 +179,71 @@ describe("mascot.getProgress", () => {
     const ctx = createAnonContext();
     const caller = appRouter.createCaller(ctx);
     await expect(caller.mascot.getProgress()).rejects.toThrow();
+  });
+});
+
+describe("mascot.resetHunt", () => {
+  beforeEach(() => { vi.clearAllMocks(); });
+
+  it("clears all finds for the authenticated user", async () => {
+    vi.mocked(mascotDb.resetUserFinds).mockResolvedValue(undefined);
+    const ctx = createAuthContext();
+    const caller = appRouter.createCaller(ctx);
+    const result = await caller.mascot.resetHunt();
+    expect(result.success).toBe(true);
+    expect(mascotDb.resetUserFinds).toHaveBeenCalledWith(42);
+  });
+
+  it("throws UNAUTHORIZED for unauthenticated users", async () => {
+    const ctx = createAnonContext();
+    const caller = appRouter.createCaller(ctx);
+    await expect(caller.mascot.resetHunt()).rejects.toThrow();
+  });
+});
+
+describe("mascot.claimReward", () => {
+  beforeEach(() => { vi.clearAllMocks(); });
+
+  it("issues a new reward when all mascots found", async () => {
+    const allPages = [
+      "home", "services", "blog", "blogpost", "firstvisit",
+      "beforecare", "aftercare", "faq", "locations", "about", "winafreewax",
+    ];
+    vi.mocked(mascotDb.getUserFinds).mockResolvedValue(allPages);
+    vi.mocked(mascotDb.claimReward).mockResolvedValue({
+      reward: {
+        id: 1, userId: 42,
+        discountCode: "WAXHUNT-42-CLAIM1",
+        discountPercent: 20,
+        fullName: "Jane Smith", phone: "8015550100", email: "jane@example.com",
+        claimedAt: new Date(), usedAt: null,
+      },
+      isNew: true,
+    });
+    const ctx = createAuthContext();
+    const caller = appRouter.createCaller(ctx);
+    const result = await caller.mascot.claimReward({
+      fullName: "Jane Smith", phone: "8015550100", email: "jane@example.com",
+    });
+    expect(result.isNew).toBe(true);
+    expect(result.discountCode).toBe("WAXHUNT-42-CLAIM1");
+    expect(result.discountPercent).toBe(20);
+  });
+
+  it("throws BAD_REQUEST when not all mascots found", async () => {
+    vi.mocked(mascotDb.getUserFinds).mockResolvedValue(["home", "services"]);
+    const ctx = createAuthContext();
+    const caller = appRouter.createCaller(ctx);
+    await expect(
+      caller.mascot.claimReward({ fullName: "Jane", phone: "8015550100", email: "j@example.com" })
+    ).rejects.toThrow();
+  });
+
+  it("throws UNAUTHORIZED for unauthenticated users", async () => {
+    const ctx = createAnonContext();
+    const caller = appRouter.createCaller(ctx);
+    await expect(
+      caller.mascot.claimReward({ fullName: "Jane", phone: "8015550100", email: "j@example.com" })
+    ).rejects.toThrow();
   });
 });

@@ -32,16 +32,13 @@ export async function recordMascotFind(
   const db = await getDb();
   if (!db) return false;
 
-  // Check if already found
   const existing = await db
     .select()
     .from(mascotFinds)
     .where(and(eq(mascotFinds.userId, userId), eq(mascotFinds.pageId, pageId)))
     .limit(1);
 
-  if (existing.length > 0) {
-    return false; // already recorded
-  }
+  if (existing.length > 0) return false;
 
   await db.insert(mascotFinds).values({ userId, pageId });
   return true;
@@ -67,9 +64,17 @@ export async function getUserFinds(userId: number): Promise<string[]> {
  */
 export async function hasAllFinds(userId: number): Promise<boolean> {
   const found = await getUserFinds(userId);
-  // Only count finds that are in the official list
   const validFinds = found.filter((p) => (ALL_PAGE_IDS as readonly string[]).includes(p));
   return validFinds.length >= TOTAL_MASCOTS;
+}
+
+/**
+ * Delete all mascot finds for a user (reset hunt).
+ */
+export async function resetUserFinds(userId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+  await db.delete(mascotFinds).where(eq(mascotFinds.userId, userId));
 }
 
 /**
@@ -101,26 +106,25 @@ function generateDiscountCode(userId: number): string {
 }
 
 /**
- * If the user has found all mascots and doesn't have a reward yet,
- * create and return a new reward. Otherwise return the existing reward (or null).
+ * Claim the reward for a user who has found all mascots.
+ * Stores their contact info (fullName, phone, email) alongside the discount code.
+ * Returns the reward row, or null if not eligible or already claimed.
+ * isNew = true means the reward was just created now.
  */
-export async function getOrCreateReward(
-  userId: number
+export async function claimReward(
+  userId: number,
+  contact: { fullName: string; phone: string; email: string }
 ): Promise<{ reward: MascotReward | null; isNew: boolean }> {
   const db = await getDb();
   if (!db) return { reward: null, isNew: false };
 
-  // Check if reward already exists
+  // If already claimed, return existing reward
   const existing = await getReward(userId);
-  if (existing) {
-    return { reward: existing, isNew: false };
-  }
+  if (existing) return { reward: existing, isNew: false };
 
-  // Check if all mascots found
+  // Must have found all mascots
   const allFound = await hasAllFinds(userId);
-  if (!allFound) {
-    return { reward: null, isNew: false };
-  }
+  if (!allFound) return { reward: null, isNew: false };
 
   // Generate unique code (retry up to 5 times on collision)
   let code = generateDiscountCode(userId);
@@ -129,15 +133,33 @@ export async function getOrCreateReward(
       await db.insert(mascotRewards).values({
         userId,
         discountCode: code,
-        discountPercent: 15,
+        discountPercent: 20,
+        fullName: contact.fullName,
+        phone: contact.phone,
+        email: contact.email,
       });
       const newReward = await getReward(userId);
       return { reward: newReward, isNew: true };
     } catch {
-      // Likely a unique constraint violation — regenerate code
       code = generateDiscountCode(userId);
     }
   }
+
+  return { reward: null, isNew: false };
+}
+
+/**
+ * Get progress without auto-creating a reward.
+ * Used by getProgress to show current state without side effects.
+ */
+export async function getOrCreateReward(
+  userId: number
+): Promise<{ reward: MascotReward | null; isNew: boolean }> {
+  const db = await getDb();
+  if (!db) return { reward: null, isNew: false };
+
+  const existing = await getReward(userId);
+  if (existing) return { reward: existing, isNew: false };
 
   return { reward: null, isNew: false };
 }

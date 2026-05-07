@@ -5,6 +5,8 @@ import {
   recordMascotFind,
   getUserFinds,
   getOrCreateReward,
+  resetUserFinds,
+  claimReward,
   ALL_PAGE_IDS,
   TOTAL_MASCOTS,
 } from "./mascotDb";
@@ -12,12 +14,11 @@ import {
 export const mascotRouter = router({
   /**
    * Record that the current user found the mascot on a given page.
-   * Returns updated progress and reward info.
+   * Returns updated progress (no auto-reward — reward requires explicit claim).
    */
   recordFind: protectedProcedure
     .input(z.object({ pageId: z.string().min(1).max(64) }))
     .mutation(async ({ ctx, input }) => {
-      // Validate that the pageId is one of the official 11 mascot pages
       if (!(ALL_PAGE_IDS as readonly string[]).includes(input.pageId)) {
         throw new TRPCError({
           code: "BAD_REQUEST",
@@ -27,7 +28,7 @@ export const mascotRouter = router({
       const userId = ctx.user.id;
       const isNew = await recordMascotFind(userId, input.pageId);
       const found = await getUserFinds(userId);
-      const { reward, isNew: rewardIsNew } = await getOrCreateReward(userId);
+      const { reward } = await getOrCreateReward(userId);
 
       return {
         isNew,
@@ -41,7 +42,6 @@ export const mascotRouter = router({
               claimedAt: reward.claimedAt,
             }
           : null,
-        rewardIsNew,
       };
     }),
 
@@ -51,20 +51,75 @@ export const mascotRouter = router({
   getProgress: protectedProcedure.query(async ({ ctx }) => {
     const userId = ctx.user.id;
     const found = await getUserFinds(userId);
-    const reward = await getOrCreateReward(userId);
+    const { reward } = await getOrCreateReward(userId);
 
     return {
       found,
       total: TOTAL_MASCOTS,
       allPageIds: ALL_PAGE_IDS as readonly string[],
       complete: found.length >= TOTAL_MASCOTS,
-      reward: reward.reward
+      reward: reward
         ? {
-            discountCode: reward.reward.discountCode,
-            discountPercent: reward.reward.discountPercent,
-            claimedAt: reward.reward.claimedAt,
+            discountCode: reward.discountCode,
+            discountPercent: reward.discountPercent,
+            claimedAt: reward.claimedAt,
+            fullName: reward.fullName,
           }
         : null,
     };
+  }),
+
+  /**
+   * Claim the 20% discount reward after finding all 11 mascots.
+   * Requires full name, phone, and email.
+   * One-time only — subsequent calls return the existing reward.
+   */
+  claimReward: protectedProcedure
+    .input(
+      z.object({
+        fullName: z.string().min(2).max(200),
+        phone: z.string().min(7).max(30),
+        email: z.string().email(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const userId = ctx.user.id;
+      const found = await getUserFinds(userId);
+
+      if (found.length < TOTAL_MASCOTS) {
+        throw new TRPCError({
+          code: "BAD_REQUEST",
+          message: `You need to find all ${TOTAL_MASCOTS} mascots before claiming your reward.`,
+        });
+      }
+
+      const { reward, isNew } = await claimReward(userId, {
+        fullName: input.fullName,
+        phone: input.phone,
+        email: input.email,
+      });
+
+      if (!reward) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "Could not generate your reward code. Please try again.",
+        });
+      }
+
+      return {
+        isNew,
+        discountCode: reward.discountCode,
+        discountPercent: reward.discountPercent,
+        claimedAt: reward.claimedAt,
+      };
+    }),
+
+  /**
+   * Reset the current user's hunt — deletes all finds from the DB.
+   * The client is responsible for clearing localStorage.
+   */
+  resetHunt: protectedProcedure.mutation(async ({ ctx }) => {
+    await resetUserFinds(ctx.user.id);
+    return { success: true };
   }),
 });

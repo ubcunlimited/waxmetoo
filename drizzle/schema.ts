@@ -117,7 +117,11 @@ export const mascotRewards = mysqlTable("mascot_rewards", {
   id: int("id").autoincrement().primaryKey(),
   userId: int("userId").notNull().unique(), // one reward per user
   discountCode: varchar("discountCode", { length: 32 }).notNull().unique(),
-  discountPercent: int("discountPercent").default(15).notNull(),
+  discountPercent: int("discountPercent").default(20).notNull(),
+  // Contact info submitted when claiming the reward
+  fullName: varchar("fullName", { length: 200 }),
+  phone: varchar("phone", { length: 30 }),
+  email: varchar("email", { length: 320 }),
   claimedAt: timestamp("claimedAt").defaultNow().notNull(),
   usedAt: timestamp("usedAt"),
 });

@@ -176,6 +176,8 @@ export default function MascotEasterEgg({ pageId }: { pageId: string }) {
     // 1. Persist to localStorage immediately
     markPageFound(pageId);
     setAlreadyFound(true);
+    // Notify the floating badge on the same tab
+    window.dispatchEvent(new CustomEvent("mascot-found"));
 
     // 2. Record via tRPC (fire-and-forget; localStorage is the source of truth for UI)
     if (isAuthenticated) {
