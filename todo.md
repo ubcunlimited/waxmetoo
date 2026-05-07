@@ -208,3 +208,13 @@
 - [x] Reward: one-time 15% discount code generated when all 11 mascots found (one per user)
 - [x] Discount code stored in mascot_rewards table, shown with copy button, cannot be claimed twice
 - [x] Vitest tests: 7 mascot tests — all passing (41 total tests across 5 test files)
+
+## Phase 18 — Mascot Click-to-Disappear
+
+- [x] Clicking the mascot plays a "caught!" scale-up + spin-out CSS animation (1.1 s)
+- [x] After animation, mascot is removed from the DOM entirely
+- [x] Found state persisted in localStorage (key: wmt_mascot_found) so mascot stays gone after page refresh
+- [x] tRPC recordFind still called for authenticated users to sync server-side progress
+- [x] Celebration bubble appears on click ("💅 Found her! See progress" or "Create account to track finds!")
+- [x] Bubble fades out gracefully before mascot disappears
+- [x] 0 TypeScript errors, 42 tests passing
