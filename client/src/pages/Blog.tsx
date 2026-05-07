@@ -9,6 +9,7 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -516,6 +517,11 @@ export default function Blog() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg
+        style={{ bottom: "220px", left: "8px" }}
+        size={42}
+      transform="rotate(-8deg)"
+      />
     </Layout>
   );
 }

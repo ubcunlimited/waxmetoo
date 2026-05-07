@@ -13,6 +13,7 @@ import { Link } from "wouter";
 import { CheckCircle, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -117,6 +118,11 @@ export default function BeforeCare() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg
+        style={{ top: "520px", left: "10px" }}
+        size={42}
+      transform="scaleX(-1)"
+      />
     </Layout>
   );
 }

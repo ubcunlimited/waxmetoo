@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import { CheckCircle, Leaf, Shield, Star, Heart, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL, testimonials } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -238,6 +239,11 @@ export default function About() {
           </div>
         </div>
       </section>
+    <MascotEasterEgg
+        style={{ top: "560px", left: "8px" }}
+        size={44}
+      transform="scaleX(-1) rotate(-5deg)"
+      />
     </Layout>
   );
 }

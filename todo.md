@@ -171,3 +171,18 @@
 - [x] Add period note "On your period? No problem. We will work around the string." to FAQ
 - [x] Fix hair length copy to: 1/4 inch long, 10 days after shaving, 3-4 weeks after waxing
 - [x] Remove all "loose/comfortable clothing" references site-wide (BlogPost.tsx x9, data.ts, FAQ auto-synced)
+
+## Phase 14 — Auto-Hide Current Pricing After June 1, 2026
+
+- [ ] Add isPastJune1 constant (new Date() >= new Date('2026-06-01')) to Services.tsx
+- [ ] Conditionally hide the current price column and "Price update" badge when isPastJune1 is true
+- [ ] Rename the "From June 1" label to just the price when isPastJune1 is true (no more "upcoming" framing)
+- [ ] Remove the June 1 notice banner when isPastJune1 is true
+
+## Phase 15 — Mascot Easter Egg (Where's Waldo)
+
+- [x] Generate full-body transparent PNG mascot (red hair, black tank, confident pose, no background)
+- [x] Upload mascot PNG to webdev static assets (/manus-storage/mascot_transparent_2e3ceae0.png)
+- [x] Create MascotEasterEgg component with unique position/pose per page
+- [x] Add hidden mascot to: Home, Services, Blog, BlogPost, FirstVisit, BeforeCare, AfterCare, FAQ, Locations, About, WinAFreeWax (11 pages)
+- [x] Add a fun tooltip on hover: "You found me! 💅"

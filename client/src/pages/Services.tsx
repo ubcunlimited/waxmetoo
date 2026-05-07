@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { ChevronDown, ChevronUp, Star, ArrowRight, CalendarClock } from "lucide-react";
 import Layout from "@/components/Layout";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 import {
   mostPopular,
   ladiesSections,
@@ -477,6 +478,11 @@ export default function Services() {
           </div>
         </div>
       </section>
+    <MascotEasterEgg
+        style={{ top: "340px", right: "10px" }}
+        size={46}
+      transform="scaleX(-1)"
+      />
     </Layout>
   );
 }

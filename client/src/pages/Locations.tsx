@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -176,6 +177,11 @@ export default function Locations() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg
+        style={{ bottom: "240px", right: "10px" }}
+        size={42}
+      transform="rotate(10deg)"
+      />
     </Layout>
   );
 }

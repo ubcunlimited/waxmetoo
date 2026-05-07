@@ -9,6 +9,7 @@ import { Link, useParams, useLocation } from "wouter";
 import { ArrowLeft, Clock, Hash, Calendar, Check, Copy, ArrowRight, ExternalLink, ChevronDown, ChevronRight, BookOpen, Tag } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 // SEO helper — sets document title and meta description dynamically
 function useSEO(title: string, description: string) {
@@ -1514,6 +1515,11 @@ export default function BlogPost() {
         </div>
       </section>
 
+    <MascotEasterEgg
+        style={{ top: "480px", right: "6px" }}
+        size={44}
+      transform="scaleX(-1) rotate(5deg)"
+      />
     </Layout>
   );
 }
