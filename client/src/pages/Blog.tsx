@@ -481,7 +481,7 @@ export default function Blog() {
               {/* Book CTA */}
               <div className="rounded-xl p-6 text-center" style={{ background: "linear-gradient(135deg, #3B2F2A 0%, #4a3d38 100%)", border: "1px solid #A8B3AA30" }}>
                 <p className="font-display text-xl text-white mb-2">Ready to get smooth?</p>
-                <p className="text-sm font-body mb-4" style={{ color: "#A8B3AA" }}>New clients get 20% off their first service.</p>
+                <p className="text-sm font-body mb-4" style={{ color: "#A8B3AA" }}>New clients get 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
                 <a
                   href="https://app.mangomint.com/waxmetoo"
                   target="_blank"

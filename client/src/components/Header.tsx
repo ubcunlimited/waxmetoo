@@ -48,7 +48,7 @@ export default function Header() {
         className="promo-banner flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2 text-center"
         style={{ background: "linear-gradient(90deg, #CFA7A0 0%, #A8B3AA 100%)", color: "#3B2F2A" }}
       >
-        <span className="text-sm font-medium">✦ New Clients: Enjoy 20% off your first service</span>
+        <span className="text-sm font-medium">✦ New Clients: 50% off your first Brazilian, Deep Bikini, or Bikini wax</span>
         <a
           href={BOOKING_URL}
           target="_blank"

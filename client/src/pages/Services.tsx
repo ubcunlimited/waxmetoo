@@ -277,7 +277,7 @@ function BookingCTA() {
     >
       <p className="font-serif text-xl text-white mb-2">Ready to book?</p>
       <p className="text-sm mb-4" style={{ color: "#D8C6B6" }}>
-        First visit? New clients enjoy 20% off their first service.
+        First visit? New clients enjoy 50% off their first Brazilian, Deep Bikini, or Bikini wax.
       </p>
       <a
         href={BOOKING_URL}
@@ -319,7 +319,7 @@ export default function Services() {
       document.head.appendChild(meta);
     }
     meta.content =
-      "Browse Wax Me Too's full waxing menu — Brazilian wax, eyebrow design, full body waxing, men's waxing, and more. Transparent pricing, 6 Utah locations. New clients receive 20% off.";
+      "Browse Wax Me Too's full waxing menu — Brazilian wax, eyebrow design, full body waxing, men's waxing, and more. Transparent pricing, 6 Utah locations. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.";
     return () => {
       document.title = "Wax Me Too — Professional Waxing Studio | Utah";
     };

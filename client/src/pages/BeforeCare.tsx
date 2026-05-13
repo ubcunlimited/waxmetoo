@@ -109,7 +109,7 @@ export default function BeforeCare() {
           <FadeUp delay={200}>
             <div className="mt-10 bg-[#CFA7A0] rounded-lg p-6 text-center">
               <h2 className="font-display text-2xl text-[#3B2F2A] mb-3">Ready to book?</h2>
-              <p className="text-[#3B2F2A]/80 font-body text-sm mb-4">New clients receive 20% off their first service.</p>
+              <p className="text-[#3B2F2A]/80 font-body text-sm mb-4">New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">Book Now</a>
                 <Link href="/after-care"><span className="btn-outline cursor-pointer">After Care Guide</span></Link>
