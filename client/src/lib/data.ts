@@ -20,7 +20,7 @@ export const locations = [
     city: "Layton",
     county: "Davis County",
     state: "UT",
-    note: "Military Discounts Available",
+    militaryDiscount: true,
   },
   {
     id: "south-jordan",

@@ -205,6 +205,12 @@ export default function LocationDetail() {
                       ))}
                     </div>
                   </div>
+                  {(location as any).militaryDiscount && (
+                    <div className="mt-4 rounded-md px-3 py-2 flex items-center gap-2" style={{ background: "rgba(168,179,170,0.18)", border: "1px solid rgba(74,103,65,0.25)" }}>
+                      <span className="text-base" aria-hidden>🎖️</span>
+                      <p className="text-xs font-body font-600" style={{ color: "#4A6741" }}>Military Discount Available — ask your esthetician for details.</p>
+                    </div>
+                  )}
                   <div className="mt-4 mb-1 rounded-md bg-[#F7F3EE] border border-[#D8C6B6] px-3 py-2">
                     <p className="text-xs font-body text-[#4A4A4A] leading-relaxed">
                       <span className="font-600 text-[#3B2F2A]">By Appointment Only.</span> While we appreciate walk-ins, our estheticians are usually booked. We recommend scheduling in advance to guarantee your preferred time.

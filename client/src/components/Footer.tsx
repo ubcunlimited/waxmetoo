@@ -132,6 +132,9 @@ export default function Footer() {
                       {(loc as any).note && (
                         <p className="text-xs mt-0.5" style={{ color: "#CFA7A0" }}>📍 {(loc as any).note}</p>
                       )}
+                      {(loc as any).militaryDiscount && (
+                        <p className="text-xs mt-0.5 font-600" style={{ color: "#7a9e72" }}>★ Military Discount Available</p>
+                      )}
                       <p className="text-xs text-[#A8B3AA]">{loc.phone}</p>
                     </div>
                   </Link>

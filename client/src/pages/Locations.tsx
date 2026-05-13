@@ -98,10 +98,16 @@ export default function Locations() {
                     </div>
 
                     {(loc as any).note && (
-                      <div className="flex items-center gap-1.5 mb-4">
+                      <div className="flex items-center gap-1.5 mb-2">
                         <span className="text-xs font-body font-600 text-[#CFA7A0] bg-[#CFA7A0]/10 px-2.5 py-1 rounded-full">📍 {(loc as any).note}</span>
                       </div>
                     )}
+                    {(loc as any).militaryDiscount && (
+                      <div className="flex items-center gap-1.5 mb-4">
+                        <span className="text-xs font-body font-600 px-2.5 py-1 rounded-full" style={{ background: "rgba(168,179,170,0.18)", color: "#4A6741" }}>★ Military Discount Available</span>
+                      </div>
+                    )}
+                    {!(loc as any).note && !(loc as any).militaryDiscount && <div className="mb-4" />}
                     <div className="flex gap-3">
                       <a
                         href={BOOKING_URL}

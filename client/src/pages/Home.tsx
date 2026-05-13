@@ -391,9 +391,14 @@ export default function Home() {
                     </div>
                     <p className="text-xs text-[#4A4A4A] font-body mb-1">{loc.address}</p>
                     {(loc as any).note && (
-                      <p className="text-xs font-600 font-body mb-2" style={{ color: "#CFA7A0" }}>
+                      <p className="text-xs font-600 font-body mb-1" style={{ color: "#CFA7A0" }}>
                         📍 {(loc as any).note}
                       </p>
+                    )}
+                    {(loc as any).militaryDiscount && (
+                      <span className="inline-flex items-center gap-1 text-xs font-600 font-body px-2 py-0.5 rounded-full mb-2" style={{ background: "rgba(168,179,170,0.18)", color: "#4A6741" }}>
+                        ★ Military Discount Available
+                      </span>
                     )}
                     <p className="text-xs text-[#4A4A4A] font-body mb-4">{loc.phone}</p>
                     <div className="text-xs text-[#A8B3AA] font-body space-y-1 mb-4">
