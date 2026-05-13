@@ -60,7 +60,7 @@ export const locations = [
   {
     id: "salt-lake-city",
     name: "Salt Lake City",
-    address: "1850 South 300 West, Suite A (inside Miri Lash Studio), Salt Lake City, UT 84102",
+    address: "1850 South 300 West, Suite A, Salt Lake City, UT 84102",
     phone: "(801) 572-7771",
     email: "slc@waxmetoo.com",
     hours: {
@@ -73,6 +73,7 @@ export const locations = [
     city: "Salt Lake City",
     county: "Salt Lake County",
     state: "UT",
+    note: "Located inside Miri Lash Studio",
   },
   {
     id: "draper",
