@@ -99,7 +99,7 @@ export default function Locations() {
 
                     {(loc as any).note && (
                       <div className="flex items-center gap-1.5 mb-4">
-                        <span className="text-xs font-body font-600 text-[#A8B3AA] bg-[#F7F3EE] px-2.5 py-1 rounded-full">★ {(loc as any).note}</span>
+                        <span className="text-xs font-body font-600 text-[#CFA7A0] bg-[#CFA7A0]/10 px-2.5 py-1 rounded-full">📍 {(loc as any).note}</span>
                       </div>
                     )}
                     <div className="flex gap-3">

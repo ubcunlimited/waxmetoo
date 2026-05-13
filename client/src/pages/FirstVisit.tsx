@@ -48,7 +48,7 @@ const steps = [
   {
     number: "03",
     title: "Arrive & check in",
-    description: "Arrive and check in via the Mangomint app — or check in via the text message you received. Have a seat and your waxer will be with you as soon as she can.",
+    description: "Arrive and check in via the Mangomint app — or check in via the text message you received. Fill out your consent form and have a seat. Your waxer will be with you as soon as she can.",
   },
   {
     number: "04",

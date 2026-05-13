@@ -38,6 +38,7 @@ export const locations = [
     city: "South Jordan",
     county: "Salt Lake County",
     state: "UT",
+    note: "Located upstairs in My Salon Suites",
   },
   {
     id: "orem",
@@ -89,6 +90,7 @@ export const locations = [
     city: "Draper",
     county: "Salt Lake County",
     state: "UT",
+    note: "Located inside Image Studios",
   },
   {
     id: "st-george",
@@ -106,6 +108,7 @@ export const locations = [
     city: "St. George",
     county: "Washington County",
     state: "UT",
+    note: "Located upstairs in Aubri Mcki Salon",
   },
 ];
 

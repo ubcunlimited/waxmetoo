@@ -320,3 +320,10 @@
 
 - [x] ScrollToTop component already exists (client/src/components/ScrollToTop.tsx) — fires window.scrollTo({ top: 0, behavior: 'instant' }) on every route change
 - [x] ScrollToTop is mounted inside Router in App.tsx — confirmed working: navigating from mid-page homepage to First Visit loads at top (0px above viewport)
+
+## Phase 24 — Location Details & Check-In Copy
+
+- [x] South Jordan location: note "Located upstairs in My Salon Suites" added to data.ts, shown on Locations card + LocationDetail sidebar
+- [x] St. George location: note "Located upstairs in Aubri Mcki Salon" added to data.ts, shown on Locations card + LocationDetail sidebar
+- [x] Draper location: note "Located inside Image Studios" added to data.ts, shown on Locations card + LocationDetail sidebar
+- [x] First Visit step 03 (Arrive & check in): updated to include "Fill out your consent form and have a seat"

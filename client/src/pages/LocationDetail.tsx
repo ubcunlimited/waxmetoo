@@ -149,7 +149,14 @@ export default function LocationDetail() {
                   <div className="space-y-3 mb-5">
                     <div className="flex items-start gap-3">
                       <MapPin size={15} className="text-[#CFA7A0] mt-0.5 shrink-0" />
-                      <p className="text-sm font-body text-[#4A4A4A]">{location.address}</p>
+                      <div>
+                        <p className="text-sm font-body text-[#4A4A4A]">{location.address}</p>
+                        {location.note && (
+                          <p className="text-xs font-600 font-body mt-1" style={{ color: "#CFA7A0" }}>
+                            📍 {location.note}
+                          </p>
+                        )}
+                      </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Phone size={15} className="text-[#CFA7A0] shrink-0" />
