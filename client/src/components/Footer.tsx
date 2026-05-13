@@ -117,27 +117,26 @@ export default function Footer() {
             <ul className="space-y-4">
               {locations.map((loc) => (
                 <li key={loc.id}>
-                  <Link href={`/locations/${loc.id}`}>
-                    <div className="cursor-pointer group">
-                      <p className="text-sm font-medium text-[#D8C6B6] group-hover:text-white transition-colors">{loc.name}</p>
-                      <a
-                        href={loc.mapUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-[#A8B3AA] mt-0.5 hover:text-[#CFA7A0] transition-colors underline-offset-2 hover:underline block"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {loc.address}
-                      </a>
-                      {(loc as any).note && (
-                        <p className="text-xs mt-0.5" style={{ color: "#CFA7A0" }}>📍 {(loc as any).note}</p>
-                      )}
-                      {(loc as any).militaryDiscount && (
-                        <p className="text-xs mt-0.5 font-600" style={{ color: "#7a9e72" }}>★ Military Discount Available</p>
-                      )}
-                      <p className="text-xs text-[#A8B3AA]">{loc.phone}</p>
-                    </div>
-                  </Link>
+                  <div className="cursor-pointer group">
+                    <Link href={`/locations/${loc.id}`}>
+                      <p className="text-sm font-medium text-[#D8C6B6] group-hover:text-white transition-colors mb-0.5">{loc.name}</p>
+                    </Link>
+                    <a
+                      href={loc.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#A8B3AA] mt-0.5 hover:text-[#CFA7A0] transition-colors underline-offset-2 hover:underline block"
+                    >
+                      {loc.address}
+                    </a>
+                    {(loc as any).note && (
+                      <p className="text-xs mt-0.5" style={{ color: "#CFA7A0" }}>📍 {(loc as any).note}</p>
+                    )}
+                    {(loc as any).militaryDiscount && (
+                      <p className="text-xs mt-0.5 font-600" style={{ color: "#7a9e72" }}>★ Military Discount Available</p>
+                    )}
+                    <p className="text-xs text-[#A8B3AA]">{loc.phone}</p>
+                  </div>
                 </li>
               ))}
             </ul>
