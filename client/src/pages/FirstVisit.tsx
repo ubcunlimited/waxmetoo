@@ -268,7 +268,7 @@ export default function FirstVisit() {
                 The best part? It gets easier with every visit. Regular waxing means finer, softer regrowth and way less discomfort over time.
               </p>
               <p className="text-[#4A4A4A] font-body leading-relaxed font-500">
-                Most Brazilian appointments are booked for 30 minutes. The actual waxing? Usually closer to 15. By the time your esthetician knows all about your vacation plans, favorite reality show, or difficult coworker, you'll already be smooth and on your way out the door.
+                Most Brazilian appointments are booked for 30 minutes. The actual waxing? Usually closer to 15. By that time your esthetician knows all about your vacation plans, favorite reality show, or difficult coworker, you'll already be smooth and on your way out the door.
               </p>
             </div>
           </FadeUp>
