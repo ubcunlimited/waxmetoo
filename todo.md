@@ -260,31 +260,31 @@
 
 ## Phase 22 — Content Updates from Wax.docx
 
-- [ ] Home: hero headline → "Brazilian Waxing…. Perfected"
-- [ ] Home: review count → "1000+ five-star reviews"
-- [ ] Home: first-service offer → "Your first Brazilian, Deep Bikini, or Bikini wax 50% off"
-- [ ] Home: remove Manzilian from services, add Brow Wax and Design with new description
-- [ ] Home: Brazilian description → "Our signature service. Completely bare. Completely confident."
-- [ ] Home: Deep Bikini description → "More than a bikini, less than a Brazilian."
-- [ ] Home: Bikini description → "Perfectly tidy, removes anything outside the bikini line. Clean and classic."
-- [ ] Home: Most Popular — replace Manzilian with Eyebrow Wax
-- [ ] Home: New Clients banner → "50% off select services your first time in"
-- [ ] FirstVisit: "Completely private" copy update
-- [ ] FirstVisit: "Zero judgment" copy update
-- [ ] FirstVisit: Step 2 prep — remove exfoliate 24hrs, remove avoid lotion, add sun/spray tan warning
-- [ ] FirstVisit: Discomfort section — replace with new honest copy
-- [ ] FirstVisit: Before appt list — reorder sun exposure to #2, remove "hair too long" trim note
-- [ ] FirstVisit: After appt list — add Utah Lake / hot tub note, PFB mention
-- [ ] About: founding story copy update (remove "turned up the music" ambiguity, refine)
-- [ ] About: Our Values → Our Promise / The Wax Me Too Standard — replace with new copy
-- [ ] Locations: South Jordan — change "boutique" to "Wax Me Too signature experience", add "Inside My Salon Suite"
-- [ ] Locations: Orem — change "boutique experience" to "Wax Me Too signature"
-- [ ] Locations: Draper — update to Image Studios copy, freeway access note
-- [ ] Locations: St. George — add "Inside Salon Aubri McKi", note closed Mondays
-- [ ] Locations: add "By Appointment Only" note site-wide or on location pages
-- [ ] FAQ: update first-visit answer to include booking confirmation / release form / reminder texts / cancellation policy
-- [ ] BeforeCare: reorder sun exposure to #2, remove "hair too long" trim note
-- [ ] AfterCare: add Utah Lake / hot tub note with humor, add PFB product mention
+- [x] Home: hero headline → "Brazilian Waxing…. Perfected"
+- [x] Home: review count → "1000+ five-star reviews"
+- [x] Home: first-service offer → "Your first Brazilian, Deep Bikini, or Bikini wax 50% off"
+- [x] Home: remove Manzilian from services, add Brow Wax and Design with new description
+- [x] Home: Brazilian description → "Our signature service. Completely bare. Completely confident."
+- [x] Home: Deep Bikini description → "More than a bikini, less than a Brazilian."
+- [x] Home: Bikini description → "Perfectly tidy, removes anything outside the bikini line. Clean and classic."
+- [x] Home: Most Popular — replace Manzilian with Eyebrow Wax
+- [x] Home: New Clients banner → "50% off select services your first time in"
+- [x] FirstVisit: "Completely private" copy update
+- [x] FirstVisit: "Zero judgment" copy update
+- [x] FirstVisit: Step 2 prep — remove exfoliate 24hrs, remove avoid lotion, add sun/spray tan warning
+- [x] FirstVisit: Discomfort section — replace with new honest copy
+- [x] FirstVisit: Before appt list — reorder sun exposure to #2, remove "hair too long" trim note
+- [x] FirstVisit: After appt list — add Utah Lake / hot tub note, PFB mention
+- [x] About: founding story copy update (remove "turned up the music" ambiguity, refine)
+- [x] About: Our Values → Our Promise / The Wax Me Too Standard — replace with new copy
+- [x] Locations: South Jordan — change "boutique" to "Wax Me Too signature experience", add "Inside My Salon Suite"
+- [x] Locations: Orem — change "boutique experience" to "Wax Me Too signature"
+- [x] Locations: Draper — update to Image Studios copy, freeway access note
+- [x] Locations: St. George — add "Inside Salon Aubri McKi", note closed Mondays
+- [x] Locations: add "By Appointment Only" note site-wide or on location pages
+- [x] FAQ: update first-visit answer to include booking confirmation / release form / reminder texts / cancellation policy
+- [x] BeforeCare: reorder sun exposure to #2, remove "hair too long" trim note
+- [x] AfterCare: add Utah Lake / hot tub note with humor, add PFB product mention
 
 ## Phase 22 — Content Updates from Wax.docx
 
@@ -315,3 +315,8 @@
 - [x] BeforeCare: "hair too long may be trimmed" phrase removed; sun/spray tan/tanning moved to #2
 - [x] AfterCare: Utah Lake item expanded with "we wish we were kidding" + pore explanation
 - [x] 0 TypeScript errors, 47 tests passing
+
+## Phase 23 — Scroll to Top on Navigation
+
+- [x] ScrollToTop component already exists (client/src/components/ScrollToTop.tsx) — fires window.scrollTo({ top: 0, behavior: 'instant' }) on every route change
+- [x] ScrollToTop is mounted inside Router in App.tsx — confirmed working: navigating from mid-page homepage to First Visit loads at top (0px above viewport)
