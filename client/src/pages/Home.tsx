@@ -389,7 +389,12 @@ export default function Home() {
                       <MapPin size={16} style={{ color: "#A8B3AA" }} />
                       <h3 className="font-display text-xl text-[#3B2F2A]">{loc.name}</h3>
                     </div>
-                    <p className="text-xs text-[#4A4A4A] font-body mb-2">{loc.address}</p>
+                    <p className="text-xs text-[#4A4A4A] font-body mb-1">{loc.address}</p>
+                    {(loc as any).note && (
+                      <p className="text-xs font-600 font-body mb-2" style={{ color: "#CFA7A0" }}>
+                        📍 {(loc as any).note}
+                      </p>
+                    )}
                     <p className="text-xs text-[#4A4A4A] font-body mb-4">{loc.phone}</p>
                     <div className="text-xs text-[#A8B3AA] font-body space-y-1 mb-4">
                       {Object.entries(loc.hours).map(([day, hours]) => (
