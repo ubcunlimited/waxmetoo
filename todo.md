@@ -327,3 +327,8 @@
 - [x] St. George location: note "Located upstairs in Aubri Mcki Salon" added to data.ts, shown on Locations card + LocationDetail sidebar
 - [x] Draper location: note "Located inside Image Studios" added to data.ts, shown on Locations card + LocationDetail sidebar
 - [x] First Visit step 03 (Arrive & check in): updated to include "Fill out your consent form and have a seat"
+
+## Phase 25 — Footer Map Links & Getting Here Tips
+
+- [x] Footer: address text wrapped in <a href={loc.mapUrl}> — opens Google Maps in new tab, hover underline + pink color
+- [x] LocationDetail: "Getting Here" card added for South Jordan, Salt Lake City, Draper, St. George — shows navigation instructions + "Open in Google Maps" link; hidden for Layton and Orem

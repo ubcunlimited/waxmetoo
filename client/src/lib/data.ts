@@ -39,6 +39,7 @@ export const locations = [
     county: "Salt Lake County",
     state: "UT",
     note: "Located upstairs in My Salon Suites",
+    gettingHere: "Enter through the main My Salon Suites entrance and take the stairs to the second floor. We are on the upper level — follow the suite numbers to find us.",
   },
   {
     id: "orem",
@@ -74,6 +75,7 @@ export const locations = [
     county: "Salt Lake County",
     state: "UT",
     note: "Located inside Miri Lash Studio",
+    gettingHere: "We are inside Miri Lash Studio. Enter through the main building entrance and look for the Miri Lash Studio signage — our suite is inside.",
   },
   {
     id: "draper",
@@ -92,6 +94,7 @@ export const locations = [
     county: "Salt Lake County",
     state: "UT",
     note: "Located inside Image Studios",
+    gettingHere: "We are inside Image Studios on the west side of I-15. Enter through the Image Studios main entrance and follow the suite numbers to find us. Ample parking is available out front.",
   },
   {
     id: "st-george",
@@ -110,6 +113,7 @@ export const locations = [
     county: "Washington County",
     state: "UT",
     note: "Located upstairs in Aubri Mcki Salon",
+    gettingHere: "Enter through the main entrance of Aubri Mcki Salon and take the stairs to the second floor. We are located upstairs — follow the signage once inside.",
   },
 ];
 

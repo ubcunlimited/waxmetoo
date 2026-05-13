@@ -5,7 +5,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "wouter";
-import { MapPin, Phone, Mail, Clock, Star, ArrowLeft } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Star, ArrowLeft, Navigation } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, testimonials, BOOKING_URL } from "@/lib/data";
 
@@ -106,6 +106,30 @@ export default function LocationDetail() {
                   </div>
                 </div>
               </FadeUp>
+
+              {/* Getting Here — only shown for suite/shared-building locations */}
+              {(location as any).gettingHere && (
+                <FadeUp delay={120}>
+                  <div className="bg-[#CFA7A0]/10 border border-[#CFA7A0]/30 rounded-lg p-6 mb-6 flex gap-4 items-start">
+                    <div className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "rgba(207,167,160,0.2)" }}>
+                      <Navigation size={16} style={{ color: "#CFA7A0" }} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg text-[#3B2F2A] mb-1">Getting Here</h3>
+                      <p className="text-sm text-[#4A4A4A] font-body leading-relaxed">{(location as any).gettingHere}</p>
+                      <a
+                        href={location.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-3 text-xs font-600 font-body hover:underline"
+                        style={{ color: "#CFA7A0" }}
+                      >
+                        <MapPin size={12} /> Open in Google Maps
+                      </a>
+                    </div>
+                  </div>
+                </FadeUp>
+              )}
 
               {/* Local SEO Content */}
               <FadeUp delay={150}>
