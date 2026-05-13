@@ -257,3 +257,61 @@
 
 - [x] Footer: add Mascot Hunt promo strip above bottom bar (🔍 headline, 20% discount callout, "Start the Hunt →" pill button)
 - [x] Footer Quick Links: added "Win a Free Wax" link
+
+## Phase 22 — Content Updates from Wax.docx
+
+- [ ] Home: hero headline → "Brazilian Waxing…. Perfected"
+- [ ] Home: review count → "1000+ five-star reviews"
+- [ ] Home: first-service offer → "Your first Brazilian, Deep Bikini, or Bikini wax 50% off"
+- [ ] Home: remove Manzilian from services, add Brow Wax and Design with new description
+- [ ] Home: Brazilian description → "Our signature service. Completely bare. Completely confident."
+- [ ] Home: Deep Bikini description → "More than a bikini, less than a Brazilian."
+- [ ] Home: Bikini description → "Perfectly tidy, removes anything outside the bikini line. Clean and classic."
+- [ ] Home: Most Popular — replace Manzilian with Eyebrow Wax
+- [ ] Home: New Clients banner → "50% off select services your first time in"
+- [ ] FirstVisit: "Completely private" copy update
+- [ ] FirstVisit: "Zero judgment" copy update
+- [ ] FirstVisit: Step 2 prep — remove exfoliate 24hrs, remove avoid lotion, add sun/spray tan warning
+- [ ] FirstVisit: Discomfort section — replace with new honest copy
+- [ ] FirstVisit: Before appt list — reorder sun exposure to #2, remove "hair too long" trim note
+- [ ] FirstVisit: After appt list — add Utah Lake / hot tub note, PFB mention
+- [ ] About: founding story copy update (remove "turned up the music" ambiguity, refine)
+- [ ] About: Our Values → Our Promise / The Wax Me Too Standard — replace with new copy
+- [ ] Locations: South Jordan — change "boutique" to "Wax Me Too signature experience", add "Inside My Salon Suite"
+- [ ] Locations: Orem — change "boutique experience" to "Wax Me Too signature"
+- [ ] Locations: Draper — update to Image Studios copy, freeway access note
+- [ ] Locations: St. George — add "Inside Salon Aubri McKi", note closed Mondays
+- [ ] Locations: add "By Appointment Only" note site-wide or on location pages
+- [ ] FAQ: update first-visit answer to include booking confirmation / release form / reminder texts / cancellation policy
+- [ ] BeforeCare: reorder sun exposure to #2, remove "hair too long" trim note
+- [ ] AfterCare: add Utah Lake / hot tub note with humor, add PFB product mention
+
+## Phase 22 — Content Updates from Wax.docx
+
+- [x] Home: hero headline changed to "Brazilian Waxing…. Perfected."
+- [x] Home: review count updated to 1000+ five-star reviews
+- [x] Home: new client offer updated to 50% off first Brazilian, Deep Bikini, or Bikini wax (was 20%)
+- [x] Home: mostPopular — Manzilian replaced with Eyebrow Wax & Design
+- [x] Home: Brazilian tagline → "Completely bare. Completely confident.", Deep Bikini → "More than a bikini, less than a Brazilian.", Bikini → "Perfectly tidy. Clean and classic."
+- [x] FirstVisit: step 2 prep updated — removed exfoliate/lotion, added no spray tan/tanning/sunburns
+- [x] FirstVisit: "Completely private" card updated to "Your own room with time to change…"
+- [x] FirstVisit: "Zero judgment" card updated to "We've seen it all and waxed it all…"
+- [x] FirstVisit: discomfort section rewritten — "it's waxing, not a massage" with 15-min waxing note
+- [x] FirstVisit: before list — sun exposure moved to #2, lotion item removed
+- [x] FirstVisit: after list — Utah Lake expanded to "or any lake", PFB Vanish mention added
+- [x] FirstVisit: new client offer updated to 50% off
+- [x] About: founding story rewritten — candles/whispered voices, "Nineteen years later", women-owned origin
+- [x] About: Our Promise rewritten — "Clean rooms. Great estheticians. Zero judgment."
+- [x] About: "Sinks in every treatment room" values card description updated
+- [x] Locations data: South Jordan — "boutique" → "signature experience", added "inside My Salon Suite"
+- [x] Locations data: Orem — "boutique" → "signature experience"
+- [x] Locations data: Draper — rewritten to mention Image Studios suites and west side of I-15
+- [x] Locations data: St. George — added "inside Salon Aubri McKi", Monday closed (Tue–Fri hours)
+- [x] LocationDetail: "By Appointment Only" note added below hours on all location pages
+- [x] LocationDetail: new client offer updated to 50% off
+- [x] FAQ: first-visit answer expanded with booking confirmation/reminder/release form info
+- [x] FAQ: cancellation policy updated — no deposit required, trust-based policy
+- [x] FAQ: new client offer FAQ updated to 50% off
+- [x] BeforeCare: "hair too long may be trimmed" phrase removed; sun/spray tan/tanning moved to #2
+- [x] AfterCare: Utah Lake item expanded with "we wish we were kidding" + pore explanation
+- [x] 0 TypeScript errors, 47 tests passing

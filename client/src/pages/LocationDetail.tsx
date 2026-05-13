@@ -34,7 +34,7 @@ export default function LocationDetail() {
     document.title = `Waxing in ${location.city}, Utah | Wax Me Too — Professional Waxing Studio`;
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
-    meta.content = `Wax Me Too ${location.city} — Professional Brazilian waxing, eyebrow design, and full body waxing in ${location.city}, ${location.county}, Utah. ${location.address}. Book online today. New clients receive 20% off.`;
+    meta.content = `Wax Me Too ${location.city} — Professional Brazilian waxing, eyebrow design, and full body waxing in ${location.city}, ${location.county}, Utah. ${location.address}. Book online today. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.`;
     return () => { document.title = 'Wax Me Too — Professional Waxing Studio | Utah'; };
   }, [location]);
 
@@ -174,7 +174,12 @@ export default function LocationDetail() {
                       ))}
                     </div>
                   </div>
-                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center mt-5 block">
+                  <div className="mt-4 mb-1 rounded-md bg-[#F7F3EE] border border-[#D8C6B6] px-3 py-2">
+                    <p className="text-xs font-body text-[#4A4A4A] leading-relaxed">
+                      <span className="font-600 text-[#3B2F2A]">By Appointment Only.</span> While we appreciate walk-ins, our estheticians are usually booked. We recommend scheduling in advance to guarantee your preferred time.
+                    </p>
+                  </div>
+                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center mt-4 block">
                     Book at {location.name}
                   </a>
                 </div>
@@ -183,8 +188,8 @@ export default function LocationDetail() {
               <FadeUp delay={100}>
                 <div className="bg-[#CFA7A0] rounded-lg p-5">
                   <p className="font-body text-xs font-600 text-[#3B2F2A] uppercase tracking-wide mb-2">New Client Special</p>
-                  <p className="font-display text-xl text-[#3B2F2A] mb-2">20% off your first service</p>
-                  <p className="text-xs font-body text-[#3B2F2A]/80 mb-3">First time at Wax Me Too? Book online and receive 20% off any service.</p>
+                  <p className="font-display text-xl text-[#3B2F2A] mb-2">50% off your first Brazilian, Deep Bikini, or Bikini wax</p>
+                  <p className="text-xs font-body text-[#3B2F2A]/80 mb-3">First time at Wax Me Too? Book your first Brazilian, Deep Bikini, or Bikini wax and receive 50% off.</p>
                   <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2.5 w-full text-center block">
                     Claim Offer
                   </a>

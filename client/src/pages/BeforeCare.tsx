@@ -31,12 +31,12 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 const beforeCareItems = [
-  { title: "Let hair grow to ¼ inch", desc: "This is approximately 10 days of growth after shaving. Hair that is too short won't grip properly; hair that is too long may be trimmed before waxing." },
+  { title: "Let hair grow to ¼ inch", desc: "This is approximately 10 days of growth after shaving. Hair that is too short won't grip properly. When in doubt, let it grow a bit more than you think you need." },
+  { title: "Avoid sun exposure, spray tans, and tanning beds", desc: "Avoid sunbathing, tanning beds, spray tans, or sunburns on the areas to be waxed for at least 24 hours before your appointment. Freshly tanned or sunburned skin is too sensitive for waxing." },
   { title: "Exfoliate 24–48 hours before", desc: "Gentle exfoliation removes dead skin cells and helps the wax grip hair more effectively. Use a soft scrub or exfoliating mitt — nothing too abrasive." },
   { title: "Skip lotion on appointment day", desc: "Avoid applying lotion, oils, or body butter to the area on the day of your appointment. These create a barrier that can interfere with wax adhesion." },
   { title: "Consider ibuprofen beforehand", desc: "If you're concerned about discomfort, take an over-the-counter pain reliever like ibuprofen 30–45 minutes before your appointment." },
   { title: "Stay hydrated", desc: "Well-hydrated skin waxes more cleanly. Drink plenty of water in the days leading up to your appointment." },
-  { title: "Avoid sun exposure", desc: "Avoid sunbathing, tanning beds, or prolonged sun exposure on the areas to be waxed for at least 24 hours before your appointment." },
   { title: "Skip retinol and AHAs on the area", desc: "If you use retinol, AHAs, or other exfoliating skincare products, avoid applying them to the wax area for at least 5–7 days before your appointment and let your esthetician know." },
 ];
 

@@ -38,7 +38,7 @@ const doItems = [
 ];
 
 const dontItems = [
-  { title: "Don't swim in Utah Lake", desc: "Seriously — freshly waxed skin and questionable water don't mix. Avoid pools, hot tubs, and any open water for 24–48 hours after your wax." },
+  { title: "Don't swim in Utah Lake or any lake", desc: "Don't swim in Utah Lake or any lake for 24–48 hours (or any hot tub/pool) — we wish we were kidding. After waxing, your skin is more sensitive and your pores are temporarily open, making them more susceptible to irritation from chlorine, bacteria, heat, and sweat. Translation: skip the hot tub for a day." },
   { title: "Skip the sauna and steam room", desc: "Avoid saunas, steam rooms, and hot tubs for at least 48 hours after waxing." },
   { title: "Avoid direct sun exposure", desc: "Keep waxed areas out of direct sunlight for 24–48 hours. Freshly waxed skin is more susceptible to sun damage and hyperpigmentation." },
   { title: "Don't pick or scratch", desc: "If you experience any bumps or ingrown hairs, resist the urge to pick or scratch. This can cause scarring and infection." },

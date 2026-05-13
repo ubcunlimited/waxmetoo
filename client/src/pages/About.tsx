@@ -125,20 +125,23 @@ export default function About() {
               <div>
                 <p className="section-label mb-3">The Wax Me Too Story</p>
                 <h2 className="font-display text-4xl md:text-5xl text-[#3B2F2A] mb-6">
-                  Where it all began
+                  Where It All Began
                 </h2>
                 <div className="space-y-4 text-[#4A4A4A] font-body leading-relaxed">
                   <p>
-                    Wax Me Too was founded in 2007 with a belief that professional waxing should be accessible, comfortable, and completely free of judgment. At the time, the waxing industry was dominated by clinical, impersonal experiences that left clients feeling self-conscious rather than confident.
+                    Wax Me Too was founded in 2007 with one big idea: waxing didn't need to feel cold, clinical, or awkward. We wanted to be the best at one thing — waxing — and we wanted to do it differently.
                   </p>
                   <p>
-                    We set out to build something different — a boutique waxing studio where every client felt welcomed, respected, and at ease. From our very first location in Utah, we focused on three things: expert technique, strict sanitation, and a warm, private environment.
+                    At the time, most waxing happened quietly inside traditional day spas, with whispered voices, spa music, and candles flickering in the corner while clients nervously stared at the ceiling wondering what they'd gotten themselves into. We thought there had to be a better way.
                   </p>
                   <p>
-                    Seventeen years later, that founding philosophy still drives everything we do. We've grown to multiple locations across Utah, but our commitment to the individual client experience has never wavered.
+                    So we created something different. We laughed with our clients. We talked them through every step. We built an environment that felt warm, relaxed, and human — because distraction, conversation, and comfort make a huge difference when someone is trusting you with a very personal service.
                   </p>
                   <p>
-                    We're proud to be women-owned, eco-conscious, and deeply rooted in the communities we serve. Our estheticians aren't just skilled — they're passionate about making your experience exceptional, every single time.
+                    Wax Me Too became Utah's first waxing-only salon, founded by women who actually understood the experience from the client's side of the waxing table. Long before waxing chains and corporate-owned salons entered the industry, we were building a business centered around comfort, professionalism, privacy, and genuinely great estheticians.
+                  </p>
+                  <p>
+                    Nineteen years later, that philosophy still drives everything we do. We've grown to multiple locations across Utah, but we've never lost the personality and warmth that made clients fall in love with Wax Me Too in the first place. We're still women-owned. Still client-focused. Still passionate about creating expert waxing experiences with zero judgment, plenty of laughter, and estheticians who know exactly how to make clients feel comfortable from the moment they walk through the door.
                   </p>
                 </div>
               </div>
@@ -196,13 +199,16 @@ export default function About() {
             <div className="max-w-2xl mx-auto text-center">
               <p className="section-label text-[#CFA7A0] mb-3">Our Promise</p>
               <h2 className="font-display text-4xl text-white mb-5">
-                The Wax Me Too standard
+                The Wax Me Too Standard
               </h2>
               <p className="text-[#D8C6B6] font-body leading-relaxed mb-4">
-                Every time you walk through our doors, you can expect the same thing: a clean, private space, a skilled and respectful esthetician, premium products, and results you'll love.
+                Clean rooms. Great estheticians. Zero judgment. Energetic music optional.
+              </p>
+              <p className="text-[#D8C6B6] font-body leading-relaxed mb-4">
+                From the moment you walk in, our goal is simple: make you feel comfortable and cared for.
               </p>
               <p className="text-[#D8C6B6] font-body leading-relaxed mb-8">
-                We don't cut corners on sanitation, we don't rush your service, and we never make you feel anything other than completely at ease. That's the Wax Me Too standard — and it's been our standard since day one.
+                We don't rush services, cut corners on sanitation, or believe waxing needs to feel awkward and clinical. We believe it should feel warm, professional, and human. That's been the Wax Me Too standard since 2007.
               </p>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">
                 Book Your Appointment

@@ -56,7 +56,7 @@ export default function Home() {
   useEffect(() => {
     document.title = "Wax Me Too — Utah's Professional Waxing Studio Since 2007";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']"); if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. New clients receive 20% off.";
+    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.";
     return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
   }, []);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -89,8 +89,8 @@ export default function Home() {
             <div className="animate-fade-up">
               <p className="section-label text-[#CFA7A0] mb-3">Professional Waxing Studio · Est. 2007</p>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
-                Smooth skin.<br />
-                <em className="text-[#CFA7A0]">Confident you.</em>
+                Brazilian Waxing….<br />
+                <em className="text-[#CFA7A0]">Perfected.</em>
               </h1>
               <p className="text-[#D8C6B6] text-lg leading-relaxed mb-8 font-body">
                 Utah's women-owned waxing studio since 2007. Expert estheticians, premium wax, and a private experience designed to make you feel at ease — every single time.
@@ -107,7 +107,7 @@ export default function Home() {
                 <div className="flex">
                   {[1,2,3,4,5].map(i => <Star key={i} size={16} className="fill-[#CFA7A0] text-[#CFA7A0]" />)}
                 </div>
-                <p className="text-[#D8C6B6] text-sm font-body">500+ five-star reviews across Utah</p>
+                <p className="text-[#D8C6B6] text-sm font-body">1000+ five-star reviews across Utah</p>
               </div>
             </div>
           </div>
@@ -127,10 +127,10 @@ export default function Home() {
               <div>
                 <p className="font-body text-xs font-600 tracking-widest uppercase text-[#3B2F2A]/70 mb-2">New Client Special</p>
                 <h2 className="font-display text-3xl md:text-4xl text-[#3B2F2A]">
-                  Your first service, <em>20% off.</em>
+                  Your first Brazilian, Deep Bikini, or Bikini wax, <em>50% off.</em>
                 </h2>
                 <p className="text-[#3B2F2A]/80 mt-2 font-body">
-                  First time at Wax Me Too? We'd love to welcome you. Book any service and receive 20% off.
+                  First time at Wax Me Too? We'd love to welcome you. Book your first Brazilian, Deep Bikini, or Bikini wax and receive 50% off.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -587,7 +587,7 @@ export default function Home() {
                 Your smoothest skin is<br /><em className="text-[#CFA7A0]">one appointment away.</em>
               </h2>
               <p className="text-[#D8C6B6] font-body mb-8 max-w-md mx-auto">
-                Book online in minutes. New clients receive 20% off their first service.
+                Book online in minutes. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">

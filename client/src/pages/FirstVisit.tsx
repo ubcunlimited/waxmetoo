@@ -38,12 +38,12 @@ const steps = [
   {
     number: "01",
     title: "Book your appointment",
-    description: "Choose your location, service, and preferred time online. It takes less than 2 minutes. New clients receive 20% off their first service.",
+    description: "Choose your location, service, and preferred time online. It takes less than 2 minutes. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.",
   },
   {
     number: "02",
     title: "Prepare at home",
-    description: "Let hair grow to at least ¼ inch (10 days from shaving). Gently exfoliate 24 hours before. Avoid lotion on the day of your appointment.",
+    description: "Let hair grow to at least ¼ inch (10 days from shaving). No spray tan, tanning beds, or sunburns on the area to be waxed before your appointment.",
   },
   {
     number: "03",
@@ -70,12 +70,12 @@ const reassurances = [
   {
     icon: Shield,
     title: "Completely private",
-    description: "Every service takes place in a private room — just you and your esthetician. Expect some laughter and loud music.",
+    description: "Your own room with time to change before your esthetician comes in to start the wax. Expect some laughter and music. Good vibes only.",
   },
   {
     icon: Heart,
     title: "Zero judgment",
-    description: "Our estheticians are professionals who perform these services every day. There is nothing awkward, embarrassing, or unusual about any of our services.",
+    description: "We've seen it all and waxed it all. No need to apologize, explain, or feel embarrassed. This is literally what we do and we love our job!",
   },
   {
     icon: CheckCircle,
@@ -149,7 +149,7 @@ export default function FirstVisit() {
       <div className="bg-[#CFA7A0] py-5">
         <div className="container text-center">
           <p className="font-body text-[#3B2F2A] font-500">
-            ✦ <strong>New Client Special:</strong> Enjoy 20% off your first service when you book online.{" "}
+              ✦ <strong>New Client Special:</strong> Enjoy 50% off your first Brazilian, Deep Bikini, or Bikini wax when you book online.{" "}
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="underline font-600">
               Claim your offer →
             </a>
@@ -256,16 +256,19 @@ export default function FirstVisit() {
             <div className="max-w-2xl mx-auto text-center">
               <p className="section-label text-[#3B2F2A] mb-3">About Discomfort</p>
               <h2 className="font-display text-3xl md:text-4xl text-[#3B2F2A] mb-5">
-                Let's talk about pain — honestly.
+                Let's be honest: it's waxing, not a massage.
               </h2>
               <p className="text-[#4A4A4A] font-body leading-relaxed mb-4">
-                We won't pretend waxing is completely painless. There is a quick, sharp sensation when the wax is removed — but it passes in an instant. Most clients describe it as far more manageable than they expected.
+                There's a quick sting when the wax comes off and the hair is removed from its root, but it's over almost immediately, and most clients are surprised by how manageable the experience actually is.
               </p>
               <p className="text-[#4A4A4A] font-body leading-relaxed mb-4">
-                Here's the good news: it gets significantly easier with each visit. As you wax regularly, hair grows back finer and sparser, which means less discomfort over time. Many regular clients barely notice it at all.
+                We also have a few tricks up our sleeve and a signature way of waxing that helps make the whole experience a lot less painful than you imagined.
+              </p>
+              <p className="text-[#4A4A4A] font-body leading-relaxed mb-4">
+                The best part? It gets easier with every visit. Regular waxing means finer, softer regrowth and way less discomfort over time.
               </p>
               <p className="text-[#4A4A4A] font-body leading-relaxed font-500">
-                Tip: taking ibuprofen 30 minutes before your appointment can help take the edge off.
+                Most Brazilian appointments are booked for 30 minutes. The actual waxing? Usually closer to 15. By the time your esthetician knows all about your vacation plans, favorite reality show, or difficult coworker, you'll already be smooth and on your way out the door.
               </p>
             </div>
           </FadeUp>
@@ -282,8 +285,8 @@ export default function FirstVisit() {
                 <ul className="space-y-3">
                   {[
                     "Let hair grow to at least ¼ inch (10 days from shaving)",
+                    "Avoid sunbathing, tanning beds, or sunburns on the area to be waxed for at least 24 hours before your appointment",
                     "Gently exfoliate the area 24–48 hours before",
-                    "Avoid applying lotion or oils on the day of your appointment",
                     "Take ibuprofen 30 minutes before if you're concerned about discomfort",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-body text-[#4A4A4A]">
@@ -307,10 +310,11 @@ export default function FirstVisit() {
                 <h3 className="font-display text-2xl text-[#3B2F2A] mb-5">After your appointment</h3>
                 <ul className="space-y-3">
                   {[
-                    "Don't swim in Utah Lake for 24–48 hours (or any hot tub/pool)",
+                    "Don't swim in Utah Lake or any lake for 24–48 hours (or any hot tub/pool) — we wish we were kidding.",
                     "Avoid sun exposure on waxed areas for 24 hours",
                     "Apply a gentle, fragrance-free moisturizer",
                     "After 48 hours: begin gentle exfoliation 2–3 times per week to prevent ingrown hairs",
+                    "Ask us about PFB Vanish — our recommended product for preventing ingrown hairs",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-body text-[#4A4A4A]">
                       <CheckCircle size={16} className="text-[#A8B3AA] shrink-0 mt-0.5" />
@@ -363,7 +367,7 @@ export default function FirstVisit() {
                 Your first visit is waiting.
               </h2>
               <p className="text-[#D8C6B6] font-body mb-8 max-w-md mx-auto">
-                New clients receive 20% off their first service. Book online in minutes.
+                New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. Book online in minutes.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">
