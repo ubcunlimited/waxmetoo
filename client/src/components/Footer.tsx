@@ -121,6 +121,9 @@ export default function Footer() {
                     <div className="cursor-pointer group">
                       <p className="text-sm font-medium text-[#D8C6B6] group-hover:text-white transition-colors">{loc.name}</p>
                       <p className="text-xs text-[#A8B3AA] mt-0.5">{loc.address}</p>
+                      {(loc as any).note && (
+                        <p className="text-xs mt-0.5" style={{ color: "#CFA7A0" }}>📍 {(loc as any).note}</p>
+                      )}
                       <p className="text-xs text-[#A8B3AA]">{loc.phone}</p>
                     </div>
                   </Link>
