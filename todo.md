@@ -352,4 +352,4 @@
   - Sends owner notification: "All Clear" if no broken links, detailed broken-links report if any found
 - [x] Register handler in server/_core/index.ts before Vite/static fallthrough
 - [x] 0 TypeScript errors
-- [ ] Deploy site, then create weekly Heartbeat cron (every Monday 9am UTC)
+- [x] Deploy site, then create weekly Heartbeat cron (every Monday 9am UTC) — task_uid: 9EBsYyL69q5bCbmQ2iWW2W, next run: 2026-05-25T09:00:00Z
