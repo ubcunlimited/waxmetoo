@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Admin pages — no indexing needed
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://www.waxmetoo.com/sitemap.xml
