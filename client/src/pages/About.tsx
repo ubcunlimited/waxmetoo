@@ -62,7 +62,7 @@ const values = [
 const stats = [
   { number: "2007", label: "Year Founded" },
   { number: "4+", label: "Utah Locations" },
-  { number: "500+", label: "5-Star Reviews" },
+  { number: "1,000+", label: "5-Star Reviews" },
   { number: "17+", label: "Years of Excellence" },
 ];
 
