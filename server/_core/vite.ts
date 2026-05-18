@@ -21,6 +21,26 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
+
+  // Serve sitemap.xml and robots.txt directly from client/public in dev mode
+  const clientPublicPath = path.resolve(import.meta.dirname, "../..", "client", "public");
+  app.get("/sitemap.xml", (_req, res) => {
+    const p = path.resolve(clientPublicPath, "sitemap.xml");
+    if (fs.existsSync(p)) {
+      res.set("Content-Type", "application/xml").sendFile(p);
+    } else {
+      res.status(404).send("sitemap.xml not found");
+    }
+  });
+  app.get("/robots.txt", (_req, res) => {
+    const p = path.resolve(clientPublicPath, "robots.txt");
+    if (fs.existsSync(p)) {
+      res.set("Content-Type", "text/plain").sendFile(p);
+    } else {
+      res.status(404).send("robots.txt not found");
+    }
+  });
+
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
@@ -57,6 +77,25 @@ export function serveStatic(app: Express) {
       `Could not find the build directory: ${distPath}, make sure to build the client first`
     );
   }
+
+  // Serve sitemap.xml and robots.txt with correct Content-Type before catch-all
+  app.get("/sitemap.xml", (_req, res) => {
+    const sitemapPath = path.resolve(distPath, "sitemap.xml");
+    if (fs.existsSync(sitemapPath)) {
+      res.set("Content-Type", "application/xml").sendFile(sitemapPath);
+    } else {
+      res.status(404).send("sitemap.xml not found");
+    }
+  });
+
+  app.get("/robots.txt", (_req, res) => {
+    const robotsPath = path.resolve(distPath, "robots.txt");
+    if (fs.existsSync(robotsPath)) {
+      res.set("Content-Type", "text/plain").sendFile(robotsPath);
+    } else {
+      res.status(404).send("robots.txt not found");
+    }
+  });
 
   app.use(express.static(distPath));
 
