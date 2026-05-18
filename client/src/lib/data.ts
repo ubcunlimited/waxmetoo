@@ -1,7 +1,7 @@
 // WAX ME TOO — Site Data
 // All content is original and written for the Wax Me Too brand
 
-export const BOOKING_URL = "https://www.mangomint.com/waxmetoo";
+export const BOOKING_URL = "https://booking.mangomint.com/593822";
 
 export const locations = [
   {

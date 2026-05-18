@@ -11,6 +11,7 @@ import { Link, useLocation } from "wouter";
 import Layout from "@/components/Layout";
 import { trpc } from "@/lib/trpc";
 import { CheckCircle, XCircle, Loader2, ChevronRight, Gift } from "lucide-react";
+import { BOOKING_URL } from "@/lib/data";
 
 export default function GiveawayConfirm() {
   const [location] = useLocation();
@@ -110,7 +111,7 @@ export default function GiveawayConfirm() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
-                    href="https://app.mangomint.com/waxmetoo"
+                    href={BOOKING_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-sm"

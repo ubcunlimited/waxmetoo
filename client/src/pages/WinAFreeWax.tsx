@@ -12,6 +12,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { trpc } from "@/lib/trpc";
 import { Gift, CheckCircle, Mail, ChevronRight, Star, Calendar, MapPin, Share2, Copy, Check } from "lucide-react";
+import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 const SHARE_TEXT = "I just entered to win a free wax at Wax Me Too! Enter for your chance to win a complimentary waxing service — one winner every month! 🎁";
@@ -383,7 +384,7 @@ export default function WinAFreeWax() {
       <section className="py-12 px-6 text-center" style={{ background: "linear-gradient(135deg, #3B2F2A 0%, #4a3d38 100%)" }}>
         <p className="font-serif text-xl mb-2" style={{ color: "#F7F3EE" }}>Can't wait to win? Book your appointment today.</p>
         <p className="text-sm mb-6" style={{ color: "#A8B3AA" }}>Professional waxing services starting at $12 — From Brows to Toes &amp; Anything in Between!™</p>
-        <a href="https://app.mangomint.com/waxmetoo" target="_blank" rel="noopener noreferrer"
+        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-sm transition-all"
           style={{ background: "linear-gradient(90deg, #CFA7A0, #A8B3AA)", color: "#3B2F2A" }}>
           Book Now <ChevronRight size={16} />

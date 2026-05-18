@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
-import { blogPosts } from "@/lib/data";
+import { blogPosts, BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -483,7 +483,7 @@ export default function Blog() {
                 <p className="font-display text-xl text-white mb-2">Ready to get smooth?</p>
                 <p className="text-sm font-body mb-4" style={{ color: "#A8B3AA" }}>New clients get 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
                 <a
-                  href="https://app.mangomint.com/waxmetoo"
+                  href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3 rounded-lg text-sm font-body font-semibold transition-colors"
