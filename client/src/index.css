@@ -102,6 +102,77 @@
   --chart-5: oklch(0.45 0.02 35);
 }
 
+/* ============================================================
+   ADA / Accessibility Widget CSS
+   Applied by AccessibilityWidget.tsx via class toggles on <html>
+   ============================================================ */
+
+/* High contrast */
+.a11y-high-contrast {
+  filter: contrast(150%);
+}
+
+/* Invert colors */
+.a11y-invert {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Grayscale */
+.a11y-grayscale {
+  filter: grayscale(100%);
+}
+
+/* Dyslexia-friendly font (OpenDyslexic fallback to Arial rounded) */
+.a11y-dyslexia body,
+.a11y-dyslexia p,
+.a11y-dyslexia span,
+.a11y-dyslexia li,
+.a11y-dyslexia h1,
+.a11y-dyslexia h2,
+.a11y-dyslexia h3,
+.a11y-dyslexia h4 {
+  font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.8 !important;
+}
+
+/* Highlight links */
+.a11y-highlight-links a {
+  background-color: #fff176 !important;
+  color: #000 !important;
+  text-decoration: underline !important;
+  outline: 2px solid #f57f17;
+  border-radius: 2px;
+}
+
+/* Big cursor */
+.a11y-big-cursor,
+.a11y-big-cursor * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath fill='black' stroke='white' stroke-width='1' d='M4 0 L4 20 L8 16 L12 24 L14 22 L10 14 L16 14 Z'/%3E%3C/svg%3E") 0 0, auto !important;
+}
+
+/* Reduce motion */
+.a11y-reduce-motion *,
+.a11y-reduce-motion *::before,
+.a11y-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Focus mode — dim everything except focused element */
+.a11y-focus-mode *:not(:focus):not(:focus-within) {
+  opacity: 0.7;
+}
+.a11y-focus-mode *:focus,
+.a11y-focus-mode *:focus-within {
+  opacity: 1;
+  outline: 3px solid #c9847a !important;
+  outline-offset: 2px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

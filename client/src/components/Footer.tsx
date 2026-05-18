@@ -179,9 +179,9 @@ export default function Footer() {
           </p>
           <div className="flex gap-5">
             {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms & Conditions", href: "/terms" },
-              { label: "AI Disclosure", href: "/terms#ai-disclosure" },
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms & Conditions", href: "/terms-of-service" },
+              { label: "Accessibility", href: "/terms-of-service#accessibility" },
             ].map((link) => (
               <Link key={link.href} href={link.href}>
                 <span className="text-xs text-[#7a6a62] hover:text-[#A8B3AA] transition-colors cursor-pointer">{link.label}</span>

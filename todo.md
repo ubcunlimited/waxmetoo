@@ -332,3 +332,14 @@
 
 - [x] Footer: address text wrapped in <a href={loc.mapUrl}> — opens Google Maps in new tab, hover underline + pink color
 - [x] LocationDetail: "Getting Here" card added for South Jordan, Salt Lake City, Draper, St. George — shows navigation instructions + "Open in Google Maps" link; hidden for Layton and Orem
+
+## Phase 26 — Cookie Consent, ADA Accessibility Widget, Legal Pages
+
+- [x] CookieConsent component: fixed dark bottom banner, Accept All / Reject Optional buttons, Privacy Policy link, localStorage persistence, GA consent update on accept/reject, X dismiss button
+- [x] AccessibilityWidget component: fixed bottom-right dark rounded button, panel with 4 accordion sections (Vision, Color & Contrast, Motor & Navigation, Cognitive & Learning), reading guide, reset all, settings persisted to localStorage, skip-to-main-content link (WCAG 2.4.1)
+- [x] ADA CSS classes in index.css: high-contrast, invert, grayscale, dyslexia font, highlight links, big cursor, reduce motion, focus mode
+- [x] PrivacyPolicy page (/privacy-policy): 11 sections covering data collection, cookies, sharing, retention, rights, children, security, third-party links, changes, contact
+- [x] TermsOfService page (/terms-of-service): 14 sections including AI content disclosure, promotions/mascot hunt terms, appointment/cancellation policy, accessibility commitment
+- [x] Footer bottom bar: links updated to /privacy-policy, /terms-of-service, /terms-of-service#accessibility
+- [x] App.tsx: CookieConsent and AccessibilityWidget mounted globally; new routes registered
+- [x] 0 TypeScript errors, 47 tests passing

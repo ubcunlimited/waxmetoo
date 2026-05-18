@@ -21,6 +21,10 @@ import AfterCare from "./pages/AfterCare";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
+import AccessibilityWidget from "./components/AccessibilityWidget";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 // Mascot hunt pages
 import Register from "./pages/Register";
@@ -56,6 +60,8 @@ function Router() {
       <Route path="/after-care" component={AfterCare} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
       {/* Giveaway */}
       <Route path="/win-a-free-wax" component={WinAFreeWax} />
       <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
@@ -83,6 +89,8 @@ function App() {
           <Toaster />
           <Router />
           <MascotHuntBadge />
+          <CookieConsent />
+          <AccessibilityWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
