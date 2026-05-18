@@ -235,6 +235,12 @@
     font-family: 'DM Sans', sans-serif;
   }
 
+  /* Shimmer keyframe for booking buttons */
+  @keyframes btn-shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
   /* Brand Button Styles */
   .btn-primary {
     background-color: var(--espresso);
@@ -246,16 +252,47 @@
     text-transform: uppercase;
     padding: 0.875rem 2rem;
     border-radius: 0.25rem;
-    transition: all 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                background-color 0.22s ease;
     display: inline-block;
     text-decoration: none;
     border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Shimmer sweep on btn-primary */
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(247,243,238,0.18) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    background-position: -200% center;
+    transition: background-position 0s;
+    pointer-events: none;
   }
 
   .btn-primary:hover {
     background-color: #2a1f1b;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(59, 47, 42, 0.25);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(59, 47, 42, 0.32);
+  }
+
+  .btn-primary:hover::after {
+    animation: btn-shimmer 0.55s ease forwards;
+  }
+
+  .btn-primary:active {
+    transform: translateY(-1px) scale(1.00);
+    box-shadow: 0 3px 10px rgba(59, 47, 42, 0.2);
+    transition-duration: 0.1s;
   }
 
   .btn-rose {
@@ -268,16 +305,46 @@
     text-transform: uppercase;
     padding: 0.875rem 2rem;
     border-radius: 0.25rem;
-    transition: all 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                background-color 0.22s ease;
     display: inline-block;
     text-decoration: none;
     border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Shimmer sweep on btn-rose */
+  .btn-rose::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255,255,255,0.22) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    background-position: -200% center;
+    pointer-events: none;
   }
 
   .btn-rose:hover {
     background-color: #b8918a;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(207, 167, 160, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 28px rgba(207, 167, 160, 0.5);
+  }
+
+  .btn-rose:hover::after {
+    animation: btn-shimmer 0.55s ease forwards;
+  }
+
+  .btn-rose:active {
+    transform: translateY(-1px) scale(1.00);
+    box-shadow: 0 3px 12px rgba(207, 167, 160, 0.3);
+    transition-duration: 0.1s;
   }
 
   .btn-outline {
@@ -291,7 +358,10 @@
     padding: 0.8125rem 1.9375rem;
     border-radius: 0.25rem;
     border: 1.5px solid var(--espresso);
-    transition: all 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                background-color 0.22s ease,
+                color 0.22s ease;
     display: inline-block;
     text-decoration: none;
   }
@@ -299,6 +369,13 @@
   .btn-outline:hover {
     background-color: var(--espresso);
     color: var(--ivory);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(59, 47, 42, 0.22);
+  }
+
+  .btn-outline:active {
+    transform: translateY(-1px) scale(1.00);
+    transition-duration: 0.1s;
   }
 
   .btn-outline-ivory {
@@ -312,7 +389,10 @@
     padding: 0.8125rem 1.9375rem;
     border-radius: 0.25rem;
     border: 1.5px solid var(--ivory);
-    transition: all 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                background-color 0.22s ease,
+                color 0.22s ease;
     display: inline-block;
     text-decoration: none;
   }
@@ -320,6 +400,13 @@
   .btn-outline-ivory:hover {
     background-color: var(--ivory);
     color: var(--espresso);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(247, 243, 238, 0.25);
+  }
+
+  .btn-outline-ivory:active {
+    transform: translateY(-1px) scale(1.00);
+    transition-duration: 0.1s;
   }
 
   /* Section Label */
@@ -369,16 +456,44 @@
     text-transform: uppercase;
     padding: 0.875rem 2rem;
     border-radius: 0.25rem;
-    transition: all 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+                box-shadow 0.28s ease,
+                background-color 0.22s ease;
     display: inline-block;
     text-decoration: none;
     border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-sage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255,255,255,0.2) 50%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    background-position: -200% center;
+    pointer-events: none;
   }
 
   .btn-sage:hover {
     background-color: #8fa098;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(168, 179, 170, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(168, 179, 170, 0.45);
+  }
+
+  .btn-sage:hover::after {
+    animation: btn-shimmer 0.55s ease forwards;
+  }
+
+  .btn-sage:active {
+    transform: translateY(-1px) scale(1.00);
+    transition-duration: 0.1s;
   }
 
   /* Tag chip — sage */
