@@ -119,7 +119,7 @@ export default function FirstVisit() {
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(/manus-storage/first-visit_66b40ffa.jpg)` }}
+          style={{ backgroundImage: `url(/manus-storage/first-visit_713b5f78.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B2F2A]/85 to-[#3B2F2A]/50" />
         <div className="container relative z-10 py-24">

@@ -4,8 +4,8 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { getLoginUrl } from "@/const";
 
-const mascotStanding = "/manus-storage/mascot_v2_transparent_835c9480.png";
-const mascotPeeking  = "/manus-storage/mascot_peeking_t_26e6c284.png";
+const mascotStanding = "/manus-storage/mascot_v2_transparent_983f0933.webp";
+const mascotPeeking  = "/manus-storage/mascot_peeking_t_5bcdcc1a.webp";
 
 const LS_KEY = "wmt_mascot_found";
 

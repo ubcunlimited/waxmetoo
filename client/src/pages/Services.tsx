@@ -343,7 +343,7 @@ export default function Services() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url(/manus-storage/hero-services_3fc5840d.jpg)",
+            backgroundImage: "url(/manus-storage/hero-services_d8b61cd1.webp)",
           }}
         />
         <div className="absolute inset-0 bg-[#3B2F2A]/80" />

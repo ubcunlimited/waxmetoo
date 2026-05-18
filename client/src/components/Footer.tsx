@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <img
-              src="/manus-storage/logo-main_dd69d8bf.png"
+              src="/manus-storage/logo-main_d068419a.webp"
               alt="Wax Me Too — Professional Waxing Studio"
               className="h-16 w-auto mb-2 brightness-0 invert opacity-80"
             />

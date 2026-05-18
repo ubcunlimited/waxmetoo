@@ -76,7 +76,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(/manus-storage/hero-main_9c0c850f.jpg)`,
+            backgroundImage: `url(/manus-storage/hero-main_0aa99cbe.webp)`,
           }}
         />
         {/* Left-to-right gradient — ensures text always readable */}
@@ -221,7 +221,7 @@ export default function Home() {
             <FadeUp>
               <div className="relative">
                 <img
-                  src="/manus-storage/about-hero_3c8ee818.jpg"
+                  src="/manus-storage/about-hero_1fceb727.webp"
                   alt="Wax Me Too esthetician in treatment room"
                   className="w-full rounded-lg object-cover aspect-[4/3]"
                 />
@@ -271,7 +271,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(/manus-storage/first-visit_66b40ffa.jpg)`,
+            backgroundImage: `url(/manus-storage/first-visit_713b5f78.webp)`,
           }}
         />
         <div className="absolute inset-0 bg-[#3B2F2A]/75" />

@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 
-const mascotStanding = "/manus-storage/mascot_v2_transparent_835c9480.png";
+const mascotStanding = "/manus-storage/mascot_v2_transparent_983f0933.webp";
 
 export default function Register() {
   const { isAuthenticated, loading } = useAuth();

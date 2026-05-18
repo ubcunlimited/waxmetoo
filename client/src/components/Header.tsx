@@ -82,7 +82,7 @@ export default function Header() {
             <Link href="/">
               <div className="flex items-center gap-3 cursor-pointer">
                 <img
-                  src="/manus-storage/logo-main_dd69d8bf.png"
+                  src="/manus-storage/logo-main_d068419a.webp"
                   alt="Wax Me Too — Professional Waxing Studio"
                   className="h-20 md:h-24 w-auto"
                 />

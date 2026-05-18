@@ -82,7 +82,7 @@ export default function About() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(/manus-storage/about-hero_3c8ee818.jpg)`,
+            backgroundImage: `url(/manus-storage/about-hero_1fceb727.webp)`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#3B2F2A]/85 to-[#3B2F2A]/40" />
@@ -150,7 +150,7 @@ export default function About() {
             <FadeUp delay={150}>
               <div className="relative">
                 <img
-                  src="/manus-storage/about-hero_3c8ee818.jpg"
+                  src="/manus-storage/about-hero_1fceb727.webp"
                   alt="Wax Me Too studio interior"
                   className="w-full rounded-lg object-cover aspect-[4/5]"
                 />

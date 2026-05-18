@@ -18,10 +18,10 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Link } from "wouter";
 
 // ─── Asset URLs ──────────────────────────────────────────────────────────────
-const STANDING = "/manus-storage/mascot_v2_transparent_835c9480.png";
-const LAYING   = "/manus-storage/mascot_laying_t_4ff4c059.png";
-const PEEKING  = "/manus-storage/mascot_peeking_t_26e6c284.png";
-const SITTING  = "/manus-storage/mascot_sitting_t_2696d23e.png";
+const STANDING = "/manus-storage/mascot_v2_transparent_983f0933.webp";
+const LAYING   = "/manus-storage/mascot_laying_t_601867ad.webp";
+const PEEKING  = "/manus-storage/mascot_peeking_t_5bcdcc1a.webp";
+const SITTING  = "/manus-storage/mascot_sitting_t_9c3d0cab.webp";
 
 // ─── localStorage key ─────────────────────────────────────────────────────────
 const LS_KEY = "wmt_mascot_found";
