@@ -343,3 +343,13 @@
 - [x] Footer bottom bar: links updated to /privacy-policy, /terms-of-service, /terms-of-service#accessibility
 - [x] App.tsx: CookieConsent and AccessibilityWidget mounted globally; new routes registered
 - [x] 0 TypeScript errors, 47 tests passing
+
+## Phase 27 — Weekly Automated 404 Check
+
+- [x] Write /api/scheduled/link-check Express handler (server/linkCheckHandler.ts)
+  - Checks 27 routes: all static pages, 6 location detail pages, 5 blog sample slugs, sitemap.xml, robots.txt
+  - Runs checks in batches of 5 concurrently with 10s timeout per URL
+  - Sends owner notification: "All Clear" if no broken links, detailed broken-links report if any found
+- [x] Register handler in server/_core/index.ts before Vite/static fallthrough
+- [x] 0 TypeScript errors
+- [ ] Deploy site, then create weekly Heartbeat cron (every Monday 9am UTC)

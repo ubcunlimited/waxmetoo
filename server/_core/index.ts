@@ -9,6 +9,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { startScheduler } from "../scheduler";
+import { linkCheckHandler } from "../linkCheckHandler";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -45,6 +46,9 @@ async function startServer() {
       createContext,
     })
   );
+  // Scheduled / cron handlers — must be registered before Vite/static fallthrough
+  app.post("/api/scheduled/link-check", linkCheckHandler);
+
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
