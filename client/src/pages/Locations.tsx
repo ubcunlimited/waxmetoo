@@ -176,7 +176,7 @@ export default function Locations() {
             <h2 className="font-display text-3xl md:text-4xl text-[#3B2F2A] mb-4">
               Ready to book at your nearest location?
             </h2>
-            <p className="text-[#3B2F2A]/80 font-body mb-6">New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+            <p className="text-[#3B2F2A]/80 font-body mb-6">First time at Wax Me Too? Get your Brazilian wax for $50.</p>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Book Your Appointment
             </a>

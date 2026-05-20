@@ -427,7 +427,7 @@ export const faqs = [
     id: 14,
     category: "First Visit",
     question: "Do you offer a new client special?",
-    answer: "Yes! New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. This is our way of welcoming you to the Wax Me Too family. Book online and the discount will be applied automatically.",
+    answer: "Yes! First-time clients at Wax Me Too get their Brazilian wax for $50. This is our way of welcoming you to the family. Book online and the offer will be applied automatically.",
   },
 ];
 

@@ -38,7 +38,7 @@ const steps = [
   {
     number: "01",
     title: "Book your appointment",
-    description: "Choose your location, service, and preferred time online. It takes less than 2 minutes. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.",
+    description: "Choose your location, service, and preferred time online. It takes less than 2 minutes. First-time clients get their Brazilian wax for $50.",
   },
   {
     number: "02",
@@ -149,7 +149,7 @@ export default function FirstVisit() {
       <div className="bg-[#CFA7A0] py-5">
         <div className="container text-center">
           <p className="font-body text-[#3B2F2A] font-500">
-              ✦ <strong>New Client Special:</strong> Enjoy 50% off your first Brazilian, Deep Bikini, or Bikini wax when you book online.{" "}
+              ✦ <strong>New Client Special:</strong> First time at Wax Me Too? Get your Brazilian wax for $50.{" "}
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="underline font-600">
               Claim your offer →
             </a>
@@ -367,7 +367,7 @@ export default function FirstVisit() {
                 Your first visit is waiting.
               </h2>
               <p className="text-[#D8C6B6] font-body mb-8 max-w-md mx-auto">
-                New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. Book online in minutes.
+                First time at Wax Me Too? Get your Brazilian wax for $50. Book online in minutes.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">

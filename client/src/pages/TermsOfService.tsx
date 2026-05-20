@@ -64,7 +64,7 @@ export default function TermsOfService() {
           </p>
           <ul>
             <li>Promotions are subject to change or withdrawal at any time without notice.</li>
-            <li>New client discounts (currently 50% off select services on the first visit) apply to first-time clients only and are limited to one use per person.</li>
+            <li>New client offer (currently $50 Brazilian wax on the first visit) applies to first-time clients only, is limited to one use per person, and is valid on Brazilian wax services only.</li>
             <li>The Mascot Hunt discount code (currently 20% off one service) is awarded once per registered account upon finding all hidden mascots on the Site. Codes may not be combined with other offers and are valid for one use only.</li>
             <li>Discount codes have no cash value and are non-transferable.</li>
             <li>Military discounts are available at select locations. Proof of service may be required.</li>

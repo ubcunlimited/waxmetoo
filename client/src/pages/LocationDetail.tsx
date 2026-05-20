@@ -34,7 +34,7 @@ export default function LocationDetail() {
     document.title = `Waxing in ${location.city}, Utah | Wax Me Too — Professional Waxing Studio`;
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.appendChild(meta); }
-    meta.content = `Wax Me Too ${location.city} — Professional Brazilian waxing, eyebrow design, and full body waxing in ${location.city}, ${location.county}, Utah. ${location.address}. Book online today. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.`;
+    meta.content = `Wax Me Too ${location.city} — Professional Brazilian waxing, eyebrow design, and full body waxing in ${location.city}, ${location.county}, Utah. ${location.address}. Book online today. First-time clients get their Brazilian wax for $50.`;
     return () => { document.title = 'Wax Me Too — Professional Waxing Studio | Utah'; };
   }, [location]);
 
@@ -225,8 +225,8 @@ export default function LocationDetail() {
               <FadeUp delay={100}>
                 <div className="bg-[#CFA7A0] rounded-lg p-5">
                   <p className="font-body text-xs font-600 text-[#3B2F2A] uppercase tracking-wide mb-2">New Client Special</p>
-                  <p className="font-display text-xl text-[#3B2F2A] mb-2">50% off your first Brazilian, Deep Bikini, or Bikini wax</p>
-                  <p className="text-xs font-body text-[#3B2F2A]/80 mb-3">First time at Wax Me Too? Book your first Brazilian, Deep Bikini, or Bikini wax and receive 50% off.</p>
+                  <p className="font-display text-xl text-[#3B2F2A] mb-2">Brazilian wax for $50 — first visit only</p>
+                  <p className="text-xs font-body text-[#3B2F2A]/80 mb-3">First time at Wax Me Too? Book your first Brazilian wax and pay just $50.</p>
                   <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm py-2.5 w-full text-center block">
                     Claim Offer
                   </a>

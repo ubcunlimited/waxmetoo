@@ -56,7 +56,7 @@ export default function Home() {
   useEffect(() => {
     document.title = "Wax Me Too — Utah's Professional Waxing Studio Since 2007";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']"); if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.";
+    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. First-time clients get their Brazilian wax for $50.";
     return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
   }, []);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -127,10 +127,10 @@ export default function Home() {
               <div>
                 <p className="font-body text-xs font-600 tracking-widest uppercase text-[#3B2F2A]/70 mb-2">New Client Special</p>
                 <h2 className="font-display text-3xl md:text-4xl text-[#3B2F2A]">
-                  Your first Brazilian, Deep Bikini, or Bikini wax, <em>50% off.</em>
+                  First time at Wax Me Too? <em>Brazilian wax for $50.</em>
                 </h2>
                 <p className="text-[#3B2F2A]/80 mt-2 font-body">
-                  First time at Wax Me Too? We'd love to welcome you. Book your first Brazilian, Deep Bikini, or Bikini wax and receive 50% off.
+                  We'd love to welcome you. New clients get their first Brazilian wax for just $50 — book online in minutes.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -597,7 +597,7 @@ export default function Home() {
                 Your smoothest skin is<br /><em className="text-[#CFA7A0]">one appointment away.</em>
               </h2>
               <p className="text-[#D8C6B6] font-body mb-8 max-w-md mx-auto">
-                Book online in minutes. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.
+                Book online in minutes. First-time clients get their Brazilian wax for $50.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose">

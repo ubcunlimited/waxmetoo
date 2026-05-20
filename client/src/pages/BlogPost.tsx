@@ -168,7 +168,7 @@ function getArticleContent(slug: string): string {
         </ul>
 
         <h2>Book at Any of Our 6 Utah Locations</h2>
-        <p>Wax Me Too has 6 convenient locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online at waxmetoo.com and select your preferred location, esthetician, and time. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Wax Me Too has 6 convenient locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online at waxmetoo.com and select your preferred location, esthetician, and time. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "military-discounts-wax-me-too-layton":
@@ -260,7 +260,7 @@ function getArticleContent(slug: string): string {
         <p>Avoid scheduling your wax the day before — while most clients are fine, we want to give your skin the best possible chance to look its absolute best.</p>
 
         <h2>Book Your Bridal Consultation</h2>
-        <p>Wax Me Too has 6 locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online at waxmetoo.com and mention that you're a bride — our estheticians love helping brides prepare for their special day. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Wax Me Too has 6 locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online at waxmetoo.com and mention that you're a bride — our estheticians love helping brides prepare for their special day. First-time clients get their Brazilian wax for $50.</p>
         <p>Say "I do" to smooth, glowing skin. We can't wait to be part of your wedding journey.</p>
       `;
 
@@ -290,7 +290,7 @@ function getArticleContent(slug: string): string {
         <p>Our new South Jordan location is easily accessible from throughout the Salt Lake Valley's southwest corridor. Whether you're coming from South Jordan, West Jordan, Herriman, or Riverton, we're conveniently located to serve you.</p>
 
         <h2>Book Your Appointment</h2>
-        <p>Book online at waxmetoo.com and select the South Jordan location. You'll find our full list of services, estheticians, and available appointment times. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax — we'd love to welcome you to the Wax Me Too family.</p>
+        <p>Book online at waxmetoo.com and select the South Jordan location. You'll find our full list of services, estheticians, and available appointment times. First-time clients get their Brazilian wax for $50 — we'd love to welcome you to the Wax Me Too family.</p>
       `;
 
     case "south-jordan-6th-location-opening":
@@ -305,7 +305,7 @@ function getArticleContent(slug: string): string {
           <li><strong>No double-dipping.</strong> Fresh applicators for every client, every time.</li>
           <li><strong>Sinks in every room.</strong> Your esthetician washes her hands in front of you before every service.</li>
           <li><strong>No memberships.</strong> Transparent pricing, no hidden fees, no pressure.</li>
-          <li><strong>50% off your first Brazilian, Deep Bikini, or Bikini wax.</strong> Your first service at any Wax Me Too location comes with a 20% new client discount.</li>
+          <li><strong>your first Brazilian wax for $50.</strong> Your first service at any Wax Me Too location comes with a 20% new client discount.</li>
         </ul>
         <h2>Book Your Appointment</h2>
         <p>Ready to experience Utah's most trusted waxing studio? Book online at waxmetoo.com and select the South Jordan location. We can't wait to welcome you.</p>
@@ -340,10 +340,10 @@ function getArticleContent(slug: string): string {
           <li><strong>Privacy and dignity.</strong> We step out while you prepare. You'll never feel rushed or uncomfortable.</li>
           <li><strong>Experienced estheticians only.</strong> We don't train new graduates on clients.</li>
           <li><strong>No hairs left behind guarantee.</strong> We check our work before you leave.</li>
-          <li><strong>50% off your first Brazilian, Deep Bikini, or Bikini wax.</strong> We want you to experience the Wax Me Too difference risk-free.</li>
+          <li><strong>First-time client offer.</strong> Get your first Brazilian wax for $50. We want you to experience the Wax Me Too difference risk-free.</li>
         </ul>
         <h2>6 Locations Across Utah</h2>
-        <p>With studios in Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George, we're Utah's most accessible professional waxing studio. Book online at waxmetoo.com — your first Brazilian, Deep Bikini, or Bikini wax is 50% off.</p>
+        <p>With studios in Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George, we're Utah's most accessible professional waxing studio. Book online at waxmetoo.com — first-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "summer-waxing-utah-guide":
@@ -369,7 +369,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Moisturize daily.</strong> Hydrated skin holds wax results longer and reduces the risk of ingrown hairs.</li>
         </ul>
         <h2>Book at Any of Our 6 Utah Locations</h2>
-        <p>Wax Me Too has studios in Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online and enjoy 50% off your first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Wax Me Too has studios in Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online and enjoy your first Brazilian wax for $50.</p>
       `;
 
     case "wax-me-too-happy-faces-community":
@@ -383,7 +383,7 @@ function getArticleContent(slug: string): string {
         <p>Many of our clients have been coming to Wax Me Too for years — some since we first opened in 2007. They've followed us as we've grown from one location in Draper to six studios across Utah. They've referred their friends, their sisters, their mothers. They've trusted us with some of their most personal grooming needs, and we don't take that trust lightly.</p>
         <h2>Thank You, Utah</h2>
         <p>To every client who has ever walked through our doors: thank you. You are the reason we do what we do. We're honored to be part of your self-care routine, and we look forward to many more years of serving Utah's most amazing community.</p>
-        <p>Book your next appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your next appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "draper-waxing-salon-expansion":
@@ -395,7 +395,7 @@ function getArticleContent(slug: string): string {
         <h2>Our Draper Studio: Where It All Started</h2>
         <p>Draper has been home to Wax Me Too since day one. Located at <strong>177 West 12300 South</strong>, our Draper studio is conveniently situated for clients throughout the Salt Lake Valley's south end — including Sandy, Riverton, and South Jordan. We're proud of our roots in this community and grateful for the loyal clients who have supported us from the very beginning.</p>
         <h2>Book Your Appointment</h2>
-        <p>Book online at waxmetoo.com and select the Draper location. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. We'd love to see you in our newly expanded space.</p>
+        <p>Book online at waxmetoo.com and select the Draper location. First-time clients get their Brazilian wax for $50. We'd love to see you in our newly expanded space.</p>
       `;
 
     case "salt-lake-city-waxing-salon":
@@ -412,7 +412,7 @@ function getArticleContent(slug: string): string {
           <li><strong>No double-dipping</strong> — fresh applicators for every client</li>
           <li><strong>Sinks in every treatment room</strong> — hygiene you can see</li>
           <li><strong>No memberships, no pressure</strong> — transparent pricing always</li>
-          <li><strong>50% off your first Brazilian, Deep Bikini, or Bikini wax</strong></li>
+          <li><strong>your first Brazilian wax for $50</strong></li>
         </ul>
         <p>Book online at waxmetoo.com and select the Salt Lake City location. We look forward to welcoming you.</p>
       `;
@@ -427,7 +427,7 @@ function getArticleContent(slug: string): string {
         <h2>Serving Davis County and Beyond</h2>
         <p>Our Layton studio serves clients from throughout Davis County — including Layton, Clearfield, Syracuse, Clinton, and Kaysville — as well as clients from Weber County to the north. We're Utah's northernmost waxing studio, and we're proud to bring professional waxing expertise to this community.</p>
         <h2>Book at Our New Layton Location</h2>
-        <p>Book online at waxmetoo.com and select the Layton location. Military personnel: look for the military discount option when selecting your service. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book online at waxmetoo.com and select the Layton location. Military personnel: look for the military discount option when selecting your service. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "layton-waxing-salon-new-team":
@@ -440,7 +440,7 @@ function getArticleContent(slug: string): string {
         <p>More team members means more availability. If you've ever struggled to find an appointment time that works for your schedule, our expanded team makes it easier than ever to book at a time that's convenient for you. We offer early morning, evening, and weekend appointments to accommodate even the busiest schedules.</p>
         <h2>The Wax Me Too Standard</h2>
         <p>Every esthetician at Wax Me Too — new or veteran — upholds the same non-negotiable standards: no double-dipping, sinks in every treatment room, privacy and dignity for every client, and a genuine commitment to your comfort and satisfaction.</p>
-        <p>Book your appointment online at waxmetoo.com and select the Layton location. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your appointment online at waxmetoo.com and select the Layton location. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "layton-waxing-milly-speaks-spanish":
@@ -474,7 +474,7 @@ function getArticleContent(slug: string): string {
         <p>We are Utah's original waxing-only studio — not a spa that offers waxing as an afterthought. Our estheticians specialize exclusively in waxing, performing these services every day and refining their technique with every appointment. The result is a level of expertise that generalist salons simply cannot match.</p>
         <p>We also offer <strong>military discounts</strong> for active service members and their families — a small token of appreciation for those who serve near Hill Air Force Base.</p>
         <h2>Book Your Layton Appointment</h2>
-        <p>Book online at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book online at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "how-often-should-you-wax":
@@ -525,7 +525,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>Professional Waxing Reduces Ingrown Hair Risk</h2>
         <p>Proper waxing technique significantly reduces the risk of ingrown hairs compared to shaving. When hair is removed from the root (as in waxing), it grows back with a tapered tip that's less likely to curl back into the skin. Shaving creates a blunt cut that's more prone to ingrowth.</p>
-        <p>Book your appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "waxing-aftercare-guide":
@@ -573,7 +573,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Take an OTC pain reliever if desired.</strong> Some clients find that taking ibuprofen 30–45 minutes before their appointment reduces discomfort.</li>
         </ul>
         <h2>Book Your Appointment</h2>
-        <p>Ready to experience the Wax Me Too difference? Book online at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Ready to experience the Wax Me Too difference? Book online at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "waxing-faq-utah":
@@ -612,7 +612,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>Why Men Choose Waxing Over Shaving</h2>
         <p>The benefits of waxing over shaving are the same for men as for women: longer-lasting results (3–6 weeks vs. 1–3 days), finer regrowth over time, no razor burn, and no daily maintenance. For active men, waxing also eliminates the chafing and irritation that can come from shaving.</p>
-        <p>Book your men's waxing appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your men's waxing appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "waxing-sensitive-skin-guide":
@@ -637,7 +637,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>Our Approach to Sensitive Skin</h2>
         <p>At Wax Me Too, we use professional-grade wax formulations that are gentle on sensitive skin. Our estheticians are trained to recognize signs of sensitivity and adjust their technique accordingly. We'd rather take an extra moment to ensure your comfort than rush through a service that leaves your skin unhappy.</p>
-        <p>Book your appointment at waxmetoo.com and mention your sensitive skin in the notes field when booking. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your appointment at waxmetoo.com and mention your sensitive skin in the notes field when booking. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "waxing-while-pregnant-utah":
@@ -659,7 +659,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Listen to your body.</strong> If at any point you feel uncomfortable, let your esthetician know and we'll adjust accordingly.</li>
         </ul>
         <h2>Book Your Prenatal Waxing Appointment</h2>
-        <p>Our licensed estheticians at all 6 Wax Me Too locations are experienced in working with pregnant clients. Book online at waxmetoo.com and mention your pregnancy in the notes field. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Our licensed estheticians at all 6 Wax Me Too locations are experienced in working with pregnant clients. Book online at waxmetoo.com and mention your pregnancy in the notes field. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "first-brazilian-wax-step-by-step":
@@ -681,7 +681,7 @@ function getArticleContent(slug: string): string {
         <p>Your esthetician will cleanse the area, apply warm wax in small sections, and remove it quickly and efficiently. The sensation is a quick, sharp sting that passes immediately — most clients are surprised by how manageable it is. Your esthetician will work methodically to ensure complete coverage and clean results.</p>
         <h2>Step 5: Aftercare</h2>
         <p>After your service, your esthetician will apply a soothing aftercare product and review aftercare instructions with you. Avoid heat, sun exposure, and pools for 24 hours.</p>
-        <p>Ready to book? Visit waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Ready to book? Visit waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "15-minute-brazilian-wax-experience":
@@ -699,7 +699,7 @@ function getArticleContent(slug: string): string {
         <p>The efficiency of our service is a reflection of expertise, not haste. Our estheticians perform Brazilian waxes every day — they've refined their technique to be both fast and thorough. The result is a service that's quick, comfortable, and complete.</p>
         <h2>First-Time Clients: What to Expect</h2>
         <p>If this is your first Brazilian wax, your appointment may take slightly longer as your esthetician takes time to explain each step and ensure your comfort throughout. That's completely normal — and we'd rather take the extra time than rush you through an experience that deserves care and attention.</p>
-        <p>Book your Brazilian wax at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your Brazilian wax at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "naked-and-afraid-first-brazilian":
@@ -723,7 +723,7 @@ function getArticleContent(slug: string): string {
           <li>30-minute appointments so you never feel rushed</li>
           <li>A genuine commitment to your comfort and dignity</li>
         </ul>
-        <p>Ready to take the plunge? Book at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Ready to take the plunge? Book at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "bikini-wax-types-explained":
@@ -738,7 +738,7 @@ function getArticleContent(slug: string): string {
         <p>The <strong>Brazilian wax</strong> is our most popular service — and for good reason. It removes all or nearly all hair from the bikini area, front to back, leaving you completely smooth. Clients can choose to leave a small strip or triangle in the front, or opt for a completely bare look. The Brazilian wax is the gold standard for beach vacations, honeymoons, and anyone who simply prefers the feeling of complete smoothness.</p>
         <h2>Which Should You Choose?</h2>
         <p>If you're new to waxing, we generally recommend starting with a bikini line or full bikini wax to see how your skin responds. If you're ready to go all-in, the Brazilian is an excellent choice — and our estheticians are experts at making first-time Brazilian clients feel comfortable and at ease.</p>
-        <p>Book your bikini wax at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your bikini wax at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "eyebrow-design-waxing-guide":
@@ -757,7 +757,7 @@ function getArticleContent(slug: string): string {
         <h2>Eyebrow Tinting</h2>
         <p>Pair your eyebrow wax with an eyebrow tint for a complete brow transformation. Tinting adds definition, depth, and fullness to your brows — perfect for clients with lighter or sparser hair. Results last 4–6 weeks.</p>
         <h2>Book Your Brow Appointment</h2>
-        <p>Book your eyebrow wax, tint, or design appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your eyebrow wax, tint, or design appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "underarm-waxing-guide-utah":
@@ -781,7 +781,7 @@ function getArticleContent(slug: string): string {
           <li>Avoid heat and sweating for 24 hours</li>
           <li>Begin gentle exfoliation 48 hours after your wax to prevent ingrown hairs</li>
         </ul>
-        <p>Book your underarm waxing appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your underarm waxing appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "3-worst-things-waxing-salon":
@@ -818,7 +818,7 @@ function getArticleContent(slug: string): string {
         <p><strong>Shaving:</strong> Daily or near-daily maintenance required. Razor replacement, shaving cream, post-shave care — it adds up in time and money.</p>
         <p><strong>Brazilian wax:</strong> One appointment every 4–6 weeks. No daily routine, no razor burns, no stubble.</p>
         <h2>The Verdict</h2>
-        <p>For anyone who shaves regularly, switching to professional waxing is one of the best decisions you can make for your skin and your routine. Book your first Brazilian wax at waxmetoo.com — new clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>For anyone who shaves regularly, switching to professional waxing is one of the best decisions you can make for your skin and your routine. Book your first Brazilian wax at waxmetoo.com — first-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "brazilian-waxing-salon-qa":
@@ -830,14 +830,14 @@ function getArticleContent(slug: string): string {
         <h2>Q: How long does the appointment take?</h2>
         <p>A: We schedule Brazilian wax appointments for 30 minutes. The actual waxing typically takes about 15 minutes — the extra time ensures you never feel rushed.</p>
         <h2>Q: How much does it cost?</h2>
-        <p>A: Our Brazilian wax is $65. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax — see our full pricing at waxmetoo.com.</p>
+        <p>A: Our Brazilian wax is $65. First-time clients get their Brazilian wax for $50 — see our full pricing at waxmetoo.com.</p>
         <h2>Q: How long does hair need to be?</h2>
         <p>A: At least ¼ inch — roughly 10 days of growth after shaving, or 3 to 4 weeks after waxing. If you're not sure, err on the side of more growth rather than less.</p>
         <h2>Q: Will it hurt?</h2>
         <p>A: There's a sensation — a quick, sharp sting that passes immediately. Most clients are surprised by how manageable it is. It gets significantly easier with each subsequent visit.</p>
         <h2>Q: How do I prepare?</h2>
         <p>A: Stop shaving at least 10 days before your appointment. Exfoliate gently 24–48 hours before. Shower and cleanse the area on the day of your appointment.</p>
-        <p>Ready to book? Visit waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Ready to book? Visit waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "prevention-magazine-bikini-wax-tips":
@@ -851,7 +851,7 @@ function getArticleContent(slug: string): string {
         <p>Not all waxing salons are equal. <em>Prevention</em>'s advice: look for a salon that uses fresh applicators for every client (no double-dipping), has sinks in the treatment rooms, and employs experienced estheticians who specialize in waxing. That's exactly what you'll find at every Wax Me Too location.</p>
         <h2>Post-Wax Care</h2>
         <p>After your wax, avoid heat, sun exposure, and tight clothing for 24 hours. Begin gentle exfoliation 48 hours after your appointment and continue 2–3 times per week to prevent ingrown hairs. Moisturize daily to keep skin hydrated and smooth.</p>
-        <p>Book your bikini wax at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book your bikini wax at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "throw-away-your-razor":
@@ -871,7 +871,7 @@ function getArticleContent(slug: string): string {
           <li>A simplified daily routine — no more shaving in the shower</li>
         </ul>
         <h2>Ready to Make the Switch?</h2>
-        <p>Your first step: stop shaving now and let your hair grow to at least ¼ inch (about 10 days). Then book your first appointment at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Your first step: stop shaving now and let your hair grow to at least ¼ inch (about 10 days). Then book your first appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
         <p>Throw away your razor. You won't miss it.</p>
       `;
 
@@ -901,7 +901,7 @@ function getArticleContent(slug: string): string {
           <li>Pack SPF for freshly waxed areas</li>
         </ul>
         <h2>Book Your Pre-Vacation Wax</h2>
-        <p>Wax Me Too has 6 locations across Utah. Book online at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Wax Me Too has 6 locations across Utah. Book online at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "spring-adventure-waxing-utah":
@@ -925,7 +925,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Protect with SPF.</strong> As UV exposure increases in spring, protect freshly waxed skin with sunscreen.</li>
         </ul>
         <h2>Book Your Spring Appointment</h2>
-        <p>Spring appointments fill up fast — book early at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Spring appointments fill up fast — book early at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "holiday-waxing-on-top-of-the-world":
@@ -960,7 +960,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Consider a full leg wax.</strong> Park City in January means layers, but the après-ski parties mean showing some skin.</li>
         </ul>
         <h2>Book at Our Draper or Salt Lake City Location</h2>
-        <p>Our Draper and Salt Lake City studios are the most convenient for Sundance attendees. Book online at waxmetoo.com — new clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Our Draper and Salt Lake City studios are the most convenient for Sundance attendees. Book online at waxmetoo.com — first-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "valentines-day-waxing-rippp-and-swear":
@@ -973,7 +973,7 @@ function getArticleContent(slug: string): string {
         <h2>Book Early — Valentine's Week Fills Up Fast</h2>
         <p>Valentine's Day appointments at Wax Me Too fill up weeks in advance. We strongly recommend booking at least 2 weeks before February 14th to secure your preferred time slot. Book online at waxmetoo.com and select your preferred location from our 6 Utah studios.</p>
         <h2>New Client Special</h2>
-        <p>Never tried a Brazilian wax before? Valentine's Day is the perfect occasion for your first experience. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax — and our estheticians are experts at making first-timers feel comfortable and at ease.</p>
+        <p>Never tried a Brazilian wax before? Valentine's Day is the perfect occasion for your first experience. First-time clients get their Brazilian wax for $50 — and our estheticians are experts at making first-timers feel comfortable and at ease.</p>
         <p>Rip it. Swear by it. Book at waxmetoo.com.</p>
       `;
 
@@ -1005,7 +1005,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Facial waxing</strong> — a flawless complexion for the occasion</li>
         </ul>
         <h2>Book Your Valentine's Appointment</h2>
-        <p>Valentine's week fills up fast. Book your appointment now at waxmetoo.com — new clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. And don't forget to enter our giveaway for a chance to win a free service!</p>
+        <p>Valentine's week fills up fast. Book your appointment now at waxmetoo.com — first-time clients get their Brazilian wax for $50. And don't forget to enter our giveaway for a chance to win a free service!</p>
       `;
 
     case "free-bikini-wax-drawing-utah":
@@ -1018,7 +1018,7 @@ function getArticleContent(slug: string): string {
         <p>At Wax Me Too, we believe that every woman deserves to feel confident and cared for. Our monthly giveaways are our way of saying thank you to our incredible Utah community — and of giving new clients a risk-free way to discover what professional waxing can do for them.</p>
         <p>If you've been curious about waxing but haven't taken the plunge, winning a free bikini wax is the perfect way to try it without any commitment. Our licensed estheticians will make you feel comfortable, informed, and completely at ease from the moment you walk in.</p>
         <h2>About Wax Me Too</h2>
-        <p>Wax Me Too has been Utah's most trusted waxing studio since 2007. We have 6 locations across the state — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book at waxmetoo.com. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Wax Me Too has been Utah's most trusted waxing studio since 2007. We have 6 locations across the state — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "waxing-south-jordan-utah-opening":
@@ -1035,7 +1035,7 @@ function getArticleContent(slug: string): string {
           <li>No double-dipping — ever</li>
           <li>Sinks in every treatment room</li>
           <li>No memberships, no pressure</li>
-          <li>50% off your first Brazilian, Deep Bikini, or Bikini wax</li>
+          <li>your first Brazilian wax for $50</li>
         </ul>
         <p>Book your South Jordan appointment at waxmetoo.com. We can't wait to welcome you.</p>
       `;
@@ -1056,7 +1056,7 @@ function getArticleContent(slug: string): string {
           <li>Facial waxing</li>
         </ul>
         <h2>Book Your Appointment</h2>
-        <p>Book online at waxmetoo.com and select the South Jordan location. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax. We're so excited to be part of the South Jordan community — we can't wait to meet you.</p>
+        <p>Book online at waxmetoo.com and select the South Jordan location. First-time clients get their Brazilian wax for $50. We're so excited to be part of the South Jordan community — we can't wait to meet you.</p>
       `;
 
     case "utah-waxing-salon-established-2007":
@@ -1095,7 +1095,7 @@ function getArticleContent(slug: string): string {
         <h2>The London Brow Company — Exclusively at Wax Me Too</h2>
         <p>We are proud to be the exclusive Utah retailer of <strong>The London Brow Company</strong> — a premium, vegan, cruelty-free brow product line. Available at our St. George location and select other Wax Me Too studios.</p>
         <h2>Book Your St. George Appointment</h2>
-        <p>Book online at waxmetoo.com and select the St. George location. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book online at waxmetoo.com and select the St. George location. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "mens-eyebrow-waxing-metrosexual":
@@ -1110,7 +1110,7 @@ function getArticleContent(slug: string): string {
         <h2>The Unibrow: We Can Help</h2>
         <p>If you're dealing with a unibrow, we can take care of that too — quickly, cleanly, and with results that last 3–4 weeks. No more daily tweezing or shaving between the brows.</p>
         <h2>Book Your Men's Eyebrow Wax</h2>
-        <p>Book at waxmetoo.com and select "Men's Eyebrow Wax" from the service menu. New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax.</p>
+        <p>Book at waxmetoo.com and select "Men's Eyebrow Wax" from the service menu. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     default:
@@ -1314,7 +1314,7 @@ export default function BlogPost() {
                     <div className="flex-1">
                       <p className="text-xs font-body font-semibold uppercase tracking-widest mb-2" style={{ color: "#A8B3AA" }}>New Client Special</p>
                       <h3 className="font-display text-2xl text-white mb-2">Ready to get smooth?</h3>
-                      <p className="text-[#D8C6B6] font-body text-sm">New clients receive 50% off their first Brazilian, Deep Bikini, or Bikini wax at any of our 6 Utah locations.</p>
+                      <p className="text-[#D8C6B6] font-body text-sm">First time at Wax Me Too? Get your Brazilian wax for $50 at any of our 6 Utah locations.</p>
                     </div>
                     <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose whitespace-nowrap shrink-0">
                       Book Your Appointment
@@ -1380,7 +1380,7 @@ export default function BlogPost() {
               <FadeUp>
                 <div className="bg-[#3B2F2A] rounded-xl p-5">
                   <p className="text-xs font-body font-semibold uppercase tracking-wide mb-2" style={{ color: "#A8B3AA" }}>New Client Special</p>
-                  <p className="font-display text-xl text-white mb-1">50% off your first Brazilian, Deep Bikini, or Bikini wax</p>
+                  <p className="font-display text-xl text-white mb-1">Brazilian wax for $50 — first visit only</p>
                   <p className="text-xs text-[#D8C6B6] font-body mb-3">6 Utah locations. Book online in minutes.</p>
                   <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-rose text-sm py-2.5 w-full text-center block">
                     Book Now
