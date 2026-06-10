@@ -18,6 +18,7 @@ import Layout from "@/components/Layout";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import {
   mostPopular,
+  laminationItems,
   ladiesSections,
   menSections,
   type ServiceItem,
@@ -364,6 +365,89 @@ export default function Services() {
           </div>
         </div>
       </div>
+
+      {/* ── NEW! Lamination & Brow Henna ── */}
+      <section className="py-10" style={{ background: "#fff8f4" }}>
+        <div className="container max-w-3xl">
+          {/* Section header with NEW badge */}
+          <div className="flex items-center gap-3 mb-5">
+            <span
+              className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
+              style={{ background: "#CFA7A0", color: "#ffffff" }}
+            >
+              NEW!
+            </span>
+            <h2 className="font-display text-2xl font-bold" style={{ color: "#3B2F2A" }}>
+              Lamination &amp; Brow Henna
+            </h2>
+          </div>
+          <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+            Introducing our new brow lamination services using The London Brow Company's
+            vegan, cruelty-free formula — for perfectly groomed brows that last for weeks.
+          </p>
+
+          <div
+            className="rounded-2xl overflow-hidden mb-4"
+            style={{ border: "2px solid #CFA7A0", background: "#ffffff" }}
+          >
+            <div
+              className="flex items-center justify-between px-5 py-3 border-b"
+              style={{ borderColor: "#F0EAE4", background: "#FBF8F5" }}
+            >
+              <span className="text-xs font-semibold" style={{ color: "#A8B3AA" }}>Service</span>
+              <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>Price</span>
+            </div>
+            <div className="px-5 pb-2 pt-1">
+              {laminationItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-start justify-between py-4 border-b last:border-0 gap-3"
+                  style={{ borderColor: "#F0EAE4" }}
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-sm font-semibold" style={{ color: "#3B2F2A" }}>
+                        {item.name}
+                      </span>
+                      <span
+                        className="text-xs px-2 py-0.5 rounded-full"
+                        style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0" }}
+                      >
+                        Popular
+                      </span>
+                    </div>
+                    {item.duration && (
+                      <p className="text-xs mt-0.5" style={{ color: "#A8B3AA" }}>{item.duration}</p>
+                    )}
+                    {item.description && (
+                      <p className="text-xs mt-1.5 leading-relaxed" style={{ color: "#6B6B6B" }}>
+                        {item.description}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex-shrink-0 text-right ml-4">
+                    <p className="text-base font-bold" style={{ color: "#3B2F2A" }}>
+                      {fmt(item.price)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ background: "#CFA7A0", color: "#ffffff" }}
+            >
+              Book Lamination or Brow Henna
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* ── Content ── */}
       <section className="py-12 pb-20" style={{ background: "#F7F3EE" }}>

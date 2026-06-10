@@ -149,6 +149,28 @@ export type TopSection = {
   subCategories: SubCategory[];
 };
 
+// ─── NEW! Lamination & Brow Henna ───────────────────────────────────────────
+export const laminationItems: ServiceItem[] = [
+  {
+    id: "brow-lamination",
+    name: "Brow Lamination",
+    tagline: "Perfectly groomed brows that last for weeks.",
+    description: "Transform your brows into works of art with The London Brow Company's revolutionary lamination treatment. This expertly crafted, vegan and cruelty-free formula will leave your brows looking perfectly groomed and flawlessly smooth. Experience the ultimate brow transformation and reveal a new level of beauty with our lamination service.",
+    price: 75,
+    duration: "45–60 min",
+    popular: true,
+  },
+  {
+    id: "brow-lamination-tint",
+    name: "Brow Lamination and Tint",
+    tagline: "The ultimate brow transformation — groomed, defined, and darkened.",
+    description: "Transform your brows into works of art with The London Brow Company's revolutionary lamination treatment. This expertly crafted, vegan and cruelty-free formula will leave your brows looking perfectly groomed and flawlessly smooth. Take it one step further and add a brow tint to your treatment and enjoy darkened tinted perfect brows. It's the ultimate brow transformation service and lasts for weeks!",
+    price: 95,
+    duration: "60–75 min",
+    popular: true,
+  },
+];
+
 export const mostPopular: ServiceItem[] = [
   {
     id: "brazilian",
