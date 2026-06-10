@@ -279,7 +279,7 @@ function getArticleContent(slug: string): string {
           <li><strong>1. Local, female-owned and operated.</strong> We're not a franchise. We're not governed by outside investors. When you choose Wax Me Too, you're supporting Utah women and receiving service tailored to your needs — not dictated by a corporate playbook.</li>
           <li><strong>2. Hygiene you can see.</strong> Our estheticians wash their hands in front of you before every service. Our treatment rooms are sanitized between every client. We never double-dip — ever.</li>
           <li><strong>3. No awkward positions.</strong> Unlike some salons that require uncomfortable positions during intimate waxing services, we ensure a relaxed, dignified experience throughout your appointment.</li>
-          <li><strong>4. No memberships, no pressure.</strong> Transparent pricing, no monthly fees, no contracts. Our Brazilian wax is $60 — no hidden charges, no upselling pressure.</li>
+          <li><strong>4. No memberships, no pressure.</strong> Transparent pricing, no monthly fees, no contracts. Our Brazilian wax is $65 — no hidden charges, no upselling pressure.</li>
           <li><strong>5. Experienced estheticians only.</strong> Mastering the Brazilian wax takes real skill. We don't train new graduates on clients. Our team has the experience to deliver clean, complete results every time.</li>
           <li><strong>6. Privacy and dignity.</strong> We step out of the room while you prepare, giving you the time and space to settle in comfortably before your service begins.</li>
           <li><strong>7. No rush.</strong> We schedule Brazilian waxes for 30-minute appointments even though the service typically takes 15 minutes. You'll never feel rushed or hurried out the door.</li>

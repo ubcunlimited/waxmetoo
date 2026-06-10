@@ -34,7 +34,30 @@ export default function FAQ() {
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
     if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
     m.content = "Find answers to the most common waxing questions — from how to prepare for your first Brazilian wax to how often you should wax. Expert guidance from Wax Me Too's licensed estheticians.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
+
+    // schema.org FAQPage structured data for Google rich snippets
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-schema';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.title = "Wax Me Too — Professional Waxing Studio | Utah";
+      document.getElementById('faq-schema')?.remove();
+    };
   }, []);
 
   const [search, setSearch] = useState("");
