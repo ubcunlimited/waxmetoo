@@ -104,6 +104,23 @@ export default function FAQ() {
       <section className="py-16 bg-[#F7F3EE]">
         <div className="container">
           <div className="max-w-3xl mx-auto">
+            {/* Pricing last-updated note — shown when Pricing category is active or all categories shown */}
+            {(activeCategory === "All" || activeCategory === "Pricing") && !search && (
+              <div
+                className="flex items-center gap-2 mb-4 px-4 py-2.5 rounded-lg text-sm font-body"
+                style={{ background: "rgba(168,179,170,0.12)", border: "1px solid rgba(168,179,170,0.35)", color: "#4A4A4A" }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8B3AA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                <span>
+                  <strong style={{ color: "#3B2F2A" }}>Pricing last updated June 2026.</strong>{" "}
+                  All prices are standardized across all 6 Utah locations.{" "}
+                  <a href="/services" className="underline" style={{ color: "#CFA7A0" }}>View full menu →</a>
+                </span>
+              </div>
+            )}
+
             {filtered.length === 0 ? (
               <div className="text-center py-16">
                 <p className="font-display text-2xl text-[#3B2F2A] mb-3">No results found</p>
