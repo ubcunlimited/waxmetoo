@@ -13,6 +13,7 @@ import { CheckCircle, Shield, Leaf, Star, Clock, Heart, Droplets, AlertTriangle,
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -105,6 +106,11 @@ const reassurances = [
 ];
 
 export default function FirstVisit() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "First Visit", url: "/first-visit" },
+  ]);
+
   useEffect(() => {
     document.title = "First Visit Guide — What to Expect at Wax Me Too | Utah Waxing";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

@@ -9,6 +9,7 @@ import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,6 +27,11 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export default function Locations() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations" },
+  ]);
+
   useEffect(() => {
     document.title = "Wax Me Too Locations — 6 Utah Waxing Studios | Layton, SLC, Draper, Orem, St. George";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, BOOKING_URL } from "@/lib/data";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,6 +24,11 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export default function Contact() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
+
   useEffect(() => {
     document.title = "Contact Wax Me Too — 6 Utah Waxing Studio Locations";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

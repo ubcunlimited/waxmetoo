@@ -14,6 +14,7 @@ import { CheckCircle, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -41,6 +42,11 @@ const beforeCareItems = [
 ];
 
 export default function BeforeCare() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Before Care", url: "/before-care" },
+  ]);
+
   useEffect(() => {
     document.title = "Before Care Guide — How to Prepare for Your Wax | Wax Me Too";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

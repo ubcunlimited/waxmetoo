@@ -10,6 +10,7 @@ import { ArrowLeft, Clock, Hash, Calendar, Check, Copy, ArrowRight, ExternalLink
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 // SEO helper — sets document title and meta description dynamically
 function useSEO(title: string, description: string) {
@@ -1176,6 +1177,12 @@ export default function BlogPost() {
     post?.title ?? 'Blog',
     post?.excerpt ?? 'Read the latest waxing tips, news, and guides from Wax Me Too — Utah\'s professional waxing studio since 2007.'
   );
+
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Journal", url: "/blog" },
+    { name: post?.title ?? "Article", url: `/blog/${slug}` },
+  ]);
 
   if (!post) {
     return (

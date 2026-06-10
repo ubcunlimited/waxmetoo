@@ -10,6 +10,7 @@ import { CheckCircle, Leaf, Shield, Star, Heart, Users } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL, testimonials } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -67,6 +68,11 @@ const stats = [
 ];
 
 export default function About() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About", url: "/about" },
+  ]);
+
   useEffect(() => {
     document.title = "About Wax Me Too — Utah's First Waxing-Only Studio Since 2007";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

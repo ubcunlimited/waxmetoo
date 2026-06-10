@@ -13,6 +13,7 @@ import { CheckCircle, XCircle, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -46,6 +47,11 @@ const dontItems = [
 ];
 
 export default function AfterCare() {
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "After Care", url: "/after-care" },
+  ]);
+
   useEffect(() => {
     document.title = "After Care Guide — How to Care for Your Skin After Waxing | Wax Me Too";
     let m = document.querySelector<HTMLMetaElement>("meta[name='description']");

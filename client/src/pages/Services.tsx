@@ -11,6 +11,7 @@
  */
 
 import { useState, useEffect } from "react";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 import { Link } from "wouter";
 import { ChevronDown, ChevronUp, Star, ArrowRight, CalendarClock } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -293,6 +294,11 @@ export default function Services() {
       document.title = "Wax Me Too — Professional Waxing Studio | Utah";
     };
   }, []);
+
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services & Pricing", url: "/services" },
+  ]);
 
   const tabs: { id: Tab; label: string }[] = [
     { id: "popular", label: "⭐ Most Popular" },

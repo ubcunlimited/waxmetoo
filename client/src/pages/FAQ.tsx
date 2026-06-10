@@ -9,6 +9,7 @@ import { Search, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { faqs, BOOKING_URL } from "@/lib/data";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -63,6 +64,11 @@ export default function FAQ() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [openId, setOpenId] = useState<number | null>(null);
+
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "FAQ", url: "/faq" },
+  ]);
 
   const filtered = faqs.filter(faq => {
     const matchesCategory = activeCategory === "All" || faq.category === activeCategory;

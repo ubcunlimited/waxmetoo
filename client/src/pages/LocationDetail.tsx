@@ -8,6 +8,7 @@ import { Link, useParams } from "wouter";
 import { MapPin, Phone, Mail, Clock, Star, ArrowLeft, Navigation } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, testimonials, BOOKING_URL } from "@/lib/data";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,6 +28,12 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 export default function LocationDetail() {
   const { id } = useParams<{ id: string }>();
   const location = locations.find(l => l.id === id);
+
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations" },
+    { name: location?.city ?? "Location", url: `/locations/${id}` },
+  ]);
 
   // Dynamic SEO per location
   useEffect(() => {

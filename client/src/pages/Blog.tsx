@@ -10,6 +10,7 @@ import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, Bo
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
+import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,6 +84,11 @@ export default function Blog() {
   const [selectedArchiveMonth, setSelectedArchiveMonth] = useState<{ year: number; month: string } | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [showAllTags, setShowAllTags] = useState(false);
+
+  useBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Journal", url: "/blog" },
+  ]);
 
   // Read ?tag= URL parameter and pre-filter on mount / location change
   useEffect(() => {
