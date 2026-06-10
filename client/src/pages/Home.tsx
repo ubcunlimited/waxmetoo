@@ -181,7 +181,8 @@ export default function Home() {
             {mostPopular.slice(0, 6).map((service, i) => {
               const accent = i % 2 === 0 ? "#CFA7A0" : "#A8B3AA";
               const icon = SERVICE_ICONS[service.id] ?? DEFAULT_ICONS[i % DEFAULT_ICONS.length];
-              const displayPrice = `$${service.price % 1 === 0 ? service.price : service.price.toFixed(2)}`;
+              const effectivePrice = new Date() >= new Date("2026-06-01T00:00:00") && service.priceNew !== undefined ? service.priceNew : service.price;
+              const displayPrice = `$${effectivePrice % 1 === 0 ? effectivePrice : effectivePrice.toFixed(2)}`;
               return (
                 <FadeUp key={service.id} delay={i * 80}>
                   <Link href={`/services?tab=popular`}>
