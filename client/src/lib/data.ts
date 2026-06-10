@@ -417,7 +417,13 @@ export const faqs = [
     id: 13,
     category: "Pricing",
     question: "How does your pricing work?",
-    answer: "Our pricing is straightforward — what you see on our menu is what you pay. No hidden fees, no surprises. Prices may vary slightly by location.",
+    answer: "Our pricing is straightforward — what you see on our menu is what you pay. No hidden fees, no surprises. All prices are standardized across all 6 Utah locations.",
+  },
+  {
+    id: 15,
+    category: "Pricing",
+    question: "Did your prices change recently?",
+    answer: "Yes — we updated our pricing on June 1, 2026. All prices are now standardized across all 6 Utah locations, so you'll pay the same rate whether you visit Layton, Ogden, Bountiful, South Jordan, Draper, or Orem. The new menu is live on our Services page. If you have any questions about a specific service price, feel free to call your nearest location.",
   },
   {
     id: 14,
