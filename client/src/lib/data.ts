@@ -130,8 +130,7 @@ export type ServiceItem = {
   whoItsFor?: string;
   prep?: string;
   aftercare?: string;
-  price: number;       // current price
-  priceNew?: number;    // price effective June 1 2026 (omit if unchanged)
+  price: number;
   duration?: string;
   popular?: boolean;
   note?: string;
@@ -159,8 +158,7 @@ export const mostPopular: ServiceItem[] = [
     whoItsFor: "Anyone who wants a clean, smooth result with long-lasting confidence. First-timers are always welcome — we'll walk you through every step.",
     prep: "Let hair grow to at least ¼ inch (about 3–4 weeks of growth). Exfoliate 24 hours before. Avoid scheduling during your period if possible.",
     aftercare: "Avoid heat, friction, and tight clothing for 24–48 hours. Exfoliate gently after 48 hours to prevent ingrown hairs.",
-    price: 60,
-    priceNew: 65,
+    price: 65,
     duration: "30–45 min",
     popular: true,
   },
@@ -172,8 +170,7 @@ export const mostPopular: ServiceItem[] = [
     whoItsFor: "Great for those who want more coverage removed than a standard bikini but aren't ready for a full Brazilian.",
     prep: "Same as Brazilian — ¼ inch minimum hair growth.",
     aftercare: "Avoid heat and friction for 24 hours. Moisturize daily.",
-    price: 50,
-    priceNew: 55,
+    price: 55,
     duration: "25–35 min",
     popular: true,
   },
@@ -185,8 +182,7 @@ export const mostPopular: ServiceItem[] = [
     whoItsFor: "Perfect for those who prefer a natural look with clean edges, or as a starting point before trying a Brazilian.",
     prep: "Hair should be at least ¼ inch long. Avoid sun exposure on the area for 24 hours before.",
     aftercare: "Keep the area clean and moisturized. Avoid tight underwear for 24 hours.",
-    price: 40,
-    priceNew: 45,
+    price: 45,
     duration: "20–30 min",
     popular: true,
   },
@@ -209,21 +205,21 @@ export const ladiesSections: SubCategory[] = [
     id: "bikini-area",
     title: "Bikini Area",
     items: [
-      { id: "l-brazilian", name: "Brazilian Wax", tagline: "Our signature service. Complete, clean, confident.", description: "Removes all or nearly all hair from the bikini area — front, back, and everything in between.", price: 60, priceNew: 65, duration: "30–45 min", popular: true },
-      { id: "l-deep-bikini", name: "Deep Bikini Wax", tagline: "More coverage, more confidence.", description: "Goes further than a standard bikini — removing more hair from the front and sides.", price: 50, priceNew: 55, duration: "25–35 min" },
-      { id: "l-bikini", name: "Bikini Wax", tagline: "Clean lines, effortless confidence.", description: "Removes hair along the bikini line — everything that would show in a swimsuit.", price: 40, priceNew: 45, duration: "20–30 min" },
+      { id: "l-brazilian", name: "Brazilian Wax", tagline: "Our signature service. Complete, clean, confident.", description: "Removes all or nearly all hair from the bikini area — front, back, and everything in between.", price: 65, duration: "30–45 min", popular: true },
+      { id: "l-deep-bikini", name: "Deep Bikini Wax", tagline: "More coverage, more confidence.", description: "Goes further than a standard bikini — removing more hair from the front and sides.", price: 55, duration: "25–35 min" },
+      { id: "l-bikini", name: "Bikini Wax", tagline: "Clean lines, effortless confidence.", description: "Removes hair along the bikini line — everything that would show in a swimsuit.", price: 45, duration: "20–30 min" },
     ],
   },
   {
     id: "combos",
     title: "Combos",
     items: [
-      { id: "l-combo-bz-brow", name: "Brazilian + Brow", tagline: "Two essentials, one appointment.", description: "Brazilian wax plus eyebrow wax in a single visit.", price: 80, priceNew: 85, duration: "45–60 min" },
-      { id: "l-combo-bz-ua", name: "Brazilian + Underarm", tagline: "Smooth all over.", description: "Brazilian wax plus underarm wax.", price: 80, priceNew: 85, duration: "45–60 min" },
-      { id: "l-combo-bz-leg", name: "Brazilian + Lower Leg", tagline: "Head to toe smooth.", description: "Brazilian wax plus lower leg wax.", price: 100, priceNew: 105, duration: "60–75 min" },
-      { id: "l-combo-db-brow", name: "Deep Bikini + Brow", tagline: "Coverage and definition.", description: "Deep bikini wax plus eyebrow wax.", price: 80, priceNew: 85, duration: "40–55 min" },
-      { id: "l-combo-db-ua", name: "Deep Bikini + Underarm", tagline: "Smooth where it counts.", description: "Deep bikini wax plus underarm wax.", price: 70, priceNew: 75, duration: "35–50 min" },
-      { id: "l-combo-db-leg", name: "Deep Bikini + Lower Leg", tagline: "More coverage, more smooth.", description: "Deep bikini wax plus lower leg wax.", price: 80, priceNew: 90, duration: "50–65 min" },
+      { id: "l-combo-bz-brow", name: "Brazilian + Brow", tagline: "Two essentials, one appointment.", description: "Brazilian wax plus eyebrow wax in a single visit.", price: 85, duration: "45–60 min" },
+      { id: "l-combo-bz-ua", name: "Brazilian + Underarm", tagline: "Smooth all over.", description: "Brazilian wax plus underarm wax.", price: 85, duration: "45–60 min" },
+      { id: "l-combo-bz-leg", name: "Brazilian + Lower Leg", tagline: "Head to toe smooth.", description: "Brazilian wax plus lower leg wax.", price: 105, duration: "60–75 min" },
+      { id: "l-combo-db-brow", name: "Deep Bikini + Brow", tagline: "Coverage and definition.", description: "Deep bikini wax plus eyebrow wax.", price: 85, duration: "40–55 min" },
+      { id: "l-combo-db-ua", name: "Deep Bikini + Underarm", tagline: "Smooth where it counts.", description: "Deep bikini wax plus underarm wax.", price: 75, duration: "35–50 min" },
+      { id: "l-combo-db-leg", name: "Deep Bikini + Lower Leg", tagline: "More coverage, more smooth.", description: "Deep bikini wax plus lower leg wax.", price: 90, duration: "50–65 min" },
     ],
   },
   {
@@ -231,11 +227,11 @@ export const ladiesSections: SubCategory[] = [
     title: "Arms & Legs",
     items: [
       { id: "l-half-arm", name: "1/2 Arm (Elbow to Knuckles)", tagline: "Smooth lower arms.", description: "Waxing from elbow to knuckles for clean, smooth lower arms.", price: 45, duration: "20–25 min" },
-      { id: "l-full-arm", name: "Full Arm", tagline: "Smooth arms, effortlessly.", description: "Full arm wax from wrist to shoulder.", price: 50, priceNew: 55, duration: "30–40 min" },
+      { id: "l-full-arm", name: "Full Arm", tagline: "Smooth arms, effortlessly.", description: "Full arm wax from wrist to shoulder.", price: 55, duration: "30–40 min" },
       { id: "l-underarms", name: "Underarms", tagline: "Smooth underarms that last for weeks.", description: "Quick, effective underarm wax.", price: 25, duration: "15 min" },
-      { id: "l-lower-leg", name: "Lower Leg / 1/2 Leg", tagline: "Silky smooth from knee to ankle.", description: "Waxing from the knee down to the ankle.", price: 50, priceNew: 55, duration: "25–35 min" },
+      { id: "l-lower-leg", name: "Lower Leg / 1/2 Leg", tagline: "Silky smooth from knee to ankle.", description: "Waxing from the knee down to the ankle.", price: 55, duration: "25–35 min" },
       { id: "l-full-leg", name: "Full Leg", tagline: "Silky smooth from hip to toe.", description: "Full leg wax from upper thigh to ankle.", price: 90, duration: "45–60 min" },
-      { id: "l-thighs", name: "Thighs", tagline: "Upper leg smoothness.", description: "Waxing the upper thigh area.", price: 50, priceNew: 55, duration: "25–35 min" },
+      { id: "l-thighs", name: "Thighs", tagline: "Upper leg smoothness.", description: "Waxing the upper thigh area.", price: 55, duration: "25–35 min" },
       { id: "l-bike-shorts", name: "Bike Shorts Area (Legs only)", tagline: "Upper leg coverage.", description: "Waxing the bike shorts area — legs only.", price: 45, duration: "25–30 min" },
     ],
   },
@@ -288,7 +284,7 @@ export const menSections: SubCategory[] = [
     id: "m-below-belt",
     title: "Below the Belt",
     items: [
-      { id: "m-manzilian", name: "Manzilian (Male Brazilian)", tagline: "The male Brazilian. Clean, confident, professional.", description: "Full male Brazilian wax performed by experienced, discreet estheticians in a private room.", price: 85, priceNew: 90, duration: "45–60 min", popular: true },
+      { id: "m-manzilian", name: "Manzilian (Male Brazilian)", tagline: "The male Brazilian. Clean, confident, professional.", description: "Full male Brazilian wax performed by experienced, discreet estheticians in a private room.", price: 90, duration: "45–60 min", popular: true },
       { id: "m-derriere", name: "Derriere Cheeks", tagline: "Smooth and clean.", description: "Waxing of the derriere cheeks.", price: 35, duration: "20 min" },
     ],
   },
@@ -296,8 +292,8 @@ export const menSections: SubCategory[] = [
     id: "m-combos",
     title: "Combos",
     items: [
-      { id: "m-combo-bz-brow", name: "Manzilian + Brow", tagline: "Two essentials, one appointment.", description: "Manzilian plus eyebrow wax in a single visit.", price: 80, priceNew: 85, duration: "60–75 min" },
-      { id: "m-combo-bz-ua", name: "Manzilian + Underarm", tagline: "Smooth all over.", description: "Manzilian plus underarm wax.", price: 80, priceNew: 85, duration: "60–75 min" },
+      { id: "m-combo-bz-brow", name: "Manzilian + Brow", tagline: "Two essentials, one appointment.", description: "Manzilian plus eyebrow wax in a single visit.", price: 85, duration: "60–75 min" },
+      { id: "m-combo-bz-ua", name: "Manzilian + Underarm", tagline: "Smooth all over.", description: "Manzilian plus underarm wax.", price: 85, duration: "60–75 min" },
     ],
   },
   {
@@ -308,8 +304,8 @@ export const menSections: SubCategory[] = [
       { id: "m-full-arm", name: "Full Arm", tagline: "Smooth arms, effortlessly.", description: "Full arm wax from wrist to shoulder.", price: 50, duration: "30–40 min" },
       { id: "m-shoulders", name: "Shoulders", tagline: "Clean shoulders.", description: "Waxing the shoulder area.", price: 25, duration: "15 min" },
       { id: "m-underarms", name: "Underarms", tagline: "Smooth underarms.", description: "Quick, effective underarm wax.", price: 20, duration: "15 min" },
-      { id: "m-half-leg", name: "1/2 Leg", tagline: "Lower or upper leg.", description: "Half leg wax — knee down or above knee.", price: 45, priceNew: 55, duration: "25–35 min", note: "Knee Down $40 / Above Knee $50 currently; unified at $55 from June 1" },
-      { id: "m-full-leg", name: "Full Leg", tagline: "Silky smooth from hip to toe.", description: "Full leg wax for men.", price: 80, priceNew: 100, duration: "45–60 min", note: "Starting at $80 currently" },
+      { id: "m-half-leg", name: "1/2 Leg", tagline: "Lower or upper leg.", description: "Half leg wax — knee down or above knee.", price: 55, duration: "25–35 min" },
+      { id: "m-full-leg", name: "Full Leg", tagline: "Silky smooth from hip to toe.", description: "Full leg wax for men.", price: 100, duration: "45–60 min" },
       { id: "m-toes", name: "Toes", tagline: "The finishing touch.", description: "Toe hair waxing.", price: 5, duration: "5 min" },
     ],
   },
@@ -317,9 +313,9 @@ export const menSections: SubCategory[] = [
     id: "m-neck-stomach",
     title: "Neck to Stomach",
     items: [
-      { id: "m-full-back", name: "Full Back", tagline: "Clean back, confident you.", description: "Professional back waxing for men.", price: 60, priceNew: 65, duration: "30–40 min" },
-      { id: "m-chest", name: "Chest", tagline: "Smooth chest, lasting results.", description: "Full chest waxing for a clean, defined look.", price: 50, priceNew: 55, duration: "30–40 min" },
-      { id: "m-chest-stomach", name: "Chest/Stomach Combined", tagline: "The complete package.", description: "Chest and stomach waxed together.", price: 60, priceNew: 65, duration: "40–50 min" },
+      { id: "m-full-back", name: "Full Back", tagline: "Clean back, confident you.", description: "Professional back waxing for men.", price: 65, duration: "30–40 min" },
+      { id: "m-chest", name: "Chest", tagline: "Smooth chest, lasting results.", description: "Full chest waxing for a clean, defined look.", price: 55, duration: "30–40 min" },
+      { id: "m-chest-stomach", name: "Chest/Stomach Combined", tagline: "The complete package.", description: "Chest and stomach waxed together.", price: 65, duration: "40–50 min" },
     ],
   },
   {

@@ -39,13 +39,9 @@ function fmt(n: number) {
 const JUNE_1_2026 = new Date("2026-06-01T00:00:00");
 const isPastJune1 = () => new Date() >= JUNE_1_2026;
 
-// ─── PriceRow — shows current price and upcoming June 1 price side-by-side ───
+// ─── PriceRow ─────────────────────────────────────────────────────────────────
 
 function PriceRow({ item }: { item: ServiceItem }) {
-  const hasPriceChange = !isPastJune1() && item.priceNew !== undefined && item.priceNew !== item.price;
-  // After June 1, display the new price (if set) as the single price
-  const displayPrice = isPastJune1() && item.priceNew !== undefined ? item.priceNew : item.price;
-
   return (
     <div
       className="flex items-start justify-between py-3 border-b last:border-0 gap-3"
@@ -78,44 +74,11 @@ function PriceRow({ item }: { item: ServiceItem }) {
         )}
       </div>
 
-      {/* Right: price column(s) */}
-      <div className="flex-shrink-0 flex items-center gap-3 text-right">
-        {isPastJune1() ? (
-          /* After June 1 — show only the current (new) price */
-          <div className="text-right">
-            <p className="text-base font-bold" style={{ color: "#3B2F2A" }}>
-              {fmt(displayPrice)}
-            </p>
-          </div>
-        ) : (
-          /* Before June 1 — show old price, and upcoming price if different */
-          <>
-            <div className="text-right">
-              <p className="text-xs font-medium mb-0.5" style={{ color: "#A8B3AA" }}>
-                Current
-              </p>
-              <p
-                className="text-base font-bold"
-                style={{ color: hasPriceChange ? "#9CA3AF" : "#3B2F2A", textDecoration: hasPriceChange ? "line-through" : "none" }}
-              >
-                {fmt(item.price)}
-              </p>
-            </div>
-            {hasPriceChange && (
-              <>
-                <div className="w-px self-stretch" style={{ background: "#E8DDD6" }} />
-                <div className="text-right">
-                  <p className="text-xs font-semibold mb-0.5" style={{ color: "#CFA7A0" }}>
-                    June 1
-                  </p>
-                  <p className="text-base font-bold" style={{ color: "#3B2F2A" }}>
-                    {fmt(item.priceNew!)}
-                  </p>
-                </div>
-              </>
-            )}
-          </>
-        )}
+      {/* Right: price */}
+      <div className="flex-shrink-0 text-right">
+        <p className="text-base font-bold" style={{ color: "#3B2F2A" }}>
+          {fmt(item.price)}
+        </p>
       </div>
     </div>
   );
@@ -177,9 +140,7 @@ function SubCategoryPanel({
   open: boolean;
   onToggle: () => void;
 }) {
-  const hasChanges = sub.items.some(
-    (it) => it.priceNew !== undefined && it.priceNew !== it.price
-  );
+  const hasChanges = false; // priceNew field retired after June 1 2026
   return (
     <div
       className="rounded-2xl overflow-hidden mb-4"
@@ -327,7 +288,7 @@ export default function Services() {
       document.head.appendChild(meta);
     }
     meta.content =
-      "Browse Wax Me Too's full waxing menu — Brazilian wax, eyebrow design, full body waxing, men's waxing, and more. Transparent pricing, 6 Utah locations. First-time clients get their Brazilian wax for $50.";
+      "Browse Wax Me Too's full waxing menu — Brazilian, bikini, brow & body waxing. Standardized pricing guaranteed across all 6 Utah locations. First-time Brazilian wax $50.";
     return () => {
       document.title = "Wax Me Too — Professional Waxing Studio | Utah";
     };
@@ -339,10 +300,8 @@ export default function Services() {
     { id: "men", label: "For the Men" },
   ];
 
-  // Determine if the popular list has any price changes
-  const popularHasChanges = mostPopular.some(
-    (it) => it.priceNew !== undefined && it.priceNew !== it.price
-  );
+  // priceNew field retired after June 1 2026 — no pending changes
+  const popularHasChanges = false;
 
   return (
     <Layout>
