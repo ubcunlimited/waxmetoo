@@ -9,6 +9,39 @@ import { MapPin, Phone, Mail, Clock, Star, ArrowLeft, Navigation } from "lucide-
 import Layout from "@/components/Layout";
 import { locations, testimonials, BOOKING_URL } from "@/lib/data";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
+import { useLocalBusinessSchema } from "@/hooks/useLocalBusinessSchema";
+
+// Geo coordinates for each studio (lat/lng)
+const GEO: Record<string, { latitude: number; longitude: number }> = {
+  "layton":          { latitude: 41.0602,  longitude: -111.9710 },
+  "south-jordan":    { latitude: 40.5621,  longitude: -111.9996 },
+  "orem":            { latitude: 40.2969,  longitude: -111.6938 },
+  "salt-lake-city":  { latitude: 40.7282,  longitude: -111.9044 },
+  "draper":          { latitude: 40.5246,  longitude: -111.8638 },
+  "st-george":       { latitude: 37.1041,  longitude: -113.5841 },
+};
+
+// Parse "9:00 AM – 7:00 PM" → { opens: "09:00", closes: "19:00" }
+function parseHours(raw: string): { opens: string; closes: string } | null {
+  const m = raw.match(/(\d+):(\d+)\s*(AM|PM)\s*[–-]\s*(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  const to24 = (h: string, min: string, ampm: string) => {
+    let hour = parseInt(h, 10);
+    if (ampm.toUpperCase() === "PM" && hour !== 12) hour += 12;
+    if (ampm.toUpperCase() === "AM" && hour === 12) hour = 0;
+    return `${String(hour).padStart(2, "0")}:${min}`;
+  };
+  return { opens: to24(m[1], m[2], m[3]), closes: to24(m[4], m[5], m[6]) };
+}
+
+// Map human-readable day ranges to schema.org day URIs
+const DAY_MAP: Record<string, string[]> = {
+  "Mon–Fri":       ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+  "Saturday":      ["Saturday"],
+  "Sunday":        ["Sunday"],
+  "Tuesday–Friday":["Tuesday","Wednesday","Thursday","Friday"],
+  "Sunday–Monday": ["Sunday","Monday"],
+};
 
 function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,6 +61,37 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
 export default function LocationDetail() {
   const { id } = useParams<{ id: string }>();
   const location = locations.find(l => l.id === id);
+
+  // Build opening hours spec for schema.org
+  const openingHoursSpecification = location
+    ? Object.entries(location.hours).flatMap(([dayRange, timeRange]) => {
+        const parsed = parseHours(timeRange);
+        if (!parsed) return [];
+        const days = DAY_MAP[dayRange] ?? [dayRange];
+        return days.map(day => ({ dayOfWeek: day, opens: parsed.opens, closes: parsed.closes }));
+      })
+    : [];
+
+  // Extract postal code from address (last 5-digit sequence)
+  const postalCode = location?.address.match(/(\d{5})(?!\d)/)?.[1] ?? "";
+
+  useLocalBusinessSchema({
+    name: `Wax Me Too ${location?.city ?? ""}`,
+    description: location?.description ?? "",
+    url: `https://www.waxmetoo.com/locations/${id}`,
+    telephone: location?.phone ?? "",
+    email: location?.email ?? "",
+    address: {
+      streetAddress: location?.address.split(",")[0] ?? "",
+      addressLocality: location?.city ?? "",
+      addressRegion: "UT",
+      postalCode,
+      addressCountry: "US",
+    },
+    geo: id ? GEO[id] : undefined,
+    openingHoursSpecification,
+    priceRange: "$$",
+  });
 
   useBreadcrumbSchema([
     { name: "Home", url: "/" },
