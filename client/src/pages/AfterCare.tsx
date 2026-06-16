@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — After Care Page
  * Updated per waxdoc.docx:
@@ -15,20 +17,6 @@ import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 const doItems = [
   { title: "Keep the area clean", desc: "Gently cleanse waxed areas with a mild, fragrance-free cleanser. Pat dry — don't rub." },
@@ -52,13 +40,10 @@ export default function AfterCare() {
     { name: "After Care", url: "/after-care" },
   ]);
 
-  useEffect(() => {
-    document.title = "After Care Guide — How to Care for Your Skin After Waxing | Wax Me Too";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
-    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Protect your freshly waxed skin with Wax Me Too's expert aftercare guide. Learn what to avoid in the 24-48 hours after your wax, how to prevent ingrown hairs, and how to keep skin smooth longer.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "After Care Guide — How to Care for Your Skin After Waxing | Wax Me Too",
+    "Protect your freshly waxed skin with Wax Me Too’s expert aftercare guide. Learn what to avoid in the 24-48 hours after your wax and how to prevent ingrown hairs.",
+  );
 
   return (
     <Layout>

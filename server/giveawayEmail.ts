@@ -1,52 +1,9 @@
+import { sendEmail } from "./emailUtils";
 /**
  * Giveaway Email Helpers
  * Uses the Manus built-in notification API to send transactional emails.
  * Falls back to console logging if the API is unavailable.
  */
-
-import { ENV } from "./_core/env";
-
-interface SendEmailOptions {
-  to: string;
-  subject: string;
-  html: string;
-}
-
-async function sendEmail(opts: SendEmailOptions): Promise<boolean> {
-  const forgeUrl = ENV.forgeApiUrl?.replace(/\/+$/, "");
-  const forgeKey = ENV.forgeApiKey;
-
-  if (!forgeUrl || !forgeKey) {
-    console.warn("[GiveawayEmail] Forge API not configured — logging email instead:");
-    console.log(`TO: ${opts.to}\nSUBJECT: ${opts.subject}\n---\n${opts.html}`);
-    return false;
-  }
-
-  try {
-    const res = await fetch(`${forgeUrl}/v1/notification/email`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${forgeKey}`,
-      },
-      body: JSON.stringify({
-        to: opts.to,
-        subject: opts.subject,
-        html: opts.html,
-      }),
-    });
-
-    if (!res.ok) {
-      const body = await res.text().catch(() => "");
-      console.error(`[GiveawayEmail] Failed to send email: ${res.status} ${body}`);
-      return false;
-    }
-    return true;
-  } catch (err) {
-    console.error("[GiveawayEmail] Error sending email:", err);
-    return false;
-  }
-}
 
 /** Send the double opt-in confirmation email. */
 export async function sendConfirmationEmail(opts: {

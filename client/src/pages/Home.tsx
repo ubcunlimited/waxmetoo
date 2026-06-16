@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — Homepage
  * Design: Modern Feminine Craft
@@ -26,22 +28,6 @@ function useFadeUp() {
   return { ref, visible };
 }
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const { ref, visible } = useFadeUp();
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  );
-}
 
 // Icons mapped by service id — falls back to a neutral glyph
 const SERVICE_ICONS: Record<string, string> = {
@@ -53,12 +39,10 @@ const SERVICE_ICONS: Record<string, string> = {
 const DEFAULT_ICONS = ["✦", "◆", "◇", "◈", "✧", "❋"];
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Wax Me Too — Utah's Professional Waxing Studio Since 2007";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']"); if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Wax Me Too is Utah's first and most trusted waxing-only studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Brazilian wax, eyebrow design, full body waxing. First-time clients get their Brazilian wax for $50.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "Wax Me Too — Utah’s Professional Waxing Studio Since 2007",
+    "Utah’s first and most trusted waxing-only studio. 6 locations across Utah. Brazilian wax, eyebrow design, full body waxing. First-time clients get their Brazilian wax for $50.",
+  );
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 

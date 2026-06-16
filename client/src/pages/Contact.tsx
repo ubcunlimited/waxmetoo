@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — Contact Page
  */
@@ -8,20 +10,6 @@ import Layout from "@/components/Layout";
 import { locations, BOOKING_URL } from "@/lib/data";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 export default function Contact() {
   useBreadcrumbSchema([
@@ -29,13 +17,10 @@ export default function Contact() {
     { name: "Contact", url: "/contact" },
   ]);
 
-  useEffect(() => {
-    document.title = "Contact Wax Me Too — 6 Utah Waxing Studio Locations";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
-    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Contact Wax Me Too at any of our 6 Utah locations — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Call (801) 572-7771 or book online. We'd love to hear from you.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "Contact Wax Me Too — 6 Utah Waxing Studio Locations",
+    "Contact Wax Me Too at any of our 6 Utah locations — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Call (801) 572-7771 or book online.",
+  );
 
   const [submitted, setSubmitted] = useState(false);
 

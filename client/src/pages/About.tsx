@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — About Page
  * Design: Modern Feminine Craft
@@ -12,20 +14,6 @@ import { BOOKING_URL, testimonials } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 const values = [
   {
@@ -73,13 +61,10 @@ export default function About() {
     { name: "About", url: "/about" },
   ]);
 
-  useEffect(() => {
-    document.title = "About Wax Me Too — Utah's First Waxing-Only Studio Since 2007";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
-    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Learn the story behind Wax Me Too — Utah's first waxing-only salon, founded in 2007 by two best friends. Women-owned, locally operated, and committed to professional waxing excellence across 6 Utah locations.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "About Wax Me Too — Utah’s First Waxing-Only Studio Since 2007",
+    "Learn about Wax Me Too — Utah’s first waxing-only studio, founded in 2007. Women-owned, licensed estheticians, and 6 locations across Utah.",
+  );
 
   return (
     <Layout>

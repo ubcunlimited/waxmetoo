@@ -1,3 +1,4 @@
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — Individual Location Page
  * Design: Modern Feminine Craft
@@ -43,20 +44,6 @@ const DAY_MAP: Record<string, string[]> = {
   "Sunday–Monday": ["Sunday","Monday"],
 };
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 export default function LocationDetail() {
   const { id } = useParams<{ id: string }>();

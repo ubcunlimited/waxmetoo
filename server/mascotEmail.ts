@@ -1,47 +1,8 @@
+import { sendEmail } from "./emailUtils";
 /**
  * Mascot Hunt Email Helper
  * Sends a branded confirmation email when a user claims their mascot hunt reward.
  */
-
-import { ENV } from "./_core/env";
-
-interface SendEmailOptions {
-  to: string;
-  subject: string;
-  html: string;
-}
-
-async function sendEmail(opts: SendEmailOptions): Promise<boolean> {
-  const forgeUrl = ENV.forgeApiUrl?.replace(/\/+$/, "");
-  const forgeKey = ENV.forgeApiKey;
-
-  if (!forgeUrl || !forgeKey) {
-    console.warn("[MascotEmail] Forge API not configured — logging email instead:");
-    console.log(`TO: ${opts.to}\nSUBJECT: ${opts.subject}\n---\n${opts.html}`);
-    return false;
-  }
-
-  try {
-    const res = await fetch(`${forgeUrl}/v1/notification/email`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${forgeKey}`,
-      },
-      body: JSON.stringify({ to: opts.to, subject: opts.subject, html: opts.html }),
-    });
-
-    if (!res.ok) {
-      const body = await res.text().catch(() => "");
-      console.error(`[MascotEmail] Failed: ${res.status} ${body}`);
-      return false;
-    }
-    return true;
-  } catch (err) {
-    console.error("[MascotEmail] Error:", err);
-    return false;
-  }
-}
 
 /**
  * Send the mascot hunt reward confirmation email.

@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — Before Care Page
  * Updated per waxdoc.docx:
@@ -16,20 +18,6 @@ import { BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 const beforeCareItems = [
   { title: "Let hair grow to ¼ inch", desc: "This is approximately 10 days of growth after shaving. Hair that is too short won't grip properly. When in doubt, let it grow a bit more than you think you need." },
@@ -47,13 +35,10 @@ export default function BeforeCare() {
     { name: "Before Care", url: "/before-care" },
   ]);
 
-  useEffect(() => {
-    document.title = "Before Care Guide — How to Prepare for Your Wax | Wax Me Too";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
-    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Get the best possible waxing results by following Wax Me Too's before-care guide. Learn what to do (and avoid) in the days before your appointment for a smoother, more comfortable wax.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "Before Care Guide — How to Prepare for Your Wax | Wax Me Too",
+    "Get the best possible waxing results by following Wax Me Too’s before-care guide. Learn what to do (and avoid) in the days before your appointment.",
+  );
 
   return (
     <Layout>

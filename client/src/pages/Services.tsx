@@ -1,19 +1,20 @@
 /*
  * WAX ME TOO — Services & Pricing Page
- * Category hierarchy (from wax_me_too_pricing_sheet_june_1_2026.xlsx):
+ * Category hierarchy:
+ *   NEW! Lamination & Brow Henna
  *   Most Popular
  *   Full Body Waxing Services for the Ladies
  *     Bikini Area | Combos | Arms & Legs | Face Waxing | Other Body Parts | Tinting
  *   Full Body Waxing Services for Men
  *     Face Waxing | Combos | Below the Belt | Arms & Legs | Neck to Stomach
  *
- * Dual pricing: current price shown alongside June 1 2026 guaranteed price.
+ * Prices updated June 2026 — standardized across all 6 Utah locations.
  */
 
 import { useState, useEffect } from "react";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 import { Link } from "wouter";
-import { ChevronDown, ChevronUp, Star, ArrowRight, CalendarClock } from "lucide-react";
+import { ChevronDown, ChevronUp, Star, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import {
@@ -28,18 +29,10 @@ import {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
+/** Format a numeric price as a dollar string (e.g. 65 → "$65", 12.5 → "$12.50"). */
 function fmt(n: number) {
   return `$${n % 1 === 0 ? n : n.toFixed(2)}`;
 }
-
-/**
- * After June 1 2026 the old prices are retired — hide the "current" column
- * and the notice banner automatically so no manual update is needed.
- * Evaluated at call-time (not build-time) so the live site always reflects
- * the real current date.
- */
-const JUNE_1_2026 = new Date("2026-06-01T00:00:00");
-const isPastJune1 = () => new Date() >= JUNE_1_2026;
 
 // ─── PriceRow ─────────────────────────────────────────────────────────────────
 
@@ -88,7 +81,7 @@ function PriceRow({ item }: { item: ServiceItem }) {
 
 // ─── Column header row ────────────────────────────────────────────────────────
 
-function PriceHeader({ hasChanges }: { hasChanges: boolean }) {
+function PriceHeader() {
   return (
     <div
       className="flex items-center justify-between px-5 py-3 border-b"
@@ -97,42 +90,15 @@ function PriceHeader({ hasChanges }: { hasChanges: boolean }) {
       <span className="text-xs font-semibold" style={{ color: "#A8B3AA" }}>
         Service
       </span>
-      {!isPastJune1() && hasChanges ? (
-        <div className="flex items-center gap-3">
-          <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>
-            Current
-          </span>
-          <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>
-            June 1
-          </span>
-        </div>
-      ) : (
-        <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>
-          Price
-        </span>
-      )}
+      <span className="text-xs font-semibold" style={{ color: "#CFA7A0" }}>
+        Price
+      </span>
     </div>
   );
 }
 
-// ─── June 1 notice banner ─────────────────────────────────────────────────────
+// ─── SubCategoryPanel ─────────────────────────────────────────────────────────
 
-function June1Banner() {
-  if (isPastJune1()) return null;
-  return (
-    <div
-      className="flex items-start gap-3 rounded-xl px-4 py-3 mb-6"
-      style={{ background: "rgba(207,167,160,0.12)", border: "1px solid rgba(207,167,160,0.35)" }}
-    >
-      <CalendarClock size={18} className="flex-shrink-0 mt-0.5" style={{ color: "#CFA7A0" }} />
-      <p className="text-sm leading-relaxed" style={{ color: "#3B2F2A" }}>
-        <strong>Pricing update effective June 1, 2026.</strong> Where two prices are shown, the left column is today's price and the right column (in rose) is the new guaranteed price across all Wax Me Too locations.
-      </p>
-    </div>
-  );
-}
-
-/// ─── SubCategoryPanel ─────────────────────────────────────────────────────────
 function SubCategoryPanel({
   sub,
   open,
@@ -142,7 +108,6 @@ function SubCategoryPanel({
   open: boolean;
   onToggle: () => void;
 }) {
-  const hasChanges = false; // priceNew field retired after June 1 2026
   return (
     <div
       className="rounded-2xl overflow-hidden mb-4"
@@ -153,29 +118,19 @@ function SubCategoryPanel({
         className="w-full flex items-center justify-between px-5 py-4 text-left transition-colors"
         style={{ background: open ? "#FBF8F5" : "#ffffff" }}
       >
-        <div className="flex items-center gap-2">
-          <span
-            className="font-serif text-base font-semibold"
-            style={{ color: "#3B2F2A" }}
-          >
-            {sub.title}
-          </span>
-          {!isPastJune1() && hasChanges && (
-            <span
-              className="text-xs px-2 py-0.5 rounded-full font-medium"
-              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0" }}
-            >
-              Price update
-            </span>
-          )}
-        </div>
+        <span
+          className="font-serif text-base font-semibold"
+          style={{ color: "#3B2F2A" }}
+        >
+          {sub.title}
+        </span>
         <span style={{ color: "#A8B3AA" }}>
           {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </span>
       </button>
       {open && (
         <div style={{ background: "#ffffff" }}>
-          <PriceHeader hasChanges={hasChanges} />
+          <PriceHeader />
           <div className="px-5 pb-2 pt-1">
             {sub.items.map((item) => (
               <PriceRow key={item.id} item={item} />
@@ -188,57 +143,6 @@ function SubCategoryPanel({
 }
 
 // ─── Booking CTA block ────────────────────────────────────────────────────────
-
-// ─── Single-open accordion wrappers ───────────────────────────────────────────────
-function LadiesAccordion() {
-  const [openId, setOpenId] = useState<string>(ladiesSections[0]?.id ?? "");
-  return (
-    <div>
-      <p className="section-label-sage mb-2">For the Ladies</p>
-      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
-        Full Body Waxing Services — For the Ladies
-      </h2>
-      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
-        Tap a category to expand its price list. Only one section is open at a time.
-      </p>
-      <June1Banner />
-      {ladiesSections.map((sub) => (
-        <SubCategoryPanel
-          key={sub.id}
-          sub={sub}
-          open={openId === sub.id}
-          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
-        />
-      ))}
-      <BookingCTA />
-    </div>
-  );
-}
-
-function MenAccordion() {
-  const [openId, setOpenId] = useState<string>(menSections[0]?.id ?? "");
-  return (
-    <div>
-      <p className="section-label-sage mb-2">For the Men</p>
-      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
-        Full Body Waxing Services — For the Men
-      </h2>
-      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
-        Clean, professional waxing services designed for men. No judgment, just results.
-      </p>
-      <June1Banner />
-      {menSections.map((sub) => (
-        <SubCategoryPanel
-          key={sub.id}
-          sub={sub}
-          open={openId === sub.id}
-          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
-        />
-      ))}
-      <BookingCTA />
-    </div>
-  );
-}
 
 function BookingCTA() {
   return (
@@ -263,6 +167,56 @@ function BookingCTA() {
   );
 }
 
+// ─── Single-open accordion wrappers ───────────────────────────────────────────
+
+function LadiesAccordion() {
+  const [openId, setOpenId] = useState<string>(ladiesSections[0]?.id ?? "");
+  return (
+    <div>
+      <p className="section-label-sage mb-2">For the Ladies</p>
+      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
+        Full Body Waxing Services — For the Ladies
+      </h2>
+      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+        Tap a category to expand its price list. Only one section is open at a time.
+      </p>
+      {ladiesSections.map((sub) => (
+        <SubCategoryPanel
+          key={sub.id}
+          sub={sub}
+          open={openId === sub.id}
+          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
+        />
+      ))}
+      <BookingCTA />
+    </div>
+  );
+}
+
+function MenAccordion() {
+  const [openId, setOpenId] = useState<string>(menSections[0]?.id ?? "");
+  return (
+    <div>
+      <p className="section-label-sage mb-2">For the Men</p>
+      <h2 className="font-serif text-2xl font-bold mb-2" style={{ color: "#3B2F2A" }}>
+        Full Body Waxing Services — For the Men
+      </h2>
+      <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+        Clean, professional waxing services designed for men. No judgment, just results.
+      </p>
+      {menSections.map((sub) => (
+        <SubCategoryPanel
+          key={sub.id}
+          sub={sub}
+          open={openId === sub.id}
+          onToggle={() => setOpenId(openId === sub.id ? "" : sub.id)}
+        />
+      ))}
+      <BookingCTA />
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 type Tab = "popular" | "ladies" | "men";
@@ -270,7 +224,7 @@ type Tab = "popular" | "ladies" | "men";
 export default function Services() {
   const [activeTab, setActiveTab] = useState<Tab>("popular");
 
-  // Handle ?tab= query param for deep-linking
+  // Handle ?tab= query param for deep-linking (e.g. /services?tab=men)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const t = params.get("tab");
@@ -306,9 +260,6 @@ export default function Services() {
     { id: "ladies", label: "For the Ladies" },
     { id: "men", label: "For the Men" },
   ];
-
-  // priceNew field retired after June 1 2026 — no pending changes
-  const popularHasChanges = false;
 
   return (
     <Layout>
@@ -369,7 +320,6 @@ export default function Services() {
       {/* ── NEW! Lamination & Brow Henna ── */}
       <section className="py-10" style={{ background: "#fff8f4" }}>
         <div className="container max-w-3xl">
-          {/* Section header with NEW badge */}
           <div className="flex items-center gap-3 mb-5">
             <span
               className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"
@@ -470,13 +420,11 @@ export default function Services() {
                 Utah locations.
               </p>
 
-              <June1Banner />
-
               <div
                 className="rounded-2xl overflow-hidden mb-8"
                 style={{ border: "1px solid #E8DDD6", background: "#ffffff" }}
               >
-                <PriceHeader hasChanges={popularHasChanges} />
+                <PriceHeader />
                 <div className="px-5 pb-2 pt-1">
                   {mostPopular.map((item) => (
                     <PriceRow key={item.id} item={item} />
@@ -489,13 +437,10 @@ export default function Services() {
           )}
 
           {/* For the Ladies */}
-          {activeTab === "ladies" && (
-            <LadiesAccordion />
-          )}
+          {activeTab === "ladies" && <LadiesAccordion />}
+
           {/* For the Men */}
-          {activeTab === "men" && (
-            <MenAccordion />
-          )}
+          {activeTab === "men" && <MenAccordion />}
 
         </div>
       </section>
@@ -545,7 +490,7 @@ export default function Services() {
           </div>
         </div>
       </section>
-    <MascotEasterEgg pageId="services" />
+      <MascotEasterEgg pageId="services" />
     </Layout>
   );
 }

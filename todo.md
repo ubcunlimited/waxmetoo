@@ -353,3 +353,16 @@
 - [x] Register handler in server/_core/index.ts before Vite/static fallthrough
 - [x] 0 TypeScript errors
 - [x] Deploy site, then create weekly Heartbeat cron (every Monday 9am UTC) — task_uid: 9EBsYyL69q5bCbmQ2iWW2W, next run: 2026-05-25T09:00:00Z
+
+## Code Cleanup (Phase 28)
+
+- [x] Remove dead June 1st dual-pricing system from Services.tsx (isPastJune1, June1Banner, PriceHeader conditional branches, hasChanges variables)
+- [x] Remove unused TopSection type export from data.ts
+- [x] Delete ComponentShowcase.tsx (unused scaffolding leftover)
+- [x] Delete duplicate Privacy.tsx and Terms.tsx stub pages; redirect routes to canonical PrivacyPolicy and TermsOfService pages in App.tsx
+- [x] Extract shared FadeUp component to client/src/components/FadeUp.tsx (was copy-pasted in 11 pages)
+- [x] Extract shared usePageSEO hook to client/src/hooks/usePageSEO.ts (was copy-pasted in 12 pages)
+- [x] Extract shared sendEmail utility to server/emailUtils.ts (was duplicated in giveawayEmail.ts and mascotEmail.ts)
+- [x] Add useMemo to useBreadcrumbSchema and useLocalBusinessSchema hooks to prevent unnecessary DOM churn
+- [x] Split data.ts (1,146 lines) into 5 domain modules: locations.ts, services.ts, faqs.ts, blogPosts.ts, testimonials.ts; data.ts is now a 13-line barrel re-export
+- [x] 0 TypeScript errors after all changes

@@ -1,3 +1,5 @@
+import { usePageSEO } from "@/hooks/usePageSEO";
+import FadeUp from "@/components/FadeUp";
 /*
  * WAX ME TOO — Locations Hub Page
  * Design: Modern Feminine Craft
@@ -11,20 +13,6 @@ import { locations, BOOKING_URL } from "@/lib/data";
 import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
-function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms` }}>
-      {children}
-    </div>
-  );
-}
 
 export default function Locations() {
   useBreadcrumbSchema([
@@ -32,13 +20,10 @@ export default function Locations() {
     { name: "Locations", url: "/locations" },
   ]);
 
-  useEffect(() => {
-    document.title = "Wax Me Too Locations — 6 Utah Waxing Studios | Layton, SLC, Draper, Orem, St. George";
-    let m = document.querySelector<HTMLMetaElement>("meta[name='description']");
-    if (!m) { m = document.createElement('meta') as HTMLMetaElement; m.name = 'description'; document.head.appendChild(m); }
-    m.content = "Find your nearest Wax Me Too waxing studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. From Weber County to Utah County and Washington County to Mesquite, Nevada.";
-    return () => { document.title = "Wax Me Too — Professional Waxing Studio | Utah"; };
-  }, []);
+  usePageSEO(
+    "Wax Me Too Locations — 6 Utah Waxing Studios | Layton, SLC, Draper, Orem, St. George",
+    "Find your nearest Wax Me Too waxing studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George.",
+  );
 
   return (
     <Layout>

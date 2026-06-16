@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
@@ -18,8 +18,6 @@ import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import BeforeCare from "./pages/BeforeCare";
 import AfterCare from "./pages/AfterCare";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
 import AccessibilityWidget from "./components/AccessibilityWidget";
@@ -41,42 +39,49 @@ import AdminHub from "./pages/AdminHub";
 import AdminMascot from "./pages/AdminMascot";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <>
-    <ScrollToTop />
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/services" component={Services} />
-      <Route path="/first-visit" component={FirstVisit} />
-      <Route path="/about" component={About} />
-      <Route path="/locations" component={Locations} />
-      <Route path="/locations/:id" component={LocationDetail} />
-      <Route path="/faq" component={FAQ} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/before-care" component={BeforeCare} />
-      <Route path="/after-care" component={AfterCare} />
-      <Route path="/privacy" component={Privacy} />
-      <Route path="/terms" component={Terms} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
-      <Route path="/terms-of-service" component={TermsOfService} />
-      {/* Giveaway */}
-      <Route path="/win-a-free-wax" component={WinAFreeWax} />
-      <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
-      {/* Mascot Hunt */}
-      <Route path="/register" component={Register} />
-      <Route path="/mascot-hunt" component={MascotHunt} />
-      {/* Admin */}
-      <Route path="/admin" component={AdminHub} />
-      <Route path="/admin/giveaway" component={AdminGiveaway} />
-      <Route path="/admin/blog" component={AdminBlog} />
-      <Route path="/admin/subscribers" component={AdminSubscribers} />
-      <Route path="/admin/mascot" component={AdminMascot} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/services" component={Services} />
+        <Route path="/first-visit" component={FirstVisit} />
+        <Route path="/about" component={About} />
+        <Route path="/locations" component={Locations} />
+        <Route path="/locations/:id" component={LocationDetail} />
+        <Route path="/faq" component={FAQ} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/before-care" component={BeforeCare} />
+        <Route path="/after-care" component={AfterCare} />
+
+        {/* Canonical legal pages */}
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-of-service" component={TermsOfService} />
+
+        {/* Legacy short URLs — redirect to canonical pages */}
+        <Route path="/privacy"><Redirect to="/privacy-policy" /></Route>
+        <Route path="/terms"><Redirect to="/terms-of-service" /></Route>
+
+        {/* Giveaway */}
+        <Route path="/win-a-free-wax" component={WinAFreeWax} />
+        <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
+
+        {/* Mascot Hunt */}
+        <Route path="/register" component={Register} />
+        <Route path="/mascot-hunt" component={MascotHunt} />
+
+        {/* Admin */}
+        <Route path="/admin" component={AdminHub} />
+        <Route path="/admin/giveaway" component={AdminGiveaway} />
+        <Route path="/admin/blog" component={AdminBlog} />
+        <Route path="/admin/subscribers" component={AdminSubscribers} />
+        <Route path="/admin/mascot" component={AdminMascot} />
+
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
     </>
   );
 }
