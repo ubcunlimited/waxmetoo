@@ -1,360 +1,426 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Core pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://www.waxmetoo.com/</loc>
+    <loc>https://waxmetoo.com/</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/services</loc>
+    <loc>https://waxmetoo.com/services</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/first-visit</loc>
+    <loc>https://waxmetoo.com/locations</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.waxmetoo.com/locations</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.waxmetoo.com/faq</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.waxmetoo.com/blog</loc>
+    <loc>https://waxmetoo.com/blog</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/contact</loc>
+    <loc>https://waxmetoo.com/first-visit</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://waxmetoo.com/about</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/before-care</loc>
+    <loc>https://waxmetoo.com/faq</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://waxmetoo.com/contact</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/after-care</loc>
+    <loc>https://waxmetoo.com/before-care</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/win-a-free-wax</loc>
+    <loc>https://waxmetoo.com/after-care</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/privacy-policy</loc>
+    <loc>https://waxmetoo.com/win-a-free-wax</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://waxmetoo.com/privacy-policy</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/terms-of-service</loc>
+    <loc>https://waxmetoo.com/terms-of-service</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <!-- Location detail pages -->
   <url>
-    <loc>https://www.waxmetoo.com/locations/layton</loc>
+    <loc>https://waxmetoo.com/locations/layton</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/locations/south-jordan</loc>
+    <loc>https://waxmetoo.com/locations/south-jordan</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/locations/orem</loc>
+    <loc>https://waxmetoo.com/locations/orem</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/locations/salt-lake-city</loc>
+    <loc>https://waxmetoo.com/locations/salt-lake-city</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/locations/draper</loc>
+    <loc>https://waxmetoo.com/locations/draper</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/locations/st-george</loc>
+    <loc>https://waxmetoo.com/locations/st-george</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Blog posts -->
   <url>
-    <loc>https://www.waxmetoo.com/blog/win-complimentary-bikini-wax-summer</loc>
+    <loc>https://waxmetoo.com/blog/win-complimentary-bikini-wax-summer</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/st-george-premier-waxing-salon</loc>
+    <loc>https://waxmetoo.com/blog/st-george-premier-waxing-salon</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/vacation-waxing-prep-guide</loc>
+    <loc>https://waxmetoo.com/blog/vacation-waxing-prep-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/military-discounts-wax-me-too-layton</loc>
+    <loc>https://waxmetoo.com/blog/military-discounts-wax-me-too-layton</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/why-waxing-is-best-hair-removal</loc>
+    <loc>https://waxmetoo.com/blog/why-waxing-is-best-hair-removal</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/bridal-waxing-guide</loc>
+    <loc>https://waxmetoo.com/blog/bridal-waxing-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/south-jordan-waxing-salon-relocation</loc>
+    <loc>https://waxmetoo.com/blog/south-jordan-waxing-salon-relocation</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/south-jordan-6th-location-opening</loc>
+    <loc>https://waxmetoo.com/blog/south-jordan-6th-location-opening</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/free-bikini-wax-layton-utah</loc>
+    <loc>https://waxmetoo.com/blog/free-bikini-wax-layton-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/wax-me-too-difference-local-salon</loc>
+    <loc>https://waxmetoo.com/blog/wax-me-too-difference-local-salon</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/summer-waxing-utah-guide</loc>
+    <loc>https://waxmetoo.com/blog/summer-waxing-utah-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/first-brazilian-wax-step-by-step</loc>
+    <loc>https://waxmetoo.com/blog/first-brazilian-wax-step-by-step</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/spring-adventure-waxing-utah</loc>
+    <loc>https://waxmetoo.com/blog/spring-adventure-waxing-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/south-jordan-waxing-grand-opening</loc>
+    <loc>https://waxmetoo.com/blog/south-jordan-waxing-grand-opening</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-south-jordan-utah-opening</loc>
+    <loc>https://waxmetoo.com/blog/waxing-south-jordan-utah-opening</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/valentines-day-waxing-rippp-and-swear</loc>
+    <loc>https://waxmetoo.com/blog/valentines-day-waxing-rippp-and-swear</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/valentines-day-free-wax-giveaway-2017</loc>
+    <loc>https://waxmetoo.com/blog/valentines-day-free-wax-giveaway-2017</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/sundance-film-festival-waxing-utah</loc>
+    <loc>https://waxmetoo.com/blog/sundance-film-festival-waxing-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/layton-waxing-salon-new-team</loc>
+    <loc>https://waxmetoo.com/blog/layton-waxing-salon-new-team</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/pre-vacation-waxing-checklist</loc>
+    <loc>https://waxmetoo.com/blog/pre-vacation-waxing-checklist</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/free-bikini-wax-drawing-utah</loc>
+    <loc>https://waxmetoo.com/blog/free-bikini-wax-drawing-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/holiday-waxing-on-top-of-the-world</loc>
+    <loc>https://waxmetoo.com/blog/holiday-waxing-on-top-of-the-world</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/3-worst-things-waxing-salon</loc>
+    <loc>https://waxmetoo.com/blog/3-worst-things-waxing-salon</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/underarm-waxing-guide-utah</loc>
+    <loc>https://waxmetoo.com/blog/underarm-waxing-guide-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/throw-away-your-razor</loc>
+    <loc>https://waxmetoo.com/blog/throw-away-your-razor</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/bikini-wax-types-explained</loc>
+    <loc>https://waxmetoo.com/blog/bikini-wax-types-explained</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/naked-and-afraid-first-brazilian</loc>
+    <loc>https://waxmetoo.com/blog/naked-and-afraid-first-brazilian</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/mens-eyebrow-waxing-metrosexual</loc>
+    <loc>https://waxmetoo.com/blog/mens-eyebrow-waxing-metrosexual</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/eyebrow-design-waxing-guide</loc>
+    <loc>https://waxmetoo.com/blog/eyebrow-design-waxing-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/hair-removal-layton-utah</loc>
+    <loc>https://waxmetoo.com/blog/hair-removal-layton-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/brazilian-waxing-salon-qa</loc>
+    <loc>https://waxmetoo.com/blog/brazilian-waxing-salon-qa</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/prevention-magazine-bikini-wax-tips</loc>
+    <loc>https://waxmetoo.com/blog/prevention-magazine-bikini-wax-tips</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/layton-waxing-milly-speaks-spanish</loc>
+    <loc>https://waxmetoo.com/blog/layton-waxing-milly-speaks-spanish</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/valentines-day-brazilian-wax-gift</loc>
+    <loc>https://waxmetoo.com/blog/valentines-day-brazilian-wax-gift</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/layton-waxing-salon-new-location</loc>
+    <loc>https://waxmetoo.com/blog/layton-waxing-salon-new-location</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/15-minute-brazilian-wax-experience</loc>
+    <loc>https://waxmetoo.com/blog/15-minute-brazilian-wax-experience</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/draper-waxing-salon-expansion</loc>
+    <loc>https://waxmetoo.com/blog/draper-waxing-salon-expansion</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/salt-lake-city-waxing-salon</loc>
+    <loc>https://waxmetoo.com/blog/salt-lake-city-waxing-salon</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/valentines-day-free-brazilian-2013</loc>
+    <loc>https://waxmetoo.com/blog/valentines-day-free-brazilian-2013</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/utah-waxing-salon-established-2007</loc>
+    <loc>https://waxmetoo.com/blog/utah-waxing-salon-established-2007</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/brazilian-wax-benefits-vs-shaving</loc>
+    <loc>https://waxmetoo.com/blog/brazilian-wax-benefits-vs-shaving</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-while-pregnant-utah</loc>
+    <loc>https://waxmetoo.com/blog/waxing-while-pregnant-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/ingrown-hair-prevention-waxing</loc>
+    <loc>https://waxmetoo.com/blog/ingrown-hair-prevention-waxing</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-sensitive-skin-guide</loc>
+    <loc>https://waxmetoo.com/blog/waxing-sensitive-skin-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/how-often-should-you-wax</loc>
+    <loc>https://waxmetoo.com/blog/how-often-should-you-wax</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-for-men-manzilian-guide</loc>
+    <loc>https://waxmetoo.com/blog/waxing-for-men-manzilian-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/st-george-waxing-salon-utah</loc>
+    <loc>https://waxmetoo.com/blog/st-george-waxing-salon-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-aftercare-guide</loc>
+    <loc>https://waxmetoo.com/blog/waxing-aftercare-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-before-care-guide</loc>
+    <loc>https://waxmetoo.com/blog/waxing-before-care-guide</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/wax-me-too-happy-faces-community</loc>
+    <loc>https://waxmetoo.com/blog/wax-me-too-happy-faces-community</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/blog/waxing-faq-utah</loc>
+    <loc>https://waxmetoo.com/blog/waxing-faq-utah</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
-
 </urlset>
