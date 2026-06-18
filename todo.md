@@ -579,3 +579,10 @@
 - [x] Fix: st-george-waxing-salon-utah slow page — already resolved by storage proxy cache (presigned URL cache drops load from 5-6s to <60ms)
 - [x] Verify: 17 sampled pages all pass h1 ≠ title check (blog with suffix, blog without suffix, static, location)
 - [x] Build production bundle and save checkpoint
+
+## Critical Fix — Blank Page on Production (CORS, June 18, 2026)
+- [x] Root cause: storageProxy.ts was issuing 307 redirects to CloudFront presigned URLs; CloudFront has no Access-Control-Allow-Origin header, so browser blocked all /manus-storage/ resources (fonts CSS, gtag JS, mangomint JS) with CORS error (status 0)
+- [x] Fix: rewrite storageProxy.ts to pipe content through Express (fetch CloudFront server-side, stream bytes back to browser) — browser only ever talks to waxmetoo.com (same-origin), CORS never triggered
+- [x] Verified: /manus-storage/self-hosted-fonts_ada0be97.css now returns HTTP 200 with Content-Type: text/css and Access-Control-Allow-Origin: * directly from Express
+- [x] Verified: gtag and mangomint JS files also return 200 via proxy
+- [x] TypeScript clean, production bundle rebuilt
