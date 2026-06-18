@@ -64,7 +64,7 @@ export default function BlogPost() {
   useEffect(() => {
     if (!slug) return;
     setArticleContent('');
-    import(`./blog-content/${slug}`)
+    import(`./blog-content/${slug}.ts`)
       .then((m: { default: string }) => setArticleContent(m.default))
       .catch(() => setArticleContent('<p>Article content coming soon.</p>'));
   }, [slug]);

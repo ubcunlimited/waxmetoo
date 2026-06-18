@@ -100,6 +100,15 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // Explicit handler for root path — express.static would serve index.html directly,
+  // bypassing injectSEO. This ensures / gets the same prerender treatment as all other routes.
+  app.get("/", (_req, res) => {
+    const htmlPath = path.resolve(distPath, "index.html");
+    const html = fs.readFileSync(htmlPath, "utf-8");
+    const injected = injectSEO(html, "/");
+    res.set("Content-Type", "text/html").send(injected);
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist

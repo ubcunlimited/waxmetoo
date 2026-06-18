@@ -408,52 +408,52 @@
 ## Phase 30 — SEMrush Clean Audit (Zero Issues)
 
 ### Issue 1 — Disallowed External Resources (144 instances / 71 pages)
-- [ ] Verify Google Fonts self-hosting is live on production
-- [ ] Confirm Mangomint widget is the only remaining blocked third-party resource
-- [ ] Document Mangomint as acceptable third-party block (their robots.txt, not ours)
+- [x] Verify Google Fonts self-hosting is live on production
+- [x] Confirm Mangomint widget is the only remaining blocked third-party resource
+- [x] Document Mangomint as acceptable third-party block (their robots.txt, not ours)
 
 ### Issue 2 — Low Text-to-HTML Ratio (68 pages)
-- [ ] Verify SSR prerender middleware is injecting content on all 68 flagged pages
-- [ ] Confirm production curl returns visible text on homepage, location, and blog pages
+- [x] Verify SSR prerender middleware is injecting content on all 68 flagged pages
+- [x] Confirm production curl returns visible text on homepage, location, and blog pages
 
 ### Issue 3 — Broken External Images (11 instances / 10 pages)
-- [ ] Fix broken images on /blog index page (2 instances)
-- [ ] Fix broken images on /blog/15-minute-brazilian-wax-experience
-- [ ] Fix broken images on /blog/bikini-wax-types-explained
-- [ ] Fix broken images on /blog/brazilian-waxing-salon-qa
-- [ ] Fix broken images on /blog/ingrown-hair-prevention-waxing
-- [ ] Fix broken images on /blog/naked-and-afraid-first-brazilian
-- [ ] Fix broken images on /blog/summer-waxing-utah-guide
-- [ ] Fix broken images on /blog/waxing-before-care-guide
-- [ ] Fix broken images on /blog/waxing-faq-utah
-- [ ] Fix broken images on /blog/waxing-sensitive-skin-guide
+- [x] Fix broken images on /blog index page (2 instances)
+- [x] Fix broken images on /blog/15-minute-brazilian-wax-experience
+- [x] Fix broken images on /blog/bikini-wax-types-explained
+- [x] Fix broken images on /blog/brazilian-waxing-salon-qa
+- [x] Fix broken images on /blog/ingrown-hair-prevention-waxing
+- [x] Fix broken images on /blog/naked-and-afraid-first-brazilian
+- [x] Fix broken images on /blog/summer-waxing-utah-guide
+- [x] Fix broken images on /blog/waxing-before-care-guide
+- [x] Fix broken images on /blog/waxing-faq-utah
+- [x] Fix broken images on /blog/waxing-sensitive-skin-guide
 
 ### Issue 5 — Pages with Only One Internal Link (8 pages)
-- [ ] Add internal links to /blog/bridal-waxing-guide
-- [ ] Add internal links to /blog/draper-waxing-salon-expansion
-- [ ] Add internal links to /blog/how-often-should-you-wax
-- [ ] Add internal links to /blog/prevention-magazine-bikini-wax-tips
-- [ ] Add internal links to /blog/sundance-film-festival-waxing-utah
-- [ ] Add internal links to /blog/waxing-before-care-guide
-- [ ] Add internal links to /blog/waxing-while-pregnant-utah
-- [ ] Fix /services?tab=popular (query-param URL — add canonical or redirect)
+- [x] Add internal links to /blog/bridal-waxing-guide
+- [x] Add internal links to /blog/draper-waxing-salon-expansion
+- [x] Add internal links to /blog/how-often-should-you-wax
+- [x] Add internal links to /blog/prevention-magazine-bikini-wax-tips
+- [x] Add internal links to /blog/sundance-film-festival-waxing-utah
+- [x] Add internal links to /blog/waxing-before-care-guide
+- [x] Add internal links to /blog/waxing-while-pregnant-utah
+- [x] Fix /services?tab=popular (query-param URL — add canonical or redirect)
 
 ### Issue 6 — Permanent Redirects (3 pages)
-- [ ] Remove all internal links pointing to /privacy (→ /privacy-policy)
-- [ ] Remove all internal links pointing to /terms (→ /terms-of-service)
-- [ ] Remove /win-a-free-wax redirect from sitemap / fix its canonical
-- [ ] Update sitemap to remove all redirecting URLs
+- [x] Remove all internal links pointing to /privacy (→ /privacy-policy)
+- [x] Remove all internal links pointing to /terms (→ /terms-of-service)
+- [x] Remove /win-a-free-wax redirect from sitemap / fix its canonical
+- [x] Update sitemap to remove all redirecting URLs
 
 ### Issue 7 — Blocked from Crawling (2 pages)
-- [ ] /mascot-hunt: decide index vs noindex; enforce consistently (sitemap + nav links)
-- [ ] /register: decide index vs noindex; enforce consistently (sitemap + nav links)
+- [x] /mascot-hunt: decide index vs noindex; enforce consistently (sitemap + nav links)
+- [x] /register: decide index vs noindex; enforce consistently (sitemap + nav links)
 
 ### Issue 8 — Orphaned Sitemap Pages (70 pages)
-- [ ] Regenerate sitemap after all internal linking + redirect + blocked-page fixes
-- [ ] Ensure every sitemap URL is reachable from site navigation
+- [x] Regenerate sitemap after all internal linking + redirect + blocked-page fixes
+- [x] Ensure every sitemap URL is reachable from site navigation
 
 ### Issue 9 — llms.txt Formatting Issues
-- [ ] Validate llms.txt against spec and fix any formatting errors
+- [x] Validate llms.txt against spec and fix any formatting errors
 
 ## SEMrush Audit v3 — June 2026
 

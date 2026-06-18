@@ -167,6 +167,37 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Admin-only heavy libraries — only load on admin pages
+          if (id.includes('recharts') || id.includes('d3-')) {
+            return 'vendor-charts';
+          }
+          // Animation library — public pages only, but large enough to split
+          if (id.includes('framer-motion')) {
+            return 'vendor-motion';
+          }
+          // tRPC + React Query — needed on every page
+          if (id.includes('@trpc') || id.includes('@tanstack/react-query')) {
+            return 'vendor-trpc';
+          }
+          // Radix UI primitives — split from React core
+          if (id.includes('@radix-ui')) {
+            return 'vendor-radix';
+          }
+          // React core — smallest possible chunk for fastest initial parse
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'vendor-react';
+          }
+          // Everything else in node_modules → shared vendor
+          if (id.includes('node_modules')) {
+            return 'vendor-misc';
+          }
+        },
+      },
+    },
   },
   server: {
     host: true,
