@@ -542,3 +542,13 @@
 - [x] Update image URLs in client/src/lib/blogPosts.ts
 - [x] Update og:image URLs in server/seoPrerender.ts BLOG_POST_IMAGES map
 - [x] TypeScript check passes, production bundle rebuilt
+
+## WebP Batch Conversion — All 51 Blog Hero Images (June 18, 2026)
+- [x] Batch-convert remaining 48 blog hero JPEG images to WebP (quality 82)
+- [x] 0 errors across all 48 conversions
+- [x] Total savings: 1,984 KB → 994 KB (50% smaller) for the batch
+- [x] Combined with previous 3: all 51 blog hero images now WebP
+- [x] Updated all 48 image URLs in client/src/lib/blogPosts.ts
+- [x] Updated all 48 og:image URLs in server/seoPrerender.ts BLOG_POST_IMAGES
+- [x] Verified: 0 remaining .jpg references in blogPosts.ts or seoPrerender.ts
+- [x] TypeScript check passes, production bundle rebuilt
