@@ -565,9 +565,3 @@
 - [x] Fix: added strip step in _injectSEO() to remove any existing prerender-content and prerender-site-nav blocks before injecting new ones
 - [x] Verified: dev server now returns exactly 1 prerender-content div, 1 h1, has module script, has </body>
 - [x] TypeScript clean, production bundle rebuilt
-
-## Performance Fix — Storage Proxy Presigned URL Cache
-- [x] Root cause: storageProxy.ts had Cache-Control: no-store and no server-side cache, causing a fresh 5-6s Forge API round-trip on every /manus-storage/ request
-- [x] Fix: added in-memory presigned URL cache (evicts 30 min before expiry), changed Cache-Control to public max-age=82800 (23h)
-- [x] Result: /manus-storage/ image fetch time dropped from 5-6s to 36-59ms (99% reduction)
-- [x] TypeScript clean, production bundle rebuilt
