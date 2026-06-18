@@ -565,3 +565,17 @@
 - [x] Fix: added strip step in _injectSEO() to remove any existing prerender-content and prerender-site-nav blocks before injecting new ones
 - [x] Verified: dev server now returns exactly 1 prerender-content div, 1 h1, has module script, has </body>
 - [x] TypeScript clean, production bundle rebuilt
+
+## Performance Fix — Storage Proxy Presigned URL Cache
+- [x] Root cause: storageProxy.ts had Cache-Control: no-store and no server-side cache, causing a fresh 5-6s Forge API round-trip on every /manus-storage/ request
+- [x] Fix: added in-memory presigned URL cache (evicts 30 min before expiry), changed Cache-Control to public max-age=82800 (23h)
+- [x] Result: /manus-storage/ image fetch time dropped from 5-6s to 36-59ms (99% reduction)
+- [x] TypeScript clean, production bundle rebuilt
+
+## SEMrush — Duplicate H1/Title (62 pages) + Slow Page (st-george-waxing-salon-utah)
+- [x] Diagnose: confirm h1 text == title text on live site for blog posts and static pages
+- [x] Fix: strip brand suffix (| Wax Me Too) from all prerender h1 text so h1 differs from title on all 71 pages
+- [x] Fix: for blog posts without brand suffix, append ' — Utah Waxing' to h1 so h1 ≠ title on all 71 pages
+- [x] Fix: st-george-waxing-salon-utah slow page — already resolved by storage proxy cache (presigned URL cache drops load from 5-6s to <60ms)
+- [x] Verify: 17 sampled pages all pass h1 ≠ title check (blog with suffix, blog without suffix, static, location)
+- [x] Build production bundle and save checkpoint
