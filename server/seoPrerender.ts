@@ -89,7 +89,7 @@ const STATIC_PAGES: Record<string, PageMeta> = {
     title: "Wax Me Too — Professional Waxing Studio | Est. 2007",
     description:
       "Utah's women-owned waxing studio since 2007. Brazilian, bikini, brow & body waxing across 6 locations. Book your appointment today.",
-    bodyText: `<h2>Wax Me Too — Professional Waxing Studio</h2>
+    bodyText: `<h1>Wax Me Too — Professional Waxing Studio</h1>
 Utah's premier women-owned waxing studio, serving clients since 2007 across 6 locations: Layton, South Jordan, Orem, Salt Lake City, Draper, and St. George.
 Brazilian Waxing Perfected. Our expert estheticians specialize in Brazilian wax, bikini wax, brow wax, brow lamination, underarm wax, leg wax, and full body waxing. Every room is private, every applicator is single-use, and every appointment is designed to make you feel comfortable and confident.
 Services: Brazilian Wax $65 | Deep Bikini Wax $55 | Bikini Wax $45 | Brow Wax $20 | Brow Lamination $75 | Lip Wax $12 | Chin Wax $12 | Full Leg Wax $75 | Half Leg Wax $45 | Underarm Wax $25.
@@ -100,7 +100,7 @@ Book your appointment online at booking.mangomint.com/593822.`,
     title: "Waxing Services & Pricing — Wax Me Too Utah",
     description:
       "Browse our full waxing menu — Brazilian, bikini, brow & body waxing. Standardized pricing guaranteed across all 6 Utah locations. First-time Brazilian wax $50.",
-    bodyText: `<h2>Waxing Services & Pricing — Wax Me Too Utah</h2>
+    bodyText: `<h1>Waxing Services & Pricing — Wax Me Too Utah</h1>
 Wax Me Too offers a full menu of professional waxing services at standardized prices across all 6 Utah locations as of June 2026.
 NEW! Lamination & Brow Treatments: Brow Lamination $75 | Brow Lamination and Tint $95. The London Brow Company products used exclusively at Wax Me Too.
 Bikini Waxing: Brazilian Wax $65 | Deep Bikini Wax $55 | Bikini Wax $45. First-time Brazilian wax for new clients: $50.
@@ -112,7 +112,7 @@ All services performed by licensed estheticians in private rooms. Single-use app
     title: "Wax Me Too Locations — 6 Utah Studios",
     description:
       "Find your nearest Wax Me Too studio in Layton, South Jordan, Orem, Salt Lake City, Draper, or St. George. Book online today.",
-    bodyText: `<h2>Wax Me Too Locations — 6 Utah Waxing Studios</h2>
+    bodyText: `<h1>Wax Me Too Locations — 6 Utah Waxing Studios</h1>
 Wax Me Too has 6 professional waxing studios across Utah. All locations offer the same expert estheticians, private rooms, premium wax, and standardized pricing.
 Layton: 360 S Fort Ln #101, Layton, UT 84041. Phone: (801) 572-7771. Mon–Fri 9am–7pm, Sat 9am–5pm. Near Hill Air Force Base. Military discounts available.
 South Jordan: 3674 W South Jordan Pkwy, South Jordan, UT 84095. Phone: (801) 572-7771. Mon–Fri 9am–7pm, Sat 9am–5pm. Serving southwest Salt Lake County and Utah County.
@@ -125,7 +125,7 @@ St. George: 1091 N Bluff St #104, St. George, UT 84770. Phone: (435) 688-0888. M
     title: "About Wax Me Too — Utah's Women-Owned Studio Since 2007",
     description:
       "Learn about Wax Me Too's story — Utah's women-owned waxing studio founded in 2007. Meet our expert estheticians and discover our commitment to quality.",
-    bodyText: `<h2>About Wax Me Too — Utah's Women-Owned Waxing Studio</h2>
+    bodyText: `<h1>About Wax Me Too — Utah's Women-Owned Waxing Studio</h1>
 Wax Me Too is Utah's first and most trusted waxing-only studio, founded in 2007 by two best friends with a shared vision: to create a clean, private, and professional waxing experience for every client.
 Our story began in Draper in 2007, when we opened Utah's first waxing-only salon. Today, we have grown to 6 locations across the state: Layton, South Jordan, Orem, Salt Lake City, Draper, and St. George.
 What makes Wax Me Too different: We are locally owned and operated by women — not a franchise, not backed by outside investors. When you book with us, you are supporting Utah women directly. Every treatment room has a sink so your esthetician can wash her hands in front of you before every service. We use single-use applicators — no double-dipping, ever. No memberships, no pressure, transparent pricing.
@@ -135,7 +135,7 @@ Our estheticians are licensed professionals trained in the latest waxing techniq
     title: "Waxing FAQ — Common Questions Answered | Wax Me Too",
     description:
       "Answers to your most common waxing questions — prep tips, pain levels, pricing, and what to expect at Wax Me Too. Pricing last updated June 2026.",
-    bodyText: `<h2>Waxing FAQ — Frequently Asked Questions</h2>
+    bodyText: `<h1>Waxing FAQ — Frequently Asked Questions</h1>
 Frequently Asked Questions about waxing at Wax Me Too, Utah's professional waxing studio since 2007.
 Does waxing hurt? Most clients describe waxing as a quick sting that fades immediately. Brazilian and bikini waxing is more sensitive than brow or leg waxing, but our estheticians use techniques to minimize discomfort. Clients who wax regularly report that it becomes noticeably more comfortable after a few sessions.
 How long does hair need to be? At least 1/4 inch (about 2–3 weeks of growth from your last shave) for best results. Avoid shaving for at least 3 weeks before your appointment. If hair is too short, the wax cannot grip it effectively.
@@ -148,7 +148,7 @@ Pricing: Brazilian Wax $65 | Deep Bikini $55 | Bikini $45 | Brow Wax $20 | Brow 
     title: "Waxing Tips, News & Guides — Wax Me Too Blog",
     description:
       "Expert waxing tips, prep guides, location news, and promotions from Utah's premier waxing studio. Read the Wax Me Too blog.",
-    bodyText: `<h2>Wax Me Too Blog — Waxing Tips, News & Guides</h2>
+    bodyText: `<h1>Wax Me Too Blog — Waxing Tips, News & Guides</h1>
 Expert waxing tips, preparation guides, aftercare advice, location news, and promotions from Utah's women-owned waxing studio since 2007.
 Categories: Education | Prep & Care | Locations | Promotions | Bridal | Lifestyle | Community.
 Featured articles: Your First Brazilian Wax at Wax Me Too: What to Know | How to Prep for Your Vacation with Wax Me Too | Why Waxing Is the Best Hair Removal Method | Pre-Wedding Waxing: Brows to Toes Bridal Guide | Summer Waxing in Utah: Stay Smooth All Season | Brazilian Wax vs. Shaving: Why Waxing Wins | Underarm Waxing Guide | How Often Should You Wax? | Waxing Aftercare Guide | Waxing Before Care Guide.
@@ -158,7 +158,7 @@ Wax Me Too has 6 locations across Utah: Layton, South Jordan, Orem, Salt Lake Ci
     title: "Contact Wax Me Too — Utah Waxing Studios",
     description:
       "Get in touch with Wax Me Too. Find phone numbers, emails, and addresses for all 6 Utah waxing studio locations.",
-    bodyText: `<h2>Contact Wax Me Too — Utah Waxing Studios</h2>
+    bodyText: `<h1>Contact Wax Me Too — Utah Waxing Studios</h1>
 Get in touch with Wax Me Too. We have 6 professional waxing studios across Utah.
 General inquiries: hello@waxmetoo.com. Main phone: (801) 572-7771.
 Layton: 360 S Fort Ln #101, Layton, UT 84041. Phone: (801) 572-7771.
@@ -173,7 +173,7 @@ Book your appointment online at booking.mangomint.com/593822 or call your neares
     title: "Your First Waxing Visit — What to Expect | Wax Me Too",
     description:
       "Everything you need to know before your first wax at Wax Me Too. Prep tips, what to wear, and how to get the best results.",
-    bodyText: `<h2>Your First Waxing Visit at Wax Me Too — What to Expect</h2>
+    bodyText: `<h1>Your First Waxing Visit at Wax Me Too — What to Expect</h1>
 Everything you need to know before your first wax at Wax Me Too, Utah's professional waxing studio since 2007.
 Before your appointment: let hair grow to at least 1/4 inch (about 2–3 weeks from your last shave). Exfoliate gently 24–48 hours before your appointment. Avoid retinol, AHAs, and BHAs for 48 hours before waxing. Do not apply lotion, oils, or self-tanner on the day of your appointment. Avoid caffeine before sensitive-area waxing.
 What to wear: loose, comfortable clothing. For Brazilian or bikini waxing, avoid tight jeans or leggings after your appointment.
@@ -185,7 +185,7 @@ First-time clients: Brazilian wax for $50. Book at booking.mangomint.com/593822.
     title: "Pre-Wax Care Tips — How to Prepare | Wax Me Too",
     description:
       "Follow these pre-wax care tips to get the best results from your waxing appointment at Wax Me Too.",
-    bodyText: `<h2>Pre-Wax Care Tips — How to Prepare for Your Waxing Appointment</h2>
+    bodyText: `<h1>Pre-Wax Care Tips — How to Prepare for Your Waxing Appointment</h1>
 Follow these pre-wax care tips from Wax Me Too to get the best results from your waxing appointment.
 Hair length: let hair grow to at least 1/4 inch (about 2–3 weeks from your last shave). This is the minimum length for the wax to grip effectively. If hair is too short, we may need to reschedule your appointment.
 Exfoliation: exfoliate gently 24–48 hours before your appointment to remove dead skin cells and help prevent ingrown hairs. Do not exfoliate on the day of your appointment, as this can make skin more sensitive.
@@ -197,7 +197,7 @@ Sun exposure: avoid prolonged sun exposure or tanning beds for 24–48 hours bef
     title: "Post-Wax Care Tips — Keep Skin Smooth | Wax Me Too",
     description:
       "Follow these after-wax care tips to keep skin smooth, prevent ingrown hairs, and extend your waxing results.",
-    bodyText: `<h2>Post-Wax Care Tips — Keep Skin Smooth After Waxing</h2>
+    bodyText: `<h1>Post-Wax Care Tips — Keep Skin Smooth After Waxing</h1>
 Follow these aftercare tips from Wax Me Too to keep skin smooth, prevent ingrown hairs, and extend your waxing results.
 First 24–48 hours: avoid heat in all forms — no hot showers, hot baths, saunas, steam rooms, or hot tubs. Heat opens pores and can cause irritation or infection in freshly waxed skin. Avoid sun exposure and tanning beds for at least 48 hours after waxing.
 Skin care products: do not apply makeup, deodorant, perfumed products, or body lotion with fragrance to waxed areas for 24 hours. Use only fragrance-free, gentle products on freshly waxed skin.
@@ -208,7 +208,7 @@ Next appointment: book your next appointment in 4–6 weeks for best results. Re
   "/privacy-policy": {
     title: "Privacy Policy — Wax Me Too",
     description: "Wax Me Too privacy policy — how we collect, use, and protect your personal information.",
-    bodyText: `<h2>Privacy Policy — Wax Me Too</h2>
+    bodyText: `<h1>Privacy Policy — Wax Me Too</h1>
 Wax Me Too Privacy Policy. Last updated 2024.
 We collect personal information you provide when booking appointments or contacting us, including your name, email address, and phone number. We use this information solely to process bookings, send appointment reminders, and communicate about our services.
 We do not sell, rent, or share your personal information with third parties for marketing purposes. We use industry-standard security measures to protect your data, including encrypted connections (HTTPS) and secure servers.
@@ -218,7 +218,7 @@ For questions about this policy, contact Wax Me Too at hello@waxmetoo.com or (80
   "/terms-of-service": {
     title: "Terms of Service — Wax Me Too",
     description: "Wax Me Too terms of service — booking policies, cancellation policy, and service terms.",
-    bodyText: `<h2>Terms of Service — Wax Me Too</h2>
+    bodyText: `<h1>Terms of Service — Wax Me Too</h1>
 Wax Me Too Terms of Service. By booking an appointment, you agree to the following terms.
 Booking policy: appointments can be booked online via Mangomint at booking.mangomint.com/593822 or by calling (801) 572-7771. Walk-ins are welcome based on availability.
 Cancellation policy: cancellations must be made at least 24 hours in advance. Late cancellations or no-shows may be subject to a cancellation fee. We reserve the right to charge a deposit for future bookings after repeated no-shows.
@@ -228,7 +228,7 @@ Health and safety: please inform your esthetician of any medications, skin condi
   "/win-a-free-wax": {
     title: "Win a Free Wax — Monthly Giveaway | Wax Me Too",
     description: "Enter to win a complimentary waxing service at Wax Me Too Utah. One winner drawn every month from all confirmed entries. Open to new and returning clients.",
-    bodyText: `<h2>Win a Free Wax — Monthly Giveaway</h2>
+    bodyText: `<h1>Win a Free Wax — Monthly Giveaway</h1>
 Enter Wax Me Too's monthly giveaway for a chance to win a complimentary waxing service. One winner is drawn each month from all confirmed entries.
 How to enter: fill out the form with your first name, last name, and email address. You will receive a confirmation email — click the link inside to complete your entry. Only confirmed entries are eligible to win.
 Prize: one complimentary waxing service per month. The winner is notified by email and text. The prize is non-transferable and has no cash value.
@@ -612,7 +612,7 @@ function resolvePageMeta(urlPath: string): PageMeta | null {
       return {
         title: `${loc.name} Waxing Studio — Wax Me Too Utah`,
         description: `Professional waxing in ${loc.name}, Utah. ${loc.description} Book online today.`,
-        bodyText: `<h2>${loc.name} Waxing Studio — Wax Me Too Utah</h2>
+        bodyText: `<h1>${loc.name} Waxing Studio — Wax Me Too Utah</h1>
 Wax Me Too ${loc.name}. ${loc.address}. Phone: ${loc.phone}.
 ${loc.description}
 Services: Brazilian Wax $65 | Deep Bikini Wax $55 | Bikini Wax $45 | Brow Wax $20 | Brow Lamination $75 | Full Leg Wax $75 | Half Leg Wax $45 | Underarm Wax $25 | Lip Wax $12 | Chin Wax $12.
@@ -634,8 +634,8 @@ First-time clients: Brazilian wax for $50. Book online at booking.mangomint.com/
         description: post.description,
         ogImage,
         bodyText: BLOG_BODY_TEXTS[slug]
-          ? `<h2>${post.title}</h2>\n${BLOG_BODY_TEXTS[slug]}\n\nWax Me Too — Utah's women-owned waxing studio since 2007. 6 locations: Layton, South Jordan, Orem, Salt Lake City, Draper, St. George. Book: booking.mangomint.com/593822.`
-          : `<h2>${post.title}</h2>\n${post.excerpt}\nWax Me Too — Utah's women-owned waxing studio since 2007. 6 locations: Layton, South Jordan, Orem, Salt Lake City, Draper, St. George. Book: booking.mangomint.com/593822.`,
+          ? `<h1>${post.title}</h1>\n${BLOG_BODY_TEXTS[slug]}\n\nWax Me Too — Utah's women-owned waxing studio since 2007. 6 locations: Layton, South Jordan, Orem, Salt Lake City, Draper, St. George. Book: booking.mangomint.com/593822.`
+          : `<h1>${post.title}</h1>\n${post.excerpt}\nWax Me Too — Utah's women-owned waxing studio since 2007. 6 locations: Layton, South Jordan, Orem, Salt Lake City, Draper, St. George. Book: booking.mangomint.com/593822.`,
       };
     }
   }

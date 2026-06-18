@@ -552,3 +552,10 @@
 - [x] Updated all 48 og:image URLs in server/seoPrerender.ts BLOG_POST_IMAGES
 - [x] Verified: 0 remaining .jpg references in blogPosts.ts or seoPrerender.ts
 - [x] TypeScript check passes, production bundle rebuilt
+
+## SEMrush — 71 Pages Missing h1 (Server-Side Fix, June 18, 2026)
+- [x] Diagnose: confirmed live site server HTML had 0 h1 tags (React h1s are client-side only)
+- [x] Fix seoPrerender.ts: restored h1 as opening heading in all bodyText templates (13 static + 6 location + 51 blog)
+- [x] Prerender h1 text is distinct from title tag (h1 omits brand suffix '| Wax Me Too')
+- [x] Verified: dev server shows exactly 1 h1 per page on all 10 tested page types
+- [x] Build production bundle and save checkpoint
