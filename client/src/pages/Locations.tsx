@@ -21,7 +21,7 @@ export default function Locations() {
   ]);
 
   usePageSEO(
-    "Wax Me Too Locations — 6 Utah Waxing Studios | Layton, SLC, Draper, Orem, St. George",
+    "Wax Me Too Locations — 6 Utah Studios",
     "Find your nearest Wax Me Too waxing studio. 6 locations across Utah — Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George.",
   );
 
