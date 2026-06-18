@@ -508,3 +508,16 @@
 - [x] Extend _injectSEO() to inject og:title, og:description, og:type, og:image, og:image:width/height, twitter:card, twitter:image server-side for all 51 blog posts
 - [x] og:type set to "article" for blog posts, "website" for static pages
 - [x] Rebuilt production bundle (pnpm build) — all changes included in dist/index.js
+
+## SEMrush Audit — Multiple h1 + Slow Pages (June 18, 2026)
+- [x] Diagnose: identify every h1 source in server HTML for homepage, location page, blog post
+- [x] Issue A: reduce to exactly one h1 per page in seoPrerender.ts (template-level fix, not per-page)
+- [x] Issue A: make h1 text distinct from title tag on every page type
+- [x] Issue A: verify 0 pages with multiple h1 AND 0 pages with duplicate h1/title after fix
+- [x] Issue A: confirm Missing h1 stays at 0 (no regressions)
+- [x] Issue B: profile layton-waxing-milly-speaks-spanish for slow load causes
+- [x] Issue B: profile wax-me-too-difference-local-salon for slow load causes
+- [x] Issue B: add <link rel=preload fetchpriority=high> for hero image on all 51 blog post pages to fix LCP
+- [x] Issue B: fix shared template/component if it is the root cause of density across pages
+- [x] Regression check: Low text-to-HTML, Low word count, Disallowed resources all still at 0
+- [x] Build production bundle and save checkpoint
