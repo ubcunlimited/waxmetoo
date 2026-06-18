@@ -559,3 +559,9 @@
 - [x] Prerender h1 text is distinct from title tag (h1 omits brand suffix '| Wax Me Too')
 - [x] Verified: dev server shows exactly 1 h1 per page on all 10 tested page types
 - [x] Build production bundle and save checkpoint
+
+## Critical Bug Fix — Blank Page (Double Prerender Injection)
+- [x] Root cause: _injectSEO() was injecting prerender block into HTML that already had one baked in from a previous build's dist/public/index.html, creating 2 prerender-content divs and malformed HTML that prevented React from mounting
+- [x] Fix: added strip step in _injectSEO() to remove any existing prerender-content and prerender-site-nav blocks before injecting new ones
+- [x] Verified: dev server now returns exactly 1 prerender-content div, 1 h1, has module script, has </body>
+- [x] TypeScript clean, production bundle rebuilt

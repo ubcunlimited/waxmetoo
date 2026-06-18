@@ -796,6 +796,13 @@ ${meta.bodyText}
 ${siteNavBlock}
 </div>`;
 
+  // Strip any existing prerender blocks that may have been baked into the
+  // dist/public/index.html during a previous build. Without this, every
+  // request injects a second block, producing malformed HTML that prevents
+  // React from mounting (blank page).
+  result = result.replace(/<div id="prerender-content"[\s\S]*?<\/div>\s*/g, '');
+  result = result.replace(/<nav id="prerender-site-nav"[\s\S]*?<\/nav>\s*/g, '');
+
   result = result.replace("</body>", `${prerenderBlock}\n</body>`);
 
   return result;
