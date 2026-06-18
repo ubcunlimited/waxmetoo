@@ -486,3 +486,13 @@
 - [x] Implement React.lazy() code splitting for all 20 page routes in App.tsx
 - [x] Rebuild production bundle — BlogPost.js now 171KB (was bundled in 1.4MB monolith)
 - [x] Verify all 18 page types pass >10% text-to-HTML ratio with zero manus-runtime in HTML
+
+## SEMrush Audit — June 18, 2026 (Issues #1–#6)
+- [x] Issue #1: Duplicate title tags — added /win-a-free-wax to STATIC_PAGES with unique title "Win a Free Wax — Monthly Giveaway | Wax Me Too"
+- [x] Issue #2: Duplicate meta descriptions — added /win-a-free-wax unique description to STATIC_PAGES
+- [x] Issue #3: Missing h1 tags — added <h1> to bodyText of all STATIC_PAGES, location detail pages, and blog post pages in seoPrerender.ts
+- [x] Issue #4: Low word count on 10 pages — expanded bodyText for all low-count pages to 500–700+ words
+- [x] Issue #5: Low text-to-HTML ratio on /win-a-free-wax — fixed by adding it to STATIC_PAGES (manus-runtime already stripped for all pages)
+- [x] Issue #6: 61 orphaned sitemap pages — added siteNavBlock with 70 internal <a href> links to every page's prerender div in seoPrerender.ts
+- [x] Changed bodyText injection from escapeHtml() to raw HTML so h1 and a tags are parsed by crawlers
+- [x] Rebuilt production bundle (pnpm build) — all changes included in dist/index.js
