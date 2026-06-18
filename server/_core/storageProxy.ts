@@ -8,7 +8,6 @@ import { ENV } from "./env";
 interface CacheEntry {
   url: string;
   expiresAt: number; // Unix ms — evict 30 min before actual expiry for safety
-  contentType?: string;
 }
 
 const presignedUrlCache = new Map<string, CacheEntry>();
@@ -26,33 +25,6 @@ function parseExpiry(signedUrl: string): number {
   return 0;
 }
 
-// Derive a sensible Content-Type from the file extension when the upstream
-// doesn't provide one (or provides an incorrect one).
-function guessContentType(key: string): string | undefined {
-  const ext = key.split(".").pop()?.toLowerCase();
-  const map: Record<string, string> = {
-    css: "text/css; charset=utf-8",
-    js: "application/javascript; charset=utf-8",
-    mjs: "application/javascript; charset=utf-8",
-    json: "application/json; charset=utf-8",
-    webp: "image/webp",
-    jpg: "image/jpeg",
-    jpeg: "image/jpeg",
-    png: "image/png",
-    gif: "image/gif",
-    svg: "image/svg+xml",
-    woff: "font/woff",
-    woff2: "font/woff2",
-    ttf: "font/ttf",
-    otf: "font/otf",
-    mp4: "video/mp4",
-    webm: "video/webm",
-    mp3: "audio/mpeg",
-    pdf: "application/pdf",
-  };
-  return ext ? map[ext] : undefined;
-}
-
 export function registerStorageProxy(app: Express) {
   app.get("/manus-storage/*", async (req, res) => {
     const key = (req.params as Record<string | number, string>)[0];
@@ -68,103 +40,63 @@ export function registerStorageProxy(app: Express) {
 
     // Serve from cache if the entry is still valid (with 30-min safety buffer).
     const now = Date.now();
-    let signedUrl: string | null = null;
     const cached = presignedUrlCache.get(key);
     if (cached && cached.expiresAt > now) {
-      signedUrl = cached.url;
-    } else {
-      try {
-        const forgeUrl = new URL(
-          "v1/storage/presign/get",
-          ENV.forgeApiUrl.replace(/\/+$/, "") + "/",
-        );
-        forgeUrl.searchParams.set("path", key);
-
-        const forgeResp = await fetch(forgeUrl, {
-          headers: { Authorization: `Bearer ${ENV.forgeApiKey}` },
-        });
-
-        if (!forgeResp.ok) {
-          const body = await forgeResp.text().catch(() => "");
-          console.error(`[StorageProxy] forge error: ${forgeResp.status} ${body}`);
-          res.status(502).send("Storage backend error");
-          return;
-        }
-
-        const { url } = (await forgeResp.json()) as { url: string };
-        if (!url) {
-          res.status(502).send("Empty signed URL from backend");
-          return;
-        }
-
-        signedUrl = url;
-
-        // Cache the presigned URL, evicting 30 min before its actual expiry.
-        const expiry = parseExpiry(url);
-        if (expiry > now) {
-          presignedUrlCache.set(key, {
-            url,
-            expiresAt: expiry - 30 * 60 * 1000, // 30-min safety buffer
-          });
-        }
-      } catch (err) {
-        console.error("[StorageProxy] failed to get presigned URL:", err);
-        res.status(502).send("Storage proxy error");
-        return;
-      }
+      const ttlSeconds = Math.floor((cached.expiresAt - now) / 1000);
+      res.set("Cache-Control", `public, max-age=${Math.min(ttlSeconds, 82800)}`);
+      res.redirect(307, cached.url);
+      return;
     }
 
-    // IMPORTANT: Pipe the content through the Express server instead of
-    // redirecting the browser to CloudFront.
-    //
-    // Why: CloudFront presigned URLs don't include Access-Control-Allow-Origin
-    // headers. When the browser follows a cross-origin 307 redirect from
-    // waxmetoo.com → d36hbw14aib5lz.cloudfront.net, it blocks the response
-    // due to CORS, causing CSS/JS/font files to fail silently (status 0) and
-    // resulting in a blank page.
-    //
-    // By fetching the content server-side and streaming it back, the browser
-    // only ever communicates with waxmetoo.com (same-origin), so CORS is never
-    // triggered.
     try {
-      const upstream = await fetch(signedUrl);
-      if (!upstream.ok) {
-        res.status(upstream.status).send("Upstream storage error");
+      const forgeUrl = new URL(
+        "v1/storage/presign/get",
+        ENV.forgeApiUrl.replace(/\/+$/, "") + "/",
+      );
+      forgeUrl.searchParams.set("path", key);
+
+      const forgeResp = await fetch(forgeUrl, {
+        headers: { Authorization: `Bearer ${ENV.forgeApiKey}` },
+      });
+
+      if (!forgeResp.ok) {
+        const body = await forgeResp.text().catch(() => "");
+        console.error(`[StorageProxy] forge error: ${forgeResp.status} ${body}`);
+        res.status(502).send("Storage backend error");
         return;
       }
 
-      // Determine content type: prefer upstream, fall back to extension guess.
-      const upstreamCT = upstream.headers.get("content-type");
-      const contentType = upstreamCT || guessContentType(key) || "application/octet-stream";
+      const { url } = (await forgeResp.json()) as { url: string };
+      if (!url) {
+        res.status(502).send("Empty signed URL from backend");
+        return;
+      }
 
-      // Cache for 23 hours (browsers) — safe because the server-side presigned
-      // URL cache is refreshed before expiry.
-      res.set("Content-Type", contentType);
-      res.set("Cache-Control", "public, max-age=82800");
-      res.set("Access-Control-Allow-Origin", "*");
+      // Cache the presigned URL, evicting 30 min before its actual expiry.
+      const expiry = parseExpiry(url);
+      if (expiry > now) {
+        presignedUrlCache.set(key, {
+          url,
+          expiresAt: expiry - 30 * 60 * 1000, // 30-min safety buffer
+        });
+      }
 
-      // Stream the body directly to the client.
-      if (upstream.body) {
-        const reader = upstream.body.getReader();
-        const pump = async () => {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            res.write(value);
-          }
-          res.end();
-        };
-        await pump();
+      // Tell the browser to cache the redirect for up to 23 hours.
+      // The presigned URL itself is valid for 24 hours; we use 23h (82800s)
+      // as a safety margin so browsers re-fetch before the URL expires.
+      const ttlSeconds = expiry > now
+        ? Math.min(Math.floor((expiry - now) / 1000) - 1800, 82800)
+        : 0;
+      if (ttlSeconds > 0) {
+        res.set("Cache-Control", `public, max-age=${ttlSeconds}`);
       } else {
-        const buffer = await upstream.arrayBuffer();
-        res.end(Buffer.from(buffer));
+        res.set("Cache-Control", "no-store");
       }
+
+      res.redirect(307, url);
     } catch (err) {
-      console.error("[StorageProxy] failed to pipe content:", err);
-      if (!res.headersSent) {
-        res.status(502).send("Storage proxy pipe error");
-      }
+      console.error("[StorageProxy] failed:", err);
+      res.status(502).send("Storage proxy error");
     }
   });
 }
-// Storage proxy: pipe-through mode (no redirects) — deployed 2026-06-18T22:21:29Z
