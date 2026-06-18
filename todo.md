@@ -500,3 +500,11 @@
 ## SEMrush Audit — h2 Subheadings (June 18, 2026)
 - [x] Add `<h2>` subheadings to 30 longer BLOG_BODY_TEXTS entries in seoPrerender.ts (85 h2 tags added across: win-complimentary-bikini-wax-summer, st-george-premier-waxing-salon, vacation-waxing-prep-guide, military-discounts-wax-me-too-layton, why-waxing-is-best-hair-removal, south-jordan-waxing-salon-relocation, wax-me-too-difference-local-salon, summer-waxing-utah-guide, how-often-should-you-wax, ingrown-hair-prevention-waxing, waxing-aftercare-guide, waxing-before-care-guide, waxing-faq-utah, waxing-for-men-manzilian-guide, first-brazilian-wax-step-by-step, bikini-wax-types-explained, eyebrow-design-waxing-guide, underarm-waxing-guide-utah, 3-worst-things-waxing-salon, throw-away-your-razor, mens-eyebrow-waxing-metrosexual, waxing-while-pregnant-utah, 15-minute-brazilian-wax-experience, naked-and-afraid-first-brazilian, utah-waxing-salon-established-2007, st-george-waxing-salon-utah, hair-removal-layton-utah, and more)
 - [x] Rebuilt production bundle (pnpm build) — all h2 changes included in dist/index.js
+
+## SEMrush Audit — h3 Hierarchy & og:image (June 18, 2026)
+- [x] Restructure waxing-faq-utah: 6 question h2 tags demoted to h3 under a single h2 "Frequently Asked Questions"
+- [x] Restructure brazilian-waxing-salon-qa: 6 Q: plain-text questions upgraded to h3 under a single h2 "Brazilian Wax Q&A"
+- [x] Add BLOG_POST_IMAGES map (51 entries) to seoPrerender.ts — slug → /manus-storage/ image path
+- [x] Extend _injectSEO() to inject og:title, og:description, og:type, og:image, og:image:width/height, twitter:card, twitter:image server-side for all 51 blog posts
+- [x] og:type set to "article" for blog posts, "website" for static pages
+- [x] Rebuilt production bundle (pnpm build) — all changes included in dist/index.js
