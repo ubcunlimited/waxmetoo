@@ -63,12 +63,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/privacy</loc>
+    <loc>https://www.waxmetoo.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.waxmetoo.com/terms</loc>
+    <loc>https://www.waxmetoo.com/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

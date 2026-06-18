@@ -8,6 +8,7 @@
  */
 
 import { useState } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { trpc } from "@/lib/trpc";
@@ -132,7 +133,12 @@ function SocialSharePanel() {
 }
 
 export default function WinAFreeWax() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "" });
+
+  // Unique SEO meta — this is a promotional giveaway page with substantive content, should index
+  usePageSEO(
+    "Win a Free Wax — Enter Our Giveaway | Wax Me Too",
+    "Enter to win a free waxing service at Wax Me Too Utah. Monthly giveaway open to new and returning clients. Sign up for your chance to win."
+  );  const [form, setForm] = useState({ firstName: "", lastName: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
   const [submitReason, setSubmitReason] = useState<"created" | "resent" | "already_confirmed" | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});

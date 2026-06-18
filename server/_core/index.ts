@@ -10,6 +10,7 @@ import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { startScheduler } from "../scheduler";
 import { linkCheckHandler } from "../linkCheckHandler";
+import { seoPrerender } from "../seoPrerender";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -46,6 +47,13 @@ async function startServer() {
       createContext,
     })
   );
+  // SEO prerender — inject page-specific title/meta/body text into HTML shell for crawlers
+  app.use(seoPrerender);
+
+  // 301 redirects for non-canonical duplicate URLs (P2 SEO fix)
+  app.get("/privacy", (_req, res) => res.redirect(301, "/privacy-policy"));
+  app.get("/terms", (_req, res) => res.redirect(301, "/terms-of-service"));
+
   // Scheduled / cron handlers — must be registered before Vite/static fallthrough
   app.post("/api/scheduled/link-check", linkCheckHandler);
 

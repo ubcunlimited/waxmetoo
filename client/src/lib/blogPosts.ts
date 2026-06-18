@@ -2,7 +2,7 @@ export const blogPosts = [
   // ── 2024 ──────────────────────────────────────────────────────────────────
   {
     id: "win-complimentary-bikini-wax-summer",
-    title: "Win a Complimentary Bikini Wax — Be Smooth and Groovin' Just in Time for Summer!",
+    title: "Win a Free Bikini Wax — Smooth Just in Time for Summer",
     category: "Promotions",
     date: "April 2, 2024",
     excerpt: "Say goodbye to razor burns and hello to silky-smooth skin this summer. Wax Me Too is giving away a complimentary bikini wax — find out how to enter and why waxing is the ultimate summer upgrade.",
@@ -14,7 +14,7 @@ export const blogPosts = [
   },
   {
     id: "st-george-premier-waxing-salon",
-    title: "Waxing Wonderland: Unveiling St. George's Premier Waxing Salon",
+    title: "St. George's Premier Waxing Salon | Wax Me Too",
     category: "Locations",
     date: "March 26, 2024",
     excerpt: "From our roots in Draper in 2007 to St. George in 2008, Wax Me Too has been Southern Utah's go-to waxing studio for over 15 years. Discover what makes our St. George location — and our London Brow Company products — truly special.",
@@ -26,7 +26,7 @@ export const blogPosts = [
   },
   {
     id: "vacation-waxing-prep-guide",
-    title: "Vacation Baby! How to Prepare for Your Winter Escape with Wax Me Too",
+    title: "How to Prep for Your Winter Escape with Wax Me Too",
     category: "Prep & Care",
     date: "March 19, 2024",
     excerpt: "Sunscreen — check. Sunglasses — check. Razor? Throw that away. Here's everything you need to know about pre-vacation waxing: timing, what to ask your salon, and why a Brazilian wax is the ultimate travel essential.",
@@ -38,7 +38,7 @@ export const blogPosts = [
   },
   {
     id: "military-discounts-wax-me-too-layton",
-    title: "Saluting Service: Honoring Our Military with Discounts at Wax Me Too Layton",
+    title: "Military Discounts at Wax Me Too Layton | Saluting Service",
     category: "Community",
     date: "March 12, 2024",
     excerpt: "At our Layton studio near Hill AFB, we proudly offer military discounts as a small token of appreciation for those who serve. Meet Liz — retired Air Force Master Sergeant turned waxing expert — and learn how we honor our military community.",
@@ -50,7 +50,7 @@ export const blogPosts = [
   },
   {
     id: "why-waxing-is-best-hair-removal",
-    title: "Smooth Silhouettes: Why Waxing Is the Best Hair Removal Method",
+    title: "Why Waxing Is the Best Hair Removal Method",
     category: "Education",
     date: "March 19, 2024",
     excerpt: "In the world of hair removal, waxing stands apart. From longer-lasting results to finer regrowth over time, here's a comprehensive guide to why professional waxing — especially the Brazilian — is the gold standard for smooth skin.",
@@ -62,7 +62,7 @@ export const blogPosts = [
   },
   {
     id: "bridal-waxing-guide",
-    title: "A Bridal Must-Do: The Importance of Pre-Wedding Waxing from Brows to Toes",
+    title: "Pre-Wedding Waxing: Brows to Toes Bridal Guide",
     category: "Bridal",
     date: "March 14, 2024",
     excerpt: "Your wedding day deserves flawless skin from head to toe. Utah brides trust Wax Me Too for pre-wedding waxing — here's why we recommend starting at least 3 sessions before the big day, and what to expect.",
@@ -74,7 +74,7 @@ export const blogPosts = [
   },
   {
     id: "south-jordan-waxing-salon-relocation",
-    title: "Smooth Moves: Wax Me Too South Jordan Relocates to a Better Space",
+    title: "Wax Me Too South Jordan Moves to a Better Space",
     category: "Locations",
     date: "March 5, 2024",
     excerpt: "We're excited to announce our South Jordan studio has moved to a beautiful new location at 3674 W South Jordan Pkwy. Two full treatment rooms, the same expert estheticians, and all the reasons that make Wax Me Too Utah's most trusted waxing studio.",
@@ -88,7 +88,7 @@ export const blogPosts = [
   // ── 2020 ──────────────────────────────────────────────────────────────────
   {
     id: "south-jordan-6th-location-opening",
-    title: "Why Wax Me Too South Jordan Is Different from Every Other Waxing Salon",
+    title: "Why Wax Me Too South Jordan Stands Apart",
     category: "Locations",
     date: "February 8, 2020",
     excerpt: "Our 6th Utah location is open in South Jordan — and it comes with 8 reasons why Wax Me Too is unlike any other waxing salon in the state. Local, female-owned, no memberships, and sinks in every room.",
@@ -100,7 +100,7 @@ export const blogPosts = [
   },
   {
     id: "free-bikini-wax-layton-utah",
-    title: "Waxing in Layton Utah: Enter to Win a Free Bikini Wax at Wax Me Too",
+    title: "Win a Free Bikini Wax in Layton Utah | Wax Me Too",
     category: "Promotions",
     date: "February 6, 2020",
     excerpt: "Did you know Wax Me Too gives away a free bikini wax every week? Our Layton studio at 360 Fort Lane is Utah's premier waxing destination — here's how to enter and what makes our Layton team exceptional.",
@@ -112,7 +112,7 @@ export const blogPosts = [
   },
   {
     id: "wax-me-too-difference-local-salon",
-    title: "The Wax Me Too Difference: Why Utah's Local Waxing Studio Beats Every Chain",
+    title: "Why Wax Me Too Beats Every Chain in Utah",
     category: "Education",
     date: "February 5, 2020",
     excerpt: "What separates Wax Me Too from every other waxing salon in Utah? We're local, women-owned, never franchise-backed, and we've never raised our prices. Here's everything that makes us Utah's first and most trusted waxing-only studio.",
@@ -126,7 +126,7 @@ export const blogPosts = [
   // ── 2019 ──────────────────────────────────────────────────────────────────
   {
     id: "summer-waxing-utah-guide",
-    title: "Summer Waxing in Utah: Your Complete Guide to Staying Smooth All Season",
+    title: "Summer Waxing in Utah: Stay Smooth All Season",
     category: "Prep & Care",
     date: "July 17, 2019",
     excerpt: "Bikinis, lake days, and poolside lounging — summer in Utah is the best reason to ditch the razor for good. Here's everything you need to know about summer waxing, from Brazilian to full leg, at Wax Me Too's 6 Utah locations.",
@@ -138,7 +138,7 @@ export const blogPosts = [
   },
   {
     id: "first-brazilian-wax-step-by-step",
-    title: "Everything You Need to Know Before Your First Brazilian Wax at Wax Me Too",
+    title: "Your First Brazilian Wax at Wax Me Too: What to Know",
     category: "Education",
     date: "February 8, 2019",
     excerpt: "Nervous about your first Brazilian wax? We walk you through every step — from the consent form to the cleanup — so you know exactly what to expect at one of our 6 Utah studios. Spoiler: it's easier than you think.",
@@ -152,7 +152,7 @@ export const blogPosts = [
   // ── 2017 ──────────────────────────────────────────────────────────────────
   {
     id: "spring-adventure-waxing-utah",
-    title: "Adventure's Calling: Get Waxed and Ready for Utah's Best Outdoor Season",
+    title: "Get Waxed and Ready for Utah's Outdoor Season",
     category: "Lifestyle",
     date: "March 19, 2017",
     excerpt: "Utah's spring and summer are made for adventure — hiking, camping, lake days, and everything in between. Here's why waxing is the smartest prep move before any outdoor adventure, and how monthly waxing creates finer, softer regrowth over time.",
@@ -164,7 +164,7 @@ export const blogPosts = [
   },
   {
     id: "south-jordan-waxing-grand-opening",
-    title: "Wax Me Too Opens in South Jordan: Utah's 6th Waxing-Only Studio Is Here",
+    title: "Wax Me Too South Jordan: Utah's 6th Waxing Studio",
     category: "Locations",
     date: "March 6, 2017",
     excerpt: "South Jordan, Utah — we've arrived! Wax Me Too's 6th location is now open at South Jordan Parkway, bringing the state's most trusted Brazilian waxing experience to the southwest valley. No memberships, no pressure, just great waxes.",
@@ -176,7 +176,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-south-jordan-utah-opening",
-    title: "Waxing in South Jordan Utah: What to Know Before Your First Appointment",
+    title: "South Jordan Waxing: What to Know Before Your Visit",
     category: "Locations",
     date: "March 1, 2017",
     excerpt: "Wax Me Too is opening its doors in South Jordan at the busy crossroads of South Jordan Parkway and Bangerter. Here's everything new clients need to know — including how to prep for a Brazilian wax and why we're different from every other salon.",
@@ -188,7 +188,7 @@ export const blogPosts = [
   },
   {
     id: "valentines-day-waxing-rippp-and-swear",
-    title: "Ripp & Swear: The Things We Do for Love — Valentine's Day Waxing at Wax Me Too",
+    title: "Valentine's Day Waxing at Wax Me Too | Ripp & Swear",
     category: "Lifestyle",
     date: "February 7, 2017",
     excerpt: "Valentine's Day is the most popular waxing week of the year — and for good reason. Whether you're getting your brows shaped for the big proposal or going full Brazilian for your special evening, Wax Me Too has you covered.",
@@ -200,7 +200,7 @@ export const blogPosts = [
   },
   {
     id: "valentines-day-free-wax-giveaway-2017",
-    title: "The Best Valentine's Day Gift Ever: Win a Free Wax at Wax Me Too",
+    title: "Win a Free Wax — Best Valentine's Day Gift Ever",
     category: "Promotions",
     date: "January 31, 2017",
     excerpt: "What's the perfect Valentine's Day gift — unisex, intimate, and genuinely useful? A Brazilian wax. Enter our weekly free wax drawing and treat yourself (or your partner) to the smoothest Valentine's Day ever.",
@@ -212,7 +212,7 @@ export const blogPosts = [
   },
   {
     id: "sundance-film-festival-waxing-utah",
-    title: "Utah Snowbunnies, Sundance Film Festival & Brazilian Waxing: How They All Connect",
+    title: "Sundance Film Festival & Brazilian Waxing in Utah",
     category: "Lifestyle",
     date: "January 25, 2017",
     excerpt: "Every January, Hollywood comes to Utah for Sundance — and our phone rings off the hook. Whether you're a local heading to Park City or a visitor from LA, here's why waxing is the ultimate pre-Sundance prep ritual.",
@@ -226,7 +226,7 @@ export const blogPosts = [
   // ── 2016 ──────────────────────────────────────────────────────────────────
   {
     id: "layton-waxing-salon-new-team",
-    title: "New! Layton Ladies Go Crazy Over Brazilian Waxing at Wax Me Too",
+    title: "Layton Ladies Love Brazilian Waxing at Wax Me Too",
     category: "Locations",
     date: "December 16, 2016",
     excerpt: "Our Layton studio at 360 Fort Lane has grown to 5 licensed estheticians and 3 full treatment rooms — and the reviews are in. Over 289 five-star ratings and counting. Here's what makes our Layton team the best in Davis County.",
@@ -238,7 +238,7 @@ export const blogPosts = [
   },
   {
     id: "pre-vacation-waxing-checklist",
-    title: "Don't Hit the Beach Without This Pre-Vacation Waxing Checklist",
+    title: "Pre-Vacation Waxing Checklist Before the Beach",
     category: "Prep & Care",
     date: "December 14, 2016",
     excerpt: "Heading somewhere warm this winter? Your vacation prep list isn't complete without a wax. Here's the exact timing, what to expect, and why waxing beats shaving every time when you're packing for the beach.",
@@ -262,7 +262,7 @@ export const blogPosts = [
   },
   {
     id: "holiday-waxing-on-top-of-the-world",
-    title: "On Top of the World Because of Some Lady Bits: Holiday Waxing at Wax Me Too",
+    title: "Holiday Waxing at Wax Me Too | On Top of the World",
     category: "Lifestyle",
     date: "November 30, 2016",
     excerpt: "The holidays are hectic — but a 15-minute Brazilian wax can make even the most exhausted mom feel amazing. Here's why self-care during the holiday season matters, and how Wax Me Too makes it easy.",
@@ -274,7 +274,7 @@ export const blogPosts = [
   },
   {
     id: "3-worst-things-waxing-salon",
-    title: "The 3 Worst Things You Can See in a Waxing Salon (And What to Look For Instead)",
+    title: "3 Red Flags in a Waxing Salon — What to Look For",
     category: "Education",
     date: "November 18, 2016",
     excerpt: "A dirty sink. A messy workstation. An unhappy esthetician. These are the three biggest red flags in any waxing salon — and why Wax Me Too's strict sanitation standards have made us Utah's most trusted waxing studio since 2007.",
@@ -286,7 +286,7 @@ export const blogPosts = [
   },
   {
     id: "underarm-waxing-guide-utah",
-    title: "Harry Pitts: Everything You Need to Know About Underarm Waxing",
+    title: "Everything You Need to Know About Underarm Waxing",
     category: "Education",
     date: "November 15, 2016",
     excerpt: "Underarm waxing is one of the most underrated services at Wax Me Too. It takes just 10 minutes, lasts 3–4 weeks, and leaves your underarms smoother than any razor ever could. Here's exactly what to expect.",
@@ -298,7 +298,7 @@ export const blogPosts = [
   },
   {
     id: "throw-away-your-razor",
-    title: "Throw That Sucker Away: 7 Reasons to Switch from Shaving to Waxing Today",
+    title: "7 Reasons to Switch from Shaving to Waxing Today",
     category: "Education",
     date: "November 11, 2016",
     excerpt: "Razor burn, stubble, nicks, and hair that grows back thicker — shaving is the worst. Here are 7 compelling reasons to throw away your razor and switch to professional waxing at Wax Me Too.",
@@ -310,7 +310,7 @@ export const blogPosts = [
   },
   {
     id: "bikini-wax-types-explained",
-    title: "Brazilian vs. Deep Bikini vs. Bikini Wax: Which One Is Right for You?",
+    title: "Brazilian vs. Deep Bikini vs. Bikini Wax: Which?",
     category: "Education",
     date: "November 3, 2016",
     excerpt: "Not sure which bikini wax to book? We break down the differences between a Brazilian, Deep Bikini, and standard Bikini wax — so you can walk into your appointment knowing exactly what you want.",
@@ -322,7 +322,7 @@ export const blogPosts = [
   },
   {
     id: "naked-and-afraid-first-brazilian",
-    title: "Naked and Afraid: The Real Truth About Getting Your First Brazilian Wax",
+    title: "The Real Truth About Getting Your First Brazilian Wax",
     category: "Education",
     date: "November 1, 2016",
     excerpt: "Being naked in front of a stranger, the pain, the embarrassing positions — these are the fears that keep first-timers away from their first Brazilian wax. Here's the honest truth about all of them, from Wax Me Too's expert estheticians.",
@@ -334,7 +334,7 @@ export const blogPosts = [
   },
   {
     id: "mens-eyebrow-waxing-metrosexual",
-    title: "The Metrosexual Male and Eyebrow Waxing: Why Men Are Flocking to Wax Me Too",
+    title: "Men's Eyebrow Waxing: Why Guys Love Wax Me Too",
     category: "Men's Waxing",
     date: "October 17, 2016",
     excerpt: "The unibrow is out. A clean, masculine brow shape is in. Men's waxing — from brow grooming to the Manzilian — is one of the fastest-growing services at Wax Me Too. Here's everything men need to know before their first appointment.",
@@ -346,7 +346,7 @@ export const blogPosts = [
   },
   {
     id: "eyebrow-design-waxing-guide",
-    title: "Eyebrow Design: How to Get the Best Brows of Your Life at Wax Me Too",
+    title: "Eyebrow Design: Get the Best Brows of Your Life",
     category: "Education",
     date: "October 1, 2016",
     excerpt: "At Wax Me Too, we don't just wax brows — we design them. From consultation to tweezers to tiny scissors, here's the full process behind our eyebrow design service and why clients drive from across Utah for their brow appointments.",
@@ -358,7 +358,7 @@ export const blogPosts = [
   },
   {
     id: "hair-removal-layton-utah",
-    title: "Hair Removal in Layton Utah: Meet the Wax Me Too Team at 360 Fort Lane",
+    title: "Hair Removal in Layton Utah | Meet the Wax Me Too Team",
     category: "Locations",
     date: "September 28, 2016",
     excerpt: "Our Layton studio has grown from a one-woman operation to a full team of 5 licensed waxing specialists in a beautiful stand-alone space just off Layton Parkway. Here's why North Utah County clients make Wax Me Too their monthly destination.",
@@ -370,7 +370,7 @@ export const blogPosts = [
   },
   {
     id: "brazilian-waxing-salon-qa",
-    title: "Brazilian Waxing Salon Q&A: Your Most Common Questions Answered",
+    title: "Brazilian Waxing Q&A: Your Top Questions Answered",
     category: "Education",
     date: "October 19, 2016",
     excerpt: "How do I choose the right waxing salon? What should I look for in a treatment room? How do I prepare for my first Brazilian? We answer the most common questions we hear from new clients at Wax Me Too.",
@@ -384,7 +384,7 @@ export const blogPosts = [
   // ── 2015 ──────────────────────────────────────────────────────────────────
   {
     id: "prevention-magazine-bikini-wax-tips",
-    title: "Wax Me Too Featured in Prevention Magazine: 9 Tips for the Perfect Bikini Wax",
+    title: "Prevention Magazine: 9 Tips for the Perfect Bikini Wax",
     category: "Press",
     date: "March 28, 2015",
     excerpt: "Prevention Magazine called us — one of America's leading health and beauty publications — to get our expert tips on getting the perfect bikini wax. Here's what co-founder Jolie Arsenault shared with millions of readers.",
@@ -396,7 +396,7 @@ export const blogPosts = [
   },
   {
     id: "layton-waxing-milly-speaks-spanish",
-    title: "Brazilian Waxing in Layton Utah with Milly — Ella Habla Español",
+    title: "Brazilian Waxing in Layton with Milly | Habla Español",
     category: "Locations",
     date: "March 4, 2015",
     excerpt: "Meet Milly — our newest Layton esthetician with 20 years of experience, originally from Venezuela, and fluent in Spanish. Wax Me Too Layton is proud to serve our Spanish-speaking community at our beautiful new 360 Fort Lane location.",
@@ -408,7 +408,7 @@ export const blogPosts = [
   },
   {
     id: "valentines-day-brazilian-wax-gift",
-    title: "The Perfect Valentine's Day Gift: Why a Brazilian Wax Is the Ultimate Romantic Treat",
+    title: "Brazilian Wax: The Ultimate Valentine's Day Gift",
     category: "Lifestyle",
     date: "January 26, 2015",
     excerpt: "Looking for a Valentine's Day gift that's unisex, intimate, and genuinely useful? The Brazilian wax is the answer. Here's why thousands of Utah couples make Wax Me Too their Valentine's Day tradition — and how to prepare.",
@@ -420,7 +420,7 @@ export const blogPosts = [
   },
   {
     id: "layton-waxing-salon-new-location",
-    title: "Wax Me Too Layton Has Moved to a Beautiful New Salon at Fort Lane Plaza",
+    title: "Wax Me Too Layton Moves to Fort Lane Plaza",
     category: "Locations",
     date: "January 10, 2015",
     excerpt: "After 4 years of outgrowing our old space, Wax Me Too Layton has moved to a stunning new studio at 360 Fort Lane. Fresh paint, new flooring, sinks in every room, and the same expert team you've trusted for years.",
@@ -434,7 +434,7 @@ export const blogPosts = [
   // ── 2013 ──────────────────────────────────────────────────────────────────
   {
     id: "15-minute-brazilian-wax-experience",
-    title: "The 15-Minute Brazilian Wax: What Really Happens Inside a Wax Me Too Studio",
+    title: "The 15-Minute Brazilian Wax Inside Wax Me Too",
     category: "Education",
     date: "November 7, 2013",
     excerpt: "Fifteen minutes. That's all it takes for a complete Brazilian wax at Wax Me Too. Here's a candid, behind-the-scenes look at what really happens during your appointment — and why our clients keep coming back every month.",
@@ -446,7 +446,7 @@ export const blogPosts = [
   },
   {
     id: "draper-waxing-salon-expansion",
-    title: "Wax Me Too Draper Expands: A Fourth Treatment Room Opens Due to High Demand",
+    title: "Wax Me Too Draper Expands: New Treatment Room Opens",
     category: "Locations",
     date: "July 31, 2013",
     excerpt: "Due to overwhelming demand, our Draper studio inside Image Studios has opened its fourth treatment room. Owner Joann Gibb shares what drives the summer surge in waxing appointments — and why once clients start, they rarely stop.",
@@ -458,7 +458,7 @@ export const blogPosts = [
   },
   {
     id: "salt-lake-city-waxing-salon",
-    title: "Brazilian Waxing in Salt Lake City: Inside Wax Me Too's Downtown Studio",
+    title: "Brazilian Waxing in Salt Lake City | Wax Me Too",
     category: "Locations",
     date: "April 5, 2013",
     excerpt: "Our downtown Salt Lake City studio is one of our busiest — and for good reason. 3 treatment rooms, 7 expert waxers, and hours from early morning to late evening. Here's what makes our SLC location the go-to for waxing in the city.",
@@ -470,7 +470,7 @@ export const blogPosts = [
   },
   {
     id: "valentines-day-free-brazilian-2013",
-    title: "Win a Free Brazilian Wax for Valentine's Day 2013 at Wax Me Too",
+    title: "Win a Free Brazilian Wax for Valentine's Day 2013",
     category: "Promotions",
     date: "January 28, 2013",
     excerpt: "In honor of Valentine's Day 2013, Wax Me Too is giving away a free Brazilian wax to one lucky winner. Here's how to enter — and why the Brazilian wax is the most romantic gift you can give (or receive) this February.",
@@ -508,7 +508,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-while-pregnant-utah",
-    title: "Can You Wax While Pregnant? Everything Expecting Moms Need to Know",
+    title: "Can You Wax While Pregnant? What Moms Need to Know",
     category: "Education",
     date: "October 5, 2012",
     excerpt: "Yes, you can wax while pregnant — with a few important considerations. Our licensed estheticians at Wax Me Too have helped hundreds of expecting moms stay smooth and comfortable throughout their pregnancies. Here's what you need to know.",
@@ -520,7 +520,7 @@ export const blogPosts = [
   },
   {
     id: "ingrown-hair-prevention-waxing",
-    title: "Ingrown Hairs After Waxing: How to Prevent Them and Keep Skin Smooth",
+    title: "Ingrown Hairs After Waxing: How to Prevent Them",
     category: "Prep & Care",
     date: "September 12, 2012",
     excerpt: "Ingrown hairs are one of the most common concerns after waxing — but they're largely preventable. Here's our expert guide to exfoliation, moisturizing, and aftercare that keeps skin smooth and bump-free between appointments.",
@@ -532,7 +532,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-sensitive-skin-guide",
-    title: "Waxing with Sensitive Skin: Tips from Wax Me Too's Expert Estheticians",
+    title: "Waxing with Sensitive Skin: Tips from Our Experts",
     category: "Education",
     date: "August 20, 2012",
     excerpt: "Sensitive skin doesn't have to mean painful waxing. Our estheticians use fragrance-free honey wax and gentle techniques specifically designed for reactive skin types. Here's how we make waxing comfortable for everyone.",
@@ -544,7 +544,7 @@ export const blogPosts = [
   },
   {
     id: "how-often-should-you-wax",
-    title: "How Often Should You Wax? The Complete Guide to Waxing Frequency",
+    title: "How Often Should You Wax? Complete Frequency Guide",
     category: "Education",
     date: "July 15, 2012",
     excerpt: "Most clients wax every 4 weeks — but the right frequency depends on your hair growth cycle, the area being waxed, and your personal preference. Here's the complete guide from Wax Me Too's licensed estheticians.",
@@ -556,7 +556,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-for-men-manzilian-guide",
-    title: "Men's Waxing Guide: Everything You Need to Know About the Manzilian",
+    title: "Men's Waxing Guide: Everything About the Manzilian",
     category: "Men's Waxing",
     date: "June 10, 2012",
     excerpt: "Men's waxing — especially the Manzilian — is one of the fastest-growing services at Wax Me Too. Here's a complete guide for men considering their first appointment: what to expect, how to prepare, and why it's worth it.",
@@ -580,7 +580,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-aftercare-guide",
-    title: "Waxing Aftercare: The Complete Guide to Caring for Your Skin After a Wax",
+    title: "Waxing Aftercare: Complete Guide to Post-Wax Skin Care",
     category: "Prep & Care",
     date: "April 2, 2012",
     excerpt: "What you do in the 24–48 hours after your wax matters as much as the wax itself. Here's the complete aftercare guide from Wax Me Too — covering what to avoid, how to moisturize, and how to prevent ingrown hairs.",
@@ -604,7 +604,7 @@ export const blogPosts = [
   },
   {
     id: "wax-me-too-happy-faces-community",
-    title: "Happy Faces: How Wax Me Too Gives Back to Utah's Youth Through Free Waxing",
+    title: "How Wax Me Too Gives Back to Utah's Youth",
     category: "Community",
     date: "February 20, 2012",
     excerpt: "Our Happy Faces program donates free brow and lip waxing to middle and high school students who need a confidence boost. Here's the story behind the program and why giving back to Utah's youth is at the heart of everything we do at Wax Me Too.",
@@ -616,7 +616,7 @@ export const blogPosts = [
   },
   {
     id: "waxing-faq-utah",
-    title: "Waxing FAQ: Your Most Common Questions About Professional Waxing Answered",
+    title: "Waxing FAQ: Your Top Questions About Professional Waxing",
     category: "Education",
     date: "January 10, 2012",
     excerpt: "Can you wax during your period? How long does hair need to be? Does waxing hurt less over time? We answer the 20 most common questions we hear from new and returning clients at Wax Me Too's Utah studios.",

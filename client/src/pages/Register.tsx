@@ -2,11 +2,27 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const mascotStanding = "/manus-storage/mascot_v2_transparent_983f0933.webp";
 
 export default function Register() {
   const { isAuthenticated, loading } = useAuth();
+
+  // Unique page title/meta — noindex because this is a gated login page, not a ranking target
+  usePageSEO(
+    "Join the Mascot Hunt — Sign In | Wax Me Too",
+    "Create a free account to join the Wax Me Too Mascot Hunt. Find all 11 hidden mascots across the site and earn a 15% discount on your next wax."
+  );
+
+  // Add noindex to prevent duplicate/thin-page SEO flag
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, follow";
+    document.head.appendChild(meta);
+    return () => { meta.remove(); };
+  }, []);
 
   // If already logged in, redirect to mascot hunt
   useEffect(() => {
@@ -78,9 +94,9 @@ export default function Register() {
 
             <p className="text-xs text-center text-[#9A8A7A]">
               By signing in you agree to our{" "}
-              <Link href="/terms" className="underline hover:text-[#3D1A1A]">Terms of Service</Link>
+              <Link href="/terms-of-service" className="underline hover:text-[#3D1A1A]">Terms of Service</Link>
               {" "}and{" "}
-              <Link href="/privacy" className="underline hover:text-[#3D1A1A]">Privacy Policy</Link>.
+              <Link href="/privacy-policy" className="underline hover:text-[#3D1A1A]">Privacy Policy</Link>.
             </p>
           </div>
         </div>

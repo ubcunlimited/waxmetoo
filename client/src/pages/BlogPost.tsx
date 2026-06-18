@@ -82,7 +82,7 @@ function getArticleContent(slug: string): string {
 
         <h2>About Wax Me Too Salons</h2>
         <p>Wax Me Too has been serving Utah since 2007. We are a locally run, women-owned business — and the <strong>first waxing-only salon to open in Utah</strong>. Today, we have 6 locations across the state: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. From Weber County to Utah County, and from Washington County to Mesquite, Nevada, we're Utah's most trusted name in professional waxing.</p>
-        <p>Ready to enter the giveaway? Visit our website, scroll to the bottom of the page, and fill out the form. Your smooth summer starts here.</p>
+        <p>Ready to enter the giveaway? Visit our website, scroll to the bottom of the page, and fill out the form. Your smooth summer starts here. You can also <a href="/services">view our full waxing menu</a> or <a href="/locations">find a Wax Me Too location near you</a> to book your first appointment.</p>
       `;
 
     case "st-george-premier-waxing-salon":
@@ -115,7 +115,7 @@ function getArticleContent(slug: string): string {
         </ul>
 
         <h2>Book Your St. George Waxing Appointment</h2>
-        <p>Our St. George studio is located inside Salon Aubri McKai. We serve clients from across Washington County and neighboring Mesquite, Nevada. Book online at waxmetoo.com — it takes just a few clicks to find your preferred esthetician, service, and time slot.</p>
+        <p>Our St. George studio is located inside Salon Aubri McKai. We serve clients from across Washington County and neighboring Mesquite, Nevada. Book online at waxmetoo.com — it takes just a few clicks to find your preferred esthetician, service, and time slot. <a href="/locations/st-george">View our St. George location details</a> or <a href="/services">browse our full services menu</a>.</p>
       `;
 
     case "vacation-waxing-prep-guide":
@@ -156,7 +156,7 @@ function getArticleContent(slug: string): string {
         </ul>
 
         <h2>Book at Any of Our 6 Utah Locations</h2>
-        <p>Wax Me Too has 6 convenient locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. Book online at waxmetoo.com and select your preferred location, esthetician, and time. First-time clients get their Brazilian wax for $50.</p>
+        <p>Wax Me Too has 6 convenient locations across Utah: Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George. <a href="/locations">Find your nearest location</a> and book online in minutes. Before your first visit, read our <a href="/before-care">pre-wax preparation guide</a> to get the best results. First-time clients get their Brazilian wax for $50.</p>
       `;
 
     case "military-discounts-wax-me-too-layton":
@@ -513,7 +513,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>Professional Waxing Reduces Ingrown Hair Risk</h2>
         <p>Proper waxing technique significantly reduces the risk of ingrown hairs compared to shaving. When hair is removed from the root (as in waxing), it grows back with a tapered tip that's less likely to curl back into the skin. Shaving creates a blunt cut that's more prone to ingrowth.</p>
-        <p>Book your appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
+        <p>Book your appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50. After your appointment, follow our <a href="/after-care">complete aftercare guide</a> to keep skin smooth and prevent ingrown hairs.</p>
       `;
 
     case "waxing-aftercare-guide":
@@ -537,7 +537,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>When to Call Us</h2>
         <p>Mild redness and sensitivity are completely normal after waxing and typically resolve within a few hours. If you experience persistent redness, bumps, or irritation lasting more than 48 hours, contact your esthetician. We're always here to help.</p>
-        <p>Book your next appointment at waxmetoo.com before your current results fade. We recommend scheduling 4–6 weeks out.</p>
+        <p>Book your next appointment at waxmetoo.com before your current results fade. We recommend scheduling 4–6 weeks out. Not sure what to expect before your visit? Read our <a href="/before-care">before-care guide</a> or visit our <a href="/faq">FAQ page</a> for answers to common questions.</p>
       `;
 
     case "waxing-before-care-guide":
@@ -561,7 +561,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Take an OTC pain reliever if desired.</strong> Some clients find that taking ibuprofen 30–45 minutes before their appointment reduces discomfort.</li>
         </ul>
         <h2>Book Your Appointment</h2>
-        <p>Ready to experience the Wax Me Too difference? Book online at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
+        <p>Ready to experience the Wax Me Too difference? Book online at waxmetoo.com. First-time clients get their Brazilian wax for $50. <a href="/locations">Find your nearest Wax Me Too location</a> and <a href="/first-visit">learn what to expect on your first visit</a>.</p>
       `;
 
     case "waxing-faq-utah":
@@ -580,13 +580,13 @@ function getArticleContent(slug: string): string {
         <p>Absolutely. We offer a full menu of men's waxing services, including back waxing, chest waxing, eyebrow waxing, and the Manzilian — our Brazilian wax service for men. Our estheticians are experienced and professional, and our treatment rooms are private and comfortable.</p>
         <h2>What is your hygiene policy?</h2>
         <p>We never double-dip — fresh applicators are used for every client, every time. Our estheticians wash their hands in front of you before every service. Treatment rooms are sanitized between every client. These are non-negotiable standards at every Wax Me Too location.</p>
-        <p>Have more questions? Visit our full FAQ page at waxmetoo.com, or call any of our 6 Utah locations.</p>
+        <p>Have more questions? Visit our <a href="/faq">full FAQ page</a>, <a href="/services">browse our services menu</a>, or <a href="/locations">find your nearest Wax Me Too location</a>.</p>
       `;
 
     case "waxing-for-men-manzilian-guide":
       return `
         <p>Men's waxing has gone mainstream — and for good reason. From athletes seeking peak performance to professionals who simply prefer a cleaner look, more men than ever are discovering the benefits of professional waxing. At <strong>Wax Me Too</strong>, we've been serving male clients since our founding in 2007, and we're proud to offer a comprehensive menu of men's waxing services.</p>
-<img src="https://images.unsplash.com/photo-1621607505282-d1e5f5b0f1e7?w=800&auto=format&fit=crop" alt="Men's waxing manzilian guide Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&auto=format&fit=crop" alt="Men's waxing manzilian guide Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Manzilian: Our Most Popular Men's Service</h2>
         <p>The <strong>Manzilian</strong> — our Brazilian wax service for men — is our most requested men's service. It's performed with the same expertise, discretion, and professionalism as our women's Brazilian wax, by licensed estheticians who specialize in this service.</p>
         <p>First-time male clients are often surprised by how professional and comfortable the experience is. Our estheticians are matter-of-fact, skilled, and focused entirely on delivering excellent results. There's no judgment, no awkwardness — just professional service in a private, comfortable treatment room.</p>
@@ -600,7 +600,7 @@ function getArticleContent(slug: string): string {
         </ul>
         <h2>Why Men Choose Waxing Over Shaving</h2>
         <p>The benefits of waxing over shaving are the same for men as for women: longer-lasting results (3–6 weeks vs. 1–3 days), finer regrowth over time, no razor burn, and no daily maintenance. For active men, waxing also eliminates the chafing and irritation that can come from shaving.</p>
-        <p>Book your men's waxing appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
+        <p>Book your men's waxing appointment at waxmetoo.com. First-time clients get their Brazilian wax for $50. <a href="/services">View our full men's waxing menu</a> or <a href="/locations">find a location near you</a>.</p>
       `;
 
     case "waxing-sensitive-skin-guide":
@@ -913,7 +913,7 @@ function getArticleContent(slug: string): string {
           <li><strong>Protect with SPF.</strong> As UV exposure increases in spring, protect freshly waxed skin with sunscreen.</li>
         </ul>
         <h2>Book Your Spring Appointment</h2>
-        <p>Spring appointments fill up fast — book early at waxmetoo.com. First-time clients get their Brazilian wax for $50.</p>
+        <p>Spring appointments fill up fast — book early at waxmetoo.com. First-time clients get their Brazilian wax for $50. <a href="/locations">Find your nearest location</a> and read our <a href="/before-care">pre-wax preparation guide</a> before your first spring appointment.</p>
       `;
 
     case "holiday-waxing-on-top-of-the-world":
@@ -931,7 +931,7 @@ function getArticleContent(slug: string): string {
         <h2>Book Early for the Holidays</h2>
         <p>The holiday season is our busiest time of year. We strongly recommend booking your holiday appointments at least 2–3 weeks in advance to secure your preferred time slot. Our online booking system makes it easy — visit waxmetoo.com and select your preferred location, esthetician, and service.</p>
         <h2>Gift Cards Available</h2>
-        <p>Looking for the perfect holiday gift? Wax Me Too gift cards are available at all 6 locations. Give the gift of smooth, confident skin — it's a present that's always appreciated.</p>
+        <p>Looking for the perfect holiday gift? Wax Me Too gift cards are available at all 6 locations. Give the gift of smooth, confident skin — it's a present that's always appreciated. <a href="/services">View our full services menu</a> or <a href="/locations">find a location near you</a> to book your holiday appointment.</p>
       `;
 
     case "sundance-film-festival-waxing-utah":
@@ -1089,7 +1089,7 @@ function getArticleContent(slug: string): string {
     case "mens-eyebrow-waxing-metrosexual":
       return `
         <p>Gentlemen, it's time to talk about your eyebrows. Well-groomed brows are no longer the exclusive domain of women — and they haven't been for years. At <strong>Wax Me Too</strong>, men's eyebrow waxing is one of our fastest-growing services, and the results speak for themselves.</p>
-<img src="https://images.unsplash.com/photo-1621607505282-d1e5f5b0f1e7?w=800&auto=format&fit=crop" alt="Men's eyebrow waxing grooming metrosexual guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&auto=format&fit=crop" alt="Men's eyebrow waxing grooming metrosexual guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Why Men Should Wax Their Eyebrows</h2>
         <p>Your eyebrows frame your face. Overgrown, unruly brows can make you look older, more tired, and less polished than you actually are. A clean, well-shaped brow — even a subtle one — makes a significant difference in your overall appearance.</p>
         <p>The key for men's eyebrow waxing is subtlety. We're not here to give you a dramatic arch or a heavily defined shape. We're here to clean up the edges, remove the strays, and give your natural brow a neat, groomed appearance that looks intentional without looking overdone.</p>

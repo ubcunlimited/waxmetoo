@@ -366,3 +366,41 @@
 - [x] Add useMemo to useBreadcrumbSchema and useLocalBusinessSchema hooks to prevent unnecessary DOM churn
 - [x] Split data.ts (1,146 lines) into 5 domain modules: locations.ts, services.ts, faqs.ts, blogPosts.ts, testimonials.ts; data.ts is now a 13-line barrel re-export
 - [x] 0 TypeScript errors after all changes
+
+## Phase 29 — SEMrush Site Audit SEO Fixes
+
+### P1 — Disallowed External Resources
+- [x] Inventory all external resources loaded sitewide (scripts, fonts, pixels, widgets)
+- [x] Audit robots.txt for any Disallow rules blocking rendering-critical JS/CSS
+- [x] Self-host Google Fonts so they're served from waxmetoo.com
+- [x] Confirm no rendering-critical resource is blocked after fix
+
+### P1 — Low Text-to-HTML Ratio (SSR/Prerendering)
+- [x] Confirm content pages are client-rendered SPA (no text in raw HTML)
+- [x] Implement SSR or prerendering so body copy/headings exist in initial HTML
+- [x] Verify curl of content pages returns visible text
+
+### P2 — Duplicate URL Pairs
+- [x] 301-redirect /privacy → /privacy-policy (canonical)
+- [x] 301-redirect /terms → /terms-of-service (canonical)
+- [x] Update sitemap to list only canonical URLs
+- [x] Update all internal links to use canonical URLs
+
+### P2 — Thin/Duplicate Utility Pages
+- [x] Give /register a unique title + meta description (or noindex)
+- [x] Give /mascot-hunt a unique title + meta description (or noindex)
+- [x] Give /win-a-free-wax a unique title + meta description
+
+### P2 — Blog Post Title Tags Too Long (52 pages)
+- [x] Rewrite all 46 over-length blog post titles to ≤60 characters
+
+### P3 — Broken External Images (12 blog pages)
+- [x] Find and fix/replace all broken external img src URLs in blog posts
+
+### P3 — Pages With Only One Internal Link (10 pages)
+- [x] Add contextual internal links to /register, /mascot-hunt, /terms-of-service, and affected blog posts
+
+### P4 — Cleanup
+- [x] Profile and fix slow load on /blog/st-george-waxing-salon-utah (no server-side bottleneck found; prerender middleware resolves crawl-time issue)
+- [x] Regenerate sitemap after internal linking work; all 51 blog slugs verified present
+- [x] Fix llms.txt formatting issue — created proper llms.txt at /public/llms.txt (was returning SPA HTML shell)

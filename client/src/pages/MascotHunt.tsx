@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
@@ -225,6 +226,18 @@ function CongratsModal({
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function MascotHunt() {
+  // Unique SEO meta — noindex because this is a gated interactive game page, not a ranking target
+  usePageSEO(
+    "Mascot Hunt — Find the Hidden Wax Me Too Mascot",
+    "Play the Wax Me Too Mascot Hunt! Find all 11 hidden mascots across the site and earn a 15% discount on your next waxing appointment."
+  );
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, follow";
+    document.head.appendChild(meta);
+    return () => { meta.remove(); };
+  }, []);
   const { isAuthenticated, loading: authLoading } = useAuth();
   const [showCongrats, setShowCongrats] = useState(false);
   const [resetConfirm, setResetConfirm] = useState(false);
