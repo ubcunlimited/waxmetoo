@@ -496,3 +496,7 @@
 - [x] Issue #6: 61 orphaned sitemap pages — added siteNavBlock with 70 internal <a href> links to every page's prerender div in seoPrerender.ts
 - [x] Changed bodyText injection from escapeHtml() to raw HTML so h1 and a tags are parsed by crawlers
 - [x] Rebuilt production bundle (pnpm build) — all changes included in dist/index.js
+
+## SEMrush Audit — h2 Subheadings (June 18, 2026)
+- [x] Add `<h2>` subheadings to 30 longer BLOG_BODY_TEXTS entries in seoPrerender.ts (85 h2 tags added across: win-complimentary-bikini-wax-summer, st-george-premier-waxing-salon, vacation-waxing-prep-guide, military-discounts-wax-me-too-layton, why-waxing-is-best-hair-removal, south-jordan-waxing-salon-relocation, wax-me-too-difference-local-salon, summer-waxing-utah-guide, how-often-should-you-wax, ingrown-hair-prevention-waxing, waxing-aftercare-guide, waxing-before-care-guide, waxing-faq-utah, waxing-for-men-manzilian-guide, first-brazilian-wax-step-by-step, bikini-wax-types-explained, eyebrow-design-waxing-guide, underarm-waxing-guide-utah, 3-worst-things-waxing-salon, throw-away-your-razor, mens-eyebrow-waxing-metrosexual, waxing-while-pregnant-utah, 15-minute-brazilian-wax-experience, naked-and-afraid-first-brazilian, utah-waxing-salon-established-2007, st-george-waxing-salon-utah, hair-removal-layton-utah, and more)
+- [x] Rebuilt production bundle (pnpm build) — all h2 changes included in dist/index.js
