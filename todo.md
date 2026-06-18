@@ -533,3 +533,12 @@
 - [x] Verify all 24 page components each have exactly 1 h1
 - [x] TypeScript check passes with 0 errors
 - [x] Build production bundle and save checkpoint
+
+## WebP Image Conversion — 3 Largest Blog Hero Images (June 18, 2026)
+- [x] Convert how-often-should-you-wax hero from JPEG (128 KB) to WebP (91 KB, 29% smaller)
+- [x] Convert waxing-aftercare-guide hero from JPEG (108 KB) to WebP (67 KB, 38% smaller)
+- [x] Convert sundance-film-festival-waxing-utah hero from JPEG (108 KB) to WebP (67 KB, 38% smaller)
+- [x] Upload all 3 WebP files to /manus-storage/
+- [x] Update image URLs in client/src/lib/blogPosts.ts
+- [x] Update og:image URLs in server/seoPrerender.ts BLOG_POST_IMAGES map
+- [x] TypeScript check passes, production bundle rebuilt
