@@ -101,6 +101,7 @@ export default function AdminSubscribers() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-8">
+        <h1 className="font-serif text-2xl font-semibold mb-6" style={{ color: "#3B2F2A" }}>Newsletter Subscribers</h1>
         {/* Stats */}
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">

@@ -371,6 +371,7 @@ export default function AdminBlog() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-8">
+        <h1 className="font-serif text-2xl font-semibold mb-6" style={{ color: "#3B2F2A" }}>Blog Management</h1>
         {/* Stats row */}
         {view === "list" && stats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">

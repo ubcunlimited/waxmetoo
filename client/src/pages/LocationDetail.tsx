@@ -100,7 +100,7 @@ export default function LocationDetail() {
     return (
       <Layout>
         <div className="container py-20 text-center">
-          <h1 className="font-display text-4xl text-[#3B2F2A] mb-4">Location not found</h1>
+          <h2 className="font-display text-4xl text-[#3B2F2A] mb-4">Location not found</h2>
           <Link href="/locations"><span className="btn-primary cursor-pointer">View All Locations</span></Link>
         </div>
       </Layout>

@@ -521,3 +521,15 @@
 - [x] Issue B: fix shared template/component if it is the root cause of density across pages
 - [x] Regression check: Low text-to-HTML, Low word count, Disallowed resources all still at 0
 - [x] Build production bundle and save checkpoint
+
+## Heading Audit — Exactly One h1 Per Page (June 18, 2026)
+- [x] Audit all 24 React page components for h1 count (missing, duplicate, or zero)
+- [x] Fix BlogPost.tsx: demote error-state h1 ("Article not found") to h2
+- [x] Fix LocationDetail.tsx: demote error-state h1 ("Location not found") to h2
+- [x] Fix MascotHunt.tsx: demote unauthenticated-state h1 ("Track Your Finds") to h2
+- [x] Fix AdminSubscribers.tsx: add missing h1 "Newsletter Subscribers"
+- [x] Fix AdminGiveaway.tsx: add missing h1 "Giveaway Management"
+- [x] Fix AdminBlog.tsx: add missing h1 "Blog Management"
+- [x] Verify all 24 page components each have exactly 1 h1
+- [x] TypeScript check passes with 0 errors
+- [x] Build production bundle and save checkpoint

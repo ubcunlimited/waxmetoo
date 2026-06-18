@@ -284,7 +284,7 @@ export default function MascotHunt() {
             <span className="w-2 h-2 rounded-full bg-[#A8B3AA] inline-block" />
             Mascot Hunt Tracker
           </div>
-          <h1 className="text-4xl font-bold mb-3">Track Your Finds</h1>
+          <h2 className="text-4xl font-bold mb-3">Track Your Finds</h2>
           <p className="text-white/80 max-w-md mx-auto">
             Sign in to track your mascot finds and earn your 20% discount when you find all 11!
           </p>

@@ -112,6 +112,7 @@ export default function AdminGiveaway() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-8 space-y-8">
+        <h1 className="font-serif text-2xl font-semibold" style={{ color: "#3B2F2A" }}>Giveaway Management</h1>
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatCard
