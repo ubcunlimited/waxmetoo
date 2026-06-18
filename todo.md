@@ -454,3 +454,21 @@
 
 ### Issue 9 — llms.txt Formatting Issues
 - [ ] Validate llms.txt against spec and fix any formatting errors
+
+## SEMrush Audit v3 — June 2026
+
+- [x] Issue 1: Self-host Google Analytics gtag.js (was external blocked resource)
+- [x] Issue 1: Self-host Mangomint booking app.js (was external blocked resource)
+- [x] Issue 1: Self-host Google Fonts (already done in prior run, confirmed clean)
+- [x] Issue 2: Inject full article body text into seoPrerender.ts for all 51 blog posts (BLOG_BODY_TEXTS constant, ~1,700 chars avg per post)
+- [x] Issue 2: Platform-level constraint documented — manus-runtime 366KB inline script prevents reaching 10% text-to-HTML ratio; escalated for human review
+- [x] Issue 3: Shortened client-side title suffix from "| Wax Me Too — Utah's Professional Waxing Studio" to "| Wax Me Too" in BlogPost.tsx
+- [x] Issue 3: Added all 51 blog post entries to seoPrerender.ts BLOG_POSTS with ≤60-char server-side titles (0 over 60 chars)
+- [x] Issue 4/7: Verified all 70 sitemap URLs are in blogPosts.ts or static routes — no orphaned pages
+- [x] Issue 4/7: Added missing valentines-day-brazilian-wax-gift to seoPrerender.ts BLOG_POSTS + BLOG_BODY_TEXTS
+- [x] Issue 4/7: Added full article content for valentines-day-brazilian-wax-gift to BlogPost.tsx
+- [x] Issue 5: Added 2–3 contextual internal links to 7 under-linked blog posts (done in prior run, confirmed)
+- [x] Issue 6: Verified no internal links point to /privacy or /terms (redirect URLs) — canonical /privacy-policy and /terms-of-service used throughout
+- [x] Issue 7: Sitemap has 70 URLs, all canonical 200-status pages, no blocked/redirect pages
+- [x] Issue 8: Added loading="lazy" to all 51 article body images in BlogPost.tsx
+- [x] Issue 9: /mascot-hunt removed from sitemap, Disallow in robots.txt, Footer link removed (done in prior run, confirmed)

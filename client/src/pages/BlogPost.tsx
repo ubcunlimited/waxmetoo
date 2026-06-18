@@ -16,7 +16,7 @@ import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 // SEO helper — sets document title and meta description dynamically
 function useSEO(title: string, description: string) {
   useEffect(() => {
-    document.title = `${title} | Wax Me Too — Utah's Professional Waxing Studio`;
+    document.title = `${title} | Wax Me Too`;
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (!meta) {
       meta = document.createElement('meta');
@@ -61,7 +61,7 @@ function getArticleContent(slug: string): string {
     case "win-complimentary-bikini-wax-summer": // image updated to beach bikini fun photo
       return `
         <p>Summer is just around the corner, and at <strong>Wax Me Too</strong> — Utah's premier professional waxing studio — we're celebrating the season with something special: a chance to win a complimentary bikini wax. All you have to do is fill out a quick form on our website. Winners are announced by text monthly, sometimes sooner!</p>
-<img src="/manus-storage/first-visit-guide_53bb696a.jpg" alt="Woman laughing and having fun at the beach in a bikini, summer confidence" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/first-visit-guide_53bb696a.jpg" alt="Woman laughing and having fun at the beach in a bikini, summer confidence" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <p>Why are we giving away free bikini waxes? Because summer is the perfect time to treat yourself — and we want to help you feel beach-ready and confident all season long.</p>
 
         <h2>Get Beach-Ready with a Summer Upgrade</h2>
@@ -88,7 +88,7 @@ function getArticleContent(slug: string): string {
     case "st-george-premier-waxing-salon":
       return `
         <p>Hello, St. George! Let's take a journey back to 2007, when <strong>Wax Me Too Salons</strong> — Utah's pioneering waxing-only studio — first opened its doors in Draper. By 2008, we proudly extended our services to the beautiful city of St. George. And now, in 2024, we remain the <strong>premier waxing salon in Southern Utah</strong>, operating out of Salon Aubri McKai with two full treatment rooms on the upper floor.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Professional waxing studio in St. George Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Professional waxing studio in St. George Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
 
         <h2>Who We Serve in St. George</h2>
         <p>Our St. George clientele is as diverse as the city itself. From students at Dixie State and Utah Tech to working professionals, retirees living the good life in the most beautiful desert area of the state, and visitors from nearby Mesquite, Nevada — we welcome everyone. Whether you're a longtime patron or considering waxing for the first time, the Wax Me Too experience is designed to make you feel comfortable, confident, and cared for.</p>
@@ -121,7 +121,7 @@ function getArticleContent(slug: string): string {
     case "vacation-waxing-prep-guide":
       return `
         <p>Sunscreen — check. Sunglasses — check. Itsy bitsy bikini — check. Razor? Throw that away.</p>
-<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Vacation ready smooth skin waxing prep" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Vacation ready smooth skin waxing prep" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <p>Whether you're jetting off to a tropical beach or escaping Utah's winter for a sunny resort, pre-vacation waxing is the single best thing you can do for your skin before you go. At <strong>Wax Me Too</strong>, Utah's professional waxing studio since 2007, we've helped thousands of clients step into paradise with smooth, confident skin. Here's everything you need to know.</p>
 
         <h2>Timing Is Everything: When to Book Before Your Trip</h2>
@@ -162,7 +162,7 @@ function getArticleContent(slug: string): string {
     case "military-discounts-wax-me-too-layton":
       return `
         <p>At <strong>Wax Me Too in Layton, Utah</strong>, we have always held a deep respect for the men and women who serve our country. Located just minutes from <strong>Hill Air Force Base</strong>, our Layton studio has been a trusted destination for military personnel and their families since we opened our doors in that community.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Military discount waxing services at Wax Me Too Layton" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Military discount waxing services at Wax Me Too Layton" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
 
         <h2>Meet Liz: Retired Air Force Master Sergeant, Waxing Expert</h2>
         <p>In 2018, we welcomed a remarkable addition to our Layton team: <strong>Liz</strong>, a retired Air Force Master Sergeant whose dedication to service seamlessly transitioned into a passion for esthetics. After retiring from the Air Force, Liz pursued her dream of mastering the art of skincare and waxing, completing her esthetics education before joining our team.</p>
@@ -188,7 +188,7 @@ function getArticleContent(slug: string): string {
     case "why-waxing-is-best-hair-removal":
       return `
         <p>When it comes to hair removal, the options seem endless — shaving, depilatory creams, laser, threading, sugaring. But for millions of people, professional waxing remains the gold standard. At <strong>Wax Me Too</strong>, Utah's waxing-only studio since 2007, we've seen firsthand why clients who try professional waxing rarely go back to anything else.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Professional waxing hair removal treatment" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Professional waxing hair removal treatment" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
 
         <h2>Why Waxing Outperforms Other Hair Removal Methods</h2>
         <p>The fundamental difference between waxing and shaving is simple: waxing removes hair <strong>from the root</strong>, while shaving only cuts it at the surface. This single distinction creates a cascade of benefits:</p>
@@ -223,7 +223,7 @@ function getArticleContent(slug: string): string {
     case "bridal-waxing-guide":
       return `
         <p>Your wedding day is one of the most photographed, most celebrated days of your life. Every detail matters — from your dress to your flowers to your skin. At <strong>Wax Me Too</strong>, Utah's premier waxing studio, we've helped hundreds of brides achieve flawless, radiant skin for their big day. Here's everything you need to know about pre-wedding waxing.</p>
-<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Bridal waxing preparation for wedding day" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Bridal waxing preparation for wedding day" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
 
         <h2>Why Brides Should Start Waxing Early</h2>
         <p>We recommend that brides-to-be begin their waxing regimen <strong>at least 2–3 sessions before the wedding day</strong> — ideally starting 2–3 months in advance. Here's why:</p>
@@ -255,7 +255,7 @@ function getArticleContent(slug: string): string {
     case "south-jordan-waxing-salon-relocation":
       return `
         <p><strong>Wax Me Too</strong> is pleased to announce the relocation of our South Jordan studio to a beautiful new address: <strong>3674 W South Jordan Pkwy, South Jordan, Utah 84095</strong>. Our new space features two fully operational treatment rooms and is conveniently located for residents of both South Jordan and West Jordan.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="South Jordan waxing salon new location" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="South Jordan waxing salon new location" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
 
         <h2>The Same Expert Team, a Better Space</h2>
         <p>Our South Jordan location proudly stands as Wax Me Too's 6th Utah studio. The move to our new address allows us to serve more clients with greater comfort and privacy — two fully equipped treatment rooms mean shorter wait times and a more relaxed experience for everyone.</p>
@@ -284,7 +284,7 @@ function getArticleContent(slug: string): string {
     case "south-jordan-6th-location-opening":
       return `
         <p>Big news for the Salt Lake Valley's south end: <strong>Wax Me Too</strong> is proud to announce the opening of our <strong>6th Utah location in South Jordan</strong>. This milestone marks a new chapter for Utah's original waxing-only studio — and we couldn't be more excited to bring our signature services to this vibrant, growing community.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Wax Me Too South Jordan grand opening" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Wax Me Too South Jordan grand opening" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Why South Jordan?</h2>
         <p>South Jordan has experienced remarkable growth over the past decade, and with that growth has come a demand for high-quality, professional beauty services. We heard you, South Jordan — and we answered. Our new studio is conveniently located at <strong>3674 W South Jordan Pkwy</strong>, easily accessible for residents of South Jordan, West Jordan, Herriman, and Riverton.</p>
         <h2>What to Expect at Our South Jordan Studio</h2>
@@ -302,7 +302,7 @@ function getArticleContent(slug: string): string {
     case "free-bikini-wax-layton-utah":
       return `
         <p>Here's something to brighten your day: <strong>Wax Me Too in Layton</strong> is giving away a free bikini wax. No strings attached, no membership required — just a chance to experience Utah's most trusted waxing studio on us.</p>
-<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Free bikini wax promotion Layton Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Free bikini wax promotion Layton Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>How to Enter</h2>
         <p>Entering is simple. Visit our website, fill out the short entry form, and you're in. Winners are selected monthly and notified by text message. Some months we draw winners even more frequently — so the sooner you enter, the better your chances.</p>
         <h2>Why We Do This</h2>
@@ -315,7 +315,7 @@ function getArticleContent(slug: string): string {
     case "wax-me-too-difference-local-salon":
       return `
         <p>In a market full of waxing options — from franchise chains to spa add-ons — what makes <strong>Wax Me Too</strong> different? The answer is everything. From our founding philosophy to our daily operations, we've built a waxing studio that puts clients first in ways that most salons simply don't.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="What makes Wax Me Too different from other salons" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="What makes Wax Me Too different from other salons" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>We Are Utah's Original Waxing-Only Studio</h2>
         <p>When we opened our first location in Draper in 2007, we were doing something no one in Utah had done before: opening a salon dedicated entirely to waxing. No haircuts, no manicures, no distractions — just professional waxing, done exceptionally well.</p>
         <p>That singular focus has defined us ever since. Our estheticians don't split their time between services. They wax all day, every day, which means they've performed thousands of Brazilian waxes, eyebrow designs, and full body waxing services. That level of specialization translates directly into better results for you.</p>
@@ -337,7 +337,7 @@ function getArticleContent(slug: string): string {
     case "summer-waxing-utah-guide":
       return `
         <p>Summer in Utah means outdoor adventures, pool days, and hiking trails — and all of it is better with smooth, confident skin. At <strong>Wax Me Too</strong>, Utah's professional waxing studio since 2007, we help thousands of clients get summer-ready every year. Here's your complete guide to summer waxing in Utah.</p>
-<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Summer waxing guide Utah smooth skin" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Summer waxing guide Utah smooth skin" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Best Services for Summer</h2>
         <p>Summer calls for a full-body approach to waxing. Here are the services our clients book most frequently as the temperatures rise:</p>
         <ul>
@@ -363,7 +363,7 @@ function getArticleContent(slug: string): string {
     case "wax-me-too-happy-faces-community":
       return `
         <p>At <strong>Wax Me Too</strong>, our greatest reward isn't a five-star review or a full appointment book — it's the look on a client's face when they leave our studio feeling confident, cared for, and completely smooth. After nearly two decades of serving Utah, we've collected thousands of those moments, and we never take a single one for granted.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Happy clients at Wax Me Too Utah community" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Happy clients at Wax Me Too Utah community" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Why Client Happiness Drives Everything We Do</h2>
         <p>From the moment you book your appointment to the moment you walk out our door, every detail of the Wax Me Too experience is designed around your comfort and satisfaction. We know that waxing — especially for first-time clients — can feel intimidating. Our entire team is trained to make that experience as warm, professional, and reassuring as possible.</p>
         <p>We've heard it hundreds of times: "I was so nervous, but my esthetician made me feel completely at ease." That's not an accident. It's the result of years of intentional culture-building, ongoing training, and a genuine commitment to treating every client with dignity and respect.</p>
@@ -377,7 +377,7 @@ function getArticleContent(slug: string): string {
     case "draper-waxing-salon-expansion":
       return `
         <p>Exciting news for our Draper community: <strong>Wax Me Too Draper</strong> has expanded, and we're thrilled to welcome even more clients to our flagship studio. Our Draper location holds a special place in our hearts — it's where it all began in 2007, when we opened Utah's very first waxing-only salon.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too Draper waxing salon expansion" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too Draper waxing salon expansion" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>More Space, Same Excellence</h2>
         <p>The expansion adds additional treatment rooms to our Draper studio, meaning shorter wait times, greater scheduling flexibility, and the same exceptional service our clients have come to expect. Whether you're a longtime regular or considering your first visit, our Draper team is ready to welcome you.</p>
         <h2>Our Draper Studio: Where It All Started</h2>
@@ -389,7 +389,7 @@ function getArticleContent(slug: string): string {
     case "salt-lake-city-waxing-salon":
       return `
         <p>Salt Lake City, we're here for you. <strong>Wax Me Too</strong> is proud to serve the heart of Utah's capital with professional waxing services at our Salt Lake City studio, located inside Miri Lash Studio at <strong>1850 S 300 West, Suite A</strong>.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Professional waxing salon Salt Lake City Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Professional waxing salon Salt Lake City Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Professional Waxing in the Heart of Salt Lake City</h2>
         <p>Our Salt Lake City location brings the same Wax Me Too experience that has made us Utah's most trusted waxing studio to the urban core. Whether you're a downtown professional, a University of Utah student, or a resident of the Sugarhouse or Liberty Wells neighborhoods, we're conveniently located to serve you.</p>
         <h2>Our Services in Salt Lake City</h2>
@@ -408,7 +408,7 @@ function getArticleContent(slug: string): string {
     case "layton-waxing-salon-new-location":
       return `
         <p>We have exciting news for our Davis County clients: <strong>Wax Me Too Layton</strong> has moved to a beautiful new location at <strong>360 S Fort Lane #101, Layton, Utah 84041</strong>. Our new space is larger, more comfortable, and better equipped to serve our growing Layton community.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Wax Me Too new Layton waxing salon location" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Wax Me Too new Layton waxing salon location" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>A New Home in Layton</h2>
         <p>Our Layton studio has always been one of our busiest locations — and for good reason. Situated near Hill Air Force Base, we serve a diverse community of clients including military personnel and their families, for whom we proudly offer special military discounts.</p>
         <p>The new space features multiple treatment rooms with sinks, ensuring the hygiene standards our clients have come to expect. Our team of six experienced estheticians brings the same expertise and warmth to the new location that made our previous studio so beloved.</p>
@@ -421,7 +421,7 @@ function getArticleContent(slug: string): string {
     case "layton-waxing-salon-new-team":
       return `
         <p>Great news for our Layton clients: our team is growing! <strong>Wax Me Too Layton</strong> has welcomed several talented new estheticians to our studio, expanding our capacity and bringing fresh expertise to our already exceptional team.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="New esthetician team at Wax Me Too Layton" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="New esthetician team at Wax Me Too Layton" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Meet Our Growing Layton Team</h2>
         <p>At Wax Me Too, we don't just hire estheticians — we hire specialists. Every member of our team has demonstrated a genuine passion for waxing and a commitment to client care that aligns with our values. Our new team members have completed extensive training in our signature techniques and are ready to deliver the Wax Me Too experience you know and love.</p>
         <h2>What This Means for You</h2>
@@ -434,7 +434,7 @@ function getArticleContent(slug: string): string {
     case "layton-waxing-milly-speaks-spanish":
       return `
         <p>¡Buenas noticias para nuestra comunidad hispanohablante! <strong>Wax Me Too Layton</strong> is proud to announce that our esthetician Milly is available to serve Spanish-speaking clients. For clients who are more comfortable communicating in Spanish, Milly's bilingual expertise ensures a comfortable, clear, and professional waxing experience from start to finish.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Spanish speaking esthetician at Wax Me Too Layton" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Spanish speaking esthetician at Wax Me Too Layton" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Breaking Down Language Barriers in Beauty</h2>
         <p>At Wax Me Too, we believe that every client deserves to feel understood, comfortable, and fully informed during their appointment. For first-time waxing clients especially, being able to ask questions and understand the process in your native language makes a significant difference in the experience.</p>
         <p>Milly brings not only bilingual communication skills but also years of waxing expertise to every appointment. Her clients — both English and Spanish-speaking — consistently praise her gentle technique, attention to detail, and warm, reassuring manner.</p>
@@ -446,7 +446,7 @@ function getArticleContent(slug: string): string {
     case "hair-removal-layton-utah":
       return `
         <p>If you're searching for professional hair removal in Layton, Utah, your search ends here. <strong>Wax Me Too Layton</strong> has been serving Davis County since our founding in 2007, and we've established ourselves as the most trusted name in professional waxing in Northern Utah.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Professional hair removal waxing in Layton Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Professional hair removal waxing in Layton Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Professional Waxing Services in Layton, UT</h2>
         <p>Our Layton studio at <strong>360 S Fort Lane #101</strong> offers a comprehensive menu of waxing services for women and men:</p>
         <ul>
@@ -468,7 +468,7 @@ function getArticleContent(slug: string): string {
     case "how-often-should-you-wax":
       return `
         <p>One of the most common questions we hear at <strong>Wax Me Too</strong> is: "How often should I wax?" The answer depends on several factors — your hair growth cycle, the area being waxed, and your personal preferences. Here's everything you need to know to establish the perfect waxing schedule.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="How often should you wax waxing schedule guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="How often should you wax waxing schedule guide" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The General Rule: Every 4–6 Weeks</h2>
         <p>For most clients, we recommend waxing every <strong>4–6 weeks</strong>. This timing aligns with the natural hair growth cycle and ensures that hair is at the optimal length for waxing — long enough for the wax to grip effectively, but not so long that the service becomes uncomfortable.</p>
         <p>However, this is a guideline, not a rule. Some clients with faster hair growth may need to come in every 3–4 weeks, while others with slower growth may find that 6–8 weeks works perfectly for them.</p>
@@ -495,7 +495,7 @@ function getArticleContent(slug: string): string {
     case "ingrown-hair-prevention-waxing":
       return `
         <p>Ingrown hairs are one of the most common concerns among waxing clients — and one of the most preventable. At <strong>Wax Me Too</strong>, our licensed estheticians have helped thousands of clients achieve smooth, ingrown-free skin through proper waxing technique and aftercare education. Here's your complete guide to preventing ingrown hairs.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Ingrown hair prevention tips after waxing" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Ingrown hair prevention tips after waxing" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>What Causes Ingrown Hairs?</h2>
         <p>Ingrown hairs occur when a hair grows back into the skin rather than up through the follicle. They're most common in areas where hair is coarse and curly — like the bikini area, underarms, and legs. Contributing factors include:</p>
         <ul>
@@ -519,7 +519,7 @@ function getArticleContent(slug: string): string {
     case "waxing-aftercare-guide":
       return `
         <p>Your waxing appointment doesn't end when you leave the studio. What you do in the 24–48 hours after your wax has a significant impact on your results, your skin's health, and your comfort. Here's <strong>Wax Me Too's</strong> complete aftercare guide.</p>
-<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing aftercare guide smooth skin care" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing aftercare guide smooth skin care" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The First 24 Hours: What to Avoid</h2>
         <p>Freshly waxed skin is temporarily more sensitive and vulnerable. In the first 24 hours after your appointment, avoid:</p>
         <ul>
@@ -543,7 +543,7 @@ function getArticleContent(slug: string): string {
     case "waxing-before-care-guide":
       return `
         <p>The secret to a great waxing experience starts before you ever walk through our door. Proper preparation ensures the wax can grip hair effectively, reduces discomfort, and minimizes the risk of irritation. Here's <strong>Wax Me Too's</strong> complete before-care guide.</p>
-<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing before care preparation guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing before care preparation guide" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Hair Length: The Most Important Factor</h2>
         <p>For waxing to work effectively, your hair needs to be at least <strong>¼ inch long</strong> — roughly the length of a grain of rice. This is approximately 10 days of growth after shaving, or 3 to 4 weeks after waxing. If your hair is too short, the wax won't be able to grip it properly, leading to incomplete results.</p>
         <p>If your hair is longer than ½ inch, don't worry — we can trim it for you. Just let your esthetician know when you arrive.</p>
@@ -567,7 +567,7 @@ function getArticleContent(slug: string): string {
     case "waxing-faq-utah":
       return `
         <p>Have questions about waxing? You're not alone. At <strong>Wax Me Too</strong>, we hear the same questions from new clients every day — and we love answering them. Here are the answers to the most frequently asked questions about professional waxing in Utah.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Waxing FAQ questions answered Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Waxing FAQ questions answered Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Does waxing hurt?</h2>
         <p>This is the question we hear most often. The honest answer: it depends. Most clients describe the sensation as a quick, sharp sting that passes immediately. The bikini and Brazilian areas tend to be more sensitive than legs or arms. The good news: it gets significantly easier with each subsequent visit. By your third or fourth wax, most clients find the experience quite manageable.</p>
         <h2>How long does hair need to be?</h2>
@@ -586,7 +586,7 @@ function getArticleContent(slug: string): string {
     case "waxing-for-men-manzilian-guide":
       return `
         <p>Men's waxing has gone mainstream — and for good reason. From athletes seeking peak performance to professionals who simply prefer a cleaner look, more men than ever are discovering the benefits of professional waxing. At <strong>Wax Me Too</strong>, we've been serving male clients since our founding in 2007, and we're proud to offer a comprehensive menu of men's waxing services.</p>
-<img src="/manus-storage/mens-eyebrow-waxing_c42dbd0d.jpg" alt="Men's waxing manzilian guide Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/mens-eyebrow-waxing_c42dbd0d.jpg" alt="Men's waxing manzilian guide Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Manzilian: Our Most Popular Men's Service</h2>
         <p>The <strong>Manzilian</strong> — our Brazilian wax service for men — is our most requested men's service. It's performed with the same expertise, discretion, and professionalism as our women's Brazilian wax, by licensed estheticians who specialize in this service.</p>
         <p>First-time male clients are often surprised by how professional and comfortable the experience is. Our estheticians are matter-of-fact, skilled, and focused entirely on delivering excellent results. There's no judgment, no awkwardness — just professional service in a private, comfortable treatment room.</p>
@@ -606,7 +606,7 @@ function getArticleContent(slug: string): string {
     case "waxing-sensitive-skin-guide":
       return `
         <p>If you have sensitive skin, you may have hesitated to try waxing — worried about redness, irritation, or reactions. The good news: with the right preparation, the right esthetician, and the right aftercare, even sensitive skin can be waxed safely and comfortably. Here's <strong>Wax Me Too's</strong> guide to waxing with sensitive skin.</p>
-<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing for sensitive skin guide tips" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing for sensitive skin guide tips" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>What Makes Skin Sensitive to Waxing?</h2>
         <p>Several factors can increase skin sensitivity during waxing:</p>
         <ul>
@@ -631,7 +631,7 @@ function getArticleContent(slug: string): string {
     case "waxing-while-pregnant-utah":
       return `
         <p>Pregnancy brings many changes to your body — including changes to your skin, your hair growth patterns, and your sensitivity to pain. Many expectant mothers wonder whether it's safe to continue waxing during pregnancy. The short answer: yes, waxing is generally safe during pregnancy, with a few important considerations.</p>
-<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing while pregnant safety guide Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-before-care_7c56e8f7.jpg" alt="Waxing while pregnant safety guide Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Is Waxing Safe During Pregnancy?</h2>
         <p>Waxing does not pose any known risks to your pregnancy. The wax is applied externally and does not penetrate the skin in any way that could affect your baby. However, pregnancy does affect the waxing experience in several ways:</p>
         <ul>
@@ -653,7 +653,7 @@ function getArticleContent(slug: string): string {
     case "first-brazilian-wax-step-by-step":
       return `
         <p>So you've decided to try your first Brazilian wax. Congratulations — you're about to discover why millions of women (and men) swear by this service. At <strong>Wax Me Too</strong>, we've guided thousands of first-time clients through their first Brazilian wax, and we're here to walk you through exactly what to expect.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="First Brazilian wax what to expect step by step" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="First Brazilian wax what to expect step by step" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Step 1: Booking Your Appointment</h2>
         <p>Book online at waxmetoo.com and select "Brazilian Wax" from the service menu. Choose your preferred location from our 6 Utah studios, select an esthetician, and pick a time that works for you. The appointment is scheduled for 30 minutes, though the actual waxing typically takes about 15 minutes — the extra time ensures you never feel rushed.</p>
         <h2>Step 2: Preparing for Your Appointment</h2>
@@ -675,7 +675,7 @@ function getArticleContent(slug: string): string {
     case "15-minute-brazilian-wax-experience":
       return `
         <p>At <strong>Wax Me Too</strong>, we schedule Brazilian wax appointments for 30 minutes — but the actual waxing typically takes about 15 minutes. Why the extra time? Because we believe you should never feel rushed. The 30-minute appointment gives you time to settle in, ask questions, and leave without feeling hurried out the door.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Quick 15 minute Brazilian wax experience" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Quick 15 minute Brazilian wax experience" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>What Happens in Those 15 Minutes?</h2>
         <p>Our estheticians have refined their Brazilian wax technique over years of daily practice. Here's what happens during a typical appointment:</p>
         <ul>
@@ -693,7 +693,7 @@ function getArticleContent(slug: string): string {
     case "naked-and-afraid-first-brazilian":
       return `
         <p>We've all heard the horror stories. A friend's terrible experience at a discount salon. A Reddit thread full of waxing nightmares. If you're considering your first Brazilian wax and feeling a little "naked and afraid," we completely understand — and we're here to set the record straight.</p>
-<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="First Brazilian wax nervous guide what to expect" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="First Brazilian wax nervous guide what to expect" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Truth About Your First Brazilian Wax</h2>
         <p>Here's what actually happens at a professional waxing studio like <strong>Wax Me Too</strong>:</p>
         <ul>
@@ -717,7 +717,7 @@ function getArticleContent(slug: string): string {
     case "bikini-wax-types-explained":
       return `
         <p>Not all bikini waxes are the same — and knowing the difference helps you choose the service that's right for you. At <strong>Wax Me Too</strong>, we offer several bikini waxing options, each designed to meet different preferences and comfort levels. Here's your complete guide to bikini wax types.</p>
-<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Bikini wax types explained Brazilian vs regular" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Bikini wax types explained Brazilian vs regular" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Bikini Line Wax</h2>
         <p>The most conservative option, a <strong>bikini line wax</strong> removes hair from the sides and top of the bikini area — essentially, anything that would be visible outside a standard swimsuit. This is a great starting point for first-time waxers who want to try waxing without committing to a more comprehensive service.</p>
         <h2>Full Bikini Wax</h2>
@@ -732,7 +732,7 @@ function getArticleContent(slug: string): string {
     case "eyebrow-design-waxing-guide":
       return `
         <p>Your eyebrows frame your face. They communicate expression, define your features, and — when perfectly shaped — can transform your entire look. At <strong>Wax Me Too</strong>, eyebrow design is one of our signature services, and our estheticians are experts at creating the ideal brow shape for every face.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Eyebrow design waxing shaping guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Eyebrow design waxing shaping guide" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Art of Eyebrow Design</h2>
         <p>Great eyebrow design is about more than just removing stray hairs. It's about understanding the natural architecture of your face and enhancing it. Our estheticians consider:</p>
         <ul>
@@ -751,7 +751,7 @@ function getArticleContent(slug: string): string {
     case "underarm-waxing-guide-utah":
       return `
         <p>Underarm waxing is one of the most practical and popular waxing services — and one of the most underrated. At <strong>Wax Me Too</strong>, underarm waxing is a quick, affordable service that delivers 3–4 weeks of smooth, carefree underarms. Here's everything you need to know.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Underarm waxing guide smooth underarms Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Underarm waxing guide smooth underarms Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Why Wax Your Underarms?</h2>
         <p>The benefits of underarm waxing over shaving are significant:</p>
         <ul>
@@ -775,7 +775,7 @@ function getArticleContent(slug: string): string {
     case "3-worst-things-waxing-salon":
       return `
         <p>Not all waxing salons are created equal. In an industry with minimal regulation and wide variation in standards, knowing what to look for — and what to avoid — can make the difference between a great experience and a nightmare. Here are the <strong>3 worst things a waxing salon can do</strong>, and why you'll never encounter them at <strong>Wax Me Too</strong>.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="What to avoid at a waxing salon red flags" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="What to avoid at a waxing salon red flags" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>1. Double-Dipping</h2>
         <p>Double-dipping — reusing the same applicator stick in the wax pot after it's touched a client's skin — is the single most egregious hygiene violation in the waxing industry. Every time a used applicator goes back into the wax pot, bacteria from the previous client's skin are introduced into the wax. That wax then gets applied to the next client.</p>
         <p>At Wax Me Too, we use a fresh, single-use applicator for every application. No exceptions, no shortcuts. This is non-negotiable.</p>
@@ -792,7 +792,7 @@ function getArticleContent(slug: string): string {
     case "brazilian-wax-benefits-vs-shaving":
       return `
         <p>The debate between waxing and shaving has a clear winner — and it's not even close. At <strong>Wax Me Too</strong>, we've helped thousands of clients make the switch from shaving to professional waxing, and the transformation in their skin, their confidence, and their daily routine is remarkable. Here's a comprehensive comparison.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Brazilian wax benefits vs shaving comparison" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Brazilian wax benefits vs shaving comparison" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Results Duration</h2>
         <p><strong>Shaving:</strong> 1–3 days. Shaving cuts hair at the surface, leaving a blunt tip that's visible (and prickly) within hours.</p>
         <p><strong>Brazilian wax:</strong> 3–6 weeks. Waxing removes hair from the root, leaving skin genuinely smooth for weeks.</p>
@@ -812,7 +812,7 @@ function getArticleContent(slug: string): string {
     case "brazilian-waxing-salon-qa":
       return `
         <p>Thinking about trying a Brazilian wax but still have questions? You're not alone. At <strong>Wax Me Too</strong>, we answer these questions every day — and we love helping new clients feel informed and confident before their first appointment. Here are the answers to the questions we hear most often.</p>
-<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Brazilian waxing salon Q&A questions answered" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/waxing-faq_d1331117.jpg" alt="Brazilian waxing salon Q&A questions answered" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Q: What exactly is a Brazilian wax?</h2>
         <p>A: A Brazilian wax removes all or nearly all hair from the bikini area — front, back, and everything in between. Clients can choose to leave a small strip or triangle in the front, or opt for a completely bare look. It's the most comprehensive bikini waxing service available.</p>
         <h2>Q: How long does the appointment take?</h2>
@@ -831,7 +831,7 @@ function getArticleContent(slug: string): string {
     case "prevention-magazine-bikini-wax-tips":
       return `
         <p>When <em>Prevention</em> magazine featured professional waxing tips, the advice aligned perfectly with what we've been telling our clients at <strong>Wax Me Too</strong> for years. Great waxing results come down to preparation, technique, and aftercare — and all three matter enormously.</p>
-<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Bikini wax tips from Prevention magazine" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Bikini wax tips from Prevention magazine" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Pre-Wax Preparation: The Foundation of Great Results</h2>
         <p>The most important thing you can do before a bikini wax is let your hair grow. <em>Prevention</em> recommends at least ¼ inch of growth — and we agree completely. Hair that's too short won't grip the wax properly, leading to incomplete results and a more uncomfortable experience.</p>
         <p>Beyond hair length, gentle exfoliation 24–48 hours before your appointment helps remove dead skin cells that can interfere with the wax's grip. And staying well-hydrated — both by drinking water and moisturizing your skin — makes for a smoother, more comfortable wax.</p>
@@ -845,7 +845,7 @@ function getArticleContent(slug: string): string {
     case "throw-away-your-razor":
       return `
         <p>It's time to have a serious conversation about your razor. That daily ritual of shaving — the nicks, the razor burn, the stubble that appears within hours — is it really serving you? At <strong>Wax Me Too</strong>, we've been helping Utah women (and men) throw away their razors since 2007. Here's why you should join them.</p>
-<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Throw away your razor switch to waxing" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/ingrown-hair-prevention_bf5c34e2.jpg" alt="Throw away your razor switch to waxing" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Real Cost of Shaving</h2>
         <p>Think about how much time you spend shaving. Five minutes a day, every day, adds up to over 30 hours a year. Add in the cost of razors, shaving cream, and aftershave products, and you're spending hundreds of dollars annually on a method that delivers results lasting less than 24 hours.</p>
         <p>Now compare that to professional waxing: one 30-minute appointment every 4–6 weeks. The time savings alone are significant — but the skin benefits are even more compelling.</p>
@@ -866,7 +866,7 @@ function getArticleContent(slug: string): string {
     case "pre-vacation-waxing-checklist":
       return `
         <p>Vacation is coming — and your skin deserves to be ready. Whether you're heading to a tropical beach, a ski resort, or a European adventure, pre-vacation waxing ensures you arrive at your destination feeling confident, smooth, and completely carefree. Here's <strong>Wax Me Too's</strong> complete pre-vacation waxing checklist.</p>
-<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Pre-vacation waxing checklist travel ready" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Pre-vacation waxing checklist travel ready" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>4–6 Weeks Before: Book Your Appointment</h2>
         <p>Don't wait until the last minute. Book your pre-vacation waxing appointment 4–6 weeks in advance to secure your preferred esthetician and time slot. If this is your first wax, we strongly recommend doing a trial run well before your trip to see how your skin responds.</p>
         <h2>10 Days Before: Stop Shaving</h2>
@@ -895,7 +895,7 @@ function getArticleContent(slug: string): string {
     case "spring-adventure-waxing-utah":
       return `
         <p>Spring in Utah means hiking the red rock canyons of Moab, biking the trails of Park City, and finally shedding the layers that have kept you covered all winter. It also means it's time to get your skin ready for the season ahead. At <strong>Wax Me Too</strong>, spring is one of our busiest seasons — and for good reason.</p>
-<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Spring adventure waxing Utah outdoor ready" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/summer-waxing-utah-guide_234143c1.jpg" alt="Spring adventure waxing Utah outdoor ready" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Spring Waxing Services</h2>
         <p>As the temperatures rise and the outdoor adventures begin, here are the services our clients book most frequently in spring:</p>
         <ul>
@@ -919,7 +919,7 @@ function getArticleContent(slug: string): string {
     case "holiday-waxing-on-top-of-the-world":
       return `
         <p>The holidays are a time for family gatherings, festive parties, and — at <strong>Wax Me Too</strong> — a full calendar of clients getting holiday-ready. Whether you're attending an office party, a family reunion, or a New Year's Eve celebration, professional waxing is the finishing touch that makes you feel your absolute best.</p>
-<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Holiday waxing special on top of the world" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Holiday waxing special on top of the world" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Holiday Waxing Services</h2>
         <p>The most popular holiday waxing services at Wax Me Too:</p>
         <ul>
@@ -937,7 +937,7 @@ function getArticleContent(slug: string): string {
     case "sundance-film-festival-waxing-utah":
       return `
         <p>Every January, Park City transforms into one of the world's most glamorous destinations as the <strong>Sundance Film Festival</strong> brings celebrities, filmmakers, and film lovers from around the globe to Utah. And every January, <strong>Wax Me Too</strong> sees a surge of clients getting festival-ready.</p>
-<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Sundance Film Festival waxing Utah Park City" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/sundance-waxing_ece2fcaa.jpg" alt="Sundance Film Festival waxing Utah Park City" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Looking Your Best at Sundance</h2>
         <p>Whether you're attending screenings, parties, or simply soaking in the festival atmosphere on Main Street, looking and feeling your best matters. Professional waxing is a key part of the pre-festival beauty routine for many of our clients — and it's easy to see why.</p>
         <p>A Brazilian wax, perfectly shaped brows, and smooth legs give you the confidence to focus on the films, the conversations, and the experiences — not your appearance. That's the Wax Me Too promise.</p>
@@ -954,7 +954,7 @@ function getArticleContent(slug: string): string {
     case "valentines-day-waxing-rippp-and-swear":
       return `
         <p>Valentine's Day is coming — and at <strong>Wax Me Too</strong>, we have a saying: "Rip it and swear by it." Because once you experience the results of a professional Brazilian wax, you'll never go back to shaving. And there's no better time to make the switch than before Valentine's Day.</p>
-<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day waxing special Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day waxing special Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Valentine's Day Brazilian: Why It's Worth It</h2>
         <p>Valentine's Day is one of our busiest times of year — and it's not hard to understand why. Whether you're celebrating with a long-term partner or someone new, feeling confident and smooth makes the occasion even more special.</p>
         <p>A Brazilian wax provides weeks of smooth, carefree skin — no last-minute shaving, no razor burn, no stubble. Just smooth, confident skin that lets you focus on what matters.</p>
@@ -968,7 +968,7 @@ function getArticleContent(slug: string): string {
     case "valentines-day-free-brazilian-2013":
       return `
         <p>Love is in the air — and so is the chance to win a free Brazilian wax. At <strong>Wax Me Too</strong>, we're celebrating Valentine's Day 2013 with a special giveaway: one lucky winner will receive a complimentary Brazilian wax at any of our Utah locations.</p>
-<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day free Brazilian wax 2013" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day free Brazilian wax 2013" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>How to Enter</h2>
         <p>Entering is simple. Visit our website, fill out the entry form, and you're automatically in the drawing. The winner will be notified by text message before Valentine's Day — giving you plenty of time to book your appointment and get smooth for the occasion.</p>
         <h2>Why a Brazilian Wax Makes the Perfect Valentine's Gift</h2>
@@ -981,7 +981,7 @@ function getArticleContent(slug: string): string {
     case "valentines-day-free-wax-giveaway-2017":
       return `
         <p>Happy Valentine's Day from <strong>Wax Me Too</strong>! To celebrate the season of love, we're giving away a free waxing service to one lucky winner. Whether you're treating yourself or someone special, this is your chance to experience Utah's most trusted waxing studio on us.</p>
-<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day free wax giveaway 2017" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/valentines-waxing_5c0c6b61.jpg" alt="Valentine's Day free wax giveaway 2017" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>How to Enter</h2>
         <p>Visit our website and fill out the entry form. It takes less than a minute, and you'll be entered to win a complimentary waxing service at any of our Utah locations. Winners are notified by text message.</p>
         <h2>Valentine's Day Waxing: Our Most Popular Services</h2>
@@ -999,7 +999,7 @@ function getArticleContent(slug: string): string {
     case "free-bikini-wax-drawing-utah":
       return `
         <p>Here's your chance to win a free bikini wax from <strong>Wax Me Too</strong> — Utah's premier professional waxing studio. We're running a monthly drawing, and entering takes less than a minute.</p>
-<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Free bikini wax drawing contest Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/bikini-wax-types_eae61711.jpg" alt="Free bikini wax drawing contest Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>How to Enter</h2>
         <p>Visit our website and fill out the entry form. Winners are selected monthly and notified by text message. Some months, we draw winners more frequently — so the sooner you enter, the better your chances.</p>
         <h2>Why We Do Giveaways</h2>
@@ -1012,7 +1012,7 @@ function getArticleContent(slug: string): string {
     case "waxing-south-jordan-utah-opening":
       return `
         <p>The wait is over, South Jordan! <strong>Wax Me Too</strong> is thrilled to announce the opening of our South Jordan studio — bringing Utah's premier professional waxing experience to the heart of the Salt Lake Valley's southwest corridor.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too South Jordan Utah grand opening" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too South Jordan Utah grand opening" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Welcome to Wax Me Too South Jordan</h2>
         <p>Our South Jordan studio is located at <strong>3674 W South Jordan Pkwy</strong>, conveniently situated for residents of South Jordan, West Jordan, Herriman, and Riverton. The studio features fully equipped treatment rooms with sinks, ensuring the hygiene standards our clients have come to expect at every Wax Me Too location.</p>
         <h2>Grand Opening Special</h2>
@@ -1031,7 +1031,7 @@ function getArticleContent(slug: string): string {
     case "south-jordan-waxing-grand-opening":
       return `
         <p>South Jordan, we're officially open! <strong>Wax Me Too</strong> is proud to welcome our South Jordan community to our newest studio. After months of preparation, we're ready to bring Utah's most trusted waxing experience to this vibrant, growing community.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="South Jordan waxing grand opening celebration" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="South Jordan waxing grand opening celebration" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Meet Your South Jordan Team</h2>
         <p>Our South Jordan studio is staffed by experienced, licensed estheticians who share the same passion for professional waxing that has defined Wax Me Too since 2007. They've been trained in our signature techniques and are committed to the hygiene standards, client care, and attention to detail that our clients have come to expect.</p>
         <h2>Services Available at South Jordan</h2>
@@ -1050,7 +1050,7 @@ function getArticleContent(slug: string): string {
     case "utah-waxing-salon-established-2007":
       return `
         <p>In 2007, two best friends with a shared vision opened Utah's first waxing-only salon in Draper. They called it <strong>Wax Me Too</strong>. Nearly two decades later, that vision has grown into a network of 6 studios across Utah — and the values that guided those first appointments still guide every service we provide today.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too Utah waxing salon established 2007" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Wax Me Too Utah waxing salon established 2007" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>The Story of Wax Me Too</h2>
         <p>Before Wax Me Too, professional waxing in Utah was an afterthought — a service offered alongside haircuts and manicures at general beauty salons. The quality was inconsistent, the hygiene standards were often questionable, and clients had no way of knowing whether they were in the hands of a true specialist or a generalist who waxed occasionally.</p>
         <p>Our founders saw an opportunity to do something different: create a salon dedicated entirely to waxing, staffed by estheticians who specialized exclusively in this craft, and built on hygiene standards that clients could trust.</p>
@@ -1068,7 +1068,7 @@ function getArticleContent(slug: string): string {
     case "st-george-waxing-salon-utah":
       return `
         <p>Southern Utah's most trusted waxing studio is right here in St. George. <strong>Wax Me Too St. George</strong> has been serving Washington County since 2008 — just one year after we opened Utah's first waxing-only salon in Draper. We know Southern Utah, we love this community, and we're proud to be your go-to destination for professional waxing.</p>
-<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Professional waxing salon St. George Utah" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/south-jordan-salon_972b4d09.jpg" alt="Professional waxing salon St. George Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Our St. George Studio</h2>
         <p>Located inside Salon Aubri McKai at <strong>175 W 900 S #9, St. George, UT 84770</strong>, our studio features two fully equipped treatment rooms on the upper floor. We serve clients from throughout Washington County — including St. George, Washington, Hurricane, and Santa Clara — as well as visitors from nearby Mesquite, Nevada.</p>
         <h2>Our Services in St. George</h2>
@@ -1089,7 +1089,7 @@ function getArticleContent(slug: string): string {
     case "mens-eyebrow-waxing-metrosexual":
       return `
         <p>Gentlemen, it's time to talk about your eyebrows. Well-groomed brows are no longer the exclusive domain of women — and they haven't been for years. At <strong>Wax Me Too</strong>, men's eyebrow waxing is one of our fastest-growing services, and the results speak for themselves.</p>
-<img src="/manus-storage/mens-eyebrow-waxing_c42dbd0d.jpg" alt="Men's eyebrow waxing grooming metrosexual guide" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+<img src="/manus-storage/mens-eyebrow-waxing_c42dbd0d.jpg" alt="Men's eyebrow waxing grooming metrosexual guide" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
         <h2>Why Men Should Wax Their Eyebrows</h2>
         <p>Your eyebrows frame your face. Overgrown, unruly brows can make you look older, more tired, and less polished than you actually are. A clean, well-shaped brow — even a subtle one — makes a significant difference in your overall appearance.</p>
         <p>The key for men's eyebrow waxing is subtlety. We're not here to give you a dramatic arch or a heavily defined shape. We're here to clean up the edges, remove the strays, and give your natural brow a neat, groomed appearance that looks intentional without looking overdone.</p>
@@ -1101,6 +1101,25 @@ function getArticleContent(slug: string): string {
         <p>Book at waxmetoo.com and select "Men's Eyebrow Wax" from the service menu. First-time clients get their Brazilian wax for $50.</p>
       `;
 
+    case "valentines-day-brazilian-wax-gift":
+      return `
+        <p>Looking for a Valentine's Day gift that's unisex, intimate, and genuinely useful? The <strong>Brazilian wax</strong> is the answer. Here's why thousands of Utah couples make <strong>Wax Me Too</strong> their Valentine's Day tradition — and how to prepare for the perfect appointment.</p>
+<img src="/manus-storage/thumb-1487412912498_1fcd4b00.jpg" alt="Valentine's Day Brazilian wax gift Utah" loading="lazy" style="width:100%;border-radius:0.75rem;margin:2rem 0;object-fit:cover;max-height:420px;box-shadow:0 4px 16px rgba(59,47,42,0.08);" />
+        <h2>Why a Brazilian Wax Makes the Perfect Valentine's Gift</h2>
+        <p>A Brazilian wax is one of the most thoughtful, practical, and genuinely appreciated gifts you can give — or receive. Unlike flowers that wilt or chocolates that disappear, the results of a professional Brazilian wax last 3–6 weeks. It's a gift that keeps giving, long after Valentine's Day has passed.</p>
+        <p>And it's not just for women. At Wax Me Too, we offer the <strong>Manzilian</strong> — our men's Brazilian wax — and it's one of our most popular Valentine's Day services. Couples who wax together stay smooth together.</p>
+        <h2>How to Prepare for Your Valentine's Day Wax</h2>
+        <ul>
+          <li><strong>Book early.</strong> Valentine's week fills up fast. Book your appointment at least a week in advance to secure your preferred time.</li>
+          <li><strong>Let hair grow.</strong> Hair needs to be at least 1/4 inch long for the wax to grip. Stop shaving at least 10 days before your appointment.</li>
+          <li><strong>Exfoliate gently.</strong> 24–48 hours before your appointment, exfoliate the area to prevent ingrown hairs and help the wax grip more effectively.</li>
+          <li><strong>Skip the lotion.</strong> On the day of your appointment, skip lotions, oils, and self-tanner on the area to be waxed.</li>
+        </ul>
+        <h2>First-Time Clients: Try It for $50</h2>
+        <p>Never had a Brazilian wax before? Valentine's Day is the perfect time to try. First-time clients at Wax Me Too get their Brazilian wax for just $50 — a savings of $15 off our regular price. <a href="/first-visit">Learn what to expect on your first visit</a> or <a href="/services">browse our full services menu</a>.</p>
+        <h2>Book Your Valentine's Day Appointment</h2>
+        <p>Wax Me Too has 6 locations across Utah: Layton, South Jordan, Orem, Salt Lake City, Draper, and St. George. <a href="/locations">Find a location near you</a> and book online — it takes just a few clicks.</p>
+      `;
     default:
       return `
         <p>${"This article is coming soon. Check back for the full content."}</p>
