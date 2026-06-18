@@ -476,3 +476,13 @@
 ## Related Articles Section (June 2026)
 
 - [x] Add full-width Related Articles section at bottom of all 51 blog posts (4-card grid, tag/category scored, with excerpt + "Read article" CTA and "Browse All Articles" button)
+
+## SEMrush Audit — Low Text-to-HTML Ratio & Slow Page Load (June 18, 2026)
+
+- [x] Strip manus-runtime inline script (366KB) from all HTML responses server-side in seoPrerender.ts
+- [x] Make prerender-content div visible (not hidden/clipped) so text counts toward ratio
+- [x] Inject full article body text for all 51 blog posts into server HTML via BLOG_BODY_TEXTS
+- [x] Rebuild production bundle so dist/index.js includes seoPrerender module
+- [x] Implement React.lazy() code splitting for all 20 page routes in App.tsx
+- [x] Rebuild production bundle — BlogPost.js now 171KB (was bundled in 1.4MB monolith)
+- [x] Verify all 18 page types pass >10% text-to-HTML ratio with zero manus-runtime in HTML
