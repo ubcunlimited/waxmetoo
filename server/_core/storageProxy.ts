@@ -167,3 +167,4 @@ export function registerStorageProxy(app: Express) {
     }
   });
 }
+// Storage proxy: pipe-through mode (no redirects) — deployed 2026-06-18T22:21:29Z
