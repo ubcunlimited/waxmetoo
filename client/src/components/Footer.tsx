@@ -144,30 +144,28 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Mascot Hunt Promo Strip */}
+      {/* Mascot Hunt Promo Strip — link removed from footer to avoid crawling noindex page */}
       <div style={{ borderTop: "1px solid #4a3d38", background: "rgba(61,26,26,0.45)" }}>
         <div className="container py-5">
-          <Link href="/mascot-hunt">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 cursor-pointer group">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl select-none">🔍</span>
-                <div>
-                  <p className="text-sm font-semibold text-[#D8C6B6] group-hover:text-white transition-colors">
-                    Mascot Hunt — Can you find all 11 hidden mascots?
-                  </p>
-                  <p className="text-xs text-[#A8B3AA]">
-                    Find them all and earn a <strong className="text-[#CFA7A0]">20% discount</strong> on your next waxing service.
-                  </p>
-                </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl select-none">🔍</span>
+              <div>
+                <p className="text-sm font-semibold text-[#D8C6B6]">
+                  Mascot Hunt — Can you find all 11 hidden mascots?
+                </p>
+                <p className="text-xs text-[#A8B3AA]">
+                  Find them all and earn a <strong className="text-[#CFA7A0]">20% discount</strong> on your next waxing service.
+                </p>
               </div>
-              <span
-                className="text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap transition-colors"
-                style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0", border: "1px solid rgba(207,167,160,0.35)" }}
-              >
-                Start the Hunt →
-              </span>
             </div>
-          </Link>
+            <span
+              className="text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap"
+              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0", border: "1px solid rgba(207,167,160,0.35)" }}
+            >
+              Find them on our pages 🔍
+            </span>
+          </div>
         </div>
       </div>
 

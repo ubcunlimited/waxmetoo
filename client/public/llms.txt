@@ -1,7 +1,6 @@
-# Wax Me Too — llms.txt
-# https://llmstxt.org
+# Wax Me Too
 
-> Wax Me Too is Utah's premier women-owned waxing-only studio, founded in 2007. We operate 6 locations across Utah (Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George) and specialize exclusively in professional waxing services.
+Wax Me Too is Utah's premier women-owned waxing-only studio, founded in 2007. We operate 6 locations across Utah (Layton, Salt Lake City, South Jordan, Draper, Orem, and St. George) and specialize exclusively in professional waxing services.
 
 ## About
 
@@ -37,20 +36,20 @@ Wax Me Too was the first waxing-only salon to open in Utah. We have been serving
 
 ## Key Pages
 
-- Homepage: https://www.waxmetoo.com/
-- Services & Pricing: https://www.waxmetoo.com/services
-- Locations: https://www.waxmetoo.com/locations
-- First Visit Guide: https://www.waxmetoo.com/first-visit
-- Before Care: https://www.waxmetoo.com/before-care
-- After Care: https://www.waxmetoo.com/after-care
-- FAQ: https://www.waxmetoo.com/faq
-- Blog: https://www.waxmetoo.com/blog
-- Book Appointment: https://booking.mangomint.com/593822
+- [Homepage](https://www.waxmetoo.com/)
+- [Services & Pricing](https://www.waxmetoo.com/services)
+- [Locations](https://www.waxmetoo.com/locations)
+- [First Visit Guide](https://www.waxmetoo.com/first-visit)
+- [Before Care](https://www.waxmetoo.com/before-care)
+- [After Care](https://www.waxmetoo.com/after-care)
+- [FAQ](https://www.waxmetoo.com/faq)
+- [Blog](https://www.waxmetoo.com/blog)
+- [Book Appointment](https://booking.mangomint.com/593822)
 
 ## Policies
 
 - No double-dipping: fresh applicators used for every client
 - Hygiene: estheticians wash hands in front of clients before every service
 - Treatment rooms sanitized between every client
-- Privacy Policy: https://www.waxmetoo.com/privacy-policy
-- Terms of Service: https://www.waxmetoo.com/terms-of-service
+- [Privacy Policy](https://www.waxmetoo.com/privacy-policy)
+- [Terms of Service](https://www.waxmetoo.com/terms-of-service)

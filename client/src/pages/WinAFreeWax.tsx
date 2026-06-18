@@ -298,7 +298,7 @@ export default function WinAFreeWax() {
 
                     <p className="text-xs text-center" style={{ color: "#A8B3AA" }}>
                       By entering, you agree to receive a one-time confirmation email. No spam, ever. See our{" "}
-                      <Link href="/privacy" className="underline" style={{ color: "#CFA7A0" }}>Privacy Policy</Link>.
+                      <Link href="/privacy-policy" className="underline" style={{ color: "#CFA7A0" }}>Privacy Policy</Link>.
                     </p>
                   </form>
                 </div>

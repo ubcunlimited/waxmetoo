@@ -168,7 +168,7 @@ export default function Home() {
               const displayPrice = `$${service.price % 1 === 0 ? service.price : service.price.toFixed(2)}`;
               return (
                 <FadeUp key={service.id} delay={i * 80}>
-                  <Link href={`/services?tab=popular`}>
+                  <Link href="/services">
                     <div className="card-service group cursor-pointer p-6 bg-white" style={{ borderTop: `3px solid ${accent}` }}>
                       <div className="flex items-start justify-between mb-3">
                         <span className="text-2xl" style={{ color: accent }}>{icon}</span>
