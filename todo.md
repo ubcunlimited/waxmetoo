@@ -472,3 +472,7 @@
 - [x] Issue 7: Sitemap has 70 URLs, all canonical 200-status pages, no blocked/redirect pages
 - [x] Issue 8: Added loading="lazy" to all 51 article body images in BlogPost.tsx
 - [x] Issue 9: /mascot-hunt removed from sitemap, Disallow in robots.txt, Footer link removed (done in prior run, confirmed)
+
+## Related Articles Section (June 2026)
+
+- [x] Add full-width Related Articles section at bottom of all 51 blog posts (4-card grid, tag/category scored, with excerpt + "Read article" CTA and "Browse All Articles" button)

@@ -1166,7 +1166,7 @@ export default function BlogPost() {
   const recentPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 4);
 
   // Tag-based related posts: score by shared tags, fall back to category
-  const related = blogPosts
+  const scoredPosts = blogPosts
     .filter(p => p.slug !== slug)
     .map(p => {
       const pTags: string[] = (p as any).tags ?? [];
@@ -1174,9 +1174,10 @@ export default function BlogPost() {
       const sameCategory = p.category === post?.category ? 1 : 0;
       return { post: p, score: sharedTags * 2 + sameCategory };
     })
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3)
-    .map(r => r.post);
+    .sort((a, b) => b.score - a.score);
+  const related = scoredPosts.slice(0, 3).map(r => r.post);
+  // Full-width bottom section: top 4 related posts
+  const relatedFull = scoredPosts.slice(0, 4).map(r => r.post);
 
   // Dynamic SEO meta
   useSEO(
@@ -1528,6 +1529,64 @@ export default function BlogPost() {
         </div>
       </section>
 
+      {/* Full-width Related Articles section */}
+      {relatedFull.length > 0 && (
+        <section className="py-16 bg-white border-t border-[#D8C6B6]">
+          <div className="container">
+            <FadeUp>
+              <div className="flex items-center gap-4 mb-10">
+                <div className="h-px flex-1 bg-[#D8C6B6]" />
+                <div className="text-center">
+                  <p className="text-xs font-body font-semibold uppercase tracking-widest text-[#A8B3AA] mb-1">Keep Reading</p>
+                  <h2 className="font-display text-3xl text-[#3B2F2A]">Related Articles</h2>
+                </div>
+                <div className="h-px flex-1 bg-[#D8C6B6]" />
+              </div>
+            </FadeUp>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedFull.map((p, i) => (
+                <FadeUp key={p.id} delay={i * 80}>
+                  <Link href={`/blog/${p.slug}`}>
+                    <article className="group cursor-pointer rounded-2xl overflow-hidden border border-[#D8C6B6] bg-[#F7F3EE] hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                      <div className="aspect-video overflow-hidden flex-shrink-0">
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-5 flex flex-col flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-body font-semibold uppercase tracking-wide text-[#A8B3AA]">{p.category}</span>
+                          <span className="text-[#D8C6B6]">·</span>
+                          <span className="text-xs text-[#A8B3AA] font-body flex items-center gap-1">
+                            <Clock size={10} /> {p.readTime}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-lg text-[#3B2F2A] leading-snug group-hover:text-[#CFA7A0] transition-colors line-clamp-2 mb-2">{p.title}</h3>
+                        <p className="text-sm text-[#4A4A4A] font-body line-clamp-2 leading-relaxed flex-1">{p.excerpt}</p>
+                        <div className="mt-4 flex items-center gap-1 text-[#CFA7A0] text-sm font-body font-semibold group-hover:gap-2 transition-all">
+                          Read article <ArrowRight size={14} />
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
+                </FadeUp>
+              ))}
+            </div>
+            <FadeUp delay={200}>
+              <div className="text-center mt-10">
+                <Link href="/blog">
+                  <span className="inline-flex items-center gap-2 text-sm font-body font-semibold text-[#3B2F2A] hover:text-[#CFA7A0] transition-colors cursor-pointer border border-[#D8C6B6] rounded-full px-6 py-2.5 hover:border-[#CFA7A0]">
+                    <BookOpen size={14} /> Browse All Articles
+                  </span>
+                </Link>
+              </div>
+            </FadeUp>
+          </div>
+        </section>
+      )}
     <MascotEasterEgg pageId="blogpost" />
     </Layout>
   );
