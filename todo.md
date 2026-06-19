@@ -571,3 +571,18 @@
 - [x] Fix: added in-memory presigned URL cache (evicts 30 min before expiry), changed Cache-Control to public max-age=82800 (23h)
 - [x] Result: /manus-storage/ image fetch time dropped from 5-6s to 36-59ms (99% reduction)
 - [x] TypeScript clean, production bundle rebuilt
+
+## Feature Removal — Mascot Hunt & Admin Panel
+
+- [x] Remove MascotHunt.tsx page
+- [x] Remove AdminHub.tsx, AdminBlog.tsx, AdminGiveaway.tsx, AdminSubscribers.tsx, AdminMascot.tsx pages
+- [x] Remove MascotEasterEgg.tsx and MascotHuntBadge.tsx components
+- [x] Remove mascot routes and admin routes from App.tsx
+- [x] Remove MascotHuntBadge from App.tsx layout
+- [x] Remove mascotRouter.ts, mascotDb.ts, mascotEmail.ts, mascot.test.ts from server/
+- [x] Remove mascot import from server/routers.ts
+- [x] Remove mascot DB tables (mascot_finds, mascot_rewards) from drizzle/schema.ts
+- [x] Remove MascotEasterEgg from all page components (Home, Services, Blog, etc.)
+- [x] Remove /mascot-hunt and /admin from robots.txt disallow
+- [x] Push DB migration to drop mascot tables
+- [x] Rebuild and save checkpoint

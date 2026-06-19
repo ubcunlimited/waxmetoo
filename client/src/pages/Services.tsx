@@ -16,7 +16,6 @@ import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 import { Link } from "wouter";
 import { ChevronDown, ChevronUp, Star, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
-import MascotEasterEgg from "@/components/MascotEasterEgg";
 import {
   mostPopular,
   laminationItems,
@@ -490,7 +489,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-      <MascotEasterEgg pageId="services" />
     </Layout>
   );
 }

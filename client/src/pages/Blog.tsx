@@ -11,7 +11,6 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
-import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 
@@ -508,7 +507,6 @@ export default function Blog() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg pageId="blog" />
     </Layout>
   );
 }

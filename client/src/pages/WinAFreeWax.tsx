@@ -14,7 +14,6 @@ import Layout from "@/components/Layout";
 import { trpc } from "@/lib/trpc";
 import { Gift, CheckCircle, Mail, ChevronRight, Star, Calendar, MapPin, Share2, Copy, Check } from "lucide-react";
 import { BOOKING_URL } from "@/lib/data";
-import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 const SHARE_TEXT = "I just entered to win a free wax at Wax Me Too! Enter for your chance to win a complimentary waxing service — one winner every month! 🎁";
 const SHARE_URL = "https://waxmetoo.com/win-a-free-wax";
@@ -396,7 +395,6 @@ export default function WinAFreeWax() {
           Book Now <ChevronRight size={16} />
         </a>
       </section>
-    <MascotEasterEgg pageId="winafreewax" />
     </Layout>
   );
 }

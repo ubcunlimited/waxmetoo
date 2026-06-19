@@ -11,7 +11,6 @@ import { Link } from "wouter";
 import { Star, ChevronDown, MapPin, ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { mostPopular, testimonials, locations, faqs, blogPosts, trustBadges, BOOKING_URL } from "@/lib/data";
-import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 // Scroll-triggered fade-up hook
 function useFadeUp() {
@@ -595,7 +594,6 @@ export default function Home() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg pageId="home" />
     </Layout>
   );
 }

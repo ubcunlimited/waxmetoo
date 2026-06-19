@@ -14,7 +14,6 @@ import { Link } from "wouter";
 import { CheckCircle, XCircle, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
-import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 
@@ -138,7 +137,6 @@ export default function AfterCare() {
           </FadeUp>
         </div>
       </section>
-    <MascotEasterEgg pageId="aftercare" />
     </Layout>
   );
 }
