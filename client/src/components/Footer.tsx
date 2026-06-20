@@ -76,7 +76,6 @@ export default function Footer() {
                 { label: "Contact", href: "/contact" },
                 { label: "Before Care", href: "/before-care" },
                 { label: "After Care", href: "/after-care" },
-                { label: "Win a Free Wax", href: "/win-a-free-wax" },
             ].map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>

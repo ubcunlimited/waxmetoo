@@ -58,7 +58,7 @@ export default function TermsOfService() {
 
           <h2>4. Promotions and Discounts</h2>
           <p>
-            From time to time, Wax Me Too may offer promotional discounts, giveaways, or loyalty
+            From time to time, Wax Me Too may offer promotional discounts or loyalty
             programs. The following terms apply to all promotions:
           </p>
           <ul>

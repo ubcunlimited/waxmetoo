@@ -511,65 +511,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── GIVEAWAY PROMO ─── */}
-      <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #3B2F2A 0%, #5a3e38 60%, #3B2F2A 100%)" }}>
-        {/* Decorative blobs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 pointer-events-none" style={{ background: "#CFA7A0", transform: "translate(35%, -35%)" }} />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-10 pointer-events-none" style={{ background: "#D8C6B6", transform: "translate(-35%, 35%)" }} />
-
-        <div className="container relative z-10">
-          <FadeUp>
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left: copy */}
-                <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(207,167,160,0.2)", border: "1px solid rgba(207,167,160,0.4)" }}>
-                    <span className="text-sm font-medium" style={{ color: "#CFA7A0", letterSpacing: "0.05em" }}>🎁 Monthly Giveaway</span>
-                  </div>
-                  <h2 className="font-display text-4xl md:text-5xl mb-5 leading-tight" style={{ color: "#F7F3EE" }}>
-                    Win a<br /><em style={{ color: "#CFA7A0" }}>Free Wax!</em>
-                  </h2>
-                  <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "#D8C6B6" }}>
-                    Every month we give away a complimentary waxing service — a $25–$80 value — to one lucky winner drawn from all confirmed entries.
-                  </p>
-                  <p className="font-body text-sm mb-8" style={{ color: "#A8B3AA" }}>
-                    Enter once and stay in the drawing every month. No purchase necessary. One winner per month, notified by email.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <Link href="/win-a-free-wax">
-                      <span className="btn-rose cursor-pointer">Enter the Giveaway</span>
-                    </Link>
-                    <Link href="/win-a-free-wax">
-                      <span className="font-body text-sm font-semibold cursor-pointer flex items-center gap-1" style={{ color: "#CFA7A0" }}>
-                        Learn more <ArrowRight size={14} />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right: steps */}
-                <div className="space-y-4">
-                  {[
-                    { step: "01", title: "Enter Your Info", desc: "Just your name and email — takes 30 seconds." },
-                    { step: "02", title: "Confirm Your Email", desc: "Click the link we send you to lock in your entry." },
-                    { step: "03", title: "Monthly Drawing", desc: "One winner randomly selected on the 1st of each month." },
-                    { step: "04", title: "Enjoy Your Free Wax!", desc: "Redeem at any of our 6 Utah locations." },
-                  ].map((item) => (
-                    <div key={item.step} className="flex items-start gap-4 p-4 rounded-xl" style={{ background: "rgba(247,243,238,0.06)", border: "1px solid rgba(207,167,160,0.2)" }}>
-                      <span className="font-display text-2xl font-bold flex-shrink-0" style={{ color: "#CFA7A0", lineHeight: 1 }}>{item.step}</span>
-                      <div>
-                        <p className="font-body font-semibold text-sm mb-0.5" style={{ color: "#F7F3EE" }}>{item.title}</p>
-                        <p className="font-body text-xs leading-relaxed" style={{ color: "#A8B3AA" }}>{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ─── FINAL CTA STRIP ─── */}
       <section className="py-16 bg-[#3B2F2A]">
         <div className="container">

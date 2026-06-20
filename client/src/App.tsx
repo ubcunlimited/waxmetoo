@@ -26,8 +26,6 @@ const BeforeCare = lazy(() => import("./pages/BeforeCare"));
 const AfterCare = lazy(() => import("./pages/AfterCare"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
-const WinAFreeWax = lazy(() => import("./pages/WinAFreeWax"));
-const GiveawayConfirm = lazy(() => import("./pages/GiveawayConfirm"));
 const Register = lazy(() => import("./pages/Register"));
 
 // Minimal spinner shown while a lazy chunk loads
@@ -66,10 +64,6 @@ function Router() {
           {/* Legacy short URLs — redirect to canonical pages */}
           <Route path="/privacy"><Redirect to="/privacy-policy" /></Route>
           <Route path="/terms"><Redirect to="/terms-of-service" /></Route>
-
-          {/* Giveaway */}
-          <Route path="/win-a-free-wax" component={WinAFreeWax} />
-          <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
 
           <Route path="/register" component={Register} />
 
