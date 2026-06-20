@@ -58,7 +58,14 @@ export default function Header() {
         >
           Book Now
         </a>
-
+        <span className="text-sm opacity-60 hidden sm:inline">·</span>
+        <a
+          href="/win-a-free-wax"
+          className="inline-flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full transition-opacity hover:opacity-80"
+          style={{ background: "rgba(59,47,42,0.15)", color: "#3B2F2A", border: "1px solid rgba(59,47,42,0.25)" }}
+        >
+          🎁 Win a Free Wax
+        </a>
       </div>
 
       {/* Main Header */}

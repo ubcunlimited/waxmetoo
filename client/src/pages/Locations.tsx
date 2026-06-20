@@ -10,6 +10,7 @@ import { Link } from "wouter";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { locations, BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 
@@ -173,6 +174,7 @@ export default function Locations() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg pageId="locations" />
     </Layout>
   );
 }

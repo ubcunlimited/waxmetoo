@@ -11,6 +11,7 @@ import { Link, useLocation } from "wouter";
 import { ArrowRight, Clock, Search, ChevronDown, ChevronRight, Tag, Calendar, BookOpen, Hash } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts, BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 
@@ -487,6 +488,27 @@ export default function Blog() {
         </div>
       </section>
 
+      {/* Newsletter */}
+      <section className="py-14 bg-[#D8C6B6]">
+        <div className="container">
+          <FadeUp>
+            <div className="max-w-xl mx-auto text-center">
+              <p className="section-label text-[#3B2F2A] mb-3">Stay Informed</p>
+              <h2 className="font-display text-3xl text-[#3B2F2A] mb-4">Get new articles in your inbox</h2>
+              <p className="text-[#4A4A4A] font-body mb-6">Waxing tips, seasonal guides, and exclusive offers — delivered monthly.</p>
+              <form className="flex gap-2 max-w-sm mx-auto" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="flex-1 px-4 py-3 rounded text-[#3B2F2A] bg-white placeholder-[#9a7a74] font-body text-sm border-0 outline-none focus:ring-2 focus:ring-[#3B2F2A]"
+                />
+                <button type="submit" className="btn-primary whitespace-nowrap">Subscribe</button>
+              </form>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+    <MascotEasterEgg pageId="blog" />
     </Layout>
   );
 }

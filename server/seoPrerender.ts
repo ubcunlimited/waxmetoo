@@ -225,6 +225,16 @@ Cancellation policy: cancellations must be made at least 24 hours in advance. La
 Service terms: results vary by individual. Hair must be at least 1/4 inch long for effective waxing. We reserve the right to refuse service if hair is too short or if skin conditions make waxing unsafe. First-time Brazilian wax offer ($50) is valid for new clients only, one per person.
 Health and safety: please inform your esthetician of any medications, skin conditions, or recent treatments before your appointment. We use single-use applicators and sanitize all equipment between clients.`,
   },
+  "/win-a-free-wax": {
+    title: "Win a Free Wax — Monthly Giveaway | Wax Me Too",
+    description: "Enter to win a complimentary waxing service at Wax Me Too Utah. One winner drawn every month from all confirmed entries. Open to new and returning clients.",
+    bodyText: `<h1>Win a Free Wax — Monthly Giveaway</h1>
+Enter Wax Me Too's monthly giveaway for a chance to win a complimentary waxing service. One winner is drawn each month from all confirmed entries.
+How to enter: fill out the form with your first name, last name, and email address. You will receive a confirmation email — click the link inside to complete your entry. Only confirmed entries are eligible to win.
+Prize: one complimentary waxing service per month. The winner is notified by email and text. The prize is non-transferable and has no cash value.
+Wax Me Too is Utah's women-owned waxing studio since 2007. We have 6 locations across Utah: Layton, South Jordan, Orem, Salt Lake City, Draper, and St. George. Services include Brazilian wax, bikini wax, brow wax, brow lamination, underarm wax, leg wax, and full body waxing.
+First-time clients: Brazilian wax for $50. Book online at booking.mangomint.com/593822.`,
+  },
 };
 
 // Location detail pages
@@ -718,6 +728,7 @@ function _injectSEO(html: string, meta: PageMeta): string {
 <a href="/first-visit">First Visit</a>
 <a href="/before-care">Before Care</a>
 <a href="/after-care">After Care</a>
+<a href="/win-a-free-wax">Win a Free Wax</a>
 <a href="/privacy-policy">Privacy Policy</a>
 <a href="/terms-of-service">Terms of Service</a>
 <a href="/locations/layton">Layton Waxing Studio</a>

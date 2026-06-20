@@ -8,6 +8,7 @@ import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { startScheduler } from "../scheduler";
 import { linkCheckHandler } from "../linkCheckHandler";
 import { seoPrerender } from "../seoPrerender";
 
@@ -72,6 +73,8 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
+    // Start scheduled jobs (monthly giveaway draw, etc.)
+    startScheduler();
   });
 }
 

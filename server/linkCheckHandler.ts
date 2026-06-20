@@ -31,6 +31,7 @@ const STATIC_ROUTES = [
   "/before-care",
   "/after-care",
   "/contact",
+  "/win-a-free-wax",
   "/privacy-policy",
   "/terms-of-service",
   "/sitemap.xml",

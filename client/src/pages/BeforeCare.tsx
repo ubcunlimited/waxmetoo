@@ -15,6 +15,7 @@ import { Link } from "wouter";
 import { CheckCircle, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { BOOKING_URL } from "@/lib/data";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
 
 
@@ -108,6 +109,7 @@ export default function BeforeCare() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg pageId="beforecare" />
     </Layout>
   );
 }

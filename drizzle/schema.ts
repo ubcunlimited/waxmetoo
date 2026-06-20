@@ -95,3 +95,36 @@ export const newsletterSubscribers = mysqlTable("newsletter_subscribers", {
 
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+
+/**
+ * Mascot easter egg finds — tracks which pages each user has found the mascot on.
+ */
+export const mascotFinds = mysqlTable("mascot_finds", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  pageId: varchar("pageId", { length: 64 }).notNull(),
+  foundAt: timestamp("foundAt").defaultNow().notNull(),
+});
+
+export type MascotFind = typeof mascotFinds.$inferSelect;
+export type InsertMascotFind = typeof mascotFinds.$inferInsert;
+
+/**
+ * Mascot hunt rewards — one-time discount codes issued when all mascots are found.
+ * Each user can only claim once.
+ */
+export const mascotRewards = mysqlTable("mascot_rewards", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique(), // one reward per user
+  discountCode: varchar("discountCode", { length: 32 }).notNull().unique(),
+  discountPercent: int("discountPercent").default(20).notNull(),
+  // Contact info submitted when claiming the reward
+  fullName: varchar("fullName", { length: 200 }),
+  phone: varchar("phone", { length: 30 }),
+  email: varchar("email", { length: 320 }),
+  claimedAt: timestamp("claimedAt").defaultNow().notNull(),
+  usedAt: timestamp("usedAt"),
+});
+
+export type MascotReward = typeof mascotRewards.$inferSelect;
+export type InsertMascotReward = typeof mascotRewards.$inferInsert;

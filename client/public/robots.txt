@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Admin pages — no indexing needed
+Disallow: /admin
+Disallow: /admin/
+
+# Interactive game and registration pages — noindex, also disallowed for crawlers
+Disallow: /mascot-hunt
+Disallow: /register
+
 Sitemap: https://www.waxmetoo.com/sitemap.xml

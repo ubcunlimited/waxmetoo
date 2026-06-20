@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
 import AccessibilityWidget from "./components/AccessibilityWidget";
+import MascotHuntBadge from "./components/MascotHuntBadge";
 
 // Eagerly loaded — always needed on first paint
 import Home from "./pages/Home";
@@ -26,7 +27,15 @@ const BeforeCare = lazy(() => import("./pages/BeforeCare"));
 const AfterCare = lazy(() => import("./pages/AfterCare"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const WinAFreeWax = lazy(() => import("./pages/WinAFreeWax"));
+const GiveawayConfirm = lazy(() => import("./pages/GiveawayConfirm"));
 const Register = lazy(() => import("./pages/Register"));
+const MascotHunt = lazy(() => import("./pages/MascotHunt"));
+const AdminGiveaway = lazy(() => import("./pages/AdminGiveaway"));
+const AdminBlog = lazy(() => import("./pages/AdminBlog"));
+const AdminSubscribers = lazy(() => import("./pages/AdminSubscribers"));
+const AdminHub = lazy(() => import("./pages/AdminHub"));
+const AdminMascot = lazy(() => import("./pages/AdminMascot"));
 
 // Minimal spinner shown while a lazy chunk loads
 function PageLoader() {
@@ -65,7 +74,20 @@ function Router() {
           <Route path="/privacy"><Redirect to="/privacy-policy" /></Route>
           <Route path="/terms"><Redirect to="/terms-of-service" /></Route>
 
+          {/* Giveaway */}
+          <Route path="/win-a-free-wax" component={WinAFreeWax} />
+          <Route path="/win-a-free-wax/confirm" component={GiveawayConfirm} />
+
+          {/* Mascot Hunt */}
           <Route path="/register" component={Register} />
+          <Route path="/mascot-hunt" component={MascotHunt} />
+
+          {/* Admin */}
+          <Route path="/admin" component={AdminHub} />
+          <Route path="/admin/giveaway" component={AdminGiveaway} />
+          <Route path="/admin/blog" component={AdminBlog} />
+          <Route path="/admin/subscribers" component={AdminSubscribers} />
+          <Route path="/admin/mascot" component={AdminMascot} />
 
           <Route path="/404" component={NotFound} />
           <Route component={NotFound} />
@@ -82,6 +104,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <MascotHuntBadge />
           <CookieConsent />
           <AccessibilityWidget />
         </TooltipProvider>

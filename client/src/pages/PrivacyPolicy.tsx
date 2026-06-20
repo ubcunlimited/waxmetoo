@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
             including but not limited to:
           </p>
           <ul>
-            <li>Full name, phone number, and email address when submitting contact forms.</li>
+            <li>Full name, phone number, and email address when submitting contact forms or giveaway entries.</li>
             <li>Account registration information (name, email, login method) when you create a Wax Me Too account.</li>
             <li>Appointment booking information processed through our third-party booking platform, Mangomint.</li>
             <li>Any messages or feedback you send us directly.</li>
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
             <li>Operate, maintain, and improve our Site and services.</li>
             <li>Process and fulfill appointment bookings and service requests.</li>
             <li>Communicate with you about your account, appointments, promotions, and updates.</li>
-            <li>Administer loyalty programs and promotions.</li>
+            <li>Administer giveaways and loyalty programs.</li>
             <li>Analyze usage trends to improve user experience.</li>
             <li>Comply with applicable laws and regulations.</li>
             <li>Prevent fraud and protect the security of our Site.</li>

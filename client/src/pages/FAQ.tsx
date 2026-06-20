@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { faqs, BOOKING_URL } from "@/lib/data";
 import { useBreadcrumbSchema } from "@/hooks/useBreadcrumbSchema";
+import MascotEasterEgg from "@/components/MascotEasterEgg";
 
 
 const categories = ["All", ...Array.from(new Set(faqs.map(f => f.category)))];
@@ -198,6 +199,7 @@ export default function FAQ() {
           </FadeUp>
         </div>
       </section>
+    <MascotEasterEgg pageId="faq" />
     </Layout>
   );
 }

@@ -11,6 +11,30 @@ import { locations, BOOKING_URL } from "@/lib/data";
 export default function Footer() {
   return (
     <footer className="bg-[#3B2F2A] text-[#D8C6B6]">
+      {/* Newsletter Strip */}
+      <div style={{ background: "linear-gradient(135deg, #CFA7A0 0%, #A8B3AA 100%)" }}>
+        <div className="container py-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="section-label text-[#3B2F2A]">Stay in the Loop</p>
+              <h3 className="font-display text-2xl text-[#3B2F2A] mt-1">
+                Get exclusive offers & waxing tips
+              </h3>
+            </div>
+            <form className="flex gap-2 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="flex-1 md:w-72 px-4 py-3 rounded text-[#3B2F2A] bg-white placeholder-[#9a7a74] font-body text-sm border-0 outline-none focus:ring-2 focus:ring-[#3B2F2A]"
+              />
+              <button type="submit" className="btn-primary whitespace-nowrap text-sm py-3 px-5">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer */}
       <div className="container py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -76,6 +100,7 @@ export default function Footer() {
                 { label: "Contact", href: "/contact" },
                 { label: "Before Care", href: "/before-care" },
                 { label: "After Care", href: "/after-care" },
+                { label: "Win a Free Wax", href: "/win-a-free-wax" },
             ].map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>
@@ -115,6 +140,31 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Mascot Hunt Promo Strip — link removed from footer to avoid crawling noindex page */}
+      <div style={{ borderTop: "1px solid #4a3d38", background: "rgba(61,26,26,0.45)" }}>
+        <div className="container py-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl select-none">🔍</span>
+              <div>
+                <p className="text-sm font-semibold text-[#D8C6B6]">
+                  Mascot Hunt — Can you find all 11 hidden mascots?
+                </p>
+                <p className="text-xs text-[#A8B3AA]">
+                  Find them all and earn a <strong className="text-[#CFA7A0]">20% discount</strong> on your next waxing service.
+                </p>
+              </div>
+            </div>
+            <span
+              className="text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap"
+              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0", border: "1px solid rgba(207,167,160,0.35)" }}
+            >
+              Find them on our pages 🔍
+            </span>
           </div>
         </div>
       </div>
