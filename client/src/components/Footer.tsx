@@ -11,30 +11,6 @@ import { locations, BOOKING_URL } from "@/lib/data";
 export default function Footer() {
   return (
     <footer className="bg-[#3B2F2A] text-[#D8C6B6]">
-      {/* Newsletter Strip */}
-      <div style={{ background: "linear-gradient(135deg, #CFA7A0 0%, #A8B3AA 100%)" }}>
-        <div className="container py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="section-label text-[#3B2F2A]">Stay in the Loop</p>
-              <h3 className="font-display text-2xl text-[#3B2F2A] mt-1">
-                Get exclusive offers & waxing tips
-              </h3>
-            </div>
-            <form className="flex gap-2 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 md:w-72 px-4 py-3 rounded text-[#3B2F2A] bg-white placeholder-[#9a7a74] font-body text-sm border-0 outline-none focus:ring-2 focus:ring-[#3B2F2A]"
-              />
-              <button type="submit" className="btn-primary whitespace-nowrap text-sm py-3 px-5">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="container py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
