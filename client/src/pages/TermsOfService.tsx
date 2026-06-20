@@ -56,27 +56,25 @@ export default function TermsOfService() {
             <li><strong>Right to refuse service:</strong> Wax Me Too reserves the right to refuse service to any client at any time for any reason consistent with applicable law.</li>
           </ul>
 
-          <h2>4. Promotions, Discounts, and the Mascot Hunt</h2>
+          <h2>4. Promotions and Discounts</h2>
           <p>
             From time to time, Wax Me Too may offer promotional discounts, giveaways, or loyalty
-            programs, including the Mascot Hunt game available on this Site. The following terms apply
-            to all promotions:
+            programs. The following terms apply to all promotions:
           </p>
           <ul>
             <li>Promotions are subject to change or withdrawal at any time without notice.</li>
             <li>New client offer (currently $50 Brazilian wax on the first visit) applies to first-time clients only, is limited to one use per person, and is valid on Brazilian wax services only.</li>
-            <li>The Mascot Hunt discount code (currently 20% off one service) is awarded once per registered account upon finding all hidden mascots on the Site. Codes may not be combined with other offers and are valid for one use only.</li>
             <li>Discount codes have no cash value and are non-transferable.</li>
             <li>Military discounts are available at select locations. Proof of service may be required.</li>
           </ul>
 
           <h2>5. User Accounts</h2>
           <p>
-            To participate in certain features of the Site (such as the Mascot Hunt), you may create a
-            user account. You are responsible for maintaining the confidentiality of your account
-            credentials and for all activities that occur under your account. You agree to notify us
-            immediately of any unauthorized use of your account. We reserve the right to terminate
-            accounts at our discretion.
+            To participate in certain features of the Site, you may create a user account. You are
+            responsible for maintaining the confidentiality of your account credentials and for all
+            activities that occur under your account. You agree to notify us immediately of any
+            unauthorized use of your account. We reserve the right to terminate accounts at our
+            discretion.
           </p>
 
           <h2>6. Intellectual Property</h2>

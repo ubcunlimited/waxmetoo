@@ -120,31 +120,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Mascot Hunt Promo Strip — link removed from footer to avoid crawling noindex page */}
-      <div style={{ borderTop: "1px solid #4a3d38", background: "rgba(61,26,26,0.45)" }}>
-        <div className="container py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl select-none">🔍</span>
-              <div>
-                <p className="text-sm font-semibold text-[#D8C6B6]">
-                  Mascot Hunt — Can you find all 11 hidden mascots?
-                </p>
-                <p className="text-xs text-[#A8B3AA]">
-                  Find them all and earn a <strong className="text-[#CFA7A0]">20% discount</strong> on your next waxing service.
-                </p>
-              </div>
-            </div>
-            <span
-              className="text-xs font-semibold px-4 py-2 rounded-full whitespace-nowrap"
-              style={{ background: "rgba(207,167,160,0.18)", color: "#CFA7A0", border: "1px solid rgba(207,167,160,0.35)" }}
-            >
-              Find them on our pages 🔍
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Bottom Bar */}
       <div style={{ borderTop: "1px solid", borderImage: "linear-gradient(90deg, #4a3d38, #A8B3AA40, #4a3d38) 1" }}>
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3">
