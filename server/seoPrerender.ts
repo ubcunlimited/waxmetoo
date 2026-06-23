@@ -655,13 +655,16 @@ First-time clients: Brazilian wax for $50. Book online at booking.mangomint.com/
  * - Replaces meta description
  * - Injects a <noscript> block with visible body text for crawlers
  */
+/** Canonical base URL — always www to consolidate link equity */
+const CANONICAL_BASE = "https://www.waxmetoo.com";
+
 export function injectSEO(html: string, urlPath: string): string {
   const meta = resolvePageMeta(urlPath);
   if (!meta) return html;
-  return _injectSEO(html, meta);
+  return _injectSEO(html, meta, urlPath);
 }
 
-function _injectSEO(html: string, meta: PageMeta): string {
+function _injectSEO(html: string, meta: PageMeta, urlPath: string = ""): string {
   let result = html;
 
   // Replace title
@@ -696,6 +699,22 @@ function _injectSEO(html: string, meta: PageMeta): string {
   result = result.replace(
     /<\/title>/,
     `</title>\n  ${ogTags}`
+  );
+
+  // Inject canonical URL tag to prevent duplicate content between
+  // waxmetoo.com and www.waxmetoo.com — always points to the www version.
+  // Remove any existing canonical first to avoid duplicates.
+  result = result.replace(/<link rel="canonical"[^>]*>/g, '');
+  const canonicalUrl = CANONICAL_BASE + (urlPath || '/');
+  const canonicalTag = `<link rel="canonical" href="${canonicalUrl}" />`;
+  result = result.replace('</head>', `  ${canonicalTag}\n</head>`);
+
+  // Also inject og:url to match the canonical
+  result = result.replace(/<meta property="og:url"[^>]*\/>/g, '');
+  const ogUrl = `<meta property="og:url" content="${canonicalUrl}" />`;
+  result = result.replace(
+    /<\/title>/,
+    `</title>\n  ${ogUrl}`
   );
 
   // Strip the manus-runtime inline script (platform visual-editor tool, 366KB).

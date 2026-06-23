@@ -5,7 +5,6 @@ import { nanoid } from "nanoid";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
-import { injectSEO } from "../seoPrerender";
 
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
@@ -22,26 +21,6 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
-
-  // Serve sitemap.xml and robots.txt directly from client/public in dev mode
-  const clientPublicPath = path.resolve(import.meta.dirname, "../..", "client", "public");
-  app.get("/sitemap.xml", (_req, res) => {
-    const p = path.resolve(clientPublicPath, "sitemap.xml");
-    if (fs.existsSync(p)) {
-      res.set("Content-Type", "application/xml").sendFile(p);
-    } else {
-      res.status(404).send("sitemap.xml not found");
-    }
-  });
-  app.get("/robots.txt", (_req, res) => {
-    const p = path.resolve(clientPublicPath, "robots.txt");
-    if (fs.existsSync(p)) {
-      res.set("Content-Type", "text/plain").sendFile(p);
-    } else {
-      res.status(404).send("robots.txt not found");
-    }
-  });
-
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
@@ -59,10 +38,9 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
-      let page = await vite.transformIndexHtml(url, template);
-      // Inject page-specific SEO content for crawlers
-      page = injectSEO(page, url);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const page = await vite.transformIndexHtml(url, template);
+      // Use res.send (not .end) so the seoPrerender middleware can intercept
+      res.status(200).set({ "Content-Type": "text/html" }).send(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -81,41 +59,21 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Serve sitemap.xml and robots.txt with correct Content-Type before catch-all
-  app.get("/sitemap.xml", (_req, res) => {
-    const sitemapPath = path.resolve(distPath, "sitemap.xml");
-    if (fs.existsSync(sitemapPath)) {
-      res.set("Content-Type", "application/xml").sendFile(sitemapPath);
-    } else {
-      res.status(404).send("sitemap.xml not found");
+  // Disable express.static's automatic index.html serving so all HTML
+  // requests fall through to the handler below, which uses res.send() instead
+  // of sendFile() — this lets the seoPrerender middleware inject canonical
+  // tags, OG metadata, and body text before the response is sent.
+  app.use(express.static(distPath, { index: false }));
+
+  // fall through to index.html — use res.send (not sendFile) so the
+  // seoPrerender middleware can intercept and inject canonical/OG tags.
+  const indexHtml = path.resolve(distPath, "index.html");
+  app.use("*", (_req, res) => {
+    try {
+      const html = fs.readFileSync(indexHtml, "utf-8");
+      res.status(200).set({ "Content-Type": "text/html" }).send(html);
+    } catch {
+      res.status(500).send("Server error: could not read index.html");
     }
-  });
-
-  app.get("/robots.txt", (_req, res) => {
-    const robotsPath = path.resolve(distPath, "robots.txt");
-    if (fs.existsSync(robotsPath)) {
-      res.set("Content-Type", "text/plain").sendFile(robotsPath);
-    } else {
-      res.status(404).send("robots.txt not found");
-    }
-  });
-
-  // Explicit handler for root path — express.static would serve index.html directly,
-  // bypassing injectSEO. This ensures / gets the same prerender treatment as all other routes.
-  app.get("/", (_req, res) => {
-    const htmlPath = path.resolve(distPath, "index.html");
-    const html = fs.readFileSync(htmlPath, "utf-8");
-    const injected = injectSEO(html, "/");
-    res.set("Content-Type", "text/html").send(injected);
-  });
-
-  app.use(express.static(distPath));
-
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (req, res) => {
-    const htmlPath = path.resolve(distPath, "index.html");
-    const html = fs.readFileSync(htmlPath, "utf-8");
-    const injected = injectSEO(html, req.originalUrl);
-    res.set("Content-Type", "text/html").send(injected);
   });
 }
