@@ -11,6 +11,7 @@ import { serveStatic, setupVite } from "./vite";
 import { startScheduler } from "../scheduler";
 import { linkCheckHandler } from "../linkCheckHandler";
 import { seoPrerender } from "../seoPrerender";
+import { sitemapHandler } from "../sitemap";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -49,14 +50,14 @@ async function startServer() {
   );
   // SEO prerender — inject page-specific title/meta/body text into HTML shell for crawlers
   app.use(seoPrerender);
-
   // 301 redirects for non-canonical duplicate URLs (P2 SEO fix)
   app.get("/privacy", (_req, res) => res.redirect(301, "/privacy-policy"));
   app.get("/terms", (_req, res) => res.redirect(301, "/terms-of-service"));
+  // Sitemap — must be registered before Vite/static fallthrough so it returns XML
+  app.get("/sitemap.xml", sitemapHandler);
 
   // Scheduled / cron handlers — must be registered before Vite/static fallthrough
   app.post("/api/scheduled/link-check", linkCheckHandler);
-
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);

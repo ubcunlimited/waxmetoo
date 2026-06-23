@@ -101,19 +101,28 @@ export default function BlogPost() {
   const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const recentPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 4);
 
-  // Tag-based related posts: score by shared tags, fall back to category
+  // Smart related posts algorithm:
+  // 1. Each shared tag = 3 points
+  // 2. Same category = 2 points
+  // 3. Recency bonus: posts within 2 years of current post = 1 point
+  // 4. Tie-break: more recent post wins
+  const postDate = post ? new Date(post.date).getTime() : 0;
+  const twoYearsMs = 2 * 365 * 24 * 60 * 60 * 1000;
   const scoredPosts = blogPosts
     .filter(p => p.slug !== slug)
     .map(p => {
       const pTags: string[] = (p as any).tags ?? [];
       const sharedTags = postTags.filter(t => pTags.includes(t)).length;
-      const sameCategory = p.category === post?.category ? 1 : 0;
-      return { post: p, score: sharedTags * 2 + sameCategory };
+      const sameCategory = p.category === post?.category ? 2 : 0;
+      const pDate = new Date(p.date).getTime();
+      const recency = Math.abs(pDate - postDate) < twoYearsMs ? 1 : 0;
+      return { post: p, score: sharedTags * 3 + sameCategory + recency, date: pDate };
     })
-    .sort((a, b) => b.score - a.score);
-  const related = scoredPosts.slice(0, 3).map(r => r.post);
-  // Full-width bottom section: top 4 related posts
-  const relatedFull = scoredPosts.slice(0, 4).map(r => r.post);
+    .sort((a, b) => b.score - a.score || b.date - a.date);
+  // Exactly 3 related posts for the bottom section
+  const relatedFull = scoredPosts.slice(0, 3).map(r => r.post);
+  // Keep sidebar related (3 posts) in sync
+  const related = relatedFull;
 
   // Dynamic SEO meta
   useSEO(
